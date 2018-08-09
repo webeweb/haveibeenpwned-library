@@ -1,0 +1,46 @@
+{
+    "name": "webeweb/haveibeenpwned-library",
+    "type": "library",
+    "description": "Have i been pwned library",
+    "keywords": ["webeweb", "library", "haveibeenpwned"],
+    "homepage": "http://github.com/webeweb/haveibeenpwned-library",
+    "license": "LGPL-3.0-only",
+    "authors": [
+        {
+            "name": "webeweb",
+            "homepage": "http://github.com/webeweb/"
+        }
+    ],
+    "require": {
+        "ext-zip": "*",
+        "webeweb/core-library": "^3.0",
+        "webeweb/curl-library": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7.*"
+    },
+    "support": {
+        "issues": "http://github.com/webeweb/haveibeenpwned-library/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "WBW\\Library\\HaveIBeenPwned\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WBW\\Library\\HaveIBeenPwned\\Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
