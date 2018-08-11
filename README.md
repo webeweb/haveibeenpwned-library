@@ -15,10 +15,6 @@ considered stable.
 
 [![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net) [![HHVM](https://img.shields.io/badge/HHVM-ready-orange.svg)](https://hhvm.com/)
 
-Requires:
-
-[![ext-zip](https://img.shields.io/badge/PHP-ext--zip-blue.svg)](http://php.net/manual/en/book.zip.php)
-
 ---
 
 ## Installation
@@ -27,7 +23,7 @@ Open a command console, enter your project directory and execute the following
 command to download the latest stable version of this package:
 
 ```bash
-$ composer require webeweb/haveibeenpwned-library "^3.0"
+$ composer require webeweb/haveibeenpwned-library "^1.0"
 ```
 
 This command requires you to have Composer installed globally, as explained in
