@@ -53,18 +53,4 @@ class HaveIBeenPwnedProviderTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($this->request, $obj->getRequest());
     }
 
-    /**
-     * Tests the callAPI() method.
-     *
-     * @return void
-     */
-    public function testCallAPI() {
-
-        $obj = new HaveIBeenPwnedProvider($this->request);
-
-        $res = $obj->callAPI();
-
-        echo $res->getResponseBody();
-    }
-
 }
