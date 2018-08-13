@@ -12,6 +12,8 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
+use DateTimeZone;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 
 /**
  * HaveIBeenPwned breach model.
@@ -121,8 +123,10 @@ class HaveIBeenPwnedBreach {
 
     /**
      * Constructor.
+     *
+     * @param array $rawResponse The raw response.
      */
-    public function __construct() {
+    public function __construct($rawResponse) {
         $this->setDataClasses([]);
         $this->setFabricated(false);
         $this->setPwnCount(0);
@@ -130,6 +134,8 @@ class HaveIBeenPwnedBreach {
         $this->setSensitive(false);
         $this->setSpamList(false);
         $this->setVerified(false);
+
+        $this->parse($rawResponse);
     }
 
     /**
@@ -259,12 +265,41 @@ class HaveIBeenPwnedBreach {
     }
 
     /**
+     * Parse the raw response.
+     *
+     * @param array $rawResponse The raw response.
+     * @return void
+     */
+    protected function parse($rawResponse) {
+
+        // Parse the date.
+        $addedDate    = DateTime::createFromFormat("Y-m-d\TH:i\Z", ArrayHelper::get($rawResponse, "AddedDate", ""), new DateTimeZone("UTC"));
+        $breachDate   = DateTime::createFromFormat("Y-m-d", ArrayHelper::get($rawResponse, "BreachDate", ""), new DateTimeZone("UTC"));
+        $modifiedDate = DateTime::createFromFormat("Y-m-d\TH:i\Z", ArrayHelper::get($rawResponse, "ModifiedDate", ""), new DateTimeZone("UTC"));
+
+        // Initialize the model.
+        $this->setAddedDate(false !== $addedDate ? $addedDate : null);
+        $this->setBreachDate(false !== $breachDate ? $breachDate : null);
+        $this->setDescription(ArrayHelper::get($rawResponse, "Description"));
+        $this->setDataClasses(ArrayHelper::get($rawResponse, "DataClasses", []));
+        $this->setDomain(ArrayHelper::get($rawResponse, "Domain"));
+        $this->setModifiedDate(false !== $modifiedDate ? $modifiedDate : null);
+        $this->setName(ArrayHelper::get($rawResponse, "Name"));
+        $this->setPwnCount(ArrayHelper::get($rawResponse, "PwnCount", 0));
+        $this->setRetired(ArrayHelper::get($rawResponse, "IsRetired", false));
+        $this->setSensitive(ArrayHelper::get($rawResponse, "IsSensitive", false));
+        $this->setSpamList(ArrayHelper::get($rawResponse, "IsSpamList", false));
+        $this->setTitle(ArrayHelper::get($rawResponse, "Title"));
+        $this->setVerified(ArrayHelper::get($rawResponse, "IsVerified", false));
+    }
+
+    /**
      * Set the added date.
      *
      * @param DateTime $addedDate The added date.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setAddedDate(DateTime $addedDate) {
+    protected function setAddedDate(DateTime $addedDate = null) {
         $this->addedDate = $addedDate;
         return $this;
     }
@@ -274,7 +309,7 @@ class HaveIBeenPwnedBreach {
      * @param DateTime $breachDate The breach date.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setBreachDate(DateTime $breachDate) {
+    protected function setBreachDate(DateTime $breachDate = null) {
         $this->breachDate = $breachDate;
         return $this;
     }
@@ -285,7 +320,7 @@ class HaveIBeenPwnedBreach {
      * @param array $dataClasses The data classes.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setDataClasses(array $dataClasses) {
+    protected function setDataClasses(array $dataClasses) {
         $this->dataClasses = $dataClasses;
         return $this;
     }
@@ -296,7 +331,7 @@ class HaveIBeenPwnedBreach {
      * @param string $description The description.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setDescription($description) {
+    protected function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -307,7 +342,7 @@ class HaveIBeenPwnedBreach {
      * @param string $domain The domain.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setDomain($domain) {
+    protected function setDomain($domain) {
         $this->domain = $domain;
         return $this;
     }
@@ -318,7 +353,7 @@ class HaveIBeenPwnedBreach {
      * @param bool $fabricated The fabricated.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setFabricated($fabricated) {
+    protected function setFabricated($fabricated) {
         $this->fabricated = $fabricated;
         return $this;
     }
@@ -329,7 +364,7 @@ class HaveIBeenPwnedBreach {
      * @param DateTime $modifiedDate The modified date.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setModifiedDate(DateTime $modifiedDate) {
+    protected function setModifiedDate(DateTime $modifiedDate = null) {
         $this->modifiedDate = $modifiedDate;
         return $this;
     }
@@ -340,7 +375,7 @@ class HaveIBeenPwnedBreach {
      * @param string $name The name.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setName($name) {
+    protected function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -351,7 +386,7 @@ class HaveIBeenPwnedBreach {
      * @param int $pwnCount The pwn count.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setPwnCount($pwnCount) {
+    protected function setPwnCount($pwnCount) {
         $this->pwnCount = $pwnCount;
         return $this;
     }
@@ -362,7 +397,7 @@ class HaveIBeenPwnedBreach {
      * @param bool $retired The retired.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setRetired($retired) {
+    protected function setRetired($retired) {
         $this->retired = $retired;
         return $this;
     }
@@ -373,7 +408,7 @@ class HaveIBeenPwnedBreach {
      * @param bool $sensitive The sensitive.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setSensitive($sensitive) {
+    protected function setSensitive($sensitive) {
         $this->sensitive = $sensitive;
         return $this;
     }
@@ -384,7 +419,7 @@ class HaveIBeenPwnedBreach {
      * @param bool $spamList The spam list.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setSpamList($spamList) {
+    protected function setSpamList($spamList) {
         $this->spamList = $spamList;
         return $this;
     }
@@ -395,7 +430,7 @@ class HaveIBeenPwnedBreach {
      * @param string $title The title.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setTitle($title) {
+    protected function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -406,7 +441,7 @@ class HaveIBeenPwnedBreach {
      * @param bool $verified The verified.
      * @return HaveIBeenPwnedBreach Returns this HaveIBeenPwned breach.
      */
-    public function setVerified($verified) {
+    protected function setVerified($verified) {
         $this->verified = $verified;
         return $this;
     }

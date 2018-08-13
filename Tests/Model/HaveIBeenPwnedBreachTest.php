@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
-use DateTime;
 use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedBreach;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
 
 /**
  * HaveIBeenPwned breach test.
@@ -31,209 +31,18 @@ final class HaveIBeenPwnedBreachTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstruct() {
 
-        $obj = new HaveIBeenPwnedBreach();
+        $obj = new HaveIBeenPwnedBreach(TestFixtures::getSampleBreachResponse()[0]);
 
-        $this->assertNull($obj->getAddedDate());
-        $this->assertNull($obj->getBreachDate());
-        $this->assertEquals([], $obj->getDataClasses());
-        $this->assertNull($obj->getDescription());
-        $this->assertNull($obj->getDomain());
-        $this->assertFalse($obj->getFabricated());
-        $this->assertNull($obj->getModifiedDate());
-        $this->assertNull($obj->getName());
-        $this->assertEquals(0, $obj->getPwnCount());
+        $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format("Y-m-d\TH:i\Z"));
+        $this->assertEquals("2013-10-04", $obj->getBreachDate()->format("Y-m-d"));
+        $this->assertEquals("adobe.com", $obj->getDomain());
+        $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format("Y-m-d\TH:i\Z"));
+        $this->assertEquals("Adobe", $obj->getName());
+        $this->assertEquals(152445165, $obj->getPwnCount());
         $this->assertFalse($obj->getRetired());
         $this->assertFalse($obj->getSensitive());
         $this->assertFalse($obj->getSpamList());
-        $this->assertNull($obj->getTitle());
-        $this->assertFalse($obj->getVerified());
-    }
-
-    /**
-     * Tests the setAddedDate() method.
-     *
-     * @return void
-     */
-    public function testSetAddedDate() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $arg = new DateTime("2018-08-11 09:30");
-
-        $obj->setAddedDate($arg);
-        $this->assertSame($arg, $obj->getAddedDate());
-    }
-
-    /**
-     * Tests the setBreachDate() method.
-     *
-     * @return void
-     */
-    public function testSetBreachDate() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $arg = new DateTime("2018-08-11 09:30");
-
-        $obj->setBreachDate($arg);
-        $this->assertSame($arg, $obj->getBreachDate());
-    }
-
-    /**
-     * Tests the setDataClasses() method.
-     *
-     * @return void
-     */
-    public function testSetDataClasses() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setDataClasses([]);
-        $this->assertEquals([], $obj->getDataClasses());
-    }
-
-    /**
-     * Tests the setDescription() method.
-     *
-     * @return void
-     */
-    public function testSetDescription() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setDescription("description");
-        $this->assertEquals("description", $obj->getDescription());
-    }
-
-    /**
-     * Tests the setDomain() method.
-     *
-     * @return void
-     */
-    public function testSetDomain() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setDomain("domain");
-        $this->assertEquals("domain", $obj->getDomain());
-    }
-
-    /**
-     * Tests the setFabricated() method.
-     *
-     * @return void
-     */
-    public function testSetFabricated() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setFabricated(true);
-        $this->assertTrue($obj->getFabricated());
-    }
-
-    /**
-     * Tests the setModifiedDate() method.
-     *
-     * @return void
-     */
-    public function testSetModifiedDate() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $arg = new DateTime("2018-08-11 09:30");
-
-        $obj->setModifiedDate($arg);
-        $this->assertSame($arg, $obj->getModifiedDate());
-    }
-
-    /**
-     * Tests the setName() method.
-     *
-     * @return void
-     */
-    public function testSetName() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setName("name");
-        $this->assertEquals("name", $obj->getName());
-    }
-
-    /**
-     * Tests the setPwnCount() method.
-     *
-     * @return void
-     */
-    public function testSetPwnCount() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setPwnCount(1);
-        $this->assertEquals(1, $obj->getPwnCount());
-    }
-
-    /**
-     * Tests the setRetired() method.
-     *
-     * @return void
-     */
-    public function testSetRetired() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setRetired(true);
-        $this->assertTrue($obj->getRetired());
-    }
-
-    /**
-     * Tests the setSensitive() method.
-     *
-     * @return void
-     */
-    public function testSetSensitive() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setSensitive(true);
-        $this->assertTrue($obj->getSensitive());
-    }
-
-    /**
-     * Tests the setSpamList() method.
-     *
-     * @return void
-     */
-    public function testSetSpamList() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setSpamList(true);
-        $this->assertTrue($obj->getSpamList());
-    }
-
-    /**
-     * Tests the setTitle() method.
-     *
-     * @return void
-     */
-    public function testSetTitle() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setTitle("title");
-        $this->assertEquals("title", $obj->getTitle());
-    }
-
-    /**
-     * Tests the setVerified() method.
-     *
-     * @return void
-     */
-    public function testSetVerified() {
-
-        $obj = new HaveIBeenPwnedBreach();
-
-        $obj->setVerified(true);
+        $this->assertEquals("Adobe", $obj->getTitle());
         $this->assertTrue($obj->getVerified());
     }
 
