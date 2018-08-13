@@ -35,18 +35,18 @@ final class HaveIBeenPwnedBreachTest extends PHPUnit_Framework_TestCase {
 
         $this->assertNull($obj->getAddedDate());
         $this->assertNull($obj->getBreachDate());
-        $this->assertNull($obj->getDataClasses());
+        $this->assertEquals([], $obj->getDataClasses());
         $this->assertNull($obj->getDescription());
         $this->assertNull($obj->getDomain());
-        $this->assertNull($obj->getFabricated());
+        $this->assertFalse($obj->getFabricated());
         $this->assertNull($obj->getModifiedDate());
         $this->assertNull($obj->getName());
-        $this->assertNull($obj->getPwnCount());
-        $this->assertNull($obj->getRetired());
-        $this->assertNull($obj->getSensitive());
-        $this->assertNull($obj->getSpamList());
+        $this->assertEquals(0, $obj->getPwnCount());
+        $this->assertFalse($obj->getRetired());
+        $this->assertFalse($obj->getSensitive());
+        $this->assertFalse($obj->getSpamList());
         $this->assertNull($obj->getTitle());
-        $this->assertNull($obj->getVerified());
+        $this->assertFalse($obj->getVerified());
     }
 
     /**

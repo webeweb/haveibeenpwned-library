@@ -123,7 +123,13 @@ class HaveIBeenPwnedBreach {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        $this->setDataClasses([]);
+        $this->setFabricated(false);
+        $this->setPwnCount(0);
+        $this->setRetired(false);
+        $this->setSensitive(false);
+        $this->setSpamList(false);
+        $this->setVerified(false);
     }
 
     /**
