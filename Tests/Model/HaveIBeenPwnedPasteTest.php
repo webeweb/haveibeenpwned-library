@@ -34,7 +34,7 @@ final class HaveIBeenPwnedPasteTest extends PHPUnit_Framework_TestCase {
         $obj = new HaveIBeenPwnedPaste();
 
         $this->assertNull($obj->getDate());
-        $this->assertNull($obj->getEmailCount());
+        $this->assertEquals(0, $obj->getEmailCount());
         $this->assertNull($obj->getId());
         $this->assertNull($obj->getSource());
         $this->assertNull($obj->getTitle());

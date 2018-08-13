@@ -60,7 +60,7 @@ class HaveIBeenPwnedPaste {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        $this->setEmailCount(0);
     }
 
     /**
