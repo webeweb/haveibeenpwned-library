@@ -13,15 +13,16 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Provider\HaveIBeenPwnedProvider;
-use WBW\Library\HaveIBeenPwned\Request\HaveIBeenPwendRequestBreaches;
+use WBW\Library\HaveIBeenPwned\Request\HaveIBeenPwnedRequestBreach;
 
 /**
  * HaveIBeenPwned provider test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
+ * @final
  */
-class HaveIBeenPwnedProviderTest extends PHPUnit_Framework_TestCase {
+final class HaveIBeenPwnedProviderTest extends PHPUnit_Framework_TestCase {
 
     /**
      * Request.
@@ -37,7 +38,7 @@ class HaveIBeenPwnedProviderTest extends PHPUnit_Framework_TestCase {
         parent::setUp();
 
         // Set a Request mock.
-        $this->request = new HaveIBeenPwendRequestBreaches();
+        $this->request = new HaveIBeenPwnedRequestBreach();
     }
 
     /**
