@@ -43,10 +43,15 @@ final class HaveIBeenPwnedRangeTest extends PHPUnit_Framework_TestCase {
      */
     public function testParse() {
 
-        $obj = HaveIBeenPwnedRange::parse("0018A45C4D1DEF81644B54AB7F969B88D65:1");
+        $obj0 = HaveIBeenPwnedRange::parse("0018A45C4D1DEF81644B54AB7F969B88D65");
 
-        $this->assertEquals(1, $obj->getCount());
-        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $obj->getHash());
+        $this->assertEquals(0, $obj0->getCount());
+        $this->assertNull($obj0->getHash());
+
+        $obj9 = HaveIBeenPwnedRange::parse("0018A45C4D1DEF81644B54AB7F969B88D65:1");
+
+        $this->assertEquals(1, $obj9->getCount());
+        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $obj9->getHash());
     }
 
     /**
