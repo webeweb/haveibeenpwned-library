@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\App;
 
-use WBW\Library\Core\Helper\Argument\StringHelper;
+use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
 
 /**
  * Test fixtures.
@@ -63,17 +63,49 @@ final class TestFixtures {
 EOTXT;
 
     /**
+     * Sample paste response.
+     *
+     * @var string
+     */
+    const SAMPLE_PASTE_RESPONSE = <<< 'EOTXT'
+[
+{
+"Source":"Pastebin",
+"Id":"8Q0BvKD8",
+"Title":"syslog",
+"Date":"2014-03-04T19:14:54Z",
+"EmailCount":139
+},
+{
+"Source":"Pastie",
+"Id":"7152479",
+"Date":"2013-03-28T16:51:10Z",
+"EmailCount":30
+}
+]
+EOTXT;
+
+    /**
      * Get a sample breach response.
      *
-     * @return array Returns a sample breach response.
+     * @return array Returns the sample breach response.
      */
     public static function getSampleBreachResponse() {
 
         // Clean the response.
-        $cleanResponse = StringHelper::replace(self::SAMPLE_BREACH_RESPONSE, [":True", ":False"], [":true", ":false"]);
+        $cleanResponse = HaveIBeenPwnedHelper::cleanResponse(self::SAMPLE_BREACH_RESPONSE);
 
         // Return the response.
         return json_decode($cleanResponse, true);
+    }
+
+    /**
+     * Get a sample paste response.
+     *
+     * @return array Returns the sample paste response.
+     */
+    public static function getSamplePasteResponse() {
+        return json_decode(self::SAMPLE_PASTE_RESPONSE, true);
     }
 
 }
