@@ -12,6 +12,9 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
+use DateTimeZone;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
+use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 
 /**
  * HaveIBeenPwned paste model.
@@ -19,7 +22,7 @@ use DateTime;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
-class HaveIBeenPwnedPaste {
+class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
 
     /**
      * Date.
@@ -109,12 +112,36 @@ class HaveIBeenPwnedPaste {
     }
 
     /**
+     * Parse a raw response.
+     *
+     * @param array $rawResponse The raw response.
+     * @return HaveIBeenPwnedPaste Returns the HaveIBeenPwned breach.
+     */
+    public static function parse($rawResponse) {
+
+        // Parse the dates.
+        $date = DateTime::createFromFormat(self::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));
+
+        // Initialize the model.
+        $model = new HaveIBeenPwnedPaste();
+
+        $model->setDate(false !== $date ? $date : null);
+        $model->setEmailCount(ArrayHelper::get($rawResponse, "EmailCount", 0));
+        $model->setId(ArrayHelper::get($rawResponse, "Id"));
+        $model->setSource(ArrayHelper::get($rawResponse, "Source"));
+        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
+
+        // Return the model.
+        return $model;
+    }
+
+    /**
      * Set the date.
      *
      * @param DateTime $date The date.
      * @return HaveIBeenPwnedPaste Returns this HaveIBeenPwned paste.
      */
-    public function setDate(DateTime $date) {
+    public function setDate(DateTime $date = null) {
         $this->date = $date;
         return $this;
     }

@@ -13,10 +13,12 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
 use DateTime;
 use PHPUnit_Framework_TestCase;
+use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedPaste;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
 
 /**
- * HaveIBeenPwned paste test.
+ * HaveIBeenPwned paste model test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package  WBW\Library\HaveIBeenPwned\Tests\Model
@@ -38,6 +40,22 @@ final class HaveIBeenPwnedPasteTest extends PHPUnit_Framework_TestCase {
         $this->assertNull($obj->getId());
         $this->assertNull($obj->getSource());
         $this->assertNull($obj->getTitle());
+    }
+
+    /**
+     * Tests the parse() method.
+     *
+     * @return void
+     */
+    public function testParse() {
+
+        $obj = HaveIBeenPwnedPaste::parse(TestFixtures::getSamplePasteResponse()[0]);
+
+        $this->assertEquals("2014-03-04T19:14:54Z", $obj->getDate()->format(HaveIBeenPwnedModelInterface::DATETIME_FORMAT_DATE));
+        $this->assertEquals(139, $obj->getEmailCount());
+        $this->assertEquals("8Q0BvKD8", $obj->getId());
+        $this->assertEquals("Pastebin", $obj->getSource());
+        $this->assertEquals("syslog", $obj->getTitle());
     }
 
     /**
