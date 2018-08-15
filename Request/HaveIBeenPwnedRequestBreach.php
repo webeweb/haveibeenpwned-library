@@ -13,14 +13,15 @@ namespace WBW\Library\HaveIBeenPwned\Request;
 
 use WBW\Library\Core\Helper\Argument\ArrayHelper;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedRequestInterface;
+use WBW\Library\HaveIBeenPwned\Response\HaveIBeenPwnedResponseBreach;
 
 /**
- * HaveIBeenPwend request "Breaches".
+ * HaveIBeenPwned request "Breach".
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
-class HaveIBeenPwendRequestBreaches implements HaveIBeenPwnedRequestInterface {
+class HaveIBeenPwnedRequestBreach implements HaveIBeenPwnedRequestInterface {
 
     /**
      * Domain.
@@ -56,7 +57,7 @@ class HaveIBeenPwendRequestBreaches implements HaveIBeenPwnedRequestInterface {
      * Set the domain.
      *
      * @param string $domain The domain.
-     * @return HaveIBeenPwnedRequestBreaches Returns this HaveIBeenPwned request "Breaches".
+     * @return HaveIBeenPwnedRequestBreaches Returns this HaveIBeenPwned request "Breach".
      */
     public function setDomain($domain) {
         $this->domain = $domain;
@@ -71,7 +72,7 @@ class HaveIBeenPwendRequestBreaches implements HaveIBeenPwnedRequestInterface {
         // Initialize the output.
         $output = [];
 
-        ArrayHelper::set($output, "domain", [null]);
+        ArrayHelper::set($output, "domain", $this->domain, [null]);
 
         // Return the output.
         return $output;
