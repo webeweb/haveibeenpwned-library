@@ -1,7 +1,7 @@
 {
     "name": "webeweb/haveibeenpwned-library",
     "type": "library",
-    "description": "Have I been pwned library",
+    "description": "Integrate Have I been pwned API in your projects",
     "keywords": ["webeweb", "library", "haveibeenpwned"],
     "homepage": "http://github.com/webeweb/haveibeenpwned-library",
     "license": "LGPL-3.0-only",
