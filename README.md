@@ -3,11 +3,7 @@ haveibeenpwned-library
 
 [![Build Status](https://travis-ci.org/webeweb/haveibeenpwned-library.svg?branch=master)](https://travis-ci.org/webeweb/haveibeenpwned-library) [![Coverage Status](https://coveralls.io/repos/github/webeweb/haveibeenpwned-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/stable)](https://packagist.org/packages/webeweb/haveibeenpwned-library) [![Latest Unstable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/unstable)](https://packagist.org/packages/webeweb/haveibeenpwned-library) [![License](https://poser.pugx.org/webeweb/haveibeenpwned-library/license)](https://packagist.org/packages/webeweb/haveibeenpwned-library) [![composer.lock](https://poser.pugx.org/webeweb/haveibeenpwned-library/composerlock)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
 
-This package contains some classes we re-use regularly into other packages or
-projects.
-
-`haveibeenpwned-library` uses a rolling release based on git master branch which is
-considered stable.
+Integrate HaveIBeenPwned API in your projects.
 
 > IMPORTANT NOTICE: This package is still under development. Any changes will be
 > done without prior notice to consumers of this package. Of course this code
