@@ -47,11 +47,13 @@ final class HaveIBeenPwnedRangeTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals(0, $obj0->getCount());
         $this->assertNull($obj0->getHash());
+        $this->assertNull($obj0->getPrefix());
 
         $obj9 = HaveIBeenPwnedRange::parse("0018A45C4D1DEF81644B54AB7F969B88D65:1");
 
         $this->assertEquals(1, $obj9->getCount());
         $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $obj9->getHash());
+        $this->assertNull($obj9->getPrefix());
     }
 
     /**
