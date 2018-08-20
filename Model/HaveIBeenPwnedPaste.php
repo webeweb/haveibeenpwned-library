@@ -19,6 +19,8 @@ use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 /**
  * HaveIBeenPwned paste model.
  *
+ * @link https://haveibeenpwned.com/API/v2#PasteModel
+ *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
