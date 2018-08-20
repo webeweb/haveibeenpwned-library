@@ -43,6 +43,23 @@ class HaveIBeenPwnedDataClass {
     }
 
     /**
+     * Parse the raw response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return HaveIBeenPwnedBreach Returns a HaveIBeenPwned data class.
+     */
+    public static function parse($rawResponse) {
+
+        // Initialize the model.
+        $model = new HaveIBeenPwnedDataClass();
+
+        $model->setName($rawResponse);
+
+        // Return the model.
+        return $model;
+    }
+
+    /**
      * Set the name.
      *
      * @param string $name The name.
