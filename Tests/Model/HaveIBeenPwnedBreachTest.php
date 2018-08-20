@@ -56,9 +56,11 @@ final class HaveIBeenPwnedBreachTest extends PHPUnit_Framework_TestCase {
      */
     public function testParse() {
 
-        $dataClasses = ["Email addresses", "Password hints", "Passwords", "Usernames"];
+        $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
         $obj = HaveIBeenPwnedBreach::parse(TestFixtures::getSampleBreachResponse()[0]);
+
+        $this->assertInstanceOf(HaveIBeenPwnedBreach::class, $obj);
 
         $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(HaveIBeenPwnedModelInterface::DATETIME_FORMAT_ADDED));
         $this->assertEquals("2013-10-04", $obj->getBreachDate()->format(HaveIBeenPwnedModelInterface::DATETIME_FORMAT_BREACH));
