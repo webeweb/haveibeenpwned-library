@@ -19,6 +19,8 @@ use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 /**
  * HaveIBeenPwned breach model.
  *
+ * @link https://haveibeenpwned.com/API/v2#BreachModel
+ *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
