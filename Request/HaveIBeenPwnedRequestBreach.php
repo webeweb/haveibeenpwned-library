@@ -54,6 +54,13 @@ class HaveIBeenPwnedRequestBreach implements HaveIBeenPwnedRequestInterface {
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function parseResponse($rawResponse) {
+        return new HaveIBeenPwnedResponseBreach($rawResponse);
+    }
+
+    /**
      * Set the domain.
      *
      * @param string $domain The domain.

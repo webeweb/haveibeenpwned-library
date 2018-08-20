@@ -13,6 +13,8 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Request\HaveIBeenPwnedRequestBreach;
+use WBW\Library\HaveIBeenPwned\Response\HaveIBeenPwnedResponseBreach;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
 
 /**
  * HaveIBeenPwned request "Breach test.
@@ -34,6 +36,21 @@ final class HaveIBeenPwnedRequestBreachTest extends PHPUnit_Framework_TestCase {
 
         $this->assertNull($obj->getDomain());
         $this->assertEquals("/breaches", $obj->getResourcePath());
+    }
+
+    /**
+     * Tests the parse response.
+     *
+     * @return void
+     */
+    public function testParseResponse() {
+
+        $obj = new HaveIBeenPwnedRequestBreach();
+
+        $res = $obj->parseResponse(TestFixtures::SAMPLE_BREACH_RESPONSE);
+        $this->assertInstanceOf(HaveIBeenPwnedResponseBreach::class, $res);
+
+        $this->assertCount(2, $res->getBreaches());
     }
 
     /**
