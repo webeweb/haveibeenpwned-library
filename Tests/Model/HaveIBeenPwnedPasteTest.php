@@ -51,6 +51,8 @@ final class HaveIBeenPwnedPasteTest extends PHPUnit_Framework_TestCase {
 
         $obj = HaveIBeenPwnedPaste::parse(TestFixtures::getSamplePasteResponse()[0]);
 
+        $this->assertInstanceOf(HaveIBeenPwnedPaste::class, $obj);
+
         $this->assertEquals("2014-03-04T19:14:54Z", $obj->getDate()->format(HaveIBeenPwnedModelInterface::DATETIME_FORMAT_DATE));
         $this->assertEquals(139, $obj->getEmailCount());
         $this->assertEquals("8Q0BvKD8", $obj->getId());
