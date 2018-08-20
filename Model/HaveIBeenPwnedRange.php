@@ -34,6 +34,13 @@ class HaveIBeenPwnedRange {
     private $hash;
 
     /**
+     * Prefix
+     *
+     * @var string
+     */
+    private $prefix;
+
+    /**
      * Constructor.
      */
     public function __construct() {
@@ -59,6 +66,15 @@ class HaveIBeenPwnedRange {
     }
 
     /**
+     * Get the prefix.
+     *
+     * @return string Returns the prefix.
+     */
+    public function getPrefix() {
+        return $this->prefix;
+    }
+
+    /**
      * Parse a raw response.
      *
      * @param string $rawResponse The raw response.
@@ -77,8 +93,8 @@ class HaveIBeenPwnedRange {
         // Initialize the model.
         $model = new HaveIBeenPwnedRange();
 
+        $model->setCount(intval($response[1]));
         $model->setHash(trim($response[0]));
-        $model->setCOunt(intval($response[1]));
 
         // Return the model.
         return $model;
@@ -103,6 +119,17 @@ class HaveIBeenPwnedRange {
      */
     public function setHash($hash) {
         $this->hash = $hash;
+        return $this;
+    }
+
+    /**
+     * Set the prefix.
+     *
+     * @param string $prefix The prefix.
+     * @return HaveIBeenPwnedRange Returns this HaveIBeenPwned range.
+     */
+    public function setPrefix($prefix) {
+        $this->prefix = $prefix;
         return $this;
     }
 
