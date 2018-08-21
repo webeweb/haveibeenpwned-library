@@ -1,8 +1,8 @@
 {
     "name": "webeweb/haveibeenpwned-library",
     "type": "library",
-    "description": "Integrate HaveIBeenPwned API in your projects",
-    "keywords": ["webeweb", "library", "haveibeenpwned"],
+    "description": "Integrate HaveIBeenPwned API with your projects",
+    "keywords": ["webeweb", "library", "haveibeenpwned", "API", "password"],
     "homepage": "http://github.com/webeweb/haveibeenpwned-library",
     "license": "LGPL-3.0-only",
     "authors": [
