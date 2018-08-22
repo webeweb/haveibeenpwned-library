@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\Core\Helper\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedRequestInterface;
 use WBW\Library\HaveIBeenPwned\Response\HaveIBeenPwnedResponseBreach;
 

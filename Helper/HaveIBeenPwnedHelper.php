@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Helper;
 
-use WBW\Library\Core\Helper\Argument\StringHelper;
+use WBW\Library\Core\Argument\StringHelper;
 
 /**
  * HaveIBeenPwned helper.

@@ -13,7 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
 use DateTimeZone;
-use WBW\Library\Core\Helper\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 
 /**
