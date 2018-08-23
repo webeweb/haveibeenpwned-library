@@ -41,7 +41,7 @@ class HaveIBeenPwnedResponseRange implements HaveIBeenPwnedResponseInterface {
      * Add a range.
      *
      * @param HaveIBeenPwnedRange $range The range.
-     * @return HaveIBeenPwnedResponseRange Returns this HaveIBeenPwned response "Rang".
+     * @return HaveIBeenPwnedResponseRange Returns this response "Range".
      */
     public function addRange(HaveIBeenPwnedRange $range) {
         $this->ranges[] = $range;
@@ -80,7 +80,7 @@ class HaveIBeenPwnedResponseRange implements HaveIBeenPwnedResponseInterface {
      * Set the ranges.
      *
      * @param HaveIBeenPwnedRange[] $ranges The ranges.
-     * @return HaveIBeenPwnedResponseRange Returns this HaveIBeenPwned response "Range".
+     * @return HaveIBeenPwnedResponseRange Returns this response "Range".
      */
     protected function setRanges($ranges) {
         $this->ranges = $ranges;

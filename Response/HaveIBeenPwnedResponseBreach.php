@@ -42,7 +42,7 @@ class HaveIBeenPwnedResponseBreach implements HaveIBeenPwnedResponseInterface {
      * Add a breach.
      *
      * @param HaveIBeenPwnedBreach $breach The breach.
-     * @return HaveIBeenPwnedResponseBreach Returns this HaveIBeenPwned response "Breach".
+     * @return HaveIBeenPwnedResponseBreach Returns this response "Breach".
      */
     public function addBreach(HaveIBeenPwnedBreach $breach) {
         $this->breaches[] = $breach;
@@ -84,7 +84,7 @@ class HaveIBeenPwnedResponseBreach implements HaveIBeenPwnedResponseInterface {
      * Set the breaches.
      *
      * @param HaveIBeenPwnedBreach[] $breaches The breaches.
-     * @return HaveIBeenPwnedResponseBreach Returns this HaveIBeenPwned response "Breach".
+     * @return HaveIBeenPwnedResponseBreach Returns this response "Breach".
      */
     protected function setBreaches($breaches) {
         $this->breaches = $breaches;

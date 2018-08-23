@@ -102,7 +102,7 @@ class HaveIBeenPwnedProvider {
      * Set the request.
      *
      * @param HaveIBeenPwnedRequestInterface $request The request.
-     * @return HaveIBeenPwnedProvider Returns this HaveIBeenPwned provider.
+     * @return HaveIBeenPwnedProvider Returns this provider.
      */
     protected function setRequest(HaveIBeenPwnedRequestInterface $request) {
         $this->request = $request;

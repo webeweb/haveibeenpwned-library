@@ -117,7 +117,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Parse a raw response.
      *
      * @param array $rawResponse The raw response.
-     * @return HaveIBeenPwnedPaste Returns the HaveIBeenPwned breach.
+     * @return HaveIBeenPwnedPaste Returns the paste.
      */
     public static function parse($rawResponse) {
 
@@ -141,7 +141,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the date.
      *
      * @param DateTime $date The date.
-     * @return HaveIBeenPwnedPaste Returns this HaveIBeenPwned paste.
+     * @return HaveIBeenPwnedPaste Returns this paste.
      */
     public function setDate(DateTime $date = null) {
         $this->date = $date;
@@ -152,7 +152,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the email count.
      *
      * @param int $emailCount The email count.
-     * @return HaveIBeenPwnedPaste Returns this HaveIBeenPwned paste.
+     * @return HaveIBeenPwnedPaste Returns this paste.
      */
     public function setEmailCount($emailCount) {
         $this->emailCount = $emailCount;
@@ -163,7 +163,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the id.
      *
      * @param string $id The id.
-     * @return HaveIBeenPwnedPaste Returns this HaveIBeenPwned paste.
+     * @return HaveIBeenPwnedPaste Returns this paste.
      */
     public function setId($id) {
         $this->id = $id;
@@ -174,7 +174,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the source.
      *
      * @param string $source The source.
-     * @return HaveIBeenPwnedPaste Returns this HaveIBeenPwned paste.
+     * @return HaveIBeenPwnedPaste Returns this paste.
      */
     public function setSource($source) {
         $this->source = $source;
@@ -185,7 +185,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the title.
      *
      * @param string $title The title.
-     * @return HaveIBeenPwnedPaste Returns this HaveIBeenPwned paste.
+     * @return HaveIBeenPwnedPaste Returns this paste.
      */
     public function setTitle($title) {
         $this->title = $title;

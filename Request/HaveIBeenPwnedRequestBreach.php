@@ -64,7 +64,7 @@ class HaveIBeenPwnedRequestBreach implements HaveIBeenPwnedRequestInterface {
      * Set the domain.
      *
      * @param string $domain The domain.
-     * @return HaveIBeenPwnedRequestBreaches Returns this HaveIBeenPwned request "Breach".
+     * @return HaveIBeenPwnedRequestBreaches Returns this request "Breach".
      */
     public function setDomain($domain) {
         $this->domain = $domain;

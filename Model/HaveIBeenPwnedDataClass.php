@@ -46,7 +46,7 @@ class HaveIBeenPwnedDataClass {
      * Parse the raw response.
      *
      * @param string $rawResponse The raw response.
-     * @return HaveIBeenPwnedBreach Returns a HaveIBeenPwned data class.
+     * @return HaveIBeenPwnedBreach Returns a data class.
      */
     public static function parse($rawResponse) {
 
@@ -63,7 +63,7 @@ class HaveIBeenPwnedDataClass {
      * Set the name.
      *
      * @param string $name The name.
-     * @return HaveIBeenPwnedDataClass Returns this HaveIBeenPwned data class.
+     * @return HaveIBeenPwnedDataClass Returns this data class.
      */
     public function setName($name) {
         $this->name = $name;

@@ -78,7 +78,7 @@ class HaveIBeenPwnedRange {
      * Parse a raw response.
      *
      * @param string $rawResponse The raw response.
-     * @return HaveIBeenPwnedRange Returns a HaveIBeenPwned range.
+     * @return HaveIBeenPwnedRange Returns a range.
      */
     public static function parse($rawResponse) {
 
@@ -104,7 +104,7 @@ class HaveIBeenPwnedRange {
      * Set the count.
      *
      * @param int $count The count.
-     * @return HaveIBeenPwnedRange Returns this HaveIBeenPwned range.
+     * @return HaveIBeenPwnedRange Returns this range.
      */
     public function setCount($count) {
         $this->count = $count;
@@ -115,7 +115,7 @@ class HaveIBeenPwnedRange {
      * Set the hash.
      *
      * @param string $hash The hash.
-     * @return HaveIBeenPwnedRange Returns this HaveIBeenPwned range.
+     * @return HaveIBeenPwnedRange Returns this range.
      */
     public function setHash($hash) {
         $this->hash = $hash;
@@ -126,7 +126,7 @@ class HaveIBeenPwnedRange {
      * Set the prefix.
      *
      * @param string $prefix The prefix.
-     * @return HaveIBeenPwnedRange Returns this HaveIBeenPwned range.
+     * @return HaveIBeenPwnedRange Returns this range.
      */
     public function setPrefix($prefix) {
         $this->prefix = $prefix;

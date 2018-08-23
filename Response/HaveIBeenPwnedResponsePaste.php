@@ -42,7 +42,7 @@ class HaveIBeenPwnedResponsePaste implements HaveIBeenPwnedResponseInterface {
      * Add a paste.
      *
      * @param HaveIBeenPwnedPaste $paste The paste.
-     * @return HaveIBeenPwnedResponsePaste Returns this HaveIBeenPwned response "Past".
+     * @return HaveIBeenPwnedResponsePaste Returns this response "Paste".
      */
     public function addPaste(HaveIBeenPwnedPaste $paste) {
         $this->pastes[] = $paste;
@@ -84,7 +84,7 @@ class HaveIBeenPwnedResponsePaste implements HaveIBeenPwnedResponseInterface {
      * Set the pastes.
      *
      * @param HaveIBeenPwnedPaste[] $pastes The pastes.
-     * @return HaveIBeenPwnedResponsePaste Returns this HaveIBeenPwned response "Paste".
+     * @return HaveIBeenPwnedResponsePaste Returns this response "Paste".
      */
     protected function setPastes($pastes) {
         $this->pastes = $pastes;

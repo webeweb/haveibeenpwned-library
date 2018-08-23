@@ -41,7 +41,7 @@ class HaveIBeenPwnedResponseDataClass implements HaveIBeenPwnedResponseInterface
      * Add a dataClass.
      *
      * @param HaveIBeenPwnedDataClass $dataClass The data class.
-     * @return HaveIBeenPwnedResponseDataClass Returns this HaveIBeenPwned response "Data class".
+     * @return HaveIBeenPwnedResponseDataClass Returns this response "Data class".
      */
     public function addDataClass(HaveIBeenPwnedDataClass $dataClass) {
         $this->dataClasses[] = $dataClass;
@@ -80,7 +80,7 @@ class HaveIBeenPwnedResponseDataClass implements HaveIBeenPwnedResponseInterface
      * Set the dataClasses.
      *
      * @param HaveIBeenPwnedDataClass[] $dataClasses The dataClasses.
-     * @return HaveIBeenPwnedResponseDataClass Returns this HaveIBeenPwned response "DataClass".
+     * @return HaveIBeenPwnedResponseDataClass Returns this response "DataClass".
      */
     protected function setDataClasses($dataClasses) {
         $this->dataClasses = $dataClasses;
