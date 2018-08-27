@@ -61,7 +61,6 @@ final class HaveIBeenPwnedBreachTest extends PHPUnit_Framework_TestCase {
         $obj = HaveIBeenPwnedBreach::parse(TestFixtures::getSampleBreachResponse()[0]);
 
         $this->assertInstanceOf(HaveIBeenPwnedBreach::class, $obj);
-
         $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(HaveIBeenPwnedModelInterface::DATETIME_FORMAT_ADDED));
         $this->assertEquals("2013-10-04", $obj->getBreachDate()->format(HaveIBeenPwnedModelInterface::DATETIME_FORMAT_BREACH));
         $this->assertCount(4, $obj->getDataClasses());
@@ -75,7 +74,6 @@ final class HaveIBeenPwnedBreachTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($obj->getSpamList());
         $this->assertEquals("Adobe", $obj->getTitle());
         $this->assertTrue($obj->getVerified());
-
         for ($i = 0; $i < 4; ++$i) {
             $this->assertEquals($dataClasses[$i], $obj->getDataClasses()[$i]->getName());
         }

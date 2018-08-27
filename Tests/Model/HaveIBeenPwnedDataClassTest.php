@@ -48,7 +48,6 @@ final class HaveIBeenPwnedDataClassTest extends PHPUnit_Framework_TestCase {
         $obj = HaveIBeenPwnedDataClass::parse($dataClasses[0]);
 
         $this->assertInstanceOf(HaveIBeenPwnedDataClass::class, $obj);
-
         $this->assertEquals("Email addresses", $obj->getName());
     }
 

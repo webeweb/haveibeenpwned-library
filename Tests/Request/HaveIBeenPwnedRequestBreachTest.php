@@ -49,7 +49,6 @@ final class HaveIBeenPwnedRequestBreachTest extends PHPUnit_Framework_TestCase {
 
         $res = $obj->parseResponse(TestFixtures::SAMPLE_BREACH_RESPONSE);
         $this->assertInstanceOf(HaveIBeenPwnedResponseBreach::class, $res);
-
         $this->assertCount(2, $res->getBreaches());
     }
 
@@ -75,10 +74,11 @@ final class HaveIBeenPwnedRequestBreachTest extends PHPUnit_Framework_TestCase {
 
         $obj = new HaveIBeenPwnedRequestBreach();
 
+        // ===
         $res0 = [];
         $this->assertEquals($res0, $obj->toArray());
 
-
+        // ===
         $obj->setDomain("domain");
         $res9 = ["domain" => "domain"];
         $this->assertEquals($res9, $obj->toArray());
