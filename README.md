@@ -55,5 +55,5 @@ $ vendor/bin/phpunit
 
 ## License
 
-haveibeenpwned-library is released under the LGPL License. See the bundled [LICENSE](LICENSE)
+`haveibeenpwned-library` is released under the LGPL License. See the bundled [LICENSE](LICENSE)
 file for details.
