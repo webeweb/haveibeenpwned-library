@@ -1,7 +1,13 @@
 haveibeenpwned-library
 ======================
 
-[![Build Status](https://travis-ci.com/webeweb/haveibeenpwned-library.svg?branch=master)](https://travis-ci.com/webeweb/haveibeenpwned-library) [![Coverage Status](https://coveralls.io/repos/github/webeweb/haveibeenpwned-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/stable)](https://packagist.org/packages/webeweb/haveibeenpwned-library) [![Latest Unstable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/unstable)](https://packagist.org/packages/webeweb/haveibeenpwned-library) [![License](https://poser.pugx.org/webeweb/haveibeenpwned-library/license)](https://packagist.org/packages/webeweb/haveibeenpwned-library) [![composer.lock](https://poser.pugx.org/webeweb/haveibeenpwned-library/composerlock)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![Build Status](https://travis-ci.com/webeweb/haveibeenpwned-library.svg?branch=master)](https://travis-ci.com/webeweb/haveibeenpwned-library)
+[![Coverage Status](https://coveralls.io/repos/github/webeweb/haveibeenpwned-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/stable)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![Latest Unstable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/unstable)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![License](https://poser.pugx.org/webeweb/haveibeenpwned-library/license)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![composer.lock](https://poser.pugx.org/webeweb/haveibeenpwned-library/composerlock)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
 
 Integrate HaveIBeenPwned API with your projects.
 
@@ -13,7 +19,8 @@ Integrate HaveIBeenPwned API with your projects.
 
 ## Compatibility
 
-[![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net) [![HHVM](https://img.shields.io/badge/HHVM-ready-orange.svg)](https://hhvm.com/)
+[![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net)
+[![HHVM](https://img.shields.io/badge/HHVM-ready-orange.svg)](https://hhvm.com/)
 
 ---
 
