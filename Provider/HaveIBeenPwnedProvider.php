@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
-use WBW\Library\CURL\Configuration\CURLConfiguration;
-use WBW\Library\CURL\Request\CURLGetRequest;
+use WBW\Library\Core\Network\CURL\Configuration\CURLConfiguration;
+use WBW\Library\Core\Network\CURL\Request\CURLGetRequest;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedRequestInterface;
 
 /**
@@ -91,7 +91,7 @@ class HaveIBeenPwnedProvider {
      * Set the debug.
      *
      * @param boolean $debug The debug.
-     * @return SMSModeProvider Returns this sMsmode provider.
+     * @return HaveIBeenPwnedProvider Returns this provider.
      */
     public function setDebug($debug) {
         $this->debug = $debug;
