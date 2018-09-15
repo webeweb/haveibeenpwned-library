@@ -23,15 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Library\\HaveIBeenPwned\\": ""
-        },
-        "exclude-from-classmap": [
-            "/Tests/"
-        ]
+            "WBW\\Library\\HaveIBeenPwned\\": "src/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Library\\HaveIBeenPwned\\Tests\\": "Tests/"
+            "WBW\\Library\\HaveIBeenPwned\\Tests\\": "tests/"
         }
     },
     "config": {
