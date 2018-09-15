@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Response;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Response\HaveIBeenPwnedResponseDataClass;
+use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
  * @package WBW\Library\HaveIBeenPwned\Tests\Response
  * @final
  */
-final class HaveIBeenPwnedResponseDataClassTest extends PHPUnit_Framework_TestCase {
+final class HaveIBeenPwnedResponseDataClassTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
