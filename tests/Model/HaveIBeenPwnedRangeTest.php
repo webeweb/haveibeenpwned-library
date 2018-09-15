@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedRange;
+use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
 
 /**
  * HaveIBeenPwned range model test.
@@ -21,7 +21,7 @@ use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedRange;
  * @package WBW\Library\HaveIBeenPwned\Tests\Model
  * @final
  */
-final class HaveIBeenPwnedRangeTest extends PHPUnit_Framework_TestCase {
+final class HaveIBeenPwnedRangeTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -12,9 +12,9 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
 use DateTime;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedPaste;
+use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
 
 /**
@@ -24,7 +24,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
  * @package  WBW\Library\HaveIBeenPwned\Tests\Model
  * @final
  */
-final class HaveIBeenPwnedPasteTest extends PHPUnit_Framework_TestCase {
+final class HaveIBeenPwnedPasteTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
