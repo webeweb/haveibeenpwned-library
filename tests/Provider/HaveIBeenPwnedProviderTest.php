@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Provider\HaveIBeenPwnedProvider;
 use WBW\Library\HaveIBeenPwned\Request\HaveIBeenPwnedRequestBreach;
+use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
 
 /**
  * HaveIBeenPwned provider test.
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Request\HaveIBeenPwnedRequestBreach;
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
  * @final
  */
-final class HaveIBeenPwnedProviderTest extends PHPUnit_Framework_TestCase {
+final class HaveIBeenPwnedProviderTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
 
     /**
      * Request.
