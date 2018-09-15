@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Helper;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
+use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
  * @package WBW\Library\HaveIBeenPwned\Tests\Helper
  * @final
  */
-final class HaveIBeenPwendHelperTest extends PHPUnit_Framework_TestCase {
+final class HaveIBeenPwendHelperTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
 
     /**
      * Tests the cleanResponse() method.
