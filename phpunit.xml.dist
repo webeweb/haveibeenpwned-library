@@ -23,7 +23,7 @@
     </filter>
     <testsuites>
         <testsuite name="webeweb/haveibeenpwned-library">
-            <directory>./tests</directory>
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
