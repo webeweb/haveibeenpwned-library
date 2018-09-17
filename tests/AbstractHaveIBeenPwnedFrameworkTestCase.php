@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * Abstract HaveIBeenPwned framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Cases
+ * @package WBW\Library\HaveIBeenPwned\Tests
  * @abstract
  */
 abstract class AbstractHaveIBeenPwnedFrameworkTestCase extends TestCase {
