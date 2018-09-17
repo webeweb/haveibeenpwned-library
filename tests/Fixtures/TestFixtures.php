@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\App;
+namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures;
 
 use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
 
