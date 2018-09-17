@@ -86,7 +86,7 @@ class HaveIBeenPwnedResponsePaste implements HaveIBeenPwnedResponseInterface {
      * @param HaveIBeenPwnedPaste[] $pastes The pastes.
      * @return HaveIBeenPwnedResponsePaste Returns this response "Paste".
      */
-    protected function setPastes($pastes) {
+    protected function setPastes(array $pastes) {
         $this->pastes = $pastes;
         return $this;
     }

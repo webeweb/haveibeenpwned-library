@@ -82,7 +82,7 @@ class HaveIBeenPwnedResponseDataClass implements HaveIBeenPwnedResponseInterface
      * @param HaveIBeenPwnedDataClass[] $dataClasses The dataClasses.
      * @return HaveIBeenPwnedResponseDataClass Returns this response "DataClass".
      */
-    protected function setDataClasses($dataClasses) {
+    protected function setDataClasses(array $dataClasses) {
         $this->dataClasses = $dataClasses;
         return $this;
     }

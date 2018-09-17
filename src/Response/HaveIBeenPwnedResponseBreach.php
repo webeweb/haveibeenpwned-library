@@ -86,7 +86,7 @@ class HaveIBeenPwnedResponseBreach implements HaveIBeenPwnedResponseInterface {
      * @param HaveIBeenPwnedBreach[] $breaches The breaches.
      * @return HaveIBeenPwnedResponseBreach Returns this response "Breach".
      */
-    protected function setBreaches($breaches) {
+    protected function setBreaches(array $breaches) {
         $this->breaches = $breaches;
         return $this;
     }

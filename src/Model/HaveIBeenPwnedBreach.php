@@ -280,7 +280,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * @param array $rawResponse The raw response.
      * @return HaveIBeenPwnedBreach Returns a breach.
      */
-    public static function parse($rawResponse) {
+    public static function parse(array $rawResponse) {
 
         // Parse the date.
         $addedDate    = DateTime::createFromFormat(self::DATETIME_FORMAT_ADDED, ArrayHelper::get($rawResponse, "AddedDate", ""), new DateTimeZone("UTC"));
@@ -343,7 +343,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * @param array $dataClasses The data classes.
      * @return HaveIBeenPwnedDataClass[] Returns this breach.
      */
-    public function setDataClasses($dataClasses) {
+    public function setDataClasses(array $dataClasses) {
         $this->dataClasses = $dataClasses;
         return $this;
     }

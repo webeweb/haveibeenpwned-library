@@ -119,7 +119,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * @param array $rawResponse The raw response.
      * @return HaveIBeenPwnedPaste Returns the paste.
      */
-    public static function parse($rawResponse) {
+    public static function parse(array $rawResponse) {
 
         // Parse the dates.
         $date = DateTime::createFromFormat(self::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));

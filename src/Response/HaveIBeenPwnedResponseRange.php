@@ -82,7 +82,7 @@ class HaveIBeenPwnedResponseRange implements HaveIBeenPwnedResponseInterface {
      * @param HaveIBeenPwnedRange[] $ranges The ranges.
      * @return HaveIBeenPwnedResponseRange Returns this response "Range".
      */
-    protected function setRanges($ranges) {
+    protected function setRanges(array $ranges) {
         $this->ranges = $ranges;
         return $this;
     }
