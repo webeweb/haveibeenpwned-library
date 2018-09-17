@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Cases;
+namespace WBW\Library\HaveIBeenPwned\Tests;
 
 use PHPUnit\Framework\TestCase;
 
