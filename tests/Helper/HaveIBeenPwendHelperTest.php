@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Helper;
 
 use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
-use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
+use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
