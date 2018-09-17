@@ -15,7 +15,7 @@ use DateTime;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedBreach;
 use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
  * HaveIBeenPwned breach model test.

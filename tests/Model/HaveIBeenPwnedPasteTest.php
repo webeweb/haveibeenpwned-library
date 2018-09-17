@@ -15,7 +15,7 @@ use DateTime;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedPaste;
 use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
  * HaveIBeenPwned paste model test.

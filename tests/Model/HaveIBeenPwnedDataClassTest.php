@@ -13,7 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedDataClass;
 use WBW\Library\HaveIBeenPwned\Tests\Cases\AbstractHaveIBeenPwnedFrameworkTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\App\TestFixtures;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
  * HaveIBeenPwned data class model test.
