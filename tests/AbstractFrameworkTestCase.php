@@ -20,6 +20,6 @@ use PHPUnit\Framework\TestCase;
  * @package WBW\Library\HaveIBeenPwned\Tests
  * @abstract
  */
-abstract class AbstractHaveIBeenPwnedFrameworkTestCase extends TestCase {
+abstract class AbstractFrameworkTestCase extends TestCase {
 
 }

@@ -13,7 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use WBW\Library\HaveIBeenPwned\Provider\HaveIBeenPwnedProvider;
 use WBW\Library\HaveIBeenPwned\Request\HaveIBeenPwnedRequestBreach;
-use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
+use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
 
 /**
  * HaveIBeenPwned provider test.
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
  * @final
  */
-final class HaveIBeenPwnedProviderTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
+final class HaveIBeenPwnedProviderTest extends AbstractFrameworkTestCase {
 
     /**
      * Request.

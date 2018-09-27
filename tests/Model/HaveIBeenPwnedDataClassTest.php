@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedDataClass;
-use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
+use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  * @package WBW\Library\HaveIBeenPwned\Tests\Model
  * @final
  */
-final class HaveIBeenPwnedDataClassTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
+final class HaveIBeenPwnedDataClassTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

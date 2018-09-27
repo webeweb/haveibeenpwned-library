@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Helper;
 
 use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
-use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
+use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  * @package WBW\Library\HaveIBeenPwned\Tests\Helper
  * @final
  */
-final class HaveIBeenPwendHelperTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
+final class HaveIBeenPwendHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the cleanResponse() method.

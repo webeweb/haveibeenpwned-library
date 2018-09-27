@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedRange;
-use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
+use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
 
 /**
  * HaveIBeenPwned range model test.
@@ -21,7 +21,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
  * @package WBW\Library\HaveIBeenPwned\Tests\Model
  * @final
  */
-final class HaveIBeenPwnedRangeTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
+final class HaveIBeenPwnedRangeTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

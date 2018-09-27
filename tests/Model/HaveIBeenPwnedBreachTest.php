@@ -14,7 +14,7 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 use DateTime;
 use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
 use WBW\Library\HaveIBeenPwned\Model\HaveIBeenPwnedBreach;
-use WBW\Library\HaveIBeenPwned\Tests\AbstractHaveIBeenPwnedFrameworkTestCase;
+use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
@@ -24,7 +24,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  * @package WBW\Library\HaveIBeenPwned\Tests\Model
  * @final
  */
-final class HaveIBeenPwnedBreachTest extends AbstractHaveIBeenPwnedFrameworkTestCase {
+final class HaveIBeenPwnedBreachTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
