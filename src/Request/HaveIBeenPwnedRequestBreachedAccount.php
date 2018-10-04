@@ -61,7 +61,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Set the include unverified.
      *
-     * @param bool $includeUnverified The include unverified.
+     * @param boolean $includeUnverified The include unverified.
      * @return HaveIBeenPwnedRequestBreaches Returns this request "Breached account".
      */
     public function setIncludeUnverified($includeUnverified) {
@@ -72,7 +72,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Set the truncate response.
      *
-     * @param bool $truncateResponse The truncate response.
+     * @param boolean $truncateResponse The truncate response.
      * @return HaveIBeenPwnedRequestBreaches Returns this request "Breached account".
      */
     public function setTruncateResponse($truncateResponse) {

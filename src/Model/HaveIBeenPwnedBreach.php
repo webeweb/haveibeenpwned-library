@@ -373,7 +373,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the fabricated.
      *
-     * @param bool $fabricated The fabricated.
+     * @param boolean $fabricated The fabricated.
      * @return HaveIBeenPwnedBreach Returns this breach.
      */
     public function setFabricated($fabricated) {
@@ -406,7 +406,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the pwn count.
      *
-     * @param int $pwnCount The pwn count.
+     * @param integer $pwnCount The pwn count.
      * @return HaveIBeenPwnedBreach Returns this breach.
      */
     public function setPwnCount($pwnCount) {
@@ -417,7 +417,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the retired.
      *
-     * @param bool $retired The retired.
+     * @param boolean $retired The retired.
      * @return HaveIBeenPwnedBreach Returns this breach.
      */
     public function setRetired($retired) {
@@ -428,7 +428,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the sensitive.
      *
-     * @param bool $sensitive The sensitive.
+     * @param boolean $sensitive The sensitive.
      * @return HaveIBeenPwnedBreach Returns this breach.
      */
     public function setSensitive($sensitive) {
@@ -439,7 +439,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the spam list.
      *
-     * @param bool $spamList The spam list.
+     * @param boolean $spamList The spam list.
      * @return HaveIBeenPwnedBreach Returns this breach.
      */
     public function setSpamList($spamList) {
@@ -461,7 +461,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the verified.
      *
-     * @param bool $verified The verified.
+     * @param boolean $verified The verified.
      * @return HaveIBeenPwnedBreach Returns this breach.
      */
     public function setVerified($verified) {

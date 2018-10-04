@@ -103,7 +103,7 @@ class HaveIBeenPwnedRange {
     /**
      * Set the count.
      *
-     * @param int $count The count.
+     * @param integer $count The count.
      * @return HaveIBeenPwnedRange Returns this range.
      */
     public function setCount($count) {

@@ -151,7 +151,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
     /**
      * Set the email count.
      *
-     * @param int $emailCount The email count.
+     * @param integer $emailCount The email count.
      * @return HaveIBeenPwnedPaste Returns this paste.
      */
     public function setEmailCount($emailCount) {
