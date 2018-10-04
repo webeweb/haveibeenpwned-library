@@ -50,7 +50,7 @@ class HaveIBeenPwnedRange {
     /**
      * Get the count.
      *
-     * @return integer Returns the count.
+     * @return int Returns the count.
      */
     public function getCount() {
         return $this->count;
@@ -103,7 +103,7 @@ class HaveIBeenPwnedRange {
     /**
      * Set the count.
      *
-     * @param integer $count The count.
+     * @param int $count The count.
      * @return HaveIBeenPwnedRange Returns this range.
      */
     public function setCount($count) {

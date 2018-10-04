@@ -26,7 +26,7 @@ class HaveIBeenPwnedProvider {
     /**
      * Debug.
      *
-     * @var boolean
+     * @var bool
      */
     private $debug;
 
@@ -72,7 +72,7 @@ class HaveIBeenPwnedProvider {
     /**
      * Get the debug.
      *
-     * @return boolean Returns the debug.
+     * @return bool Returns the debug.
      */
     public function getDebug() {
         return $this->debug;
@@ -90,7 +90,7 @@ class HaveIBeenPwnedProvider {
     /**
      * Set the debug.
      *
-     * @param boolean $debug The debug.
+     * @param bool $debug The debug.
      * @return HaveIBeenPwnedProvider Returns this provider.
      */
     public function setDebug($debug) {

@@ -22,14 +22,14 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Include unverified.
      *
-     * @var boolean
+     * @var bool
      */
     private $includeUnverified;
 
     /**
      * Truncate response.
      *
-     * @var boolean
+     * @var bool
      */
     private $truncateResponse;
 
@@ -43,7 +43,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Get the include unverified.
      *
-     * @return boolean Returns the include unverified.
+     * @return bool Returns the include unverified.
      */
     public function getIncludeUnverified() {
         return $this->includeUnverified;
@@ -52,7 +52,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Get the truncate response.
      *
-     * @return boolean Returns the truncate response.
+     * @return bool Returns the truncate response.
      */
     public function getTruncateResponse() {
         return $this->truncateResponse;
@@ -61,7 +61,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Set the include unverified.
      *
-     * @param boolean $includeUnverified The include unverified.
+     * @param bool $includeUnverified The include unverified.
      * @return HaveIBeenPwnedRequestBreaches Returns this request "Breached account".
      */
     public function setIncludeUnverified($includeUnverified) {
@@ -72,7 +72,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     /**
      * Set the truncate response.
      *
-     * @param boolean $truncateResponse The truncate response.
+     * @param bool $truncateResponse The truncate response.
      * @return HaveIBeenPwnedRequestBreaches Returns this request "Breached account".
      */
     public function setTruncateResponse($truncateResponse) {
