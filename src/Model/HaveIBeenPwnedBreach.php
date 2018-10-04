@@ -64,7 +64,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Fabricated.
      *
-     * @var bool
+     * @var boolean
      */
     private $fabricated;
 
@@ -92,21 +92,21 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Retired.
      *
-     * @var bool
+     * @var boolean
      */
     private $retired;
 
     /**
      * Sensitive.
      *
-     * @var bool
+     * @var boolean
      */
     private $sensitive;
 
     /**
      * Spam list.
      *
-     * @var bool
+     * @var boolean
      */
     private $spamList;
 
@@ -120,7 +120,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Verified.
      *
-     * @var bool
+     * @var boolean
      */
     private $verified;
 
@@ -196,7 +196,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the fabricated.
      *
-     * @return bool Returns the fabricated.
+     * @return boolean Returns the fabricated.
      */
     public function getFabricated() {
         return $this->fabricated;
@@ -223,7 +223,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the pwn count.
      *
-     * @return int Returns the pwn count.
+     * @return integer Returns the pwn count.
      */
     public function getPwnCount() {
         return $this->pwnCount;
@@ -232,7 +232,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the retired.
      *
-     * @return bool Returns the retired.
+     * @return boolean Returns the retired.
      */
     public function getRetired() {
         return $this->retired;
@@ -241,7 +241,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the sensitive.
      *
-     * @return bool Returns the sensitive.
+     * @return boolean Returns the sensitive.
      */
     public function getSensitive() {
         return $this->sensitive;
@@ -250,7 +250,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the spam list.
      *
-     * @return bool Returns the spam list.
+     * @return boolean Returns the spam list.
      */
     public function getSpamList() {
         return $this->spamList;
@@ -268,7 +268,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the verified.
      *
-     * @return bool Returns the verified.
+     * @return boolean Returns the verified.
      */
     public function getVerified() {
         return $this->verified;

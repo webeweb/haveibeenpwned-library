@@ -80,7 +80,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
     /**
      * Get the email count.
      *
-     * @return int Returns the email count.
+     * @return integer Returns the email count.
      */
     public function getEmailCount() {
         return $this->emailCount;

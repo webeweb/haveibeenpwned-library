@@ -50,7 +50,7 @@ class HaveIBeenPwnedRange {
     /**
      * Get the count.
      *
-     * @return int Returns the count.
+     * @return integer Returns the count.
      */
     public function getCount() {
         return $this->count;
