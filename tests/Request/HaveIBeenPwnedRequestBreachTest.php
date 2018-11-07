@@ -21,9 +21,8 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Request
- * @final
  */
-final class HaveIBeenPwnedRequestBreachTest extends AbstractFrameworkTestCase {
+class HaveIBeenPwnedRequestBreachTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
