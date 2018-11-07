@@ -20,9 +20,8 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Response
- * @final
  */
-final class HaveIBeenPwnedResponseRangeTest extends AbstractFrameworkTestCase {
+class HaveIBeenPwnedResponseRangeTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
