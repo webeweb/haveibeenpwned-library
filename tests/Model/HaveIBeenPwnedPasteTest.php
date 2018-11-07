@@ -22,9 +22,8 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package  WBW\Library\HaveIBeenPwned\Tests\Model
- * @final
  */
-final class HaveIBeenPwnedPasteTest extends AbstractFrameworkTestCase {
+class HaveIBeenPwnedPasteTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

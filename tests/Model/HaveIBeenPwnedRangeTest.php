@@ -19,9 +19,8 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Model
- * @final
  */
-final class HaveIBeenPwnedRangeTest extends AbstractFrameworkTestCase {
+class HaveIBeenPwnedRangeTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
