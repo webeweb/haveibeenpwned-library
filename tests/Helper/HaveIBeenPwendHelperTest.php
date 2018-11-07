@@ -20,9 +20,8 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Helper
- * @final
  */
-final class HaveIBeenPwendHelperTest extends AbstractFrameworkTestCase {
+class HaveIBeenPwendHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the cleanResponse() method.
