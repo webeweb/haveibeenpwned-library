@@ -20,9 +20,8 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
- * @final
  */
-final class HaveIBeenPwnedProviderTest extends AbstractFrameworkTestCase {
+class HaveIBeenPwnedProviderTest extends AbstractFrameworkTestCase {
 
     /**
      * Request.
