@@ -18,9 +18,8 @@ use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\App
- * @final
  */
-final class TestFixtures {
+class TestFixtures {
 
     /**
      * Sample breach response.
