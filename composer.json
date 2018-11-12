@@ -3,12 +3,12 @@
     "type": "library",
     "description": "Integrate HaveIBeenPwned API with your projects",
     "keywords": ["webeweb", "library", "haveibeenpwned", "API", "password"],
-    "homepage": "http://github.com/webeweb/haveibeenpwned-library",
+    "homepage": "https://github.com/webeweb/haveibeenpwned-library",
     "license": "LGPL-3.0-only",
     "authors": [
         {
             "name": "webeweb",
-            "homepage": "http://github.com/webeweb/"
+            "homepage": "https://github.com/webeweb/"
         }
     ],
     "require": {
@@ -19,7 +19,7 @@
         "phpunit/phpunit": "5.7.*|^7.0"
     },
     "support": {
-        "issues": "http://github.com/webeweb/haveibeenpwned-library/issues"
+        "issues": "https://github.com/webeweb/haveibeenpwned-library/issues"
     },
     "autoload": {
         "psr-4": {
