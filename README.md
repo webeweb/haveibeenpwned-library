@@ -47,7 +47,7 @@ stable version of this package:
 ```bash
 $ mkdir haveibeenpwned-library
 $ cd haveibeenpwned-library
-$ git clone git@github.com:webeweb/haveibeenpwned-library.git .
+$ git clone https://github.com/webeweb/haveibeenpwned-library.git .
 $ composer install
 ```
 
