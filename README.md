@@ -45,9 +45,8 @@ Open a command console and execute the following commands to download the latest
 stable version of this package:
 
 ```bash
-$ mkdir haveibeenpwned-library
+$ git clone https://github.com/webeweb/haveibeenpwned-library.git
 $ cd haveibeenpwned-library
-$ git clone https://github.com/webeweb/haveibeenpwned-library.git .
 $ composer install
 ```
 
