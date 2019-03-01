@@ -12,19 +12,17 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use DateTimeZone;
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
+use WBW\Library\HaveIBeenPwned\Traits\TitleTrait;
 
 /**
- * HaveIBeenPwned paste model.
- *
- * @link https://haveibeenpwned.com/API/v2#PasteModel
+ * Paste.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
-class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
+class Paste {
+
+    use TitleTrait;
 
     /**
      * Date.
@@ -53,13 +51,6 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * @var string
      */
     private $source;
-
-    /**
-     * Title.
-     *
-     * @var string
-     */
-    private $title;
 
     /**
      * Constructor.
@@ -105,43 +96,10 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
     }
 
     /**
-     * Get the title.
-     *
-     * @return string Returns the title.
-     */
-    public function getTitle() {
-        return $this->title;
-    }
-
-    /**
-     * Parse a raw response.
-     *
-     * @param array $rawResponse The raw response.
-     * @return HaveIBeenPwnedPaste Returns the paste.
-     */
-    public static function parse(array $rawResponse) {
-
-        // Parse the dates.
-        $date = DateTime::createFromFormat(self::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));
-
-        // Initialize the model.
-        $model = new HaveIBeenPwnedPaste();
-
-        $model->setDate(false !== $date ? $date : null);
-        $model->setEmailCount(ArrayHelper::get($rawResponse, "EmailCount", 0));
-        $model->setId(ArrayHelper::get($rawResponse, "Id"));
-        $model->setSource(ArrayHelper::get($rawResponse, "Source"));
-        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
-
-        // Return the model.
-        return $model;
-    }
-
-    /**
      * Set the date.
      *
      * @param DateTime $date The date.
-     * @return HaveIBeenPwnedPaste Returns this paste.
+     * @return Paste Returns this paste.
      */
     public function setDate(DateTime $date = null) {
         $this->date = $date;
@@ -152,7 +110,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the email count.
      *
      * @param int $emailCount The email count.
-     * @return HaveIBeenPwnedPaste Returns this paste.
+     * @return Paste Returns this paste.
      */
     public function setEmailCount($emailCount) {
         $this->emailCount = $emailCount;
@@ -163,7 +121,7 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the id.
      *
      * @param string $id The id.
-     * @return HaveIBeenPwnedPaste Returns this paste.
+     * @return Paste Returns this paste.
      */
     public function setId($id) {
         $this->id = $id;
@@ -174,22 +132,10 @@ class HaveIBeenPwnedPaste implements HaveIBeenPwnedModelInterface {
      * Set the source.
      *
      * @param string $source The source.
-     * @return HaveIBeenPwnedPaste Returns this paste.
+     * @return Paste Returns this paste.
      */
     public function setSource($source) {
         $this->source = $source;
         return $this;
     }
-
-    /**
-     * Set the title.
-     *
-     * @param string $title The title.
-     * @return HaveIBeenPwnedPaste Returns this paste.
-     */
-    public function setTitle($title) {
-        $this->title = $title;
-        return $this;
-    }
-
 }
