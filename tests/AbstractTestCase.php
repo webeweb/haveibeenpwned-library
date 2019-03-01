@@ -14,12 +14,12 @@ namespace WBW\Library\HaveIBeenPwned\Tests;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Abstract HaveIBeenPwned framework test case.
+ * Abstract test case.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests
  * @abstract
  */
-abstract class AbstractFrameworkTestCase extends TestCase {
+abstract class AbstractTestCase extends TestCase {
 
 }
