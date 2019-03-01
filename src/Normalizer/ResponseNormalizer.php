@@ -128,7 +128,7 @@ class ResponseNormalizer {
     /**
      * Denormalize a data classes response.
      *
-     * @param array $rawResponse The raw response.
+     * @param string $rawResponse The raw response.
      * @return DataClassesResponse Returns the data classes response.
      */
     public static function denormalizeDataClassesResponse($rawResponse) {
