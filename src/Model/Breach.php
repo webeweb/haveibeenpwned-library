@@ -12,19 +12,21 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use DateTimeZone;
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\HaveIBeenPwned\API\HaveIBeenPwnedModelInterface;
+use WBW\Library\HaveIBeenPwned\Traits\DomainTrait;
+use WBW\Library\HaveIBeenPwned\Traits\NameTrait;
+use WBW\Library\HaveIBeenPwned\Traits\TitleTrait;
 
 /**
- * HaveIBeenPwned breach model.
- *
- * @link https://haveibeenpwned.com/API/v2#BreachModel
+ * Breach.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
-class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
+class Breach {
+
+    use DomainTrait;
+    use NameTrait;
+    use TitleTrait;
 
     /**
      * Added date.
@@ -43,23 +45,16 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Data classes.
      *
-     * @var HaveIBeenPwnedDataClass[]
+     * @var DataClass[]
      */
     private $dataClasses;
 
     /**
-     * Descirption.
+     * Description.
      *
      * @var string
      */
     private $description;
-
-    /**
-     * Domain.
-     *
-     * @var string
-     */
-    private $domain;
 
     /**
      * Fabricated.
@@ -74,13 +69,6 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * @var DateTime
      */
     private $modifiedDate;
-
-    /**
-     * Name.
-     *
-     * @var string
-     */
-    private $name;
 
     /**
      * Pwn count.
@@ -111,13 +99,6 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     private $spamList;
 
     /**
-     * Title.
-     *
-     * @var string
-     */
-    private $title;
-
-    /**
      * Verified.
      *
      * @var bool
@@ -140,10 +121,10 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Add a data class.
      *
-     * @param HaveIBeenPwnedDataClass $dataClass The data class.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @param DataClass $dataClass The data class.
+     * @return Breach Returns this breach.
      */
-    public function addDataClass(HaveIBeenPwnedDataClass $dataClass) {
+    public function addDataClass(DataClass $dataClass) {
         $this->dataClasses[] = $dataClass;
         return $this;
     }
@@ -169,7 +150,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Get the data classes.
      *
-     * @return HaveIBeenPwnedDataClass[] Returns the data classes.
+     * @return DataClass[] Returns the data classes.
      */
     public function getDataClasses() {
         return $this->dataClasses;
@@ -182,15 +163,6 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      */
     public function getDescription() {
         return $this->description;
-    }
-
-    /**
-     * Get the domain.
-     *
-     * @return string Returns the domain.
-     */
-    public function getDomain() {
-        return $this->domain;
     }
 
     /**
@@ -209,15 +181,6 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      */
     public function getModifiedDate() {
         return $this->modifiedDate;
-    }
-
-    /**
-     * Get the name.
-     *
-     * @return string Returns the name.
-     */
-    public function getName() {
-        return $this->name;
     }
 
     /**
@@ -257,15 +220,6 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     }
 
     /**
-     * Get the title.
-     *
-     * @return string Returns the title.
-     */
-    public function getTitle() {
-        return $this->title;
-    }
-
-    /**
      * Get the verified.
      *
      * @return bool Returns the verified.
@@ -275,52 +229,10 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     }
 
     /**
-     * Parse the raw response.
-     *
-     * @param array $rawResponse The raw response.
-     * @return HaveIBeenPwnedBreach Returns a breach.
-     */
-    public static function parse(array $rawResponse) {
-
-        // Parse the date.
-        $addedDate    = DateTime::createFromFormat(self::DATETIME_FORMAT_ADDED, ArrayHelper::get($rawResponse, "AddedDate", ""), new DateTimeZone("UTC"));
-        $breachDate   = DateTime::createFromFormat(self::DATETIME_FORMAT_BREACH, ArrayHelper::get($rawResponse, "BreachDate", ""), new DateTimeZone("UTC"));
-        $modifiedDate = DateTime::createFromFormat(self::DATETIME_FORMAT_MODIFIED, ArrayHelper::get($rawResponse, "ModifiedDate", ""), new DateTimeZone("UTC"));
-
-        // Initialize the model.
-        $model = new HaveIBeenPwnedBreach();
-
-        $model->setAddedDate(false !== $addedDate ? $addedDate : null);
-        $model->setBreachDate(false !== $breachDate ? $breachDate : null);
-        $model->setDescription(ArrayHelper::get($rawResponse, "Description"));
-        $model->setDomain(ArrayHelper::get($rawResponse, "Domain"));
-        $model->setModifiedDate(false !== $modifiedDate ? $modifiedDate : null);
-        $model->setName(ArrayHelper::get($rawResponse, "Name"));
-        $model->setPwnCount(ArrayHelper::get($rawResponse, "PwnCount", 0));
-        $model->setRetired(ArrayHelper::get($rawResponse, "IsRetired", false));
-        $model->setSensitive(ArrayHelper::get($rawResponse, "IsSensitive", false));
-        $model->setSpamList(ArrayHelper::get($rawResponse, "IsSpamList", false));
-        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
-        $model->setVerified(ArrayHelper::get($rawResponse, "IsVerified", false));
-
-        // Handle each data class.
-        foreach (ArrayHelper::get($rawResponse, "DataClasses", []) as $current) {
-
-            $dataClass = new HaveIBeenPwnedDataClass();
-            $dataClass->setName($current);
-
-            $model->addDataClass($dataClass);
-        }
-
-        // Return the model.
-        return $model;
-    }
-
-    /**
      * Set the added date.
      *
      * @param DateTime $addedDate The added date.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setAddedDate(DateTime $addedDate = null) {
         $this->addedDate = $addedDate;
@@ -329,8 +241,9 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
 
     /**
      * Set the breach date.
+     *
      * @param DateTime $breachDate The breach date.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setBreachDate(DateTime $breachDate = null) {
         $this->breachDate = $breachDate;
@@ -340,8 +253,8 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     /**
      * Set the data classes.
      *
-     * @param array $dataClasses The data classes.
-     * @return HaveIBeenPwnedDataClass[] Returns this breach.
+     * @param DataClass[] $dataClasses The data classes.
+     * @return Breach Returns this breach.
      */
     public function setDataClasses(array $dataClasses) {
         $this->dataClasses = $dataClasses;
@@ -352,7 +265,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * Set the description.
      *
      * @param string $description The description.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setDescription($description) {
         $this->description = $description;
@@ -360,21 +273,10 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     }
 
     /**
-     * Set the domain.
-     *
-     * @param string $domain The domain.
-     * @return HaveIBeenPwnedBreach Returns this breach.
-     */
-    public function setDomain($domain) {
-        $this->domain = $domain;
-        return $this;
-    }
-
-    /**
      * Set the fabricated.
      *
      * @param bool $fabricated The fabricated.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setFabricated($fabricated) {
         $this->fabricated = $fabricated;
@@ -385,7 +287,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * Set the modified date.
      *
      * @param DateTime $modifiedDate The modified date.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setModifiedDate(DateTime $modifiedDate = null) {
         $this->modifiedDate = $modifiedDate;
@@ -393,21 +295,10 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     }
 
     /**
-     * Set the name.
-     *
-     * @param string $name The name.
-     * @return HaveIBeenPwnedBreach Returns this breach.
-     */
-    public function setName($name) {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
      * Set the pwn count.
      *
      * @param int $pwnCount The pwn count.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setPwnCount($pwnCount) {
         $this->pwnCount = $pwnCount;
@@ -418,7 +309,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * Set the retired.
      *
      * @param bool $retired The retired.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setRetired($retired) {
         $this->retired = $retired;
@@ -429,7 +320,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * Set the sensitive.
      *
      * @param bool $sensitive The sensitive.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setSensitive($sensitive) {
         $this->sensitive = $sensitive;
@@ -440,7 +331,7 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
      * Set the spam list.
      *
      * @param bool $spamList The spam list.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setSpamList($spamList) {
         $this->spamList = $spamList;
@@ -448,25 +339,13 @@ class HaveIBeenPwnedBreach implements HaveIBeenPwnedModelInterface {
     }
 
     /**
-     * Set the title.
-     *
-     * @param string $title The title.
-     * @return HaveIBeenPwnedBreach Returns this breach.
-     */
-    public function setTitle($title) {
-        $this->title = $title;
-        return $this;
-    }
-
-    /**
      * Set the verified.
      *
      * @param bool $verified The verified.
-     * @return HaveIBeenPwnedBreach Returns this breach.
+     * @return Breach Returns this breach.
      */
     public function setVerified($verified) {
         $this->verified = $verified;
         return $this;
     }
-
 }
