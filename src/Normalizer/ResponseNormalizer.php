@@ -101,6 +101,10 @@ class ResponseNormalizer {
         $model = new BreachesResponse();
         $model->setRawResponse($rawResponse);
 
+        if (true === static::isObject($response)) {
+            $response = [$response];
+        }
+
         foreach ($response as $current) {
             if (true === is_string($current)) {
                 $current = ["Name" => $current];
@@ -226,5 +230,15 @@ class ResponseNormalizer {
         }
 
         return $model;
+    }
+
+    /**
+     * Determines if an array is an object.
+     *
+     * @param array $array The array
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    protected static function isObject(array $array) {
+        return range(0, count($array) - 1) !== array_keys($array);
     }
 }

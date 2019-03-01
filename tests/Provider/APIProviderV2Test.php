@@ -47,6 +47,7 @@ class APIProviderV2Test extends AbstractTestCase {
 
         // Set a Breach request mock.
         $breachRequest = new BreachRequest();
+        $breachRequest->setName("Adobe");
 
         $obj = new APIProviderV2();
 
@@ -67,8 +68,8 @@ class APIProviderV2Test extends AbstractTestCase {
 
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
-        $breachedAccountRequest->setAccount("webeweb@gtihub.com");
-        $breachedAccountRequest->setDomain("github.com");
+        $breachedAccountRequest->setAccount("john.doe@gmail.com");
+        $breachedAccountRequest->setDomain("adobe.com");
 
         $obj = new APIProviderV2();
 
@@ -89,6 +90,7 @@ class APIProviderV2Test extends AbstractTestCase {
 
         // Set a Breaches request mock.
         $breachesRequest = new BreachesRequest();
+        $breachesRequest->setDomain("adobe.com");
 
         $obj = new APIProviderV2();
 
@@ -141,7 +143,7 @@ class APIProviderV2Test extends AbstractTestCase {
 
         // Set a Paste account request mock.
         $pasteAccountRequest = new PasteAccountRequest();
-        $pasteAccountRequest->setAccount("webeweb@gtihub.com");
+        $pasteAccountRequest->setAccount("john.doe@gmail.com");
 
         $obj = new APIProviderV2();
 
@@ -162,6 +164,7 @@ class APIProviderV2Test extends AbstractTestCase {
 
         // Set a Range request mock.
         $rangeRequest = new RangeRequest();
+        $rangeRequest->setHash("21BD1");
 
         $obj = new APIProviderV2();
 
