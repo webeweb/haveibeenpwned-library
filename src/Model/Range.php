@@ -11,13 +11,17 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
+use WBW\Library\HaveIBeenPwned\Traits\HashTrait;
+
 /**
- * HaveIBeenPwned range model.
+ * Range.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
-class HaveIBeenPwnedRange {
+class Range {
+
+    use HashTrait;
 
     /**
      * Count.
@@ -25,13 +29,6 @@ class HaveIBeenPwnedRange {
      * @var int
      */
     private $count;
-
-    /**
-     * Hash.
-     *
-     * @var string
-     */
-    private $hash;
 
     /**
      * Prefix
@@ -57,15 +54,6 @@ class HaveIBeenPwnedRange {
     }
 
     /**
-     * Get the hash.
-     *
-     * @return string Returns the hash.
-     */
-    public function getHash() {
-        return $this->hash;
-    }
-
-    /**
      * Get the prefix.
      *
      * @return string Returns the prefix.
@@ -75,36 +63,10 @@ class HaveIBeenPwnedRange {
     }
 
     /**
-     * Parse a raw response.
-     *
-     * @param string $rawResponse The raw response.
-     * @return HaveIBeenPwnedRange Returns a range.
-     */
-    public static function parse($rawResponse) {
-
-        // Split the raw response.
-        $response = explode(":", $rawResponse);
-
-        // Check the response.
-        if (count($response) < 2) {
-            return new HaveIBeenPwnedRange();
-        }
-
-        // Initialize the model.
-        $model = new HaveIBeenPwnedRange();
-
-        $model->setCount(intval($response[1]));
-        $model->setHash(trim($response[0]));
-
-        // Return the model.
-        return $model;
-    }
-
-    /**
      * Set the count.
      *
      * @param int $count The count.
-     * @return HaveIBeenPwnedRange Returns this range.
+     * @return Range Returns this range.
      */
     public function setCount($count) {
         $this->count = $count;
@@ -112,25 +74,13 @@ class HaveIBeenPwnedRange {
     }
 
     /**
-     * Set the hash.
-     *
-     * @param string $hash The hash.
-     * @return HaveIBeenPwnedRange Returns this range.
-     */
-    public function setHash($hash) {
-        $this->hash = $hash;
-        return $this;
-    }
-
-    /**
      * Set the prefix.
      *
      * @param string $prefix The prefix.
-     * @return HaveIBeenPwnedRange Returns this range.
+     * @return Range Returns this range.
      */
     public function setPrefix($prefix) {
         $this->prefix = $prefix;
         return $this;
     }
-
 }
