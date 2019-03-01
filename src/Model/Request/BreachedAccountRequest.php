@@ -9,15 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Request;
+namespace WBW\Library\HaveIBeenPwned\Model\Request;
+
+use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
+use WBW\Library\HaveIBeenPwned\Traits\AccountTrait;
 
 /**
- * HaveIBeenPwned request "Breached account".
+ * Breached account request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Request
+ * @package WBW\Library\HaveIBeenPwned\Model\Request
  */
-class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
+class BreachedAccountRequest extends BreachesRequest implements SubstituteRequestInterface {
+
+    use AccountTrait;
+
+    /**
+     * Breached account resource path.
+     *
+     * @var string
+     */
+    const BREACHED_ACCOUNT_RESOURCE_PATH = "/breachedaccount/{account}";
 
     /**
      * Include unverified.
@@ -50,6 +62,27 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::BREACHED_ACCOUNT_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubstituteName() {
+        return "{account}";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubstituteValue() {
+        return $this->getAccount();
+    }
+
+    /**
      * Get the truncate response.
      *
      * @return bool Returns the truncate response.
@@ -62,7 +95,7 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
      * Set the include unverified.
      *
      * @param bool $includeUnverified The include unverified.
-     * @return HaveIBeenPwnedRequestBreaches Returns this request "Breached account".
+     * @return BreachedAccountRequest Returns this breached account request.
      */
     public function setIncludeUnverified($includeUnverified) {
         $this->includeUnverified = $includeUnverified;
@@ -73,11 +106,10 @@ class HaveIBeenPwnedRequestBreachedAccount extends HaveIBeenPwnedRequestBreach {
      * Set the truncate response.
      *
      * @param bool $truncateResponse The truncate response.
-     * @return HaveIBeenPwnedRequestBreaches Returns this request "Breached account".
+     * @return BreachedAccountRequest Returns this breached account request.
      */
     public function setTruncateResponse($truncateResponse) {
         $this->truncateResponse = $truncateResponse;
         return $this;
     }
-
 }
