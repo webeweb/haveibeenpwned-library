@@ -99,6 +99,7 @@ class ResponseNormalizer {
         $response = json_decode($cleanedResponse, true);
 
         $model = new BreachesResponse();
+        $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
             if (true === is_string($current)) {
@@ -135,6 +136,7 @@ class ResponseNormalizer {
         $response = json_decode($rawResponse, true);
 
         $model = new DataClassesResponse();
+        $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
             $model->addDataClass(static::denormalizeDataClass($current));
@@ -176,6 +178,7 @@ class ResponseNormalizer {
         $response = json_decode($cleanedResponse, true);
 
         $model = new PastesResponse();
+        $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
             $model->addPaste(static::denormalizePaste($current));
@@ -216,6 +219,7 @@ class ResponseNormalizer {
         $response = explode("\n", $rawResponse);
 
         $model = new RangesResponse();
+        $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
             $model->addRange(static::denormalizeRange($current));
