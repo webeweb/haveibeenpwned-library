@@ -17,7 +17,7 @@ namespace WBW\Library\HaveIBeenPwned\API;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\API
  */
-interface SubstituteRequestInterface {
+interface SubstituteRequestInterface extends RequestInterface {
 
     /**
      * Get the substitute name.
