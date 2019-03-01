@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures;
 
-use WBW\Library\HaveIBeenPwned\Helper\HaveIBeenPwnedHelper;
+use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
 
 /**
  * Test fixtures.
@@ -112,11 +112,7 @@ EOT;
      * @return array Returns the sample breach response.
      */
     public static function getSampleBreachResponse() {
-
-        // Clean the response.
-        $cleanResponse = HaveIBeenPwnedHelper::cleanResponse(self::SAMPLE_BREACH_RESPONSE);
-
-        // Return the response.
+        $cleanResponse = ResponseNormalizer::cleanResponse(self::SAMPLE_BREACH_RESPONSE);
         return json_decode($cleanResponse, true);
     }
 
@@ -128,5 +124,4 @@ EOT;
     public static function getSamplePasteResponse() {
         return json_decode(self::SAMPLE_PASTE_RESPONSE, true);
     }
-
 }
