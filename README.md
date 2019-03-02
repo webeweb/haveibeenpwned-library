@@ -1,7 +1,7 @@
 haveibeenpwned-library
 ======================
 
-[![Build Status](https://travis-ci.com/webeweb/haveibeenpwned-library.svg?branch=master)](https://travis-ci.com/webeweb/haveibeenpwned-library)
+[![Build Status](https://travis-ci.org/webeweb/haveibeenpwned-library.svg?branch=master)](https://travis-ci.org/webeweb/haveibeenpwned-library)
 [![Coverage Status](https://coveralls.io/repos/github/webeweb/haveibeenpwned-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/stable)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
