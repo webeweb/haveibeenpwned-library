@@ -41,11 +41,9 @@ class ResponseNormalizer {
      */
     public static function cleanResponse($rawResponse) {
 
-        //
         $searches = [":True", ":False"];
         $replaces = [":true", ":false"];
 
-        // Return the cleaned raw response.
         return StringHelper::replace($rawResponse, $searches, $replaces);
     }
 
@@ -76,11 +74,7 @@ class ResponseNormalizer {
         $model->setVerified(ArrayHelper::get($rawResponse, "IsVerified", false));
 
         foreach (ArrayHelper::get($rawResponse, "DataClasses", []) as $current) {
-
-            $dataClass = new DataClass();
-            $dataClass->setName($current);
-
-            $model->addDataClass($dataClass);
+            $model->addDataClass(static::denormalizeDataClass($current));
         }
 
         return $model;
