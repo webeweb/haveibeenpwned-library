@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
+use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\API\RequestInterface;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
@@ -45,6 +46,31 @@ class APIProviderV1Test extends AbstractTestCase {
 
         $res = $obj->breachedAccountRequest($breachedAccountRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
+    }
+
+    /**
+     * Tests the breachedAccountRequest() method.
+     *
+     * @return void
+     */
+    public function testBreachedAccountRequestWithInvalidArgumentException() {
+
+        // Rate limiting.
+        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+
+        // Set a Breached account request mock.
+        $breachedAccountRequest = new BreachedAccountRequest();
+
+        $obj = new APIProviderV1();
+
+        try {
+
+            $obj->breachedAccountRequest($breachedAccountRequest);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The substitute value {account} is missing", $ex->getMessage());
+        }
     }
 
     /**
