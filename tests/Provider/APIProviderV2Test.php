@@ -35,6 +35,15 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class APIProviderV2Test extends AbstractTestCase {
 
     /**
+     * Pause...
+     *
+     * @return void
+     */
+    protected function pause() {
+        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+    }
+
+    /**
      * Tests the breachRequest() method.
      *
      * @return void
@@ -43,7 +52,7 @@ class APIProviderV2Test extends AbstractTestCase {
     public function testBreachRequest() {
 
         // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+        $this->pause();
 
         // Set a Breach request mock.
         $breachRequest = new BreachRequest();
@@ -64,11 +73,33 @@ class APIProviderV2Test extends AbstractTestCase {
     public function testBreachedAccountRequest() {
 
         // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+        $this->pause();
 
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
         $breachedAccountRequest->setAccount("john.doe@gmail.com");
+        $breachedAccountRequest->setDomain("adobe.com");
+
+        $obj = new APIProviderV2();
+
+        $res = $obj->breachedAccountRequest($breachedAccountRequest);
+        $this->assertInstanceOf(BreachesResponse::class, $res);
+    }
+
+    /**
+     * Tests the breachedAccountRequest() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testBreachedAccountRequestWith404() {
+
+        // Rate limiting.
+        $this->pause();
+
+        // Set a Breached account request mock.
+        $breachedAccountRequest = new BreachedAccountRequest();
+        $breachedAccountRequest->setAccount("webeweb@github.com");
         $breachedAccountRequest->setDomain("adobe.com");
 
         $obj = new APIProviderV2();
@@ -86,7 +117,7 @@ class APIProviderV2Test extends AbstractTestCase {
     public function testBreachesRequest() {
 
         // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+        $this->pause();
 
         // Set a Breaches request mock.
         $breachesRequest = new BreachesRequest();
@@ -107,7 +138,7 @@ class APIProviderV2Test extends AbstractTestCase {
     public function testDataClassesRequest() {
 
         // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+        $this->pause();
 
         // Set a Data classes request mock.
         $dataClassesRequest = new DataClassesRequest();
@@ -139,7 +170,7 @@ class APIProviderV2Test extends AbstractTestCase {
     public function testPasteAccountRequest() {
 
         // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+        $this->pause();
 
         // Set a Paste account request mock.
         $pasteAccountRequest = new PasteAccountRequest();
@@ -160,7 +191,7 @@ class APIProviderV2Test extends AbstractTestCase {
     public function testRangeRequest() {
 
         // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+        $this->pause();
 
         // Set a Range request mock.
         $rangeRequest = new RangeRequest();
