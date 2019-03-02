@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use Exception;
+use InvalidArgumentException;
 use WBW\Library\Core\Exception\Network\CURLRequestCallException;
 use WBW\Library\Core\Network\CURL\Factory\CURLFactory;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
@@ -54,10 +55,14 @@ abstract class AbstractAPIProvider {
      *
      * @param AbstractRequest $request The request.
      * @return string Returns the resource path.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     private function buildResourcePath(AbstractRequest $request) {
         if (false === ($request instanceof SubstituteRequestInterface)) {
             return $request->getResourcePath();
+        }
+        if (null === $request->getSubstituteValue()) {
+            throw new InvalidArgumentException(sprintf("The substitute value %s is missing", $request->getSubstituteName()));
         }
         return str_replace($request->getSubstituteName(), $request->getSubstituteValue(), $request->getResourcePath());
     }
@@ -70,6 +75,7 @@ abstract class AbstractAPIProvider {
      * @param string $endpointPath The endpoint path.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected function callAPI(AbstractRequest $request, array $queryData, $endpointPath = null) {
 
@@ -92,14 +98,14 @@ abstract class AbstractAPIProvider {
             $cURLResponse = $cURLRequest->call();
 
             return $cURLResponse->getResponseBody();
-        } catch (CURLRequestCallException $ex) {
+        } catch (InvalidArgumentException $ex) {
 
-            if (404 === $ex->getCode()) {
+            throw $ex;
+        } catch (Exception $ex) {
+
+            if (true === ($ex instanceof CURLRequestCallException) && 404 === $ex->getCode()) {
                 return "[]";
             }
-
-            throw new APIException("Failed to call HaveIBeenPwned API", $ex);
-        } catch (Exception $ex) {
 
             throw new APIException("Failed to call HaveIBeenPwned API", $ex);
         }
