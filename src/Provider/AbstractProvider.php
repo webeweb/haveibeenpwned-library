@@ -21,13 +21,13 @@ use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
 
 /**
- * Abstract API provider.
+ * Abstract provider.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Provider
  * @abstract
  */
-abstract class AbstractAPIProvider {
+abstract class AbstractProvider {
 
     /**
      * Endpoint path.
@@ -107,7 +107,7 @@ abstract class AbstractAPIProvider {
                 return "[]";
             }
 
-            throw new APIException("Failed to call HaveIBeenPwned API", $ex);
+            throw new APIException("Call HaveIBeenPwned API failed", $ex);
         }
     }
 
@@ -131,7 +131,7 @@ abstract class AbstractAPIProvider {
      * Set the debug.
      *
      * @param bool $debug The debug.
-     * @return AbstractAPIProvider Returns this API provider.
+     * @return AbstractProvider Returns this provider.
      */
     public function setDebug($debug) {
         $this->debug = $debug;

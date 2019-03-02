@@ -31,7 +31,7 @@ use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Provider
  */
-class APIProviderV2 extends AbstractAPIProvider {
+class APIProviderV2 extends AbstractProvider {
 
     /**
      * Breach request.

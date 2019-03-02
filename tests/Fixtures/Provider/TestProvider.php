@@ -11,15 +11,15 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider;
 
-use WBW\Library\HaveIBeenPwned\Provider\AbstractAPIProvider;
+use WBW\Library\HaveIBeenPwned\Provider\AbstractProvider;
 
 /**
- * Test API provider.
+ * Test provider.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider
  */
-class TestAPIProvider extends AbstractAPIProvider {
+class TestProvider extends AbstractProvider {
 
     /**
      * {@inheritdoc}

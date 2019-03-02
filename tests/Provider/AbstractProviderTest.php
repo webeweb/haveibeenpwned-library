@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestAPIProvider;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestProvider;
 
 /**
  * Abstract API provider test.
@@ -20,7 +20,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestAPIProvider;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
  */
-class AbstractAPIProviderTest extends AbstractTestCase {
+class AbstractProviderTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,9 +29,9 @@ class AbstractAPIProviderTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("https://haveibeenpwned.com/api", TestAPIProvider::ENDPOINT_PATH);
+        $this->assertEquals("https://haveibeenpwned.com/api", TestProvider::ENDPOINT_PATH);
 
-        $obj = new TestAPIProvider();
+        $obj = new TestProvider();
 
         $this->assertFalse($obj->getDebug());
     }
@@ -43,7 +43,7 @@ class AbstractAPIProviderTest extends AbstractTestCase {
      */
     public function testSetDebug() {
 
-        $obj = new TestAPIProvider();
+        $obj = new TestProvider();
 
         $obj->setDebug(true);
         $this->assertTrue($obj->getDebug());

@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Provider
  */
-class APIProviderV1 extends AbstractAPIProvider {
+class APIProviderV1 extends AbstractProvider {
 
     /**
      * Breached account request.
