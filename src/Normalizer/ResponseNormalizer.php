@@ -229,7 +229,7 @@ class ResponseNormalizer {
     /**
      * Determines if an array is an object.
      *
-     * @param array $array The array
+     * @param array $array The array.
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isObject(array $array) {
