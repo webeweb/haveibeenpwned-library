@@ -19,6 +19,7 @@ $response = $provider->breachRequest($model);
 foreach($response->getBreaches() as $current) {
     // ...
 }
+```
 
 2° Breached account
 ---
