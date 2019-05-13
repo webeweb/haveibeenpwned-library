@@ -38,6 +38,12 @@ Composer documentation.
 
 ---
 
+## Usage
+
+Read the [documentation](DOCUMENTATION.md).
+
+---
+
 ## Testing
 
 To test the package, is better to clone this repository on your computer.
