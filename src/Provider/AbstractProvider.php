@@ -12,10 +12,9 @@
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use Exception;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use InvalidArgumentException;
-use WBW\Library\Core\Exception\Network\CURLRequestCallException;
-use WBW\Library\Core\Network\CURL\Factory\CURLFactory;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
@@ -58,12 +57,15 @@ abstract class AbstractProvider {
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     private function buildResourcePath(AbstractRequest $request) {
+
         if (false === ($request instanceof SubstituteRequestInterface)) {
             return $request->getResourcePath();
         }
+
         if (null === $request->getSubstituteValue()) {
             throw new InvalidArgumentException(sprintf("The substitute value %s is missing", $request->getSubstituteName()));
         }
+
         return str_replace($request->getSubstituteName(), $request->getSubstituteValue(), $request->getResourcePath());
     }
 
@@ -75,7 +77,6 @@ abstract class AbstractProvider {
      * @param string $endpointPath The endpoint path.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
-     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected function callAPI(AbstractRequest $request, array $queryData, $endpointPath = null) {
 
@@ -83,27 +84,30 @@ abstract class AbstractProvider {
 
             $host = null === $endpointPath ? self::ENDPOINT_PATH . $this->getEndpointVersion() : $endpointPath;
 
-            $cURLRequest = CURLFactory::getInstance(HTTPInterface::HTTP_METHOD_GET);
-            $cURLRequest->getConfiguration()->addHeader("Accept", "application/json");
-            $cURLRequest->getConfiguration()->setDebug($this->getDebug());
-            $cURLRequest->getConfiguration()->setHost($host);
-            $cURLRequest->getConfiguration()->setUserAgent("webeweb/haveibeenpwnd-library");
-            $cURLRequest->setResourcePath($this->buildResourcePath($request));
+            $client = new Client([
+                "base_uri"    => $host . "/",
+                "debug"       => $this->getDebug(),
+                "headers"     => [
+                    "Accept"     => "application/json",
+                    "User-Agent" => "webeweb/haveibeenpwnd-library",
+                ],
+                "synchronous" => true,
+            ]);
 
-            // Handle each query data.
-            foreach ($queryData as $name => $value) {
-                $cURLRequest->addQueryData($name, $value);
-            }
+            $uri     = substr($this->buildResourcePath($request), 1);
+            $options = [
+                "query" => $queryData,
+            ];
 
-            $cURLResponse = $cURLRequest->call();
+            $response = $client->request("GET", $uri, $options);
 
-            return $cURLResponse->getResponseBody();
+            return $response->getBody()->getContents();
         } catch (InvalidArgumentException $ex) {
 
             throw $ex;
         } catch (Exception $ex) {
 
-            if (true === ($ex instanceof CURLRequestCallException) && 404 === $ex->getCode()) {
+            if (true === ($ex instanceof ClientException) && 404 === $ex->getCode()) {
                 return "[]";
             }
 
