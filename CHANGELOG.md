@@ -4,7 +4,7 @@ CHANGELOG
 ### [1.2.0](https://github.com/webeweb/haveibeenpwned-library/tree/v1.2.0) (2019-05-17)
 
 - Fix DOCUMENTATION
-- Rename some methods
+- Remove "request" from method names
 
 ### [1.1.0](https://github.com/webeweb/haveibeenpwned-library/tree/v1.1.0) (2019-05-16)
 
