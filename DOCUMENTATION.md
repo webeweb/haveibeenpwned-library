@@ -1,7 +1,7 @@
 DOCUMENTATION
 =============
 
-1° Breach
+Breach
 ---
 
 ```php
@@ -21,7 +21,7 @@ foreach($response->getBreaches() as $current) {
 }
 ```
 
-2° Breached account
+Breached account
 ---
 
 ```php
@@ -42,7 +42,7 @@ foreach($response->getBreaches() as $current) {
 }
 ```
 
-3° Breaches
+Breaches
 ---
 
 ```php
@@ -62,7 +62,7 @@ foreach($response->getBreaches() as $current) {
 }
 ```
 
-3° Data classes
+Data classes
 ---
 
 ```php
@@ -78,7 +78,7 @@ foreach($response->getDataClasses() as $current) {
 }
 ```
 
-4° Paste account
+Paste account
 ---
 
 ```php
@@ -98,7 +98,7 @@ foreach($response->getPastes() as $current) {
 }
 ```
 
-5° Range
+Range
 ---
 
 ```php
