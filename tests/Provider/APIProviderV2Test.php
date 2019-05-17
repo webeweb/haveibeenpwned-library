@@ -35,12 +35,12 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class APIProviderV2Test extends AbstractTestCase {
 
     /**
-     * Pause...
-     *
-     * @return void
+     * {inheritdoc}
      */
-    protected function pause() {
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
+    protected function setUp() {
+        parent::setUp();
+
+        $this->wait();
     }
 
     /**
@@ -50,9 +50,6 @@ class APIProviderV2Test extends AbstractTestCase {
      * @throws Exception Throws an exception if an error occurs.
      */
     public function testBreach() {
-
-        // Rate limiting.
-        $this->pause();
 
         // Set a Breach request mock.
         $breachRequest = new BreachRequest();
@@ -71,9 +68,6 @@ class APIProviderV2Test extends AbstractTestCase {
      * @throws Exception Throws an exception if an error occurs.
      */
     public function testBreachedAccount() {
-
-        // Rate limiting.
-        $this->pause();
 
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
@@ -94,9 +88,6 @@ class APIProviderV2Test extends AbstractTestCase {
      */
     public function testBreachedAccountWith404() {
 
-        // Rate limiting.
-        $this->pause();
-
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
         $breachedAccountRequest->setAccount("webeweb@github.com");
@@ -116,9 +107,6 @@ class APIProviderV2Test extends AbstractTestCase {
      */
     public function testBreaches() {
 
-        // Rate limiting.
-        $this->pause();
-
         // Set a Breaches request mock.
         $breachesRequest = new BreachesRequest();
         $breachesRequest->setDomain("adobe.com");
@@ -136,9 +124,6 @@ class APIProviderV2Test extends AbstractTestCase {
      * @throws Exception Throws an exception if an error occurs.
      */
     public function testDataClasses() {
-
-        // Rate limiting.
-        $this->pause();
 
         // Set a Data classes request mock.
         $dataClassesRequest = new DataClassesRequest();
@@ -169,9 +154,6 @@ class APIProviderV2Test extends AbstractTestCase {
      */
     public function testPasteAccount() {
 
-        // Rate limiting.
-        $this->pause();
-
         // Set a Paste account request mock.
         $pasteAccountRequest = new PasteAccountRequest();
         $pasteAccountRequest->setAccount("john.doe@gmail.com");
@@ -190,9 +172,6 @@ class APIProviderV2Test extends AbstractTestCase {
      */
     public function testRange() {
 
-        // Rate limiting.
-        $this->pause();
-
         // Set a Range request mock.
         $rangeRequest = new RangeRequest();
         $rangeRequest->setHash("21BD1");
@@ -201,5 +180,14 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $res = $obj->range($rangeRequest);
         $this->assertInstanceOf(RangesResponse::class, $res);
+    }
+
+    /**
+     * Wait.
+     *
+     * @return void
+     */
+    protected function wait() {
+        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
     }
 }
