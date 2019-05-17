@@ -1,8 +1,9 @@
 CHANGELOG
 =========
 
-### master
+### [1.2.1](https://github.com/webeweb/haveibeenpwned-library/tree/v1.2.1) (2019-05-17)
 
+- Fix DOCUMENTATION
 - Improve unit tests
 
 ### [1.2.0](https://github.com/webeweb/haveibeenpwned-library/tree/v1.2.0) (2019-05-17)
