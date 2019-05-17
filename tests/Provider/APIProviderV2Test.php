@@ -44,12 +44,12 @@ class APIProviderV2Test extends AbstractTestCase {
     }
 
     /**
-     * Tests the breachRequest() method.
+     * Tests the breach() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreachRequest() {
+    public function testBreach() {
 
         // Rate limiting.
         $this->pause();
@@ -60,17 +60,17 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->breachRequest($breachRequest);
+        $res = $obj->breach($breachRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
     /**
-     * Tests the breachedAccountRequest() method.
+     * Tests the breachedAccount() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreachedAccountRequest() {
+    public function testBreachedAccount() {
 
         // Rate limiting.
         $this->pause();
@@ -82,17 +82,17 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->breachedAccountRequest($breachedAccountRequest);
+        $res = $obj->breachedAccount($breachedAccountRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
     /**
-     * Tests the breachedAccountRequest() method.
+     * Tests the breachedAccount() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreachedAccountRequestWith404() {
+    public function testBreachedAccountWith404() {
 
         // Rate limiting.
         $this->pause();
@@ -104,17 +104,17 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->breachedAccountRequest($breachedAccountRequest);
+        $res = $obj->breachedAccount($breachedAccountRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
     /**
-     * Tests the breachesRequest() method.
+     * Tests the breaches() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreachesRequest() {
+    public function testBreaches() {
 
         // Rate limiting.
         $this->pause();
@@ -125,17 +125,17 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->breachesRequest($breachesRequest);
+        $res = $obj->breaches($breachesRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
     /**
-     * Tests the dataClassesRequest() method.
+     * Tests the dataClasses() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testDataClassesRequest() {
+    public function testDataClasses() {
 
         // Rate limiting.
         $this->pause();
@@ -145,7 +145,7 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->dataClassesRequest($dataClassesRequest);
+        $res = $obj->dataClasses($dataClassesRequest);
         $this->assertInstanceOf(DataClassesResponse::class, $res);
     }
 
@@ -162,12 +162,12 @@ class APIProviderV2Test extends AbstractTestCase {
     }
 
     /**
-     * Tests the pasteAccountRequest() method.
+     * Tests the pasteAccount() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testPasteAccountRequest() {
+    public function testPasteAccount() {
 
         // Rate limiting.
         $this->pause();
@@ -178,17 +178,17 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->pasteAccountRequest($pasteAccountRequest);
+        $res = $obj->pasteAccount($pasteAccountRequest);
         $this->assertInstanceOf(PastesResponse::class, $res);
     }
 
     /**
-     * Tests the rangeRequest() method.
+     * Tests the range() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRangeRequest() {
+    public function testRange() {
 
         // Rate limiting.
         $this->pause();
@@ -199,7 +199,7 @@ class APIProviderV2Test extends AbstractTestCase {
 
         $obj = new APIProviderV2();
 
-        $res = $obj->rangeRequest($rangeRequest);
+        $res = $obj->range($rangeRequest);
         $this->assertInstanceOf(RangesResponse::class, $res);
     }
 }

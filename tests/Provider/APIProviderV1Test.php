@@ -28,12 +28,12 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class APIProviderV1Test extends AbstractTestCase {
 
     /**
-     * Tests the breachedAccountRequest() method.
+     * Tests the breachedAccount() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreachedAccountRequest() {
+    public function testBreachedAccount() {
 
         // Rate limiting.
         sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
@@ -44,16 +44,16 @@ class APIProviderV1Test extends AbstractTestCase {
 
         $obj = new APIProviderV1();
 
-        $res = $obj->breachedAccountRequest($breachedAccountRequest);
+        $res = $obj->breachedAccount($breachedAccountRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
     /**
-     * Tests the breachedAccountRequest() method.
+     * Tests the breachedAccount() method.
      *
      * @return void
      */
-    public function testBreachedAccountRequestWithInvalidArgumentException() {
+    public function testBreachedAccountWithInvalidArgumentException() {
 
         // Rate limiting.
         sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
@@ -65,7 +65,7 @@ class APIProviderV1Test extends AbstractTestCase {
 
         try {
 
-            $obj->breachedAccountRequest($breachedAccountRequest);
+            $obj->breachedAccount($breachedAccountRequest);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);

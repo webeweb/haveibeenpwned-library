@@ -26,13 +26,13 @@ use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
 class APIProviderV1 extends AbstractProvider {
 
     /**
-     * Breached account request.
+     * Breached account.
      *
      * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function breachedAccountRequest(BreachedAccountRequest $breachedAccountRequest) {
+    public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
         $queryData = RequestNormalizer::normalizeBreachesRequest($breachedAccountRequest);
 

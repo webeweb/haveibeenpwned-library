@@ -34,13 +34,13 @@ use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
 class APIProviderV2 extends AbstractProvider {
 
     /**
-     * Breach request.
+     * Breach.
      *
      * @param BreachRequest $breachRequest The breach request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function breachRequest(BreachRequest $breachRequest) {
+    public function breach(BreachRequest $breachRequest) {
 
         $rawResponse = $this->callAPI($breachRequest, []);
 
@@ -48,13 +48,13 @@ class APIProviderV2 extends AbstractProvider {
     }
 
     /**
-     * Breached account request.
+     * Breached account.
      *
      * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function breachedAccountRequest(BreachedAccountRequest $breachedAccountRequest) {
+    public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
         $queryData = RequestNormalizer::normalizeBreachesRequest($breachedAccountRequest);
 
@@ -64,13 +64,13 @@ class APIProviderV2 extends AbstractProvider {
     }
 
     /**
-     * Breaches request.
+     * Breaches.
      *
      * @param BreachesRequest $breachesRequest The breaches request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function breachesRequest(BreachesRequest $breachesRequest) {
+    public function breaches(BreachesRequest $breachesRequest) {
 
         $queryData = RequestNormalizer::normalizeBreachesRequest($breachesRequest);
 
@@ -80,13 +80,13 @@ class APIProviderV2 extends AbstractProvider {
     }
 
     /**
-     * Data classes request.
+     * Data classes.
      *
      * @param DataClassesRequest $dataClassesRequest The data classes request.
      * @return DataClassesResponse Returns the data classes response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function dataClassesRequest(DataClassesRequest $dataClassesRequest) {
+    public function dataClasses(DataClassesRequest $dataClassesRequest) {
 
         $rawResponse = $this->callAPI($dataClassesRequest, []);
 
@@ -101,13 +101,13 @@ class APIProviderV2 extends AbstractProvider {
     }
 
     /**
-     * Paste account request.
+     * Paste account.
      *
      * @param PasteAccountRequest $pasteAccountRequest The paste account request.
      * @return PastesResponse Returns the pastes response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function pasteAccountRequest(PasteAccountRequest $pasteAccountRequest) {
+    public function pasteAccount(PasteAccountRequest $pasteAccountRequest) {
 
         $rawResponse = $this->callAPI($pasteAccountRequest, []);
 
@@ -115,13 +115,13 @@ class APIProviderV2 extends AbstractProvider {
     }
 
     /**
-     * Range request.
+     * Range.
      *
      * @param RangeRequest $rangeRequest The range request.
      * @return RangesResponse Returns the ranges response.
      * @throws APIException Throws an API exception if an error occurs.
      */
-    public function rangeRequest(RangeRequest $rangeRequest) {
+    public function range(RangeRequest $rangeRequest) {
 
         $rawResponse = $this->callAPI($rangeRequest, [], "https://api.pwnedpasswords.com");
 
