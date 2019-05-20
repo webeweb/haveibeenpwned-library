@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Reorganize documentation
+
 ### [1.2.1](https://github.com/webeweb/haveibeenpwned-library/tree/v1.2.1) (2019-05-17)
 
 - Fix DOCUMENTATION
