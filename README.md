@@ -1,13 +1,13 @@
 haveibeenpwned-library
 ======================
 
-[![Build Status](https://travis-ci.org/webeweb/haveibeenpwned-library.svg?branch=master)](https://travis-ci.org/webeweb/haveibeenpwned-library)
-[![Coverage Status](https://coveralls.io/repos/github/webeweb/haveibeenpwned-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/stable)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
-[![Latest Unstable Version](https://poser.pugx.org/webeweb/haveibeenpwned-library/v/unstable)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
-[![License](https://poser.pugx.org/webeweb/haveibeenpwned-library/license)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
-[![composer.lock](https://poser.pugx.org/webeweb/haveibeenpwned-library/composerlock)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![Build Status](https://img.shields.io/travis/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://travis-ci.org/webeweb/haveibeenpwned-library)
+[![Coverage Status](https://img.shields.io/coveralls/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/haveibeenpwned-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/haveibeenpwned-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![License](https://img.shields.io/packagist/l/webeweb/haveibeenpwned-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
+[![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
 
 Integrate HaveIBeenPwned API with your projects.
 
@@ -15,7 +15,7 @@ Integrate HaveIBeenPwned API with your projects.
 
 ## Compatibility
 
-[![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net)
+[![PHP](https://img.shields.io/packagist/php-v/webeweb/haveihavebeenpwned-library.svg?style=flat-square)](http://php.net)
 
 ---
 
