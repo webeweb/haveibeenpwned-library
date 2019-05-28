@@ -15,7 +15,7 @@ Integrate HaveIBeenPwned API with your projects.
 
 ## Compatibility
 
-[![PHP](https://img.shields.io/packagist/php-v/webeweb/haveihavebeenpwned-library.svg?style=flat-square)](http://php.net)
+[![PHP](https://img.shields.io/packagist/php-v/webeweb/haveibeenpwned-library.svg?style=flat-square)](http://php.net)
 
 ---
 
