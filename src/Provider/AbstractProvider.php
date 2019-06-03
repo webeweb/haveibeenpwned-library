@@ -77,6 +77,7 @@ abstract class AbstractProvider {
      * @param string $endpointPath The endpoint path.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected function callAPI(AbstractRequest $request, array $queryData, $endpointPath = null) {
 

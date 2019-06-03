@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
+use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
@@ -31,6 +32,7 @@ class APIProviderV1 extends AbstractProvider {
      * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 

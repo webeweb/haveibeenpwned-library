@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
+use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
@@ -39,6 +40,7 @@ class APIProviderV2 extends AbstractProvider {
      * @param BreachRequest $breachRequest The breach request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breach(BreachRequest $breachRequest) {
 
@@ -53,6 +55,7 @@ class APIProviderV2 extends AbstractProvider {
      * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
@@ -69,6 +72,7 @@ class APIProviderV2 extends AbstractProvider {
      * @param BreachesRequest $breachesRequest The breaches request.
      * @return BreachesResponse Returns the breaches response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breaches(BreachesRequest $breachesRequest) {
 
@@ -85,6 +89,7 @@ class APIProviderV2 extends AbstractProvider {
      * @param DataClassesRequest $dataClassesRequest The data classes request.
      * @return DataClassesResponse Returns the data classes response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function dataClasses(DataClassesRequest $dataClassesRequest) {
 
@@ -106,6 +111,7 @@ class APIProviderV2 extends AbstractProvider {
      * @param PasteAccountRequest $pasteAccountRequest The paste account request.
      * @return PastesResponse Returns the pastes response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function pasteAccount(PasteAccountRequest $pasteAccountRequest) {
 
@@ -120,6 +126,7 @@ class APIProviderV2 extends AbstractProvider {
      * @param RangeRequest $rangeRequest The range request.
      * @return RangesResponse Returns the ranges response.
      * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function range(RangeRequest $rangeRequest) {
 
