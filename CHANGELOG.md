@@ -3,7 +3,10 @@ CHANGELOG
 
 ### master
 
+- Update Composer (according to Composer schema)
 - Reorganize documentation
+- Update documentation
+- Update PHPDoc
 
 ### [1.2.1](https://github.com/webeweb/haveibeenpwned-library/tree/v1.2.1) (2019-05-17)
 
