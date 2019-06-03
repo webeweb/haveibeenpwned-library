@@ -17,7 +17,19 @@ $response = $provider->breach($model);
 
 // Handle the response.
 foreach($response->getBreaches() as $current) {
-    // ...
+
+    $current->getAddedDate();
+    $current->getBreachDate();
+    $current->getDataClasses();
+    $current->getDomain();
+    $current->getAddedDate();
+    $current->getName();
+    $current->getPwnCount();
+    $current->getRetired();
+    $current->getSensitive();
+    $current->getSpamList();
+    $current->getTitle();
+    $current->getVerified();
 }
 ```
 
@@ -36,10 +48,8 @@ $model->setDomain("adobe.com");
 // Call the API and get the response.
 $response = $provider->breachedAccount($model);
 
-// Handle the response.
-foreach($response->getBreaches() as $current) {
-    // ...
-}
+// Handle the response (same as breach).
+// ...
 ```
 
 Breaches
@@ -56,10 +66,8 @@ $model->setDomain("adobe.com");
 // Call the API and get the response.
 $response = $provider->breaches($model);
 
-// Handle the response.
-foreach($response->getBreaches() as $current) {
-    // ...
-}
+// Handle the response (same as breach).
+// ...
 ```
 
 Data classes
@@ -74,7 +82,8 @@ $response = $provider->dataClasses(new DataClassesRequest());
 
 // Handle the response.
 foreach($response->getDataClasses() as $current) {
-    // ...
+    
+    $current->getName();
 }
 ```
 
@@ -94,7 +103,12 @@ $response = $provider->pasteAccount($model);
 
 // Handle the response.
 foreach($response->getPastes() as $current) {
-    // ...
+
+    $current->getDate();
+    $current->getEmailCount();
+    $current->getId();
+    $current->getSource();
+    $current->getTitle();
 }
 ```
 
@@ -114,6 +128,8 @@ $response = $provider->range($model);
 
 // Handle the response.
 foreach($response->getRanges() as $current) {
-    // ...
+    
+    $current->getCount();
+    $current->getHash();
 }
 ```
