@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.3.1](https://github.com/webeweb/haveibeenpwned-library/tree/v1.3.1) (2019-07-05)
+
+- Update exception inheritance
+
 ### [1.3.0](https://github.com/webeweb/haveibeenpwned-library/tree/v1.3.0) (2019-06-08)
 
 - Change license 
