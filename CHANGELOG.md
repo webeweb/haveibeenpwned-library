@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [1.3.2](https://github.com/webeweb/haveibeenpwned-library/tree/v1.3.2) (2019-07-22)
+
+- Add PHP extensions into Composer
+
 ### [1.3.1](https://github.com/webeweb/haveibeenpwned-library/tree/v1.3.1) (2019-07-05)
 
 - Update exception inheritance
