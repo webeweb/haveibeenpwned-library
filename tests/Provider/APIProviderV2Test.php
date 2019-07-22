@@ -12,8 +12,8 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
-use GuzzleHttp\Exception\ClientException;
 use WBW\Library\HaveIBeenPwned\API\RequestInterface;
+use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
@@ -83,7 +83,7 @@ class APIProviderV2Test extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(ClientException::class, $ex);
+            $this->assertInstanceOf(APIException::class, $ex);
         }
     }
 
@@ -108,7 +108,7 @@ class APIProviderV2Test extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(ClientException::class, $ex);
+            $this->assertInstanceOf(APIException::class, $ex);
         }
     }
 
