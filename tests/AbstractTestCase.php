@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests;
 
 use PHPUnit\Framework\TestCase;
+use WBW\Library\HaveIBeenPwned\API\RequestInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachedAccountInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachesInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachInterface;
@@ -90,5 +91,14 @@ abstract class AbstractTestCase extends TestCase {
         // Set a Range mock.
         $this->range = $this->getMockBuilder(RangeInterface::class)->getMock();
         $this->range->expects($this->any())->method("getHaveIBeenPwnedHash")->willReturn("21BD1");
+    }
+
+    /**
+     * Wait.
+     *
+     * @return void
+     */
+    protected function wait() {
+        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
     }
 }

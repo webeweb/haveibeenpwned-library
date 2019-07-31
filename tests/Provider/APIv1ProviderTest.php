@@ -13,20 +13,28 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\HaveIBeenPwned\API\RequestInterface;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
-use WBW\Library\HaveIBeenPwned\Provider\APIProviderV1;
+use WBW\Library\HaveIBeenPwned\Provider\APIv1Provider;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
- * API provider v1 test.
+ * API v1 provider test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
  */
-class APIProviderV1Test extends AbstractTestCase {
+class APIv1ProviderTest extends AbstractTestCase {
+
+    /**
+     * {inheritdoc}
+     */
+    protected function setUp() {
+        parent::setUp();
+
+        $this->wait();
+    }
 
     /**
      * Tests the breachedAccount() method.
@@ -35,14 +43,11 @@ class APIProviderV1Test extends AbstractTestCase {
      */
     public function testBreachedAccount() {
 
-        // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
-
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
         $breachedAccountRequest->setAccount("john.doe@gmail.com");
 
-        $obj = new APIProviderV1();
+        $obj = new APIv1Provider();
 
         try {
 
@@ -62,13 +67,10 @@ class APIProviderV1Test extends AbstractTestCase {
      */
     public function testBreachedAccountWithInvalidArgumentException() {
 
-        // Rate limiting.
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
-
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
 
-        $obj = new APIProviderV1();
+        $obj = new APIv1Provider();
 
         try {
 
@@ -87,7 +89,7 @@ class APIProviderV1Test extends AbstractTestCase {
      */
     public function testGetEndpointVersion() {
 
-        $obj = new APIProviderV1();
+        $obj = new APIv1Provider();
 
         $this->assertEquals("", $obj->getEndpointVersion());
     }

@@ -19,12 +19,12 @@ use WBW\Library\HaveIBeenPwned\Normalizer\RequestNormalizer;
 use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
 
 /**
- * API provider v1.
+ * API v1 provider.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Provider
  */
-class APIProviderV1 extends AbstractProvider {
+class APIv1Provider extends AbstractProvider {
 
     /**
      * Breached account.
