@@ -53,7 +53,7 @@ abstract class AbstractProvider {
      * Build the configuration.
      *
      * @param string $host The host.
-     * @param null $apiKey The API key.
+     * @param string|null $apiKey The API key.
      * @return array Returns the configuration.
      */
     private function buildConfiguration($host, $apiKey = null) {
