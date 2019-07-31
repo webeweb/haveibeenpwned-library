@@ -58,6 +58,9 @@ Once all required libraries are installed then do:
 $ vendor/bin/phpunit
 ```
 
+> IMPORTANT NOTICE: To test the package with your API key, edit the
+> `tests/Provider/APIv3ProviderTest.php` file to find and replace "YOUR_API_KEY".
+
 ---
 
 ## License
