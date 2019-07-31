@@ -27,12 +27,12 @@ use WBW\Library\HaveIBeenPwned\Normalizer\RequestNormalizer;
 use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
 
 /**
- * API provider v2.
+ * API v2 provider.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Provider
  */
-class APIProviderV2 extends AbstractProvider {
+class APIv2Provider extends AbstractProvider {
 
     /**
      * Breach.

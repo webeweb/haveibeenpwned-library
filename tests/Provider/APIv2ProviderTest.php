@@ -24,16 +24,16 @@ use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\RangesResponse;
-use WBW\Library\HaveIBeenPwned\Provider\APIProviderV2;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
- * API provider v2 test.
+ * API v2 provider test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
  */
-class APIProviderV2Test extends AbstractTestCase {
+class APIv2ProviderTest extends AbstractTestCase {
 
     /**
      * {inheritdoc}
@@ -56,7 +56,7 @@ class APIProviderV2Test extends AbstractTestCase {
         $breachRequest = new BreachRequest();
         $breachRequest->setName("Adobe");
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         $res = $obj->breach($breachRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
@@ -74,7 +74,7 @@ class APIProviderV2Test extends AbstractTestCase {
         $breachedAccountRequest->setAccount("john.doe@gmail.com");
         $breachedAccountRequest->setDomain("adobe.com");
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         try {
 
@@ -99,7 +99,7 @@ class APIProviderV2Test extends AbstractTestCase {
         $breachedAccountRequest->setAccount("webeweb@github.com");
         $breachedAccountRequest->setDomain("adobe.com");
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         try {
 
@@ -124,7 +124,7 @@ class APIProviderV2Test extends AbstractTestCase {
         $breachesRequest = new BreachesRequest();
         $breachesRequest->setDomain("adobe.com");
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         $res = $obj->breaches($breachesRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
@@ -141,7 +141,7 @@ class APIProviderV2Test extends AbstractTestCase {
         // Set a Data classes request mock.
         $dataClassesRequest = new DataClassesRequest();
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         $res = $obj->dataClasses($dataClassesRequest);
         $this->assertInstanceOf(DataClassesResponse::class, $res);
@@ -154,7 +154,7 @@ class APIProviderV2Test extends AbstractTestCase {
      */
     public function testGetEndpointVersion() {
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         $this->assertEquals("/v2", $obj->getEndpointVersion());
     }
@@ -171,7 +171,7 @@ class APIProviderV2Test extends AbstractTestCase {
         $pasteAccountRequest = new PasteAccountRequest();
         $pasteAccountRequest->setAccount("john.doe@gmail.com");
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         $res = $obj->pasteAccount($pasteAccountRequest);
         $this->assertInstanceOf(PastesResponse::class, $res);
@@ -189,18 +189,9 @@ class APIProviderV2Test extends AbstractTestCase {
         $rangeRequest = new RangeRequest();
         $rangeRequest->setHash("21BD1");
 
-        $obj = new APIProviderV2();
+        $obj = new APIv2Provider();
 
         $res = $obj->range($rangeRequest);
         $this->assertInstanceOf(RangesResponse::class, $res);
-    }
-
-    /**
-     * Wait.
-     *
-     * @return void
-     */
-    protected function wait() {
-        sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
     }
 }
