@@ -4,8 +4,9 @@ CHANGELOG
 ### [2.0.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.0.0) (2019-07-31)
 
 > IMPORTANT NOTICE:
-> APIProviderV1 was renamed APIv1Provider
-> APIProviderV2 was renamed APIv2Provider
+>
+> - APIProviderV1 was renamed APIv1Provider
+> - APIProviderV2 was renamed APIv2Provider
 
 - Add API v3 provider
 
