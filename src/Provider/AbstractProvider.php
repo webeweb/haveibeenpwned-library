@@ -50,6 +50,32 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Build the configuration.
+     *
+     * @param string $host The host.
+     * @param null $apiKey The API key.
+     * @return array Returns the configuration.
+     */
+    private function buildConfiguration($host, $apiKey = null) {
+
+        $config = [
+            "base_uri"    => $host . "/",
+            "debug"       => $this->getDebug(),
+            "headers"     => [
+                "Accept"     => "application/json",
+                "User-Agent" => "webeweb/haveibeenpwnd-library",
+            ],
+            "synchronous" => true,
+        ];
+
+        if (null !== $apiKey) {
+            $config["headers"]["hibp-api-key"] = $apiKey;
+        }
+
+        return $config;
+    }
+
+    /**
      * Build a resource path.
      *
      * @param AbstractRequest $request The request.
@@ -75,25 +101,18 @@ abstract class AbstractProvider {
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @param string $endpointPath The endpoint path.
+     * @param string $apiKey The API key.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI(AbstractRequest $request, array $queryData, $endpointPath = null) {
+    protected function callAPI(AbstractRequest $request, array $queryData, $endpointPath = null, $apiKey = null) {
 
         try {
 
             $host = null === $endpointPath ? self::ENDPOINT_PATH . $this->getEndpointVersion() : $endpointPath;
 
-            $client = new Client([
-                "base_uri"    => $host . "/",
-                "debug"       => $this->getDebug(),
-                "headers"     => [
-                    "Accept"     => "application/json",
-                    "User-Agent" => "webeweb/haveibeenpwnd-library",
-                ],
-                "synchronous" => true,
-            ]);
+            $client = new Client($this->buildConfiguration($host, $apiKey));
 
             $uri     = substr($this->buildResourcePath($request), 1);
             $options = [
