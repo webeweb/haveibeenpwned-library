@@ -65,7 +65,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         $breachRequest = new BreachRequest();
         $breachRequest->setName("Adobe");
 
-        $obj = new APIv3Provider($this->apiKey);
+        $obj = new APIv3Provider();
 
         $res = $obj->breach($breachRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
@@ -133,7 +133,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         $breachesRequest = new BreachesRequest();
         $breachesRequest->setDomain("adobe.com");
 
-        $obj = new APIv3Provider($this->apiKey);
+        $obj = new APIv3Provider();
 
         $res = $obj->breaches($breachesRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
@@ -163,7 +163,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         // Set a Data classes request mock.
         $dataClassesRequest = new DataClassesRequest();
 
-        $obj = new APIv3Provider($this->apiKey);
+        $obj = new APIv3Provider();
 
         $res = $obj->dataClasses($dataClassesRequest);
         $this->assertInstanceOf(DataClassesResponse::class, $res);
@@ -206,7 +206,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         $rangeRequest = new RangeRequest();
         $rangeRequest->setHash("21BD1");
 
-        $obj = new APIv3Provider($this->apiKey);
+        $obj = new APIv3Provider();
 
         $res = $obj->range($rangeRequest);
         $this->assertInstanceOf(RangesResponse::class, $res);

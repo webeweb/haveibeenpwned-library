@@ -1,12 +1,16 @@
 CHANGELOG
 =========
 
+### [2.0.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.0.1) (2019-08-01)
+
+- Optimize API v3 calls
+
 ### [2.0.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.0.0) (2019-07-31)
 
 > IMPORTANT NOTICE:
 >
-> - APIProviderV1 was renamed APIv1Provider
-> - APIProviderV2 was renamed APIv2Provider
+> - WBW\Library\HaveIBeenPwned\Provider\APIProviderV1 was renamed APIv1Provider
+> - WBW\Library\HaveIBeenPwned\Provider\APIProviderV2 was renamed APIv2Provider
 
 - Add API v3 provider
 
