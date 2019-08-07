@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
@@ -45,9 +46,10 @@ class APIv3Provider extends AbstractProvider {
      * Constructor.
      *
      * @param string|null $apiKey The API key.
+     * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct($apiKey = null) {
-        parent::__construct();
+    public function __construct($apiKey = null, LoggerInterface $logger = null) {
+        parent::__construct($logger);
         $this->setApiKey($apiKey);
     }
 

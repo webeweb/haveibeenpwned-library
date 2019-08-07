@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.1.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.1.0) (2019-08-07)
+
+- Add Logger interface into API provider
+
 ### [2.0.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.0.1) (2019-08-01)
 
 - Optimize API v3 calls

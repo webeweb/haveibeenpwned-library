@@ -15,6 +15,7 @@ use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
@@ -43,10 +44,20 @@ abstract class AbstractProvider {
     private $debug;
 
     /**
-     * Constructor.
+     * Logger.
+     *
+     * @var LoggerInterface
      */
-    public function __construct() {
+    private $logger;
+
+    /**
+     * Constructor.
+     *
+     * @param LoggerInterface|null $logger The logger.
+     */
+    public function __construct(LoggerInterface $logger = null) {
         $this->setDebug(false);
+        $this->setLogger($logger);
     }
 
     /**
@@ -112,14 +123,19 @@ abstract class AbstractProvider {
 
             $host = null === $endpointPath ? self::ENDPOINT_PATH . $this->getEndpointVersion() : $endpointPath;
 
-            $client = new Client($this->buildConfiguration($host, $apiKey));
+            $config = $this->buildConfiguration($host, $apiKey);
 
+            $client = new Client($config);
+
+            $method  = "GET";
             $uri     = substr($this->buildResourcePath($request), 1);
             $options = [
                 "query" => $queryData,
             ];
 
-            $response = $client->request("GET", $uri, $options);
+            $this->log(sprintf("Call HaveIBeenPwned API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
+
+            $response = $client->request($method, $uri, $options);
 
             return $response->getBody()->getContents();
         } catch (InvalidArgumentException $ex) {
@@ -152,6 +168,29 @@ abstract class AbstractProvider {
     abstract public function getEndpointVersion();
 
     /**
+     * Get the logger.
+     *
+     * @return LoggerInterface Returns the logger.
+     */
+    public function getLogger() {
+        return $this->logger;
+    }
+
+    /**
+     * Log.
+     *
+     * @param string $message The message.
+     * @param array $context The context.
+     * @return AbstractProvider Returns this provider.
+     */
+    protected function log($message, array $context) {
+        if (null !== $this->getLogger()) {
+            $this->getLogger()->info($message, $context);
+        }
+        return $this;
+    }
+
+    /**
      * Set the debug.
      *
      * @param bool $debug The debug.
@@ -159,6 +198,17 @@ abstract class AbstractProvider {
      */
     public function setDebug($debug) {
         $this->debug = $debug;
+        return $this;
+    }
+
+    /**
+     * Set the logger.
+     *
+     * @param LoggerInterface|null $logger The logger
+     * @return AbstractProvider Returns this provider
+     */
+    protected function setLogger(LoggerInterface $logger = null) {
+        $this->logger = $logger;
         return $this;
     }
 }

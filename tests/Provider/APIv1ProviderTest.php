@@ -13,6 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
@@ -43,11 +44,14 @@ class APIv1ProviderTest extends AbstractTestCase {
      */
     public function testBreachedAccount() {
 
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
         $breachedAccountRequest->setAccount("john.doe@gmail.com");
 
-        $obj = new APIv1Provider();
+        $obj = new APIv1Provider($logger);
 
         try {
 
