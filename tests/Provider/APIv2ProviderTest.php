@@ -12,7 +12,6 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
-use WBW\Library\HaveIBeenPwned\API\RequestInterface;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
@@ -173,8 +172,15 @@ class APIv2ProviderTest extends AbstractTestCase {
 
         $obj = new APIv2Provider();
 
-        $res = $obj->pasteAccount($pasteAccountRequest);
-        $this->assertInstanceOf(PastesResponse::class, $res);
+        try {
+
+            $res = $obj->pasteAccount($pasteAccountRequest);
+            $this->assertInstanceOf(PastesResponse::class, $res);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertEquals(401, $ex->getPrevious()->getCode());
+        }
     }
 
     /**

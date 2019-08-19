@@ -112,6 +112,7 @@ class APIv2Provider extends AbstractProvider {
      * @return PastesResponse Returns the pastes response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @deprecated since 2.1.2 use "WBW\Library\HaveIBeenPwned\Provider\APIv3Provider" instead.
      */
     public function pasteAccount(PasteAccountRequest $pasteAccountRequest) {
 
