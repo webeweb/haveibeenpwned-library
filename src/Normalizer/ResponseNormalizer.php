@@ -13,8 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Normalizer;
 
 use DateTime;
 use DateTimeZone;
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Argument\StringHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Model\DataClass;
@@ -44,7 +43,7 @@ class ResponseNormalizer {
         $searches = [":True", ":False"];
         $replaces = [":true", ":false"];
 
-        return StringHelper::replace($rawResponse, $searches, $replaces);
+        return str_replace($searches, $replaces, $rawResponse);
     }
 
     /**
@@ -95,7 +94,7 @@ class ResponseNormalizer {
         $model = new BreachesResponse();
         $model->setRawResponse($rawResponse);
 
-        if (true === static::isObject($response)) {
+        if (true === ArrayHelper::isObject($response)) {
             $response = [$response];
         }
 
@@ -224,15 +223,5 @@ class ResponseNormalizer {
         }
 
         return $model;
-    }
-
-    /**
-     * Determines if an array is an object.
-     *
-     * @param array $array The array.
-     * @return bool Returns true in case of success, false otherwise.
-     */
-    protected static function isObject(array $array) {
-        return range(0, count($array) - 1) !== array_keys($array);
     }
 }

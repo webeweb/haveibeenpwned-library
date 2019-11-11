@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Normalizer;
 
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Argument\StringHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\StringHelper;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
 
