@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [2.2.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.2.0) (2019-11-25)
 
 - Update dependencies
 
