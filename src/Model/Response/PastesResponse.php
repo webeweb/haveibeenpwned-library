@@ -33,6 +33,7 @@ class PastesResponse extends AbstractResponse {
      * Constructor.
      */
     public function __construct() {
+        parent::__construct();
         $this->setPastes([]);
     }
 

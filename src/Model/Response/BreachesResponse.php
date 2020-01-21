@@ -33,6 +33,7 @@ class BreachesResponse extends AbstractResponse {
      * Constructor.
      */
     public function __construct() {
+        parent::__construct();
         $this->setBreaches([]);
     }
 
