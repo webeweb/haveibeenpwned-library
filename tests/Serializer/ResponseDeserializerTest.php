@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Normalizer;
+namespace WBW\Library\HaveIBeenPwned\Tests\Serializer;
 
 use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
 use WBW\Library\HaveIBeenPwned\Model\Breach;
@@ -21,16 +21,16 @@ use WBW\Library\HaveIBeenPwned\Model\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Normalizer\TestResponseNormalizer;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Serializer\TestResponseDeserializer;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
- * Response normalizer test.
+ * Response Deserializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Normalizer
+ * @package WBW\Library\HaveIBeenPwned\Tests\Serializer
  */
-class ResponseNormalizerTest extends AbstractTestCase {
+class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
      * Tests the cleanResponse() method.
@@ -44,22 +44,22 @@ class ResponseNormalizerTest extends AbstractTestCase {
         $this->assertContains("True", $arg);
         $this->assertContains("False", $arg);
 
-        $res = TestResponseNormalizer::cleanResponse($arg);
+        $res = TestResponseDeserializer::cleanResponse($arg);
 
         $this->assertNotContains("True", $res);
         $this->assertNotContains("False", $res);
     }
 
     /**
-     * Tests the denormalizeBreach() method.
+     * Tests the deserializeBreach() method.
      *
      * @return void
      */
-    public function testDenormalizeBreach() {
+    public function testDeserializeBreach() {
 
         $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
-        $obj = TestResponseNormalizer::denormalizeBreach(TestFixtures::getSampleBreachResponse()[0]);
+        $obj = TestResponseDeserializer::deserializeBreach(TestFixtures::getSampleBreachResponse()[0]);
 
         $this->assertInstanceOf(Breach::class, $obj);
 
@@ -83,13 +83,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeBreachesResponse() method.
+     * Tests the deserializeBreachesResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeBreachesResponse() {
+    public function testDeserializeBreachesResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeBreachesResponse(TestFixtures::SAMPLE_BREACH_RESPONSE);
+        $obj = TestResponseDeserializer::deserializeBreachesResponse(TestFixtures::SAMPLE_BREACH_RESPONSE);
 
         $this->assertInstanceOf(BreachesResponse::class, $obj);
 
@@ -128,15 +128,15 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeDataClass() method.
+     * Tests the deserializeDataClass() method.
      *
      * @return void
      */
-    public function testDenormalizeDataClass() {
+    public function testDeserializeDataClass() {
 
         $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
-        $obj = TestResponseNormalizer::denormalizeDataClass($dataClasses[0]);
+        $obj = TestResponseDeserializer::deserializeDataClass($dataClasses[0]);
 
         $this->assertInstanceOf(DataClass::class, $obj);
 
@@ -144,13 +144,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeDataClassesResponse() method.
+     * Tests the deserializeDataClassesResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeDataClassesResponse() {
+    public function testDeserializeDataClassesResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeDataClassesResponse(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
+        $obj = TestResponseDeserializer::deserializeDataClassesResponse(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
         $this->assertInstanceOf(DataClassesResponse::class, $obj);
 
@@ -171,13 +171,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizePaste() method.
+     * Tests the deserializePaste() method.
      *
      * @return void
      */
-    public function testDenormalizePaste() {
+    public function testDeserializePaste() {
 
-        $obj = TestResponseNormalizer::denormalizePaste(TestFixtures::getSamplePasteResponse()[0]);
+        $obj = TestResponseDeserializer::deserializePaste(TestFixtures::getSamplePasteResponse()[0]);
 
         $this->assertInstanceOf(Paste::class, $obj);
 
@@ -189,13 +189,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizePastesResponse() method.
+     * Tests the deserializePastesResponse() method.
      *
      * @return void
      */
-    public function testDenormalizePastesResponse() {
+    public function testDeserializePastesResponse() {
 
-        $obj = TestResponseNormalizer::denormalizePastesResponse(TestFixtures::SAMPLE_PASTE_RESPONSE);
+        $obj = TestResponseDeserializer::deserializePastesResponse(TestFixtures::SAMPLE_PASTE_RESPONSE);
 
         $this->assertInstanceOf(PastesResponse::class, $obj);
 
@@ -218,13 +218,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeRange() method.
+     * Tests the deserializeRange() method.
      *
      * @return void
      */
-    public function testDenormalizeRange() {
+    public function testDeserializeRange() {
 
-        $obj = TestResponseNormalizer::denormalizeRange("0018A45C4D1DEF81644B54AB7F969B88D65:1");
+        $obj = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65:1");
 
         $this->assertInstanceOf(Range::class, $obj);
 
@@ -234,13 +234,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeRangesResponse() method.
+     * Tests the deserializeRangesResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeRangeResponse() {
+    public function testDeserializeRangeResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeRangesResponse(TestFixtures::SAMPLE_RANGE_RESPONSE);
+        $obj = TestResponseDeserializer::deserializeRangesResponse(TestFixtures::SAMPLE_RANGE_RESPONSE);
 
         $this->assertInstanceOf(RangesResponse::class, $obj);
 
@@ -269,13 +269,13 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeRange() method.
+     * Tests the deserializeRange() method.
      *
      * @return void
      */
-    public function testDenormalizeRangeWithBadRawResponse() {
+    public function testDeserializeRangeWithBadRawResponse() {
 
-        $obj = TestResponseNormalizer::denormalizeRange("0018A45C4D1DEF81644B54AB7F969B88D65");
+        $obj = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65");
 
         $this->assertInstanceOf(Range::class, $obj);
 

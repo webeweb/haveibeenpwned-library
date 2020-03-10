@@ -15,8 +15,8 @@ use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
-use WBW\Library\HaveIBeenPwned\Normalizer\RequestNormalizer;
-use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
+use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 
 /**
  * API v1 provider.
@@ -36,11 +36,11 @@ class APIv1Provider extends AbstractProvider {
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
-        $queryData = RequestNormalizer::normalizeBreachesRequest($breachedAccountRequest);
+        $queryData = RequestSerializer::SerializeBreachesRequest($breachedAccountRequest);
 
         $rawResponse = $this->callAPI($breachedAccountRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeBreachesResponse($rawResponse);
+        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
 
     /**

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Normalizer;
+namespace WBW\Library\HaveIBeenPwned\Serializer;
 
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Core\Argument\Helper\StringHelper;
@@ -17,20 +17,20 @@ use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
 
 /**
- * Request normalizer.
+ * Request serializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Normalizer
+ * @package WBW\Library\HaveIBeenPwned\Serializer
  */
-class RequestNormalizer {
+class RequestSerializer {
 
     /**
-     * Normalize a breached account request.
+     * Serialize a breached account request.
      *
      * @param BreachedAccountRequest $request The breched account request.
      * @return array Returns the parameters.
      */
-    public static function normalizeBreachedAccountRequest(BreachedAccountRequest $request) {
+    public static function SerializeBreachedAccountRequest(BreachedAccountRequest $request) {
 
         $parameters = [];
 
@@ -42,12 +42,12 @@ class RequestNormalizer {
     }
 
     /**
-     * Normalize a breaches request.
+     * Serialize a breaches request.
      *
      * @param BreachesRequest $request The breaches request.
      * @return array Returns the parameters.
      */
-    public static function normalizeBreachesRequest(BreachesRequest $request) {
+    public static function SerializeBreachesRequest(BreachesRequest $request) {
 
         $parameters = [];
 

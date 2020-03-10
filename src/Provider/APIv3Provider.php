@@ -24,8 +24,8 @@ use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\RangesResponse;
-use WBW\Library\HaveIBeenPwned\Normalizer\RequestNormalizer;
-use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
+use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 
 /**
  * API v3 provider.
@@ -65,7 +65,7 @@ class APIv3Provider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($breachRequest, [], null, $this->getApiKey());
 
-        return ResponseNormalizer::denormalizeBreachesResponse($rawResponse);
+        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
 
     /**
@@ -78,11 +78,11 @@ class APIv3Provider extends AbstractProvider {
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
-        $queryData = RequestNormalizer::normalizeBreachesRequest($breachedAccountRequest);
+        $queryData = RequestSerializer::SerializeBreachesRequest($breachedAccountRequest);
 
         $rawResponse = $this->callAPI($breachedAccountRequest, $queryData, null, $this->getApiKey());
 
-        return ResponseNormalizer::denormalizeBreachesResponse($rawResponse);
+        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
 
     /**
@@ -95,11 +95,11 @@ class APIv3Provider extends AbstractProvider {
      */
     public function breaches(BreachesRequest $breachesRequest) {
 
-        $queryData = RequestNormalizer::normalizeBreachesRequest($breachesRequest);
+        $queryData = RequestSerializer::SerializeBreachesRequest($breachesRequest);
 
         $rawResponse = $this->callAPI($breachesRequest, $queryData, null, $this->getApiKey());
 
-        return ResponseNormalizer::denormalizeBreachesResponse($rawResponse);
+        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
 
     /**
@@ -114,7 +114,7 @@ class APIv3Provider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($dataClassesRequest, [], null, $this->getApiKey());
 
-        return ResponseNormalizer::denormalizeDataClassesResponse($rawResponse);
+        return ResponseDeserializer::deserializeDataClassesResponse($rawResponse);
     }
 
     /**
@@ -145,7 +145,7 @@ class APIv3Provider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($pasteAccountRequest, [], null, $this->getApiKey());
 
-        return ResponseNormalizer::denormalizePastesResponse($rawResponse);
+        return ResponseDeserializer::deserializePastesResponse($rawResponse);
     }
 
     /**
@@ -160,7 +160,7 @@ class APIv3Provider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($rangeRequest, [], "https://api.pwnedpasswords.com", $this->getApiKey());
 
-        return ResponseNormalizer::denormalizeRangesResponse($rawResponse);
+        return ResponseDeserializer::deserializeRangesResponse($rawResponse);
     }
 
     /**

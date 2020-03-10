@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures;
 
-use WBW\Library\HaveIBeenPwned\Normalizer\ResponseNormalizer;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 
 /**
  * Test fixtures.
@@ -112,7 +112,7 @@ EOT;
      * @return array Returns the sample breach response.
      */
     public static function getSampleBreachResponse() {
-        $cleanResponse = ResponseNormalizer::cleanResponse(self::SAMPLE_BREACH_RESPONSE);
+        $cleanResponse = ResponseDeserializer::cleanResponse(self::SAMPLE_BREACH_RESPONSE);
         return json_decode($cleanResponse, true);
     }
 

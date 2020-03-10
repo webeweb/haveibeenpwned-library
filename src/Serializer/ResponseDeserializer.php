@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Normalizer;
+namespace WBW\Library\HaveIBeenPwned\Serializer;
 
 use DateTime;
 use DateTimeZone;
@@ -25,12 +25,12 @@ use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Model\Response\RangesResponse;
 
 /**
- * Response normalizer.
+ * Response deserializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Normalizer
+ * @package WBW\Library\HaveIBeenPwned\Serializer
  */
-class ResponseNormalizer {
+class ResponseDeserializer {
 
     /**
      * Clean a raw response.
@@ -47,12 +47,12 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a breach.
+     * Deserialize a breach.
      *
      * @param array $rawResponse The raw response.
      * @return Breach Returns a breach.
      */
-    protected static function denormalizeBreach(array $rawResponse) {
+    protected static function deserializeBreach(array $rawResponse) {
 
         $addedDate    = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_ADDED, ArrayHelper::get($rawResponse, "AddedDate", ""), new DateTimeZone("UTC"));
         $breachDate   = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_BREACH, ArrayHelper::get($rawResponse, "BreachDate", ""), new DateTimeZone("UTC"));
@@ -73,19 +73,19 @@ class ResponseNormalizer {
         $model->setVerified(ArrayHelper::get($rawResponse, "IsVerified", false));
 
         foreach (ArrayHelper::get($rawResponse, "DataClasses", []) as $current) {
-            $model->addDataClass(static::denormalizeDataClass($current));
+            $model->addDataClass(static::deserializeDataClass($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a breaches response.
+     * Deserialize a breaches response.
      *
      * @param string $rawResponse The raw response.
      * @return BreachesResponse Returns the breaches response.
      */
-    public static function denormalizeBreachesResponse($rawResponse) {
+    public static function deserializeBreachesResponse($rawResponse) {
 
         $cleanedResponse = static::cleanResponse($rawResponse);
 
@@ -102,19 +102,19 @@ class ResponseNormalizer {
             if (true === is_string($current)) {
                 $current = ["Name" => $current];
             }
-            $model->addBreach(static::denormalizeBreach($current));
+            $model->addBreach(static::deserializeBreach($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a data class.
+     * Deserialize a data class.
      *
      * @param string $rawResponse The raw response.
      * @return DataClass Returns a data class.
      */
-    protected static function denormalizeDataClass($rawResponse) {
+    protected static function deserializeDataClass($rawResponse) {
 
         $model = new DataClass();
         $model->setName($rawResponse);
@@ -123,12 +123,12 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a data classes response.
+     * Deserialize a data classes response.
      *
      * @param string $rawResponse The raw response.
      * @return DataClassesResponse Returns the data classes response.
      */
-    public static function denormalizeDataClassesResponse($rawResponse) {
+    public static function deserializeDataClassesResponse($rawResponse) {
 
         $response = json_decode($rawResponse, true);
 
@@ -136,19 +136,19 @@ class ResponseNormalizer {
         $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
-            $model->addDataClass(static::denormalizeDataClass($current));
+            $model->addDataClass(static::deserializeDataClass($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a paste.
+     * Deserialize a paste.
      *
      * @param array $rawResponse The raw response.
      * @return Paste Returns the paste.
      */
-    protected static function denormalizePaste(array $rawResponse) {
+    protected static function deserializePaste(array $rawResponse) {
 
         $date = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));
 
@@ -163,12 +163,12 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a pastes response.
+     * Deserialize a pastes response.
      *
      * @param string $rawResponse The raw response.
      * @return PastesResponse Returns the pastes response.
      */
-    public static function denormalizePastesResponse($rawResponse) {
+    public static function deserializePastesResponse($rawResponse) {
 
         $cleanedResponse = static::cleanResponse($rawResponse);
 
@@ -178,19 +178,19 @@ class ResponseNormalizer {
         $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
-            $model->addPaste(static::denormalizePaste($current));
+            $model->addPaste(static::deserializePaste($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a range.
+     * Deserialize a range.
      *
      * @param string $rawResponse The raw response.
      * @return Range Returns a range.
      */
-    protected static function denormalizeRange($rawResponse) {
+    protected static function deserializeRange($rawResponse) {
 
         $response = explode(":", $rawResponse);
 
@@ -206,12 +206,12 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a ranges response.
+     * Deserialize a ranges response.
      *
      * @param string $rawResponse The raw response.
      * @return RangesResponse Returns the ranges response.
      */
-    public static function denormalizeRangesResponse($rawResponse) {
+    public static function deserializeRangesResponse($rawResponse) {
 
         $response = explode("\n", $rawResponse);
 
@@ -219,7 +219,7 @@ class ResponseNormalizer {
         $model->setRawResponse($rawResponse);
 
         foreach ($response as $current) {
-            $model->addRange(static::denormalizeRange($current));
+            $model->addRange(static::deserializeRange($current));
         }
 
         return $model;

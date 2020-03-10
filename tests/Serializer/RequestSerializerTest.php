@@ -9,27 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Normalizer;
+namespace WBW\Library\HaveIBeenPwned\Tests\Serializer;
 
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
-use WBW\Library\HaveIBeenPwned\Normalizer\RequestNormalizer;
+use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
- * Request normalizer test.
+ * Request serializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Normalizer
+ * @package WBW\Library\HaveIBeenPwned\Tests\Serializer
  */
-class RequestNormalizerTest extends AbstractTestCase {
+class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the normalizeBreachedAccountRequest() method.
+     * Tests the SerializeBreachedAccountRequest() method.
      *
      * @return void
      */
-    public function testNormalizeBreachedAccountRequest() {
+    public function testSerializeBreachedAccountRequest() {
 
         // Set a Breached account request mock.
         $arg = new BreachedAccountRequest();
@@ -42,49 +42,49 @@ class RequestNormalizerTest extends AbstractTestCase {
             "includeUnverified" => "true",
             "truncateResponse"  => "true",
         ];
-        $this->assertEquals($res, RequestNormalizer::normalizeBreachedAccountRequest($arg));
+        $this->assertEquals($res, RequestSerializer::SerializeBreachedAccountRequest($arg));
     }
 
     /**
-     * Tests the normalizeBreachedAccountRequest() method.
+     * Tests the SerializeBreachedAccountRequest() method.
      *
      * @return void
      */
-    public function testNormalizeBreachedAccountRequestWithoutArguments() {
+    public function testSerializeBreachedAccountRequestWithoutArguments() {
 
         // Set a Breached account request mock.
         $arg = new BreachedAccountRequest();
 
         $res = [];
-        $this->assertEquals($res, RequestNormalizer::normalizeBreachedAccountRequest($arg));
+        $this->assertEquals($res, RequestSerializer::SerializeBreachedAccountRequest($arg));
     }
 
     /**
-     * Tests the normalizeBreachesRequest() method.
+     * Tests the SerializeBreachesRequest() method.
      *
      * @return void
      */
-    public function testNormalizeBreachesRequest() {
+    public function testSerializeBreachesRequest() {
 
         // Set a Breach request mock.
         $arg = new BreachesRequest();
         $arg->setDomain("domain");
 
         $res = ["domain" => "domain"];
-        $this->assertEquals($res, RequestNormalizer::normalizeBreachesRequest($arg));
+        $this->assertEquals($res, RequestSerializer::SerializeBreachesRequest($arg));
     }
 
     /**
-     * Tests the normalizeBreachesRequest() method.
+     * Tests the SerializeBreachesRequest() method.
      *
      * @return void
      */
-    public function testNormalizeBreachesRequestWithoutArguments() {
+    public function testSerializeBreachesRequestWithoutArguments() {
 
         // Set a Breach request mock.
         $arg = new BreachesRequest();
 
         $res = [];
-        $this->assertEquals($res, RequestNormalizer::normalizeBreachesRequest($arg));
+        $this->assertEquals($res, RequestSerializer::SerializeBreachesRequest($arg));
     }
 }
