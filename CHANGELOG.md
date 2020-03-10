@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.3.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.3.0) (2020-03-10)
+
+- Rename Normalizer package
+
 ### [2.2.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.2.0) (2019-11-25)
 
 - Update dependencies
