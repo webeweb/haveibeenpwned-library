@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests
+
 ### [2.3.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.3.0) (2020-03-10)
 
 - Rename Normalizer package
