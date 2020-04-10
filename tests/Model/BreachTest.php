@@ -25,29 +25,6 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new Breach();
-
-        $this->assertNull($obj->getAddedDate());
-        $this->assertNull($obj->getBreachDate());
-        $this->assertEquals([], $obj->getDataClasses());
-        $this->assertNull($obj->getDomain());
-        $this->assertNull($obj->getAddedDate());
-        $this->assertNull($obj->getName());
-        $this->assertEquals(0, $obj->getPwnCount());
-        $this->assertFalse($obj->getRetired());
-        $this->assertFalse($obj->getSensitive());
-        $this->assertFalse($obj->getSpamList());
-        $this->assertNull($obj->getTitle());
-        $this->assertFalse($obj->getVerified());
-    }
-
-    /**
      * Tests the setAddedDate() method.
      *
      * @return void
@@ -210,5 +187,28 @@ class BreachTest extends AbstractTestCase {
 
         $obj->setVerified(true);
         $this->assertTrue($obj->getVerified());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new Breach();
+
+        $this->assertNull($obj->getAddedDate());
+        $this->assertNull($obj->getBreachDate());
+        $this->assertEquals([], $obj->getDataClasses());
+        $this->assertNull($obj->getDomain());
+        $this->assertNull($obj->getAddedDate());
+        $this->assertNull($obj->getName());
+        $this->assertEquals(0, $obj->getPwnCount());
+        $this->assertFalse($obj->getRetired());
+        $this->assertFalse($obj->getSensitive());
+        $this->assertFalse($obj->getSpamList());
+        $this->assertNull($obj->getTitle());
+        $this->assertFalse($obj->getVerified());
     }
 }

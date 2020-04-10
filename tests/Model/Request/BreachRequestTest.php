@@ -24,11 +24,24 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachRequestTest extends AbstractTestCase {
 
     /**
+     * Tests the getSubstituteValue() method.
+     *
+     * @return void
+     */
+    public function testGetSubstituteValue() {
+
+        $obj = new BreachRequest();
+
+        $obj->setName("name");
+        $this->assertEquals("name", $obj->getSubstituteValue());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/breach/{name}", BreachRequest::BREACH_RESOURCE_PATH);
 
@@ -40,18 +53,5 @@ class BreachRequestTest extends AbstractTestCase {
         $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
         $this->assertEquals("{name}", $obj->getSubstituteName());
         $this->assertNull($obj->getSubstituteValue());
-    }
-
-    /**
-     * Tests the getSubstituteValue() method.
-     *
-     * @return void
-     */
-    public function testGetSubstituteValue() {
-
-        $obj = new BreachRequest();
-
-        $obj->setName("name");
-        $this->assertEquals("name", $obj->getSubstituteValue());
     }
 }

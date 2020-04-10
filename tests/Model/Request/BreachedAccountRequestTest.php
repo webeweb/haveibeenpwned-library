@@ -24,28 +24,6 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachedAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/breachedaccount/{account}", BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH);
-
-        $obj = new BreachedAccountRequest();
-
-        $this->assertNull($obj->getAccount());
-        $this->assertNull($obj->getDomain());
-        $this->assertNull($obj->getIncludeUnverified());
-        $this->assertEquals(BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getTruncateResponse());
-
-        $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
-        $this->assertEquals("{account}", $obj->getSubstituteName());
-        $this->assertNull($obj->getSubstituteValue());
-    }
-
-    /**
      * Tests the getSubstituteValue() method.
      *
      * @return void
@@ -82,5 +60,27 @@ class BreachedAccountRequestTest extends AbstractTestCase {
 
         $obj->setTruncateResponse(true);
         $this->assertTrue($obj->getTruncateResponse());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/breachedaccount/{account}", BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH);
+
+        $obj = new BreachedAccountRequest();
+
+        $this->assertNull($obj->getAccount());
+        $this->assertNull($obj->getDomain());
+        $this->assertNull($obj->getIncludeUnverified());
+        $this->assertEquals(BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getTruncateResponse());
+
+        $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
+        $this->assertEquals("{account}", $obj->getSubstituteName());
+        $this->assertNull($obj->getSubstituteValue());
     }
 }

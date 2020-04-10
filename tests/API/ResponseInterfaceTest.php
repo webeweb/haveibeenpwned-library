@@ -27,7 +27,7 @@ class ResponseInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("Y-m-d\TH:i\Z", ResponseInterface::DATETIME_FORMAT_ADDED);
         $this->assertEquals("Y-m-d", ResponseInterface::DATETIME_FORMAT_BREACH);

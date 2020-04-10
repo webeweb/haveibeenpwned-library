@@ -27,7 +27,7 @@ class BreachesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/breaches", BreachesRequest::BREACHES_RESOURCE_PATH);
 

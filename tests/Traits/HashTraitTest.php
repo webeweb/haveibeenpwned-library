@@ -23,18 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestHashTrait;
 class HashTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestHashTrait();
-
-        $this->assertNull($obj->getHash());
-    }
-
-    /**
      * Tests the setHash() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class HashTraitTest extends AbstractTestCase {
 
         $obj->setHash("hash");
         $this->assertEquals("hash", $obj->getHash());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestHashTrait();
+
+        $this->assertNull($obj->getHash());
     }
 }

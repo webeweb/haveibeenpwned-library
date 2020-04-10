@@ -23,20 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("https://haveibeenpwned.com/api", TestProvider::ENDPOINT_PATH);
-
-        $obj = new TestProvider();
-
-        $this->assertFalse($obj->getDebug());
-    }
-
-    /**
      * Tests the setDebug() method.
      *
      * @return void
@@ -47,5 +33,19 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $obj->setDebug(true);
         $this->assertTrue($obj->getDebug());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("https://haveibeenpwned.com/api", TestProvider::ENDPOINT_PATH);
+
+        $obj = new TestProvider();
+
+        $this->assertFalse($obj->getDebug());
     }
 }

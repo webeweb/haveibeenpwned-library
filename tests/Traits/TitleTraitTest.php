@@ -23,18 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestTitleTrait;
 class TitleTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestTitleTrait();
-
-        $this->assertNull($obj->getTitle());
-    }
-
-    /**
      * Tests the setTitle() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class TitleTraitTest extends AbstractTestCase {
 
         $obj->setTitle("title");
         $this->assertEquals("title", $obj->getTitle());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestTitleTrait();
+
+        $this->assertNull($obj->getTitle());
     }
 }

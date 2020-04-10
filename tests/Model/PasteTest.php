@@ -25,22 +25,6 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class PasteTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new Paste();
-
-        $this->assertNull($obj->getDate());
-        $this->assertEquals(0, $obj->getEmailCount());
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getSource());
-        $this->assertNull($obj->getTitle());
-    }
-
-    /**
      * Tests the setDate() method.
      *
      * @return void
@@ -106,5 +90,21 @@ class PasteTest extends AbstractTestCase {
 
         $obj->setTitle("title");
         $this->assertEquals("title", $obj->getTitle());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new Paste();
+
+        $this->assertNull($obj->getDate());
+        $this->assertEquals(0, $obj->getEmailCount());
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getSource());
+        $this->assertNull($obj->getTitle());
     }
 }

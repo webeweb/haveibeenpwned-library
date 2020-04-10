@@ -59,18 +59,18 @@ class ResponseDeserializer {
         $modifiedDate = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_MODIFIED, ArrayHelper::get($rawResponse, "ModifiedDate", ""), new DateTimeZone("UTC"));
 
         $model = new Breach();
-        $model->setAddedDate(false !== $addedDate ? $addedDate : null);
-        $model->setBreachDate(false !== $breachDate ? $breachDate : null);
-        $model->setDescription(ArrayHelper::get($rawResponse, "Description"));
-        $model->setDomain(ArrayHelper::get($rawResponse, "Domain"));
-        $model->setModifiedDate(false !== $modifiedDate ? $modifiedDate : null);
         $model->setName(ArrayHelper::get($rawResponse, "Name"));
-        $model->setPwnCount(ArrayHelper::get($rawResponse, "PwnCount", 0));
-        $model->setRetired(ArrayHelper::get($rawResponse, "IsRetired", false));
-        $model->setSensitive(ArrayHelper::get($rawResponse, "IsSensitive", false));
-        $model->setSpamList(ArrayHelper::get($rawResponse, "IsSpamList", false));
         $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
+        $model->setDomain(ArrayHelper::get($rawResponse, "Domain"));
+        $model->setBreachDate(false !== $breachDate ? $breachDate : null);
+        $model->setAddedDate(false !== $addedDate ? $addedDate : null);
+        $model->setModifiedDate(false !== $modifiedDate ? $modifiedDate : null);
+        $model->setPwnCount(ArrayHelper::get($rawResponse, "PwnCount", 0));
+        $model->setDescription(ArrayHelper::get($rawResponse, "Description"));
         $model->setVerified(ArrayHelper::get($rawResponse, "IsVerified", false));
+        $model->setSensitive(ArrayHelper::get($rawResponse, "IsSensitive", false));
+        $model->setRetired(ArrayHelper::get($rawResponse, "IsRetired", false));
+        $model->setSpamList(ArrayHelper::get($rawResponse, "IsSpamList", false));
 
         foreach (ArrayHelper::get($rawResponse, "DataClasses", []) as $current) {
             $model->addDataClass(static::deserializeDataClass($current));
@@ -153,11 +153,11 @@ class ResponseDeserializer {
         $date = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));
 
         $model = new Paste();
+        $model->setSource(ArrayHelper::get($rawResponse, "Source"));
+        $model->setId(ArrayHelper::get($rawResponse, "Id"));
+        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
         $model->setDate(false !== $date ? $date : null);
         $model->setEmailCount(ArrayHelper::get($rawResponse, "EmailCount", 0));
-        $model->setId(ArrayHelper::get($rawResponse, "Id"));
-        $model->setSource(ArrayHelper::get($rawResponse, "Source"));
-        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
 
         return $model;
     }
@@ -199,8 +199,8 @@ class ResponseDeserializer {
         }
 
         $model = new Range();
-        $model->setCount(intval($response[1]));
         $model->setHash(trim($response[0]));
+        $model->setCount(intval($response[1]));
 
         return $model;
     }

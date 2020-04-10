@@ -63,18 +63,18 @@ class ResponseDeserializerTest extends AbstractTestCase {
 
         $this->assertInstanceOf(Breach::class, $obj);
 
+        $this->assertEquals("Adobe", $obj->getName());
+        $this->assertEquals("Adobe", $obj->getTitle());
+        $this->assertEquals("adobe.com", $obj->getDomain());
         $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
         $this->assertEquals("2013-10-04", $obj->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
         $this->assertCount(4, $obj->getDataClasses());
         $this->assertContains("In October 2013", $obj->getDescription());
-        $this->assertEquals("adobe.com", $obj->getDomain());
         $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
-        $this->assertEquals("Adobe", $obj->getName());
         $this->assertEquals(152445165, $obj->getPwnCount());
         $this->assertFalse($obj->getRetired());
         $this->assertFalse($obj->getSensitive());
         $this->assertFalse($obj->getSpamList());
-        $this->assertEquals("Adobe", $obj->getTitle());
         $this->assertTrue($obj->getVerified());
 
         for ($i = 0; $i < 4; ++$i) {
@@ -97,34 +97,34 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertCount(2, $res);
 
         $this->assertInstanceOf(Breach::class, $res[0]);
-        $this->assertEquals("2013-12-04T00:00Z", $res[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2013-10-04", $res[0]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertCount(4, $res[0]->getDataClasses());
-        $this->assertContains("In October 2013", $res[0]->getDescription());
-        $this->assertEquals("adobe.com", $res[0]->getDomain());
-        $this->assertEquals("2013-12-04T00:00Z", $res[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
         $this->assertEquals("Adobe", $res[0]->getName());
-        $this->assertEquals(152445165, $res[0]->getPwnCount());
-        $this->assertFalse($res[0]->getRetired());
-        $this->assertFalse($res[0]->getSensitive());
-        $this->assertFalse($res[0]->getSpamList());
         $this->assertEquals("Adobe", $res[0]->getTitle());
+        $this->assertEquals("adobe.com", $res[0]->getDomain());
+        $this->assertEquals("2013-10-04", $res[0]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertEquals("2013-12-04T00:00Z", $res[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2013-12-04T00:00Z", $res[0]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(152445165, $res[0]->getPwnCount());
+        $this->assertContains("In October 2013", $res[0]->getDescription());
+        $this->assertCount(4, $res[0]->getDataClasses());
         $this->assertTrue($res[0]->getVerified());
+        $this->assertFalse($res[0]->getSensitive());
+        $this->assertFalse($res[0]->getRetired());
+        $this->assertFalse($res[0]->getSpamList());
 
         $this->assertInstanceOf(Breach::class, $res[1]);
-        $this->assertEquals("2014-01-23T13:10Z", $res[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2011-06-26", $res[1]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertCount(2, $res[1]->getDataClasses());
-        $this->assertContains("In June 2011", $res[1]->getDescription());
-        $this->assertEquals("battlefieldheroes.com", $res[1]->getDomain());
-        $this->assertEquals("2014-01-23T13:10Z", $res[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
         $this->assertEquals("BattlefieldHeroes", $res[1]->getName());
-        $this->assertEquals(530270, $res[1]->getPwnCount());
-        $this->assertFalse($res[1]->getRetired());
-        $this->assertFalse($res[1]->getSensitive());
-        $this->assertFalse($res[1]->getSpamList());
         $this->assertEquals("Battlefield Heroes", $res[1]->getTitle());
+        $this->assertEquals("battlefieldheroes.com", $res[1]->getDomain());
+        $this->assertEquals("2011-06-26", $res[1]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertEquals("2014-01-23T13:10Z", $res[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2014-01-23T13:10Z", $res[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(530270, $res[1]->getPwnCount());
+        $this->assertContains("In June 2011", $res[1]->getDescription());
+        $this->assertCount(2, $res[1]->getDataClasses());
         $this->assertTrue($res[1]->getVerified());
+        $this->assertFalse($res[1]->getSensitive());
+        $this->assertFalse($res[1]->getRetired());
+        $this->assertFalse($res[1]->getSpamList());
     }
 
     /**
@@ -181,11 +181,11 @@ class ResponseDeserializerTest extends AbstractTestCase {
 
         $this->assertInstanceOf(Paste::class, $obj);
 
+        $this->assertEquals("Pastebin", $obj->getSource());
+        $this->assertEquals("8Q0BvKD8", $obj->getId());
+        $this->assertEquals("syslog", $obj->getTitle());
         $this->assertEquals("2014-03-04T19:14:54Z", $obj->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
         $this->assertEquals(139, $obj->getEmailCount());
-        $this->assertEquals("8Q0BvKD8", $obj->getId());
-        $this->assertEquals("Pastebin", $obj->getSource());
-        $this->assertEquals("syslog", $obj->getTitle());
     }
 
     /**
@@ -203,18 +203,18 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertCount(2, $res);
 
         $this->assertInstanceOf(Paste::class, $res[0]);
+        $this->assertEquals("Pastebin", $res[0]->getSource());
+        $this->assertEquals("8Q0BvKD8", $res[0]->getId());
+        $this->assertEquals("syslog", $res[0]->getTitle());
         $this->assertEquals("2014-03-04T19:14:54Z", $res[0]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
         $this->assertEquals(139, $res[0]->getEmailCount());
-        $this->assertEquals("8Q0BvKD8", $res[0]->getId());
-        $this->assertEquals("Pastebin", $res[0]->getSource());
-        $this->assertEquals("syslog", $res[0]->getTitle());
 
         $this->assertInstanceOf(Paste::class, $res[1]);
+        $this->assertEquals("Pastie", $res[1]->getSource());
+        $this->assertEquals("7152479", $res[1]->getId());
+        $this->assertNull($res[1]->getTitle());
         $this->assertEquals("2013-03-28T16:51:10Z", $res[1]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
         $this->assertEquals(30, $res[1]->getEmailCount());
-        $this->assertEquals("7152479", $res[1]->getId());
-        $this->assertEquals("Pastie", $res[1]->getSource());
-        $this->assertNull($res[1]->getTitle());
     }
 
     /**
@@ -228,8 +228,8 @@ class ResponseDeserializerTest extends AbstractTestCase {
 
         $this->assertInstanceOf(Range::class, $obj);
 
-        $this->assertEquals(1, $obj->getCount());
         $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $obj->getHash());
+        $this->assertEquals(1, $obj->getCount());
         $this->assertNull($obj->getPrefix());
     }
 

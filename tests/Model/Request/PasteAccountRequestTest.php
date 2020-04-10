@@ -24,11 +24,24 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class PasteAccountRequestTest extends AbstractTestCase {
 
     /**
+     * Tests the getSubstituteValue() method.
+     *
+     * @return void
+     */
+    public function testGetSubstituteValue() {
+
+        $obj = new PasteAccountRequest();
+
+        $obj->setAccount("account");
+        $this->assertEquals("account", $obj->getSubstituteValue());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/pasteaccount/{account}", PasteAccountRequest::PASTE_ACCOUNT_RESOURCE_PATH);
 
@@ -40,18 +53,5 @@ class PasteAccountRequestTest extends AbstractTestCase {
         $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
         $this->assertEquals("{account}", $obj->getSubstituteName());
         $this->assertNull($obj->getSubstituteValue());
-    }
-
-    /**
-     * Tests the getSubstituteValue() method.
-     *
-     * @return void
-     */
-    public function testGetSubstituteValue() {
-
-        $obj = new PasteAccountRequest();
-
-        $obj->setAccount("account");
-        $this->assertEquals("account", $obj->getSubstituteValue());
     }
 }

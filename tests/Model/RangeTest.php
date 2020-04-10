@@ -23,19 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RangeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new Range();
-
-        $this->assertEquals(0, $obj->getCount());
-        $this->assertNull($obj->getHash());
-    }
-
-    /**
      * Tests the setCount() method.
      *
      * @return void
@@ -59,5 +46,18 @@ class RangeTest extends AbstractTestCase {
 
         $obj->setPrefix("prefix");
         $this->assertEquals("prefix", $obj->getPrefix());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new Range();
+
+        $this->assertEquals(0, $obj->getCount());
+        $this->assertNull($obj->getHash());
     }
 }

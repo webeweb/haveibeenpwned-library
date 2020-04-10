@@ -23,18 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestNameTrait;
 class NameTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestNameTrait();
-
-        $this->assertNull($obj->getName());
-    }
-
-    /**
      * Tests the setName() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class NameTraitTest extends AbstractTestCase {
 
         $obj->setName("name");
         $this->assertEquals("name", $obj->getName());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestNameTrait();
+
+        $this->assertNull($obj->getName());
     }
 }

@@ -23,18 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestAccountTrait;
 class AccountTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestAccountTrait();
-
-        $this->assertNull($obj->getAccount());
-    }
-
-    /**
      * Tests the setAccount() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class AccountTraitTest extends AbstractTestCase {
 
         $obj->setAccount("account");
         $this->assertEquals("account", $obj->getAccount());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestAccountTrait();
+
+        $this->assertNull($obj->getAccount());
     }
 }

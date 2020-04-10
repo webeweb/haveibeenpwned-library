@@ -24,11 +24,24 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RangeRequestTest extends AbstractTestCase {
 
     /**
+     * Tests the getSubstituteValue() method.
+     *
+     * @return void
+     */
+    public function testGetSubstituteValue() {
+
+        $obj = new RangeRequest();
+
+        $obj->setHash("hash");
+        $this->assertEquals("hash", $obj->getSubstituteValue());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/range/{hash}", RangeRequest::RANGE_RESOURCE_PATH);
 
@@ -40,18 +53,5 @@ class RangeRequestTest extends AbstractTestCase {
         $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
         $this->assertEquals("{hash}", $obj->getSubstituteName());
         $this->assertNull($obj->getSubstituteValue());
-    }
-
-    /**
-     * Tests the getSubstituteValue() method.
-     *
-     * @return void
-     */
-    public function testGetSubstituteValue() {
-
-        $obj = new RangeRequest();
-
-        $obj->setHash("hash");
-        $this->assertEquals("hash", $obj->getSubstituteValue());
     }
 }

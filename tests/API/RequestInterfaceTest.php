@@ -27,7 +27,7 @@ class RequestInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals(1500, RequestInterface::RATE_LIMITING);
     }

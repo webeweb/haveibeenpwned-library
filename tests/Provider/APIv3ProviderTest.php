@@ -140,19 +140,6 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new APIv3Provider();
-
-        $this->assertEquals("/v3", $obj->getEndpointVersion());
-        $this->assertNull($obj->getApiKey());
-    }
-
-    /**
      * Tests the dataClasses() method.
      *
      * @return void
@@ -225,5 +212,18 @@ class APIv3ProviderTest extends AbstractTestCase {
 
         $obj->setApiKey("API KEY");
         $this->assertEquals("API KEY", $obj->getApiKey());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new APIv3Provider();
+
+        $this->assertEquals("/v3", $obj->getEndpointVersion());
+        $this->assertNull($obj->getApiKey());
     }
 }

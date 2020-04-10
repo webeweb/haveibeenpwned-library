@@ -23,18 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestDomainTrait;
 class DomainTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestDomainTrait();
-
-        $this->assertNull($obj->getDomain());
-    }
-
-    /**
      * Tests the setDomain() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class DomainTraitTest extends AbstractTestCase {
 
         $obj->setDomain("domain");
         $this->assertEquals("domain", $obj->getDomain());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestDomainTrait();
+
+        $this->assertNull($obj->getDomain());
     }
 }
