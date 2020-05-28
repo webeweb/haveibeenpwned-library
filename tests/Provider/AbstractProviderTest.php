@@ -15,7 +15,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestProvider;
 
 /**
- * Abstract API provider test.
+ * Abstract provider test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider

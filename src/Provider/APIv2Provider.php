@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use InvalidArgumentException;
-use WBW\Library\HaveIBeenPwned\Exception\APIException;
+use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
@@ -39,12 +39,12 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param BreachRequest $breachRequest The breach request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breach(BreachRequest $breachRequest) {
 
-        $rawResponse = $this->callAPI($breachRequest, []);
+        $rawResponse = $this->callApi($breachRequest, []);
 
         return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
@@ -54,14 +54,14 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
         $queryData = RequestSerializer::SerializeBreachesRequest($breachedAccountRequest);
 
-        $rawResponse = $this->callAPI($breachedAccountRequest, $queryData);
+        $rawResponse = $this->callApi($breachedAccountRequest, $queryData);
 
         return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
@@ -71,14 +71,14 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param BreachesRequest $breachesRequest The breaches request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breaches(BreachesRequest $breachesRequest) {
 
         $queryData = RequestSerializer::SerializeBreachesRequest($breachesRequest);
 
-        $rawResponse = $this->callAPI($breachesRequest, $queryData);
+        $rawResponse = $this->callApi($breachesRequest, $queryData);
 
         return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }
@@ -88,12 +88,12 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param DataClassesRequest $dataClassesRequest The data classes request.
      * @return DataClassesResponse Returns the data classes response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function dataClasses(DataClassesRequest $dataClassesRequest) {
 
-        $rawResponse = $this->callAPI($dataClassesRequest, []);
+        $rawResponse = $this->callApi($dataClassesRequest, []);
 
         return ResponseDeserializer::deserializeDataClassesResponse($rawResponse);
     }
@@ -110,13 +110,13 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param PasteAccountRequest $pasteAccountRequest The paste account request.
      * @return PastesResponse Returns the pastes response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @deprecated since 2.1.2 use "WBW\Library\HaveIBeenPwned\Provider\APIv3Provider" instead.
      */
     public function pasteAccount(PasteAccountRequest $pasteAccountRequest) {
 
-        $rawResponse = $this->callAPI($pasteAccountRequest, []);
+        $rawResponse = $this->callApi($pasteAccountRequest, []);
 
         return ResponseDeserializer::deserializePastesResponse($rawResponse);
     }
@@ -126,12 +126,12 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param RangeRequest $rangeRequest The range request.
      * @return RangesResponse Returns the ranges response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function range(RangeRequest $rangeRequest) {
 
-        $rawResponse = $this->callAPI($rangeRequest, [], "https://api.pwnedpasswords.com");
+        $rawResponse = $this->callApi($rangeRequest, [], "https://api.pwnedpasswords.com");
 
         return ResponseDeserializer::deserializeRangesResponse($rawResponse);
     }

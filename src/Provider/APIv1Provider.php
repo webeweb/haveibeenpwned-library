@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use InvalidArgumentException;
-use WBW\Library\HaveIBeenPwned\Exception\APIException;
+use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
@@ -31,14 +31,14 @@ class APIv1Provider extends AbstractProvider {
      *
      * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
         $queryData = RequestSerializer::SerializeBreachesRequest($breachedAccountRequest);
 
-        $rawResponse = $this->callAPI($breachedAccountRequest, $queryData);
+        $rawResponse = $this->callApi($breachedAccountRequest, $queryData);
 
         return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }

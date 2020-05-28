@@ -16,8 +16,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use WBW\Library\Core\Exception\ApiException;
+use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Exception\APIException;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
 
 /**
@@ -27,7 +28,7 @@ use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
  * @package WBW\Library\HaveIBeenPwned\Provider
  * @abstract
  */
-abstract class AbstractProvider {
+abstract class AbstractProvider extends BaseProvider {
 
     /**
      * Endpoint path.
@@ -37,27 +38,13 @@ abstract class AbstractProvider {
     const ENDPOINT_PATH = "https://haveibeenpwned.com/api";
 
     /**
-     * Debug.
-     *
-     * @var bool
-     */
-    private $debug;
-
-    /**
-     * Logger.
-     *
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
      * Constructor.
      *
      * @param LoggerInterface|null $logger The logger.
      */
     public function __construct(LoggerInterface $logger = null) {
+        parent::__construct($logger);
         $this->setDebug(false);
-        $this->setLogger($logger);
     }
 
     /**
@@ -107,17 +94,17 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Call the API.
+     * Call API.
      *
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @param string $endpointPath The endpoint path.
      * @param string $apiKey The API key.
      * @return string Returns the raw response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI(AbstractRequest $request, array $queryData, $endpointPath = null, $apiKey = null) {
+    protected function callApi(AbstractRequest $request, array $queryData, $endpointPath = null, $apiKey = null) {
 
         try {
 
@@ -147,17 +134,8 @@ abstract class AbstractProvider {
                 return "[]";
             }
 
-            throw new APIException("Call HaveIBeenPwned API failed", $ex);
+            throw new ApiException("Call HaveIBeenPwned API failed", 500, $ex);
         }
-    }
-
-    /**
-     * Get the debug.
-     *
-     * @return bool Returns the debug.
-     */
-    public function getDebug() {
-        return $this->debug;
     }
 
     /**
@@ -166,49 +144,4 @@ abstract class AbstractProvider {
      * @return string Returns the endpoint version.
      */
     abstract public function getEndpointVersion();
-
-    /**
-     * Get the logger.
-     *
-     * @return LoggerInterface Returns the logger.
-     */
-    public function getLogger() {
-        return $this->logger;
-    }
-
-    /**
-     * Log an info.
-     *
-     * @param string $message The message.
-     * @param array $context The context.
-     * @return AbstractProvider Returns this provider.
-     */
-    protected function logInfo($message, array $context) {
-        if (null !== $this->getLogger()) {
-            $this->getLogger()->info($message, $context);
-        }
-        return $this;
-    }
-
-    /**
-     * Set the debug.
-     *
-     * @param bool $debug The debug.
-     * @return AbstractProvider Returns this provider.
-     */
-    public function setDebug($debug) {
-        $this->debug = $debug;
-        return $this;
-    }
-
-    /**
-     * Set the logger.
-     *
-     * @param LoggerInterface|null $logger The logger
-     * @return AbstractProvider Returns this provider
-     */
-    protected function setLogger(LoggerInterface $logger = null) {
-        $this->logger = $logger;
-        return $this;
-    }
 }

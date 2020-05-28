@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
-use WBW\Library\HaveIBeenPwned\Exception\APIException;
+use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
@@ -82,7 +82,7 @@ class APIv2ProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertInstanceOf(ApiException::class, $ex);
         }
     }
 
@@ -107,7 +107,7 @@ class APIv2ProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertInstanceOf(ApiException::class, $ex);
         }
     }
 
@@ -178,7 +178,7 @@ class APIv2ProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(PastesResponse::class, $res);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(APIException::class, $ex);
+            $this->assertInstanceOf(ApiException::class, $ex);
             $this->assertEquals(401, $ex->getPrevious()->getCode());
         }
     }
