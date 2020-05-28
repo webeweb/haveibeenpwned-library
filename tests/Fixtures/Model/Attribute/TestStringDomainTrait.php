@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits;
+namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model\Attribute;
 
-use WBW\Library\HaveIBeenPwned\Traits\AccountTrait;
+use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
 
 /**
- * Test account trait.
+ * Test string domain trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits
+ * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model\Attribute
  */
-class TestAccountTrait {
+class TestStringDomainTrait {
 
-    use AccountTrait;
+    use StringDomainTrait;
 }

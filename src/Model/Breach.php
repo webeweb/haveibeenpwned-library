@@ -12,9 +12,9 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use WBW\Library\HaveIBeenPwned\Traits\DomainTrait;
-use WBW\Library\HaveIBeenPwned\Traits\NameTrait;
-use WBW\Library\HaveIBeenPwned\Traits\TitleTrait;
+use WBW\Library\Core\Model\Attribute\StringNameTrait;
+use WBW\Library\Core\Model\Attribute\StringTitleTrait;
+use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
 
 /**
  * Breach.
@@ -24,9 +24,9 @@ use WBW\Library\HaveIBeenPwned\Traits\TitleTrait;
  */
 class Breach {
 
-    use DomainTrait;
-    use NameTrait;
-    use TitleTrait;
+    use StringDomainTrait;
+    use StringNameTrait;
+    use StringTitleTrait;
 
     /**
      * Added date.

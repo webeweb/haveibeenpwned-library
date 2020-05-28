@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\StringNameTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
-use WBW\Library\HaveIBeenPwned\Traits\NameTrait;
 
 /**
  * Breach request.
@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Traits\NameTrait;
  */
 class BreachRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use NameTrait;
+    use StringNameTrait;
 
     /**
      * Breach resource path.

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Traits;
+namespace WBW\Library\HaveIBeenPwned\Tests\Model\Attribute;
 
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestDomainTrait;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model\Attribute\TestStringDomainTrait;
 
 /**
- * Domain trait test.
+ * String domain trait test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Traits
+ * @package WBW\Library\HaveIBeenPwned\Tests\Model\Attribute
  */
-class DomainTraitTest extends AbstractTestCase {
+class StringDomainTraitTest extends AbstractTestCase {
 
     /**
      * Tests the setDomain() method.
@@ -29,7 +29,7 @@ class DomainTraitTest extends AbstractTestCase {
      */
     public function testSetDomain() {
 
-        $obj = new TestDomainTrait();
+        $obj = new TestStringDomainTrait();
 
         $obj->setDomain("domain");
         $this->assertEquals("domain", $obj->getDomain());
@@ -42,7 +42,7 @@ class DomainTraitTest extends AbstractTestCase {
      */
     public function test__construct() {
 
-        $obj = new TestDomainTrait();
+        $obj = new TestStringDomainTrait();
 
         $this->assertNull($obj->getDomain());
     }

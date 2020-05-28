@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
-use WBW\Library\HaveIBeenPwned\Traits\NameTrait;
+use WBW\Library\Core\Model\Attribute\StringNameTrait;
 
 /**
  * Data class.
@@ -21,7 +21,7 @@ use WBW\Library\HaveIBeenPwned\Traits\NameTrait;
  */
 class DataClass {
 
-    use NameTrait;
+    use StringNameTrait;
 
     /**
      * Constructor.

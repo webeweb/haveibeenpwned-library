@@ -13,7 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Model\Request;
 
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
-use WBW\Library\HaveIBeenPwned\Traits\AccountTrait;
+use WBW\Library\HaveIBeenPwned\Model\Attribute\StringAccountTrait;
 
 /**
  * Paste account request.
@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Traits\AccountTrait;
  */
 class PasteAccountRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use AccountTrait;
+    use StringAccountTrait;
 
     /**
      * Paste account resource path.

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Traits;
+namespace WBW\Library\HaveIBeenPwned\Tests\Model\Attribute;
 
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Traits\TestAccountTrait;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model\Attribute\TestStringAccountTrait;
 
 /**
- * Account trait test.
+ * String account trait test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Traits
+ * @package WBW\Library\HaveIBeenPwned\Tests\Model\Attribute
  */
-class AccountTraitTest extends AbstractTestCase {
+class StringAccountTraitTest extends AbstractTestCase {
 
     /**
      * Tests the setAccount() method.
@@ -29,7 +29,7 @@ class AccountTraitTest extends AbstractTestCase {
      */
     public function testSetAccount() {
 
-        $obj = new TestAccountTrait();
+        $obj = new TestStringAccountTrait();
 
         $obj->setAccount("account");
         $this->assertEquals("account", $obj->getAccount());
@@ -42,7 +42,7 @@ class AccountTraitTest extends AbstractTestCase {
      */
     public function test__construct() {
 
-        $obj = new TestAccountTrait();
+        $obj = new TestStringAccountTrait();
 
         $this->assertNull($obj->getAccount());
     }

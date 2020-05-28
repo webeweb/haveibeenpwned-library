@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Traits;
+namespace WBW\Library\HaveIBeenPwned\Model\Attribute;
 
 /**
- * Domain trait.
+ * String domain trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Traits
+ * @package WBW\Library\HaveIBeenPwned\Model\Attribute
  */
-trait DomainTrait {
+trait StringDomainTrait {
 
     /**
      * Domain.

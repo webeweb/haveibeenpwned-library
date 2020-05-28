@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model\Request;
 
+use WBW\Library\Core\Model\Attribute\StringHashTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
-use WBW\Library\HaveIBeenPwned\Traits\HashTrait;
 
 /**
  * Range request.
@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Traits\HashTrait;
  */
 class RangeRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use HashTrait;
+    use StringHashTrait;
 
     /**
      * Range resource path.

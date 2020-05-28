@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Model\Request;
 
 use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
-use WBW\Library\HaveIBeenPwned\Traits\DomainTrait;
+use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
 
 /**
  * Breaches request.
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Traits\DomainTrait;
  */
 class BreachesRequest extends AbstractRequest {
 
-    use DomainTrait;
+    use StringDomainTrait;
 
     /**
      * Breaches resource path.

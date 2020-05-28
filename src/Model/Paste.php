@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use WBW\Library\HaveIBeenPwned\Traits\TitleTrait;
+use WBW\Library\Core\Model\Attribute\StringTitleTrait;
 
 /**
  * Paste.
@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Traits\TitleTrait;
  */
 class Paste {
 
-    use TitleTrait;
+    use StringTitleTrait;
 
     /**
      * Date.
