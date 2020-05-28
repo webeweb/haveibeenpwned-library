@@ -1,9 +1,11 @@
 CHANGELOG
 =========
 
-### master
+### [2.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.0) (2020-05-28)
 
 - Improve unit tests
+- Reorganize traits
+- Update dependencies
 
 ### [2.3.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.3.0) (2020-03-10)
 
