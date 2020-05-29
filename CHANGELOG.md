@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.4.2](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.2) (2020-05-29)
+
+-Code checkstyle
+
 ### [2.4.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.1) (2020-05-29)
 
 -Fix method names
