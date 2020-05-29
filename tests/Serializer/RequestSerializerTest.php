@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the SerializeBreachedAccountRequest() method.
+     * Tests the serializeBreachedAccountRequest() method.
      *
      * @return void
      */
@@ -42,11 +42,11 @@ class RequestSerializerTest extends AbstractTestCase {
             "includeUnverified" => "true",
             "truncateResponse"  => "true",
         ];
-        $this->assertEquals($res, RequestSerializer::SerializeBreachedAccountRequest($arg));
+        $this->assertEquals($res, RequestSerializer::serializeBreachedAccountRequest($arg));
     }
 
     /**
-     * Tests the SerializeBreachedAccountRequest() method.
+     * Tests the serializeBreachedAccountRequest() method.
      *
      * @return void
      */
@@ -56,11 +56,11 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new BreachedAccountRequest();
 
         $res = [];
-        $this->assertEquals($res, RequestSerializer::SerializeBreachedAccountRequest($arg));
+        $this->assertEquals($res, RequestSerializer::serializeBreachedAccountRequest($arg));
     }
 
     /**
-     * Tests the SerializeBreachesRequest() method.
+     * Tests the serializeBreachesRequest() method.
      *
      * @return void
      */
@@ -71,11 +71,11 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->setDomain("domain");
 
         $res = ["domain" => "domain"];
-        $this->assertEquals($res, RequestSerializer::SerializeBreachesRequest($arg));
+        $this->assertEquals($res, RequestSerializer::serializeBreachesRequest($arg));
     }
 
     /**
-     * Tests the SerializeBreachesRequest() method.
+     * Tests the serializeBreachesRequest() method.
      *
      * @return void
      */
@@ -85,6 +85,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new BreachesRequest();
 
         $res = [];
-        $this->assertEquals($res, RequestSerializer::SerializeBreachesRequest($arg));
+        $this->assertEquals($res, RequestSerializer::serializeBreachesRequest($arg));
     }
 }

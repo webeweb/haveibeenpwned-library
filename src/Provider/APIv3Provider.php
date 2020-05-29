@@ -78,7 +78,7 @@ class APIv3Provider extends AbstractProvider {
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
-        $queryData = RequestSerializer::SerializeBreachesRequest($breachedAccountRequest);
+        $queryData = RequestSerializer::serializeBreachesRequest($breachedAccountRequest);
 
         $rawResponse = $this->callApi($breachedAccountRequest, $queryData, null, $this->getApiKey());
 
@@ -95,7 +95,7 @@ class APIv3Provider extends AbstractProvider {
      */
     public function breaches(BreachesRequest $breachesRequest) {
 
-        $queryData = RequestSerializer::SerializeBreachesRequest($breachesRequest);
+        $queryData = RequestSerializer::serializeBreachesRequest($breachesRequest);
 
         $rawResponse = $this->callApi($breachesRequest, $queryData, null, $this->getApiKey());
 

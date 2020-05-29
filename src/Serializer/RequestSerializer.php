@@ -30,7 +30,7 @@ class RequestSerializer {
      * @param BreachedAccountRequest $request The breched account request.
      * @return array Returns the parameters.
      */
-    public static function SerializeBreachedAccountRequest(BreachedAccountRequest $request) {
+    public static function serializeBreachedAccountRequest(BreachedAccountRequest $request) {
 
         $parameters = [];
 
@@ -47,7 +47,7 @@ class RequestSerializer {
      * @param BreachesRequest $request The breaches request.
      * @return array Returns the parameters.
      */
-    public static function SerializeBreachesRequest(BreachesRequest $request) {
+    public static function serializeBreachesRequest(BreachesRequest $request) {
 
         $parameters = [];
 

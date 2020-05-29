@@ -36,7 +36,7 @@ class APIv1Provider extends AbstractProvider {
      */
     public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
 
-        $queryData = RequestSerializer::SerializeBreachesRequest($breachedAccountRequest);
+        $queryData = RequestSerializer::serializeBreachesRequest($breachedAccountRequest);
 
         $rawResponse = $this->callApi($breachedAccountRequest, $queryData);
 
