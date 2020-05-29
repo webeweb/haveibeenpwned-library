@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.4.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.1) (2020-05-29)
+
+-Fix method names
+
 ### [2.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.0) (2020-05-28)
 
 - Improve unit tests
