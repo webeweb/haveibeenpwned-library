@@ -29,16 +29,16 @@ class APIv1Provider extends AbstractProvider {
     /**
      * Breached account.
      *
-     * @param BreachedAccountRequest $breachedAccountRequest The breached account request.
+     * @param BreachedAccountRequest $request The breached account request.
      * @return BreachesResponse Returns the breaches response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breachedAccount(BreachedAccountRequest $breachedAccountRequest) {
+    public function breachedAccount(BreachedAccountRequest $request) {
 
-        $queryData = RequestSerializer::serializeBreachesRequest($breachedAccountRequest);
+        $queryData = RequestSerializer::serializeBreachesRequest($request);
 
-        $rawResponse = $this->callApi($breachedAccountRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
     }

@@ -27,32 +27,32 @@ class RequestSerializer {
     /**
      * Serialize a breached account request.
      *
-     * @param BreachedAccountRequest $request The breched account request.
-     * @return array Returns the parameters.
+     * @param BreachedAccountRequest $request The breached account request.
+     * @return array Returns the serialized breached account request.
      */
     public static function serializeBreachedAccountRequest(BreachedAccountRequest $request) {
 
-        $parameters = [];
+        $result = [];
 
-        ArrayHelper::set($parameters, "domain", $request->getDomain(), [null]);
-        ArrayHelper::set($parameters, "includeUnverified", StringHelper::parseBoolean($request->getIncludeUnverified()), ["false"]);
-        ArrayHelper::set($parameters, "truncateResponse", StringHelper::parseBoolean($request->getTruncateResponse()), ["false"]);
+        ArrayHelper::set($result, "domain", $request->getDomain(), [null]);
+        ArrayHelper::set($result, "includeUnverified", StringHelper::parseBoolean($request->getIncludeUnverified()), ["false"]);
+        ArrayHelper::set($result, "truncateResponse", StringHelper::parseBoolean($request->getTruncateResponse()), ["false"]);
 
-        return $parameters;
+        return $result;
     }
 
     /**
      * Serialize a breaches request.
      *
      * @param BreachesRequest $request The breaches request.
-     * @return array Returns the parameters.
+     * @return array Returns the serialized breaches request.
      */
     public static function serializeBreachesRequest(BreachesRequest $request) {
 
-        $parameters = [];
+        $result = [];
 
-        ArrayHelper::set($parameters, "domain", $request->getDomain(), [null]);
+        ArrayHelper::set($result, "domain", $request->getDomain(), [null]);
 
-        return $parameters;
+        return $result;
     }
 }
