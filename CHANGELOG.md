@@ -1,13 +1,17 @@
 CHANGELOG
 =========
 
+### [2.4.3](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.3) (2020-06-03)
+
+- Update documentation
+
 ### [2.4.2](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.2) (2020-05-29)
 
--Code checkstyle
+- Code checkstyle
 
 ### [2.4.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.1) (2020-05-29)
 
--Fix method names
+- Fix method names
 
 ### [2.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.0) (2020-05-28)
 
