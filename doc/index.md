@@ -32,7 +32,6 @@ $provider = new APIv3Provider("YOUR_API_KEY");
 Then you can use the provider in the same way as the version 2.
 
 Breach
----
 
 ```php
 // Create the API provider.
@@ -64,7 +63,6 @@ foreach($response->getBreaches() as $current) {
 ```
 
 Breached account
----
 
 ```php
 // Create the API provider.
@@ -83,7 +81,6 @@ $response = $provider->breachedAccount($model);
 ```
 
 Breaches
----
 
 ```php
 // Create the API provider.
@@ -101,7 +98,6 @@ $response = $provider->breaches($model);
 ```
 
 Data classes
----
 
 ```php
 // Create the API provider.
@@ -118,7 +114,6 @@ foreach($response->getDataClasses() as $current) {
 ```
 
 Paste account
----
 
 ```php
 // Create the API provider.
@@ -143,7 +138,6 @@ foreach($response->getPastes() as $current) {
 ```
 
 Range
----
 
 ```php
 // Create the API provider.
