@@ -27,7 +27,7 @@ class RangeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCount() {
+    public function testSetCount(): void {
 
         $obj = new Range();
 
@@ -40,7 +40,7 @@ class RangeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPrefix() {
+    public function testSetPrefix(): void {
 
         $obj = new Range();
 
@@ -53,7 +53,7 @@ class RangeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Range();
 

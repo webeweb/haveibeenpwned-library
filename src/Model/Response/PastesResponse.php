@@ -43,7 +43,7 @@ class PastesResponse extends AbstractResponse {
      * @param Paste $paste The paste.
      * @return PastesResponse Returns this pastes response.
      */
-    public function addPaste(Paste $paste) {
+    public function addPaste(Paste $paste): PastesResponse {
         $this->pastes[] = $paste;
         return $this;
     }
@@ -53,7 +53,7 @@ class PastesResponse extends AbstractResponse {
      *
      * @return Paste[] Returns the pastes.
      */
-    public function getPastes() {
+    public function getPastes(): array {
         return $this->pastes;
     }
 
@@ -63,7 +63,7 @@ class PastesResponse extends AbstractResponse {
      * @param Paste[] $pastes The pastes.
      * @return PastesResponse Returns this pastes response.
      */
-    protected function setPastes(array $pastes) {
+    protected function setPastes(array $pastes): PastesResponse {
         $this->pastes = $pastes;
         return $this;
     }

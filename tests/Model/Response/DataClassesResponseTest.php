@@ -28,7 +28,7 @@ class DataClassesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddDataClass() {
+    public function testAddDataClass(): void {
 
         // Set a Data class mock.
         $dataClass = new DataClass();
@@ -46,7 +46,7 @@ class DataClassesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataClassesResponse();
 

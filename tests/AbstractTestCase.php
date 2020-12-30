@@ -66,7 +66,7 @@ abstract class AbstractTestCase extends TestCase {
     /**
      * {inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a Breach mock.
@@ -98,7 +98,7 @@ abstract class AbstractTestCase extends TestCase {
      *
      * @return void
      */
-    protected function wait() {
+    protected function wait(): void {
         sleep(intval(RequestInterface::RATE_LIMITING * 4 / 1000));
     }
 }

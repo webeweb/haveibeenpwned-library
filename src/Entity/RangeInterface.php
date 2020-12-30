@@ -22,7 +22,7 @@ interface RangeInterface extends HaveIBeenPwnedEntityInterface {
     /**
      * Get the hash.
      *
-     * @return string Returns the hash.
+     * @return string|null Returns the hash.
      */
-    public function getHaveIBeenPwnedHash();
+    public function getHaveIBeenPwnedHash(): ?string;
 }

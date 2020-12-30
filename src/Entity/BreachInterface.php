@@ -22,7 +22,7 @@ interface BreachInterface extends HaveIBeenPwnedEntityInterface {
     /**
      * Get the name.
      *
-     * @return string Returns the name.
+     * @return string|null Returns the name.
      */
-    public function getHaveIBeenPwnedName();
+    public function getHaveIBeenPwnedName(): ?string;
 }

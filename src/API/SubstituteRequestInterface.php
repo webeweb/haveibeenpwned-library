@@ -24,12 +24,12 @@ interface SubstituteRequestInterface extends RequestInterface {
      *
      * @return string Returns the substitute name.
      */
-    public function getSubstituteName();
+    public function getSubstituteName(): string;
 
     /**
      * Get the substitute value.
      *
-     * @return string Returns the substitute value.
+     * @return mixed Returns the substitute value.
      */
     public function getSubstituteValue();
 }

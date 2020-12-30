@@ -28,7 +28,7 @@ class BreachesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddBreach() {
+    public function testAddBreach(): void {
 
         // Set a Breach mock.
         $breach = new Breach();
@@ -46,7 +46,7 @@ class BreachesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new BreachesResponse();
 

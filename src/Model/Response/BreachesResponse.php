@@ -43,7 +43,7 @@ class BreachesResponse extends AbstractResponse {
      * @param Breach $breach The breach.
      * @return BreachesResponse Returns this breaches response.
      */
-    public function addBreach(Breach $breach) {
+    public function addBreach(Breach $breach): BreachesResponse {
         $this->breaches[] = $breach;
         return $this;
     }
@@ -53,7 +53,7 @@ class BreachesResponse extends AbstractResponse {
      *
      * @return Breach[] Returns the breaches.
      */
-    public function getBreaches() {
+    public function getBreaches(): array {
         return $this->breaches;
     }
 
@@ -63,7 +63,7 @@ class BreachesResponse extends AbstractResponse {
      * @param Breach[] $breaches The breaches.
      * @return BreachesResponse Returns this breaches response.
      */
-    protected function setBreaches(array $breaches) {
+    protected function setBreaches(array $breaches): BreachesResponse {
         $this->breaches = $breaches;
         return $this;
     }

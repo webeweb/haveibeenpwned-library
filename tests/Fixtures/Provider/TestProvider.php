@@ -24,7 +24,7 @@ class TestProvider extends AbstractProvider {
     /**
      * {@inheritdoc}
      */
-    public function getEndpointVersion() {
+    public function getEndpointVersion(): string {
         return "";
     }
 }

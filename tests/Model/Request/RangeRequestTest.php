@@ -28,7 +28,7 @@ class RangeRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetSubstituteValue() {
+    public function testGetSubstituteValue(): void {
 
         $obj = new RangeRequest();
 
@@ -41,7 +41,7 @@ class RangeRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/range/{hash}", RangeRequest::RANGE_RESOURCE_PATH);
 

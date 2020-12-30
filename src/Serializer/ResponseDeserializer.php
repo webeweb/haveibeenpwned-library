@@ -38,7 +38,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return string Returns the cleaned raw response.
      */
-    public static function cleanResponse($rawResponse) {
+    public static function cleanResponse(string $rawResponse): string {
 
         $searches = [":True", ":False"];
         $replaces = [":true", ":false"];
@@ -52,7 +52,7 @@ class ResponseDeserializer {
      * @param array $rawResponse The raw response.
      * @return Breach Returns a breach.
      */
-    protected static function deserializeBreach(array $rawResponse) {
+    protected static function deserializeBreach(array $rawResponse): Breach {
 
         $addedDate    = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_ADDED, ArrayHelper::get($rawResponse, "AddedDate", ""), new DateTimeZone("UTC"));
         $breachDate   = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_BREACH, ArrayHelper::get($rawResponse, "BreachDate", ""), new DateTimeZone("UTC"));
@@ -85,7 +85,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return BreachesResponse Returns the breaches response.
      */
-    public static function deserializeBreachesResponse($rawResponse) {
+    public static function deserializeBreachesResponse(string $rawResponse): BreachesResponse {
 
         $cleanedResponse = static::cleanResponse($rawResponse);
 
@@ -114,7 +114,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return DataClass Returns a data class.
      */
-    protected static function deserializeDataClass($rawResponse) {
+    protected static function deserializeDataClass(string $rawResponse): DataClass {
 
         $model = new DataClass();
         $model->setName($rawResponse);
@@ -128,7 +128,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return DataClassesResponse Returns the data classes response.
      */
-    public static function deserializeDataClassesResponse($rawResponse) {
+    public static function deserializeDataClassesResponse(string $rawResponse): DataClassesResponse {
 
         $response = json_decode($rawResponse, true);
 
@@ -148,7 +148,7 @@ class ResponseDeserializer {
      * @param array $rawResponse The raw response.
      * @return Paste Returns the paste.
      */
-    protected static function deserializePaste(array $rawResponse) {
+    protected static function deserializePaste(array $rawResponse): Paste {
 
         $date = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));
 
@@ -168,7 +168,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return PastesResponse Returns the pastes response.
      */
-    public static function deserializePastesResponse($rawResponse) {
+    public static function deserializePastesResponse(string $rawResponse): PastesResponse {
 
         $cleanedResponse = static::cleanResponse($rawResponse);
 
@@ -190,7 +190,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return Range Returns a range.
      */
-    protected static function deserializeRange($rawResponse) {
+    protected static function deserializeRange(string $rawResponse): Range {
 
         $response = explode(":", $rawResponse);
 
@@ -211,7 +211,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return RangesResponse Returns the ranges response.
      */
-    public static function deserializeRangesResponse($rawResponse) {
+    public static function deserializeRangesResponse(string $rawResponse): RangesResponse {
 
         $response = explode("\n", $rawResponse);
 

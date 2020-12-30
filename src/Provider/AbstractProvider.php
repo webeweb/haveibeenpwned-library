@@ -54,7 +54,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $apiKey The API key.
      * @return array Returns the configuration.
      */
-    private function buildConfiguration($host, $apiKey = null) {
+    private function buildConfiguration(string $host, $apiKey = null): array {
 
         $config = [
             "base_uri"    => $host . "/",
@@ -80,7 +80,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @return string Returns the resource path.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    private function buildResourcePath(AbstractRequest $request) {
+    private function buildResourcePath(AbstractRequest $request): string {
 
         if (false === ($request instanceof SubstituteRequestInterface)) {
             return $request->getResourcePath();
@@ -98,13 +98,13 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
-     * @param string $endpointPath The endpoint path.
-     * @param string $apiKey The API key.
+     * @param string|null $endpointPath The endpoint path.
+     * @param string|null $apiKey The API key.
      * @return string Returns the raw response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callApi(AbstractRequest $request, array $queryData, $endpointPath = null, $apiKey = null) {
+    protected function callApi(AbstractRequest $request, array $queryData, string $endpointPath = null, string $apiKey = null): string {
 
         try {
 
@@ -143,5 +143,5 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @return string Returns the endpoint version.
      */
-    abstract public function getEndpointVersion();
+    abstract public function getEndpointVersion(): string;
 }

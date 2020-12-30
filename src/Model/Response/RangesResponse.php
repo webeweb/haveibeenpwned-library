@@ -43,7 +43,7 @@ class RangesResponse extends AbstractResponse {
      * @param Range $range The range.
      * @return RangesResponse Returns this ranges response.
      */
-    public function addRange(Range $range) {
+    public function addRange(Range $range): RangesResponse {
         $this->ranges[] = $range;
         return $this;
     }
@@ -53,7 +53,7 @@ class RangesResponse extends AbstractResponse {
      *
      * @return Range[] Returns the ranges.
      */
-    public function getRanges() {
+    public function getRanges(): array {
         return $this->ranges;
     }
 
@@ -63,7 +63,7 @@ class RangesResponse extends AbstractResponse {
      * @param Range[] $ranges The ranges.
      * @return RangesResponse Returns this ranges response.
      */
-    protected function setRanges(array $ranges) {
+    protected function setRanges(array $ranges): RangesResponse {
         $this->ranges = $ranges;
         return $this;
     }

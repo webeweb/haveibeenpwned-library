@@ -31,7 +31,7 @@ class APIv1ProviderTest extends AbstractTestCase {
     /**
      * {inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         $this->wait();
@@ -42,7 +42,7 @@ class APIv1ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBreachedAccount() {
+    public function testBreachedAccount(): void {
 
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
@@ -69,7 +69,7 @@ class APIv1ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBreachedAccountWithInvalidArgumentException() {
+    public function testBreachedAccountWithInvalidArgumentException(): void {
 
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
@@ -91,7 +91,7 @@ class APIv1ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetEndpointVersion() {
+    public function testGetEndpointVersion(): void {
 
         $obj = new APIv1Provider();
 

@@ -34,7 +34,7 @@ class APIv1Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breachedAccount(BreachedAccountRequest $request) {
+    public function breachedAccount(BreachedAccountRequest $request): BreachesResponse {
 
         $queryData = RequestSerializer::serializeBreachesRequest($request);
 
@@ -46,7 +46,7 @@ class APIv1Provider extends AbstractProvider {
     /**
      * {@inheritdoc}
      */
-    public function getEndpointVersion() {
+    public function getEndpointVersion(): string {
         return "";
     }
 }

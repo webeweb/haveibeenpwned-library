@@ -22,28 +22,28 @@ interface BreachedAccountInterface extends HaveIBeenPwnedEntityInterface {
     /**
      * Get the account.
      *
-     * @return string Returns the account.
+     * @return string|null Returns the account.
      */
-    public function getHaveIBeenPwnedAccount();
+    public function getHaveIBeenPwnedAccount(): ?string;
 
     /**
      * Get the domain.
      *
-     * @return string Returns teh domain.
+     * @return string|null Returns teh domain.
      */
-    public function getHaveIBeenPwnedDomain();
+    public function getHaveIBeenPwnedDomain(): ?string;
 
     /**
      * Get the include unverified.
      *
-     * @return bool Returns the include unverified.
+     * @return bool|null Returns the include unverified.
      */
-    public function getHaveIBeenPwnedIncludeUnverified();
+    public function getHaveIBeenPwnedIncludeUnverified(): ?bool;
 
     /**
      * Get the truncate response.
      *
-     * @return bool Returns the truncate response.
+     * @return bool|null Returns the truncate response.
      */
-    public function getHaveIBeenPwnedTruncateResponse();
+    public function getHaveIBeenPwnedTruncateResponse(): ?bool;
 }

@@ -38,7 +38,7 @@ class APIv3Provider extends AbstractProvider {
     /**
      * API key.
      *
-     * @var string
+     * @var string|null
      */
     private $apiKey;
 
@@ -48,7 +48,7 @@ class APIv3Provider extends AbstractProvider {
      * @param string|null $apiKey The API key.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct($apiKey = null, LoggerInterface $logger = null) {
+    public function __construct(string $apiKey = null, LoggerInterface $logger = null) {
         parent::__construct($logger);
         $this->setApiKey($apiKey);
     }
@@ -61,7 +61,7 @@ class APIv3Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breach(BreachRequest $request) {
+    public function breach(BreachRequest $request): BreachesResponse {
 
         $rawResponse = $this->callApi($request, [], null, $this->getApiKey());
 
@@ -76,7 +76,7 @@ class APIv3Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breachedAccount(BreachedAccountRequest $request) {
+    public function breachedAccount(BreachedAccountRequest $request): BreachesResponse {
 
         $queryData = RequestSerializer::serializeBreachesRequest($request);
 
@@ -93,7 +93,7 @@ class APIv3Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breaches(BreachesRequest $request) {
+    public function breaches(BreachesRequest $request): BreachesResponse {
 
         $queryData = RequestSerializer::serializeBreachesRequest($request);
 
@@ -110,7 +110,7 @@ class APIv3Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function dataClasses(DataClassesRequest $request) {
+    public function dataClasses(DataClassesRequest $request): DataClassesResponse {
 
         $rawResponse = $this->callApi($request, [], null, $this->getApiKey());
 
@@ -120,16 +120,16 @@ class APIv3Provider extends AbstractProvider {
     /**
      * Get the API key.
      *
-     * @return string Returns API key.
+     * @return string|null Returns API key.
      */
-    public function getApiKey() {
+    public function getApiKey(): ?string {
         return $this->apiKey;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getEndpointVersion() {
+    public function getEndpointVersion(): string {
         return "/v3";
     }
 
@@ -141,7 +141,7 @@ class APIv3Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function pasteAccount(PasteAccountRequest $request) {
+    public function pasteAccount(PasteAccountRequest $request): PastesResponse {
 
         $rawResponse = $this->callApi($request, [], null, $this->getApiKey());
 
@@ -156,7 +156,7 @@ class APIv3Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function range(RangeRequest $request) {
+    public function range(RangeRequest $request): RangesResponse {
 
         $rawResponse = $this->callApi($request, [], "https://api.pwnedpasswords.com", $this->getApiKey());
 
@@ -166,10 +166,10 @@ class APIv3Provider extends AbstractProvider {
     /**
      * Set the API key.
      *
-     * @param string $apiKey The API key.
+     * @param string|null $apiKey The API key.
      * @return APIv3Provider Returns this API v3 provider.
      */
-    public function setApiKey($apiKey) {
+    public function setApiKey(?string $apiKey): APIv3Provider {
         $this->apiKey = $apiKey;
         return $this;
     }

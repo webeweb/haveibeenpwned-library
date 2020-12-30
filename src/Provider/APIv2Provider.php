@@ -42,7 +42,7 @@ class APIv2Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breach(BreachRequest $request) {
+    public function breach(BreachRequest $request): BreachesResponse {
 
         $rawResponse = $this->callApi($request, []);
 
@@ -57,7 +57,7 @@ class APIv2Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breachedAccount(BreachedAccountRequest $request) {
+    public function breachedAccount(BreachedAccountRequest $request): BreachesResponse {
 
         $queryData = RequestSerializer::serializeBreachesRequest($request);
 
@@ -74,7 +74,7 @@ class APIv2Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function breaches(BreachesRequest $request) {
+    public function breaches(BreachesRequest $request): BreachesResponse {
 
         $queryData = RequestSerializer::serializeBreachesRequest($request);
 
@@ -91,7 +91,7 @@ class APIv2Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function dataClasses(DataClassesRequest $request) {
+    public function dataClasses(DataClassesRequest $request): DataClassesResponse {
 
         $rawResponse = $this->callApi($request, []);
 
@@ -101,7 +101,7 @@ class APIv2Provider extends AbstractProvider {
     /**
      * {@inheritdoc}
      */
-    public function getEndpointVersion() {
+    public function getEndpointVersion(): string {
         return "/v2";
     }
 
@@ -114,7 +114,7 @@ class APIv2Provider extends AbstractProvider {
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @deprecated since 2.1.2 use "WBW\Library\HaveIBeenPwned\Provider\APIv3Provider" instead.
      */
-    public function pasteAccount(PasteAccountRequest $request) {
+    public function pasteAccount(PasteAccountRequest $request): PastesResponse {
 
         $rawResponse = $this->callApi($request, []);
 
@@ -129,7 +129,7 @@ class APIv2Provider extends AbstractProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function range(RangeRequest $request) {
+    public function range(RangeRequest $request): RangesResponse {
 
         $rawResponse = $this->callApi($request, [], "https://api.pwnedpasswords.com");
 

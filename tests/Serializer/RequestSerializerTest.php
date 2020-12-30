@@ -29,7 +29,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeBreachedAccountRequest() {
+    public function testSerializeBreachedAccountRequest(): void {
 
         // Set a Breached account request mock.
         $arg = new BreachedAccountRequest();
@@ -48,7 +48,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeBreachedAccountRequestWithoutArguments() {
+    public function testSerializeBreachedAccountRequestWithoutArguments(): void {
 
         // Set a Breached account request mock.
         $arg = new BreachedAccountRequest();
@@ -62,7 +62,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeBreachesRequest() {
+    public function testSerializeBreachesRequest(): void {
 
         // Set a Breach request mock.
         $arg = new BreachesRequest();
@@ -77,7 +77,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeBreachesRequestWithoutArguments() {
+    public function testSerializeBreachesRequestWithoutArguments(): void {
 
         // Set a Breach request mock.
         $arg = new BreachesRequest();

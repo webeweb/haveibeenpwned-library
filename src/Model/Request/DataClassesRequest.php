@@ -31,7 +31,7 @@ class DataClassesRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::DATA_CLASSES_RESOURCE_PATH;
     }
 }

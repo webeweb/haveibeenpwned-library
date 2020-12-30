@@ -28,7 +28,7 @@ class RangesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddRange() {
+    public function testAddRange(): void {
 
         // Set a Range mock.
         $range = new Range();
@@ -46,7 +46,7 @@ class RangesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new RangesResponse();
 

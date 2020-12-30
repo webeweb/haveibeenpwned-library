@@ -11,6 +11,10 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Serializer;
 
+use WBW\Library\HaveIBeenPwned\Model\Breach;
+use WBW\Library\HaveIBeenPwned\Model\DataClass;
+use WBW\Library\HaveIBeenPwned\Model\Paste;
+use WBW\Library\HaveIBeenPwned\Model\Range;
 use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 
 /**
@@ -24,28 +28,28 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritdoc}
      */
-    public static function deserializeBreach(array $rawResponse) {
+    public static function deserializeBreach(array $rawResponse): Breach {
         return parent::deserializeBreach($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeDataClass($rawResponse) {
+    public static function deserializeDataClass(string $rawResponse): DataClass {
         return parent::deserializeDataClass($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializePaste(array $rawResponse) {
+    public static function deserializePaste(array $rawResponse): Paste {
         return parent::deserializePaste($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeRange($rawResponse) {
+    public static function deserializeRange(string $rawResponse): Range {
         return parent::deserializeRange($rawResponse);
     }
 }

@@ -22,7 +22,7 @@ interface PasteAccountInterface extends HaveIBeenPwnedEntityInterface {
     /**
      * Get the account.
      *
-     * @return string Returns the account.
+     * @return string|null Returns the account.
      */
-    public function getHaveIBeenPwnedAccount();
+    public function getHaveIBeenPwnedAccount(): ?string;
 }

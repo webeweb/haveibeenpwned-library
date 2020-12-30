@@ -28,7 +28,7 @@ class PastesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddPaste() {
+    public function testAddPaste(): void {
 
         // Set a Paste mock.
         $paste = new Paste();
@@ -46,7 +46,7 @@ class PastesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new PastesResponse();
 

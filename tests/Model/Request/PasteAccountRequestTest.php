@@ -28,7 +28,7 @@ class PasteAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetSubstituteValue() {
+    public function testGetSubstituteValue(): void {
 
         $obj = new PasteAccountRequest();
 
@@ -41,7 +41,7 @@ class PasteAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/pasteaccount/{account}", PasteAccountRequest::PASTE_ACCOUNT_RESOURCE_PATH);
 

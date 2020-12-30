@@ -24,7 +24,7 @@ class TestRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return "";
     }
 }

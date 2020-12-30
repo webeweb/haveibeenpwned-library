@@ -26,14 +26,14 @@ class Range {
     /**
      * Count.
      *
-     * @var int
+     * @var int|null
      */
     private $count;
 
     /**
      * Prefix
      *
-     * @var string
+     * @var string|null
      */
     private $prefix;
 
@@ -47,28 +47,28 @@ class Range {
     /**
      * Get the count.
      *
-     * @return int Returns the count.
+     * @return int|null Returns the count.
      */
-    public function getCount() {
+    public function getCount(): ?int {
         return $this->count;
     }
 
     /**
      * Get the prefix.
      *
-     * @return string Returns the prefix.
+     * @return string|null Returns the prefix.
      */
-    public function getPrefix() {
+    public function getPrefix(): ?string {
         return $this->prefix;
     }
 
     /**
      * Set the count.
      *
-     * @param int $count The count.
+     * @param int|null $count The count.
      * @return Range Returns this range.
      */
-    public function setCount($count) {
+    public function setCount(?int $count): Range {
         $this->count = $count;
         return $this;
     }
@@ -76,10 +76,10 @@ class Range {
     /**
      * Set the prefix.
      *
-     * @param string $prefix The prefix.
+     * @param string|null $prefix The prefix.
      * @return Range Returns this range.
      */
-    public function setPrefix($prefix) {
+    public function setPrefix(?string $prefix): Range {
         $this->prefix = $prefix;
         return $this;
     }

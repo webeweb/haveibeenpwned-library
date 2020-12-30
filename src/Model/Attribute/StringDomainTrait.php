@@ -22,25 +22,25 @@ trait StringDomainTrait {
     /**
      * Domain.
      *
-     * @var string
+     * @var string|null
      */
     private $domain;
 
     /**
      * Get the domain.
      *
-     * @return string Returns teh domain.
+     * @return string|null Returns teh domain.
      */
-    public function getDomain() {
+    public function getDomain(): ?string {
         return $this->domain;
     }
 
     /**
      * Set the domain.
      *
-     * @param string $domain The domain.
+     * @param string|null $domain The domain.
      */
-    public function setDomain($domain) {
+    public function setDomain(?string $domain): self {
         $this->domain = $domain;
         return $this;
     }

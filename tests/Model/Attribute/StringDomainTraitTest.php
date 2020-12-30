@@ -27,7 +27,7 @@ class StringDomainTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDomain() {
+    public function testSetDomain(): void {
 
         $obj = new TestStringDomainTrait();
 
@@ -40,7 +40,7 @@ class StringDomainTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringDomainTrait();
 

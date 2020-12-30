@@ -30,7 +30,7 @@ class BreachTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetAddedDate() {
+    public function testSetAddedDate(): void {
 
         $obj = new Breach();
 
@@ -46,7 +46,7 @@ class BreachTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetBreachDate() {
+    public function testSetBreachDate(): void {
 
         $obj = new Breach();
 
@@ -61,7 +61,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDataClasses() {
+    public function testSetDataClasses(): void {
 
         $obj = new Breach();
 
@@ -74,7 +74,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDescription() {
+    public function testSetDescription(): void {
 
         $obj = new Breach();
 
@@ -87,7 +87,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFabricated() {
+    public function testSetFabricated(): void {
 
         $obj = new Breach();
 
@@ -101,7 +101,7 @@ class BreachTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetModifiedDate() {
+    public function testSetModifiedDate(): void {
 
         $obj = new Breach();
 
@@ -116,7 +116,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPwnCount() {
+    public function testSetPwnCount(): void {
 
         $obj = new Breach();
 
@@ -129,7 +129,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRetired() {
+    public function testSetRetired(): void {
 
         $obj = new Breach();
 
@@ -142,7 +142,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSensitive() {
+    public function testSetSensitive(): void {
 
         $obj = new Breach();
 
@@ -155,7 +155,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSpamList() {
+    public function testSetSpamList(): void {
 
         $obj = new Breach();
 
@@ -168,7 +168,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTitle() {
+    public function testSetTitle(): void {
 
         $obj = new Breach();
 
@@ -181,7 +181,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVerified() {
+    public function testSetVerified(): void {
 
         $obj = new Breach();
 
@@ -194,7 +194,7 @@ class BreachTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Breach();
 

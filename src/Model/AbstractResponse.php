@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
+use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
 use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
 
 /**
@@ -22,37 +23,12 @@ use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
  */
 abstract class AbstractResponse implements ResponseInterface {
 
-    /**
-     * Raw response.
-     *
-     * @var string
-     */
-    private $rawResponse;
+    use StringRawResponseTrait;
 
     /**
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
-    }
-
-    /**
-     * Get the raw response.
-     *
-     * @return string Returns the raw response.
-     */
-    public function getRawResponse() {
-        return $this->rawResponse;
-    }
-
-    /**
-     * Set the raw response.
-     *
-     * @param string $rawResponse The raw response.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setRawResponse($rawResponse) {
-        $this->rawResponse = $rawResponse;
-        return $this;
+        // NOTHING TO DO
     }
 }

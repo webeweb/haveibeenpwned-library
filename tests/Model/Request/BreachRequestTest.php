@@ -28,7 +28,7 @@ class BreachRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetSubstituteValue() {
+    public function testGetSubstituteValue(): void {
 
         $obj = new BreachRequest();
 
@@ -41,7 +41,7 @@ class BreachRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/breach/{name}", BreachRequest::BREACH_RESOURCE_PATH);
 

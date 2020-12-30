@@ -37,7 +37,7 @@ class RequestFactory {
      * @param BreachInterface $breach The breaches.
      * @return BreachRequest Returns the breach request.
      */
-    public static function newBreachRequest(BreachInterface $breach) {
+    public static function newBreachRequest(BreachInterface $breach): BreachRequest {
 
         $model = new BreachRequest();
         $model->setName($breach->getHaveIBeenPwnedName());
@@ -51,7 +51,7 @@ class RequestFactory {
      * @param BreachedAccountInterface $breachedAccount The breached account.
      * @return BreachedAccountRequest Returns the breached account request.
      */
-    public static function newBreachedAccountRequest(BreachedAccountInterface $breachedAccount) {
+    public static function newBreachedAccountRequest(BreachedAccountInterface $breachedAccount): BreachedAccountRequest {
 
         $model = new BreachedAccountRequest();
         $model->setAccount($breachedAccount->getHaveIBeenPwnedAccount());
@@ -68,7 +68,7 @@ class RequestFactory {
      * @param BreachesInterface $breaches The breaches.
      * @return BreachesRequest Returns the breaches request.
      */
-    public static function newBreachesRequest(BreachesInterface $breaches) {
+    public static function newBreachesRequest(BreachesInterface $breaches): BreachesRequest {
 
         $model = new BreachesRequest();
         $model->setDomain($breaches->getHaveIBeenPwnedDomain());
@@ -81,7 +81,7 @@ class RequestFactory {
      *
      * @return DataClassesRequest Returns the data classes request.
      */
-    public static function newDataClassesRequest() {
+    public static function newDataClassesRequest(): DataClassesRequest {
         return new DataClassesRequest();
     }
 
@@ -91,7 +91,7 @@ class RequestFactory {
      * @param PasteAccountInterface $pasteAccount The paste account.
      * @return PasteAccountRequest Returns the paste account request.
      */
-    public static function newPasteAccountRequest(PasteAccountInterface $pasteAccount) {
+    public static function newPasteAccountRequest(PasteAccountInterface $pasteAccount): PasteAccountRequest{
 
         $model = new PasteAccountRequest();
         $model->setAccount($pasteAccount->getHaveIBeenPwnedAccount());
@@ -105,7 +105,7 @@ class RequestFactory {
      * @param RangeInterface $range The range.
      * @return RangeRequest Returns the range request.
      */
-    public static function newRangeRequest(RangeInterface $range) {
+    public static function newRangeRequest(RangeInterface $range): RangeRequest {
 
         $model = new RangeRequest();
         $model->setHash($range->getHaveIBeenPwnedHash());

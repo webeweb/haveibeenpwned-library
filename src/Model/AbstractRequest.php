@@ -24,7 +24,7 @@ abstract class AbstractRequest {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
@@ -32,5 +32,5 @@ abstract class AbstractRequest {
      *
      * @return string Returns the resource path.
      */
-    abstract public function getResourcePath();
+    abstract public function getResourcePath(): string;
 }

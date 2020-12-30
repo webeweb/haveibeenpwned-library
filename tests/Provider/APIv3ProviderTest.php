@@ -44,7 +44,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     /**
      * {inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set an API key mock.
@@ -59,7 +59,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreach() {
+    public function testBreach(): void {
 
         // Set a Breach request mock.
         $breachRequest = new BreachRequest();
@@ -76,7 +76,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBreachedAccount() {
+    public function testBreachedAccount(): void {
 
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
@@ -101,7 +101,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBreachedAccountWith404() {
+    public function testBreachedAccountWith404(): void {
 
         // Set a Breached account request mock.
         $breachedAccountRequest = new BreachedAccountRequest();
@@ -127,7 +127,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testBreaches() {
+    public function testBreaches(): void {
 
         // Set a Breaches request mock.
         $breachesRequest = new BreachesRequest();
@@ -145,7 +145,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testDataClasses() {
+    public function testDataClasses(): void {
 
         // Set a Data classes request mock.
         $dataClassesRequest = new DataClassesRequest();
@@ -162,7 +162,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testPasteAccount() {
+    public function testPasteAccount(): void {
 
         // Set a Paste account request mock.
         $pasteAccountRequest = new PasteAccountRequest();
@@ -187,7 +187,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRange() {
+    public function testRange(): void {
 
         // Set a Range request mock.
         $rangeRequest = new RangeRequest();
@@ -204,7 +204,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetApiKey() {
+    public function testSetApiKey(): void {
 
         $obj = new APIv3Provider($this->apiKey);
 
@@ -219,7 +219,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new APIv3Provider();
 

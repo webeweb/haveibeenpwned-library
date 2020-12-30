@@ -43,7 +43,7 @@ class DataClassesResponse extends AbstractResponse {
      * @param DataClass $dataClass The data class.
      * @return DataClassesResponse Returns this data classes response.
      */
-    public function addDataClass(DataClass $dataClass) {
+    public function addDataClass(DataClass $dataClass): DataClassesResponse {
         $this->dataClasses[] = $dataClass;
         return $this;
     }
@@ -53,7 +53,7 @@ class DataClassesResponse extends AbstractResponse {
      *
      * @return DataClass[] Returns the data classes.
      */
-    public function getDataClasses() {
+    public function getDataClasses(): array {
         return $this->dataClasses;
     }
 
@@ -63,7 +63,7 @@ class DataClassesResponse extends AbstractResponse {
      * @param DataClass[] $dataClasses The data classes.
      * @return DataClassesResponse Returns this data classes response.
      */
-    protected function setDataClasses(array $dataClasses) {
+    protected function setDataClasses(array $dataClasses): DataClassesResponse {
         $this->dataClasses = $dataClasses;
         return $this;
     }

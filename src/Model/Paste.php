@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
+use WBW\Library\Core\Model\Attribute\StringIdTrait;
 use WBW\Library\Core\Model\Attribute\StringTitleTrait;
 
 /**
@@ -22,33 +23,28 @@ use WBW\Library\Core\Model\Attribute\StringTitleTrait;
  */
 class Paste {
 
+    use StringIdTrait;
     use StringTitleTrait;
 
     /**
      * Date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $date;
 
     /**
      * Email count.
      *
-     * @var int
+     * @var int|null
      */
     private $emailCount;
 
-    /**
-     * Id.
-     *
-     * @var string
-     */
-    private $id;
 
     /**
      * Source.
      *
-     * @var string
+     * @var string|null
      */
     private $source;
 
@@ -62,46 +58,37 @@ class Paste {
     /**
      * Get the date.
      *
-     * @return DateTime Returns the date.
+     * @return DateTime|null Returns the date.
      */
-    public function getDate() {
+    public function getDate(): ?DateTime {
         return $this->date;
     }
 
     /**
      * Get the email count.
      *
-     * @return int Returns the email count.
+     * @return int|null Returns the email count.
      */
-    public function getEmailCount() {
+    public function getEmailCount(): ?int {
         return $this->emailCount;
-    }
-
-    /**
-     * Get the id.
-     *
-     * @return string Returns the id.
-     */
-    public function getId() {
-        return $this->id;
     }
 
     /**
      * Get the source.
      *
-     * @return string Returns the source.
+     * @return string|null Returns the source.
      */
-    public function getSource() {
+    public function getSource(): ?string {
         return $this->source;
     }
 
     /**
      * Set the date.
      *
-     * @param DateTime $date The date.
+     * @param DateTime|null $date The date.
      * @return Paste Returns this paste.
      */
-    public function setDate(DateTime $date = null) {
+    public function setDate(?DateTime $date): Paste {
         $this->date = $date;
         return $this;
     }
@@ -109,32 +96,21 @@ class Paste {
     /**
      * Set the email count.
      *
-     * @param int $emailCount The email count.
+     * @param int|null $emailCount The email count.
      * @return Paste Returns this paste.
      */
-    public function setEmailCount($emailCount) {
+    public function setEmailCount(?int $emailCount): Paste {
         $this->emailCount = $emailCount;
-        return $this;
-    }
-
-    /**
-     * Set the id.
-     *
-     * @param string $id The id.
-     * @return Paste Returns this paste.
-     */
-    public function setId($id) {
-        $this->id = $id;
         return $this;
     }
 
     /**
      * Set the source.
      *
-     * @param string $source The source.
+     * @param string|null $source The source.
      * @return Paste Returns this paste.
      */
-    public function setSource($source) {
+    public function setSource(?string $source): Paste {
         $this->source = $source;
         return $this;
     }

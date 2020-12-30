@@ -27,7 +27,7 @@ class StringAccountTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetAccount() {
+    public function testSetAccount(): void {
 
         $obj = new TestStringAccountTrait();
 
@@ -40,7 +40,7 @@ class StringAccountTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringAccountTrait();
 

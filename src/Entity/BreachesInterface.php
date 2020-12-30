@@ -21,7 +21,7 @@ interface BreachesInterface extends HaveIBeenPwnedEntityInterface {
     /**
      * Get the domain.
      *
-     * @return string Returns teh domain.
+     * @return string|null Returns teh domain.
      */
-    public function getHaveIBeenPwnedDomain();
+    public function getHaveIBeenPwnedDomain(): ?string;
 }

@@ -30,7 +30,7 @@ class PasteTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetDate() {
+    public function testSetDate(): void {
 
         $obj = new Paste();
 
@@ -45,7 +45,7 @@ class PasteTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetEmailCount() {
+    public function testSetEmailCount(): void {
 
         $obj = new Paste();
 
@@ -58,7 +58,7 @@ class PasteTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetId() {
+    public function testSetId(): void {
 
         $obj = new Paste();
 
@@ -71,7 +71,7 @@ class PasteTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSource() {
+    public function testSetSource(): void {
 
         $obj = new Paste();
 
@@ -84,7 +84,7 @@ class PasteTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTitle() {
+    public function testSetTitle(): void {
 
         $obj = new Paste();
 
@@ -97,7 +97,7 @@ class PasteTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Paste();
 

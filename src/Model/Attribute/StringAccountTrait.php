@@ -22,25 +22,25 @@ trait StringAccountTrait {
     /**
      * Account
      *
-     * @var string
+     * @var string|null
      */
     private $account;
 
     /**
      * Get the account.
      *
-     * @return string Returns the account.
+     * @return string|null Returns the account.
      */
-    public function getAccount() {
+    public function getAccount(): ?string {
         return $this->account;
     }
 
     /**
      * Set the account.
      *
-     * @param string $account The account.
+     * @param string|null $account The account.
      */
-    public function setAccount($account) {
+    public function setAccount(?string $account): self {
         $this->account = $account;
         return $this;
     }

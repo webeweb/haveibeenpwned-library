@@ -28,7 +28,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetSubstituteValue() {
+    public function testGetSubstituteValue(): void {
 
         $obj = new BreachedAccountRequest();
 
@@ -41,7 +41,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetIncludeUnverified() {
+    public function testSetIncludeUnverified(): void {
 
         $obj = new BreachedAccountRequest();
 
@@ -54,7 +54,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTruncateResponse() {
+    public function testSetTruncateResponse(): void {
 
         $obj = new BreachedAccountRequest();
 
@@ -67,7 +67,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/breachedaccount/{account}", BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH);
 

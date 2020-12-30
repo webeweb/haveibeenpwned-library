@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
+use WBW\Library\Core\Model\Attribute\StringDescriptionTrait;
 use WBW\Library\Core\Model\Attribute\StringNameTrait;
 use WBW\Library\Core\Model\Attribute\StringTitleTrait;
 use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
@@ -24,6 +25,7 @@ use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
  */
 class Breach {
 
+    use StringDescriptionTrait;
     use StringDomainTrait;
     use StringNameTrait;
     use StringTitleTrait;
@@ -31,14 +33,14 @@ class Breach {
     /**
      * Added date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $addedDate;
 
     /**
      * Breach date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $breachDate;
 
@@ -49,59 +51,53 @@ class Breach {
      */
     private $dataClasses;
 
-    /**
-     * Description.
-     *
-     * @var string
-     */
-    private $description;
 
     /**
      * Fabricated.
      *
-     * @var bool
+     * @var bool|null
      */
     private $fabricated;
 
     /**
      * Modified date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $modifiedDate;
 
     /**
      * Pwn count.
      *
-     * @var int
+     * @var int|null
      */
     private $pwnCount;
 
     /**
      * Retired.
      *
-     * @var bool
+     * @var bool|null
      */
     private $retired;
 
     /**
      * Sensitive.
      *
-     * @var bool
+     * @var bool|null
      */
     private $sensitive;
 
     /**
      * Spam list.
      *
-     * @var bool
+     * @var bool|null
      */
     private $spamList;
 
     /**
      * Verified.
      *
-     * @var bool
+     * @var bool|null
      */
     private $verified;
 
@@ -124,7 +120,7 @@ class Breach {
      * @param DataClass $dataClass The data class.
      * @return Breach Returns this breach.
      */
-    public function addDataClass(DataClass $dataClass) {
+    public function addDataClass(DataClass $dataClass): Breach {
         $this->dataClasses[] = $dataClass;
         return $this;
     }
@@ -132,18 +128,18 @@ class Breach {
     /**
      * Get the added date.
      *
-     * @return DateTime Returns the added date.
+     * @return DateTime|null Returns the added date.
      */
-    public function getAddedDate() {
+    public function getAddedDate(): ?DateTime {
         return $this->addedDate;
     }
 
     /**
      * Get the breach date.
      *
-     * @return DateTime Returns the breach date.
+     * @return DateTime|null Returns the breach date.
      */
-    public function getBreachDate() {
+    public function getBreachDate(): ?DateTime {
         return $this->breachDate;
     }
 
@@ -152,89 +148,80 @@ class Breach {
      *
      * @return DataClass[] Returns the data classes.
      */
-    public function getDataClasses() {
+    public function getDataClasses(): array {
         return $this->dataClasses;
-    }
-
-    /**
-     * Get the description.
-     *
-     * @return string Returns the description.
-     */
-    public function getDescription() {
-        return $this->description;
     }
 
     /**
      * Get the fabricated.
      *
-     * @return bool Returns the fabricated.
+     * @return bool|null Returns the fabricated.
      */
-    public function getFabricated() {
+    public function getFabricated(): ?bool {
         return $this->fabricated;
     }
 
     /**
      * Get the modified date.
      *
-     * @return DateTime Returns the modified date.
+     * @return DateTime|null Returns the modified date.
      */
-    public function getModifiedDate() {
+    public function getModifiedDate(): ?DateTime {
         return $this->modifiedDate;
     }
 
     /**
      * Get the pwn count.
      *
-     * @return int Returns the pwn count.
+     * @return int|null Returns the pwn count.
      */
-    public function getPwnCount() {
+    public function getPwnCount(): ?int {
         return $this->pwnCount;
     }
 
     /**
      * Get the retired.
      *
-     * @return bool Returns the retired.
+     * @return bool|null Returns the retired.
      */
-    public function getRetired() {
+    public function getRetired(): ?bool {
         return $this->retired;
     }
 
     /**
      * Get the sensitive.
      *
-     * @return bool Returns the sensitive.
+     * @return bool|null Returns the sensitive.
      */
-    public function getSensitive() {
+    public function getSensitive(): ?bool {
         return $this->sensitive;
     }
 
     /**
      * Get the spam list.
      *
-     * @return bool Returns the spam list.
+     * @return bool|null Returns the spam list.
      */
-    public function getSpamList() {
+    public function getSpamList(): ?bool {
         return $this->spamList;
     }
 
     /**
      * Get the verified.
      *
-     * @return bool Returns the verified.
+     * @return bool|null Returns the verified.
      */
-    public function getVerified() {
+    public function getVerified(): ?bool {
         return $this->verified;
     }
 
     /**
      * Set the added date.
      *
-     * @param DateTime $addedDate The added date.
+     * @param DateTime|null $addedDate The added date.
      * @return Breach Returns this breach.
      */
-    public function setAddedDate(DateTime $addedDate = null) {
+    public function setAddedDate(?DateTime $addedDate): Breach {
         $this->addedDate = $addedDate;
         return $this;
     }
@@ -242,10 +229,10 @@ class Breach {
     /**
      * Set the breach date.
      *
-     * @param DateTime $breachDate The breach date.
+     * @param DateTime|null $breachDate The breach date.
      * @return Breach Returns this breach.
      */
-    public function setBreachDate(DateTime $breachDate = null) {
+    public function setBreachDate(?DateTime $breachDate ): Breach {
         $this->breachDate = $breachDate;
         return $this;
     }
@@ -256,29 +243,18 @@ class Breach {
      * @param DataClass[] $dataClasses The data classes.
      * @return Breach Returns this breach.
      */
-    public function setDataClasses(array $dataClasses) {
+    public function setDataClasses(array $dataClasses): Breach {
         $this->dataClasses = $dataClasses;
-        return $this;
-    }
-
-    /**
-     * Set the description.
-     *
-     * @param string $description The description.
-     * @return Breach Returns this breach.
-     */
-    public function setDescription($description) {
-        $this->description = $description;
         return $this;
     }
 
     /**
      * Set the fabricated.
      *
-     * @param bool $fabricated The fabricated.
+     * @param bool|null $fabricated The fabricated.
      * @return Breach Returns this breach.
      */
-    public function setFabricated($fabricated) {
+    public function setFabricated(?bool $fabricated): Breach {
         $this->fabricated = $fabricated;
         return $this;
     }
@@ -286,10 +262,10 @@ class Breach {
     /**
      * Set the modified date.
      *
-     * @param DateTime $modifiedDate The modified date.
+     * @param DateTime|null $modifiedDate The modified date.
      * @return Breach Returns this breach.
      */
-    public function setModifiedDate(DateTime $modifiedDate = null) {
+    public function setModifiedDate(?DateTime $modifiedDate): Breach {
         $this->modifiedDate = $modifiedDate;
         return $this;
     }
@@ -297,10 +273,10 @@ class Breach {
     /**
      * Set the pwn count.
      *
-     * @param int $pwnCount The pwn count.
+     * @param int|null $pwnCount The pwn count.
      * @return Breach Returns this breach.
      */
-    public function setPwnCount($pwnCount) {
+    public function setPwnCount(?int $pwnCount): Breach {
         $this->pwnCount = $pwnCount;
         return $this;
     }
@@ -308,10 +284,10 @@ class Breach {
     /**
      * Set the retired.
      *
-     * @param bool $retired The retired.
+     * @param bool|null $retired The retired.
      * @return Breach Returns this breach.
      */
-    public function setRetired($retired) {
+    public function setRetired(?bool $retired): Breach {
         $this->retired = $retired;
         return $this;
     }
@@ -319,10 +295,10 @@ class Breach {
     /**
      * Set the sensitive.
      *
-     * @param bool $sensitive The sensitive.
+     * @param bool|null $sensitive The sensitive.
      * @return Breach Returns this breach.
      */
-    public function setSensitive($sensitive) {
+    public function setSensitive(?bool $sensitive): Breach {
         $this->sensitive = $sensitive;
         return $this;
     }
@@ -330,10 +306,10 @@ class Breach {
     /**
      * Set the spam list.
      *
-     * @param bool $spamList The spam list.
+     * @param bool|null $spamList The spam list.
      * @return Breach Returns this breach.
      */
-    public function setSpamList($spamList) {
+    public function setSpamList(?bool $spamList): Breach {
         $this->spamList = $spamList;
         return $this;
     }
@@ -341,10 +317,10 @@ class Breach {
     /**
      * Set the verified.
      *
-     * @param bool $verified The verified.
+     * @param bool|null $verified The verified.
      * @return Breach Returns this breach.
      */
-    public function setVerified($verified) {
+    public function setVerified(?bool $verified): Breach {
         $this->verified = $verified;
         return $this;
     }

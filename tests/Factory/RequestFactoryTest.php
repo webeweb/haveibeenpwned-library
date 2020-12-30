@@ -33,7 +33,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewBreachRequest() {
+    public function testNewBreachRequest(): void {
 
         $res = RequestFactory::newBreachRequest($this->breach);
         $this->assertInstanceOf(BreachRequest::class, $res);
@@ -46,7 +46,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewBreachedAccountRequest() {
+    public function testNewBreachedAccountRequest(): void {
 
         $res = RequestFactory::newBreachedAccountRequest($this->breachedAccount);
         $this->assertInstanceOf(BreachedAccountRequest::class, $res);
@@ -62,7 +62,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewBreachesRequest() {
+    public function testNewBreachesRequest(): void {
 
         $res = RequestFactory::newBreachesRequest($this->breaches);
         $this->assertInstanceOf(BreachesRequest::class, $res);
@@ -75,7 +75,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewDataClassesRequest() {
+    public function testNewDataClassesRequest(): void {
 
         $res = RequestFactory::newDataClassesRequest($this->breach);
         $this->assertInstanceOf(DataClassesRequest::class, $res);
@@ -86,7 +86,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewPasteAccountRequest() {
+    public function testNewPasteAccountRequest(): void {
 
         $res = RequestFactory::newPasteAccountRequest($this->pasteAccount);
         $this->assertInstanceOf(PasteAccountRequest::class, $res);
@@ -99,7 +99,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewRangeRequest() {
+    public function testNewRangeRequest(): void {
 
         $res = RequestFactory::newRangeRequest($this->range);
         $this->assertInstanceOf(RangeRequest::class, $res);

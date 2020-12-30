@@ -37,7 +37,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testCleanResponse() {
+    public function testCleanResponse(): void {
 
         $arg = TestFixtures::SAMPLE_BREACH_RESPONSE;
 
@@ -55,7 +55,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeBreach() {
+    public function testDeserializeBreach(): void {
 
         $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
@@ -87,7 +87,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeBreachesResponse() {
+    public function testDeserializeBreachesResponse(): void {
 
         $obj = TestResponseDeserializer::deserializeBreachesResponse(TestFixtures::SAMPLE_BREACH_RESPONSE);
 
@@ -132,7 +132,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeDataClass() {
+    public function testDeserializeDataClass(): void {
 
         $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
@@ -148,7 +148,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeDataClassesResponse() {
+    public function testDeserializeDataClassesResponse(): void {
 
         $obj = TestResponseDeserializer::deserializeDataClassesResponse(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
 
@@ -175,7 +175,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePaste() {
+    public function testDeserializePaste(): void {
 
         $obj = TestResponseDeserializer::deserializePaste(TestFixtures::getSamplePasteResponse()[0]);
 
@@ -193,7 +193,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializePastesResponse() {
+    public function testDeserializePastesResponse(): void {
 
         $obj = TestResponseDeserializer::deserializePastesResponse(TestFixtures::SAMPLE_PASTE_RESPONSE);
 
@@ -222,7 +222,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeRange() {
+    public function testDeserializeRange(): void {
 
         $obj = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65:1");
 
@@ -238,7 +238,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeRangeResponse() {
+    public function testDeserializeRangeResponse(): void {
 
         $obj = TestResponseDeserializer::deserializeRangesResponse(TestFixtures::SAMPLE_RANGE_RESPONSE);
 
@@ -273,7 +273,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeRangeWithBadRawResponse() {
+    public function testDeserializeRangeWithBadRawResponse(): void {
 
         $obj = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65");
 

@@ -34,7 +34,7 @@ class BreachesRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::BREACHES_RESOURCE_PATH;
     }
 }

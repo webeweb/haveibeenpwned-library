@@ -34,14 +34,14 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituteReques
     /**
      * Include unverified.
      *
-     * @var bool
+     * @var bool|null
      */
     private $includeUnverified;
 
     /**
      * Truncate response.
      *
-     * @var bool
+     * @var bool|null
      */
     private $truncateResponse;
 
@@ -55,23 +55,23 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituteReques
     /**
      * Get the include unverified.
      *
-     * @return bool Returns the include unverified.
+     * @return bool|null Returns the include unverified.
      */
-    public function getIncludeUnverified() {
+    public function getIncludeUnverified(): ?bool {
         return $this->includeUnverified;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::BREACHED_ACCOUNT_RESOURCE_PATH;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteName() {
+    public function getSubstituteName(): string {
         return "{account}";
     }
 
@@ -85,19 +85,19 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituteReques
     /**
      * Get the truncate response.
      *
-     * @return bool Returns the truncate response.
+     * @return bool|null Returns the truncate response.
      */
-    public function getTruncateResponse() {
+    public function getTruncateResponse(): ?bool {
         return $this->truncateResponse;
     }
 
     /**
      * Set the include unverified.
      *
-     * @param bool $includeUnverified The include unverified.
+     * @param bool|null $includeUnverified The include unverified.
      * @return BreachedAccountRequest Returns this breached account request.
      */
-    public function setIncludeUnverified($includeUnverified) {
+    public function setIncludeUnverified(?bool $includeUnverified): BreachedAccountRequest {
         $this->includeUnverified = $includeUnverified;
         return $this;
     }
@@ -105,10 +105,10 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituteReques
     /**
      * Set the truncate response.
      *
-     * @param bool $truncateResponse The truncate response.
+     * @param bool|null $truncateResponse The truncate response.
      * @return BreachedAccountRequest Returns this breached account request.
      */
-    public function setTruncateResponse($truncateResponse) {
+    public function setTruncateResponse(?bool $truncateResponse): BreachedAccountRequest {
         $this->truncateResponse = $truncateResponse;
         return $this;
     }

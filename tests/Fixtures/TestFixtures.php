@@ -111,7 +111,7 @@ EOT;
      *
      * @return array Returns the sample breach response.
      */
-    public static function getSampleBreachResponse() {
+    public static function getSampleBreachResponse(): array {
         $cleanResponse = ResponseDeserializer::cleanResponse(self::SAMPLE_BREACH_RESPONSE);
         return json_decode($cleanResponse, true);
     }
@@ -121,7 +121,7 @@ EOT;
      *
      * @return array Returns the sample paste response.
      */
-    public static function getSamplePasteResponse() {
+    public static function getSamplePasteResponse(): array {
         return json_decode(self::SAMPLE_PASTE_RESPONSE, true);
     }
 }
