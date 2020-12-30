@@ -46,8 +46,8 @@ class ResponseDeserializerTest extends AbstractTestCase {
 
         $res = TestResponseDeserializer::cleanResponse($arg);
 
-        $this->assertNotContains("True", $res);
-        $this->assertNotContains("False", $res);
+        $this->assertStringNotContainsString("True", $res);
+        $this->assertStringNotContainsString("False", $res);
     }
 
     /**
