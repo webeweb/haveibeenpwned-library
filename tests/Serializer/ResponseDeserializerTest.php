@@ -41,8 +41,8 @@ class ResponseDeserializerTest extends AbstractTestCase {
 
         $arg = TestFixtures::SAMPLE_BREACH_RESPONSE;
 
-        $this->assertContains("True", $arg);
-        $this->assertContains("False", $arg);
+        $this->assertStringContainsString("True", $arg);
+        $this->assertStringContainsString("False", $arg);
 
         $res = TestResponseDeserializer::cleanResponse($arg);
 
@@ -69,7 +69,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
         $this->assertEquals("2013-10-04", $obj->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
         $this->assertCount(4, $obj->getDataClasses());
-        $this->assertContains("In October 2013", $obj->getDescription());
+        $this->assertStringContainsString("In October 2013", $obj->getDescription());
         $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
         $this->assertEquals(152445165, $obj->getPwnCount());
         $this->assertFalse($obj->getRetired());
@@ -104,7 +104,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertEquals("2013-12-04T00:00Z", $res[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
         $this->assertEquals("2013-12-04T00:00Z", $res[0]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
         $this->assertEquals(152445165, $res[0]->getPwnCount());
-        $this->assertContains("In October 2013", $res[0]->getDescription());
+        $this->assertStringContainsString("In October 2013", $res[0]->getDescription());
         $this->assertCount(4, $res[0]->getDataClasses());
         $this->assertTrue($res[0]->getVerified());
         $this->assertFalse($res[0]->getSensitive());
@@ -119,7 +119,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
         $this->assertEquals("2014-01-23T13:10Z", $res[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
         $this->assertEquals("2014-01-23T13:10Z", $res[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
         $this->assertEquals(530270, $res[1]->getPwnCount());
-        $this->assertContains("In June 2011", $res[1]->getDescription());
+        $this->assertStringContainsString("In June 2011", $res[1]->getDescription());
         $this->assertCount(2, $res[1]->getDataClasses());
         $this->assertTrue($res[1]->getVerified());
         $this->assertFalse($res[1]->getSensitive());
