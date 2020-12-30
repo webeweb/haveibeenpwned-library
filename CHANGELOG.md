@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+### [2.5.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.0) (2020-12-30)
+
+> IMPORTANT NOTICE: The following PHP versions are now not supported
+> - PHP 5.6
+> - PHP 7.0
+
+- Add PHP 8.0 support
+- Improve PHP doc
+- Improve unit tests
+- Migrating from PHP 5.6 to PHP 7.1
+
 ### [2.4.3](https://github.com/webeweb/haveibeenpwned-library/tree/v2.4.3) (2020-06-03)
 
 - Update documentation
