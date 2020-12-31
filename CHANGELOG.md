@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.5.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.1) (2020-12-31)
+
+- Fix compatibility
+
 ### [2.5.0](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.0) (2020-12-30)
 
 > IMPORTANT NOTICE: The following PHP versions are now not supported
