@@ -40,7 +40,6 @@ class Paste {
      */
     private $emailCount;
 
-
     /**
      * Source.
      *

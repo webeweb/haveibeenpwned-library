@@ -91,7 +91,7 @@ class RequestFactory {
      * @param PasteAccountInterface $pasteAccount The paste account.
      * @return PasteAccountRequest Returns the paste account request.
      */
-    public static function newPasteAccountRequest(PasteAccountInterface $pasteAccount): PasteAccountRequest{
+    public static function newPasteAccountRequest(PasteAccountInterface $pasteAccount): PasteAccountRequest {
 
         $model = new PasteAccountRequest();
         $model->setAccount($pasteAccount->getHaveIBeenPwnedAccount());

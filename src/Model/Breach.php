@@ -51,7 +51,6 @@ class Breach {
      */
     private $dataClasses;
 
-
     /**
      * Fabricated.
      *
@@ -232,7 +231,7 @@ class Breach {
      * @param DateTime|null $breachDate The breach date.
      * @return Breach Returns this breach.
      */
-    public function setBreachDate(?DateTime $breachDate ): Breach {
+    public function setBreachDate(?DateTime $breachDate): Breach {
         $this->breachDate = $breachDate;
         return $this;
     }
