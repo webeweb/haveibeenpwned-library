@@ -1,8 +1,8 @@
 haveibeenpwned-library
 ======================
 
-[![Build Status](https://img.shields.io/travis/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://travis-ci.com/webeweb/haveibeenpwned-library)
-[![Coverage Status](https://img.shields.io/coveralls/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master)
+[![Build Status](https://img.shields.io/scrutinizer/build/g/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/build-status/master)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/haveibeenpwned-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
 [![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/haveibeenpwned-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
