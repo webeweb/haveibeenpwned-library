@@ -78,7 +78,7 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituteReques
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue() {
+    public function getSubstituteValue(): ?string {
         return $this->getAccount();
     }
 

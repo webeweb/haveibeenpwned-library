@@ -49,7 +49,7 @@ class BreachRequest extends AbstractRequest implements SubstituteRequestInterfac
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue() {
+    public function getSubstituteValue(): ?string {
         return $this->getName();
     }
 }

@@ -49,7 +49,7 @@ class PasteAccountRequest extends AbstractRequest implements SubstituteRequestIn
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue() {
+    public function getSubstituteValue(): ?string {
         return $this->getAccount();
     }
 }

@@ -49,7 +49,7 @@ class RangeRequest extends AbstractRequest implements SubstituteRequestInterface
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteValue() {
+    public function getSubstituteValue(): ?string {
         return $this->getHash();
     }
 }

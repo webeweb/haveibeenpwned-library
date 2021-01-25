@@ -39,6 +39,7 @@ trait StringAccountTrait {
      * Set the account.
      *
      * @param string|null $account The account.
+     * @return self Returns this instance.
      */
     public function setAccount(?string $account): self {
         $this->account = $account;

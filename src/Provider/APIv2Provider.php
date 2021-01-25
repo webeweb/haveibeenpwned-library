@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
@@ -39,8 +40,9 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param BreachRequest $request The breach request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function breach(BreachRequest $request): BreachesResponse {
 
@@ -54,8 +56,9 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param BreachedAccountRequest $request The breached account request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function breachedAccount(BreachedAccountRequest $request): BreachesResponse {
 
@@ -71,8 +74,9 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param BreachesRequest $request The breaches request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function breaches(BreachesRequest $request): BreachesResponse {
 
@@ -88,8 +92,9 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param DataClassesRequest $request The data classes request.
      * @return DataClassesResponse Returns the data classes response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function dataClasses(DataClassesRequest $request): DataClassesResponse {
 
@@ -110,8 +115,9 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param PasteAccountRequest $request The paste account request.
      * @return PastesResponse Returns the pastes response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @deprecated since 2.1.2 use "WBW\Library\HaveIBeenPwned\Provider\APIv3Provider" instead.
      */
     public function pasteAccount(PasteAccountRequest $request): PastesResponse {
@@ -126,8 +132,9 @@ class APIv2Provider extends AbstractProvider {
      *
      * @param RangeRequest $request The range request.
      * @return RangesResponse Returns the ranges response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function range(RangeRequest $request): RangesResponse {
 

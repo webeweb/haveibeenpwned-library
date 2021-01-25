@@ -39,6 +39,7 @@ trait StringDomainTrait {
      * Set the domain.
      *
      * @param string|null $domain The domain.
+     * @return self Returns this instance.
      */
     public function setDomain(?string $domain): self {
         $this->domain = $domain;

@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
@@ -31,8 +32,9 @@ class APIv1Provider extends AbstractProvider {
      *
      * @param BreachedAccountRequest $request The breached account request.
      * @return BreachesResponse Returns the breaches response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     public function breachedAccount(BreachedAccountRequest $request): BreachesResponse {
 
