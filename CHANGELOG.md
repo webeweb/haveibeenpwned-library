@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.5.2](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.2) (2021-01-25)
+
+- Improve code quality
+- Improve PHPDoc
+
 ### [2.5.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.1) (2020-12-31)
 
 - Fix compatibility
