@@ -1,7 +1,7 @@
 # .github/workflows/build.yml
 name: "build"
 
-on: [ push, release, pull_request ]
+on: [ push ]
 
 jobs:
 
@@ -17,7 +17,6 @@ jobs:
                     -   php-version: "7.3"
                     -   php-version: "7.4"
                     -   php-version: "8.0"
-            max-parallel: 1
 
         steps:
             -   name: "Checkout"
