@@ -110,7 +110,7 @@ abstract class AbstractProvider extends BaseProvider {
 
         try {
 
-            $host = null === $endpointPath ? self::ENDPOINT_PATH . $this->getEndpointVersion() : $endpointPath;
+            $host = null === $endpointPath ? static::ENDPOINT_PATH . $this->getEndpointVersion() : $endpointPath;
 
             $config = $this->buildConfiguration($host, $apiKey);
 
