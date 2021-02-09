@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.5.4](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.4) (2021-02-09)
+
+- Improve unit tests
+
 ### [2.5.3](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.3) (2021-02-08)
 
 - Replace Class:: by static::
