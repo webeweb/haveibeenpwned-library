@@ -34,16 +34,4 @@ class StringAccountTraitTest extends AbstractTestCase {
         $obj->setAccount("account");
         $this->assertEquals("account", $obj->getAccount());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringAccountTrait();
-
-        $this->assertNull($obj->getAccount());
-    }
 }

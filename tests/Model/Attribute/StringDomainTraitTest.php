@@ -34,16 +34,4 @@ class StringDomainTraitTest extends AbstractTestCase {
         $obj->setDomain("domain");
         $this->assertEquals("domain", $obj->getDomain());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringDomainTrait();
-
-        $this->assertNull($obj->getDomain());
-    }
 }
