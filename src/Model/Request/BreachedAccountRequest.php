@@ -65,7 +65,7 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituteReques
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::BREACHED_ACCOUNT_RESOURCE_PATH;
+        return self::BREACHED_ACCOUNT_RESOURCE_PATH;
     }
 
     /**

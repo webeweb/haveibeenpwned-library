@@ -36,7 +36,7 @@ class PasteAccountRequest extends AbstractRequest implements SubstituteRequestIn
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::PASTE_ACCOUNT_RESOURCE_PATH;
+        return self::PASTE_ACCOUNT_RESOURCE_PATH;
     }
 
     /**

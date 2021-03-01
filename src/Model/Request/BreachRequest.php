@@ -36,7 +36,7 @@ class BreachRequest extends AbstractRequest implements SubstituteRequestInterfac
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::BREACH_RESOURCE_PATH;
+        return self::BREACH_RESOURCE_PATH;
     }
 
     /**

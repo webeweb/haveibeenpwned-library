@@ -36,7 +36,7 @@ class RangeRequest extends AbstractRequest implements SubstituteRequestInterface
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::RANGE_RESOURCE_PATH;
+        return self::RANGE_RESOURCE_PATH;
     }
 
     /**
