@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.5.5](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.5) (2021-03-01)
+
+- Improve code quality
+
 ### [2.5.4](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.4) (2021-02-09)
 
 - Improve unit tests
