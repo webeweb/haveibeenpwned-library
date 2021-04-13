@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.0.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.0.0) (2021-04-13)
+
+- Move Request models
+- Move Response models
+
 ### [2.5.5](https://github.com/webeweb/haveibeenpwned-library/tree/v2.5.5) (2021-03-01)
 
 - Improve code quality
@@ -62,7 +67,7 @@ CHANGELOG
 ### [2.1.2](https://github.com/webeweb/haveibeenpwned-library/tree/v2.1.2) (2019-08-19)
 
 > IMPORTANT NOTICE:
-> - WBW\Library\HaveIBeenPwned\Provider\APIv2Provider::pasteAccount() is now deprecated 
+> - WBW\Library\HaveIBeenPwned\Provider\APIv2Provider::pasteAccount() is now deprecated
 
 ### [2.1.1](https://github.com/webeweb/haveibeenpwned-library/tree/v2.1.1) (2019-08-08)
 
@@ -95,7 +100,7 @@ CHANGELOG
 
 ### [1.3.0](https://github.com/webeweb/haveibeenpwned-library/tree/v1.3.0) (2019-06-08)
 
-- Change license 
+- Change license
 - Reorganize documentation
 - Update Composer (according to Composer schema)
 - Update documentation
