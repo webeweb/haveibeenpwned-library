@@ -9,16 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Response;
+namespace WBW\Library\HaveIBeenPwned\Response;
 
-use WBW\Library\HaveIBeenPwned\Model\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Model\Range;
 
 /**
  * Ranges response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model\Response
+ * @package WBW\Library\HaveIBeenPwned\Response
  */
 class RangesResponse extends AbstractResponse {
 

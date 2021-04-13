@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model;
+namespace WBW\Library\HaveIBeenPwned\Response;
 
 use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
 use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
@@ -18,7 +18,7 @@ use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
  * Abstract response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model
+ * @package WBW\Library\HaveIBeenPwned\Response
  * @abstract
  */
 abstract class AbstractResponse implements ResponseInterface {

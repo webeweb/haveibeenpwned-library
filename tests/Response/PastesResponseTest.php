@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Model\Response;
+namespace WBW\Library\HaveIBeenPwned\Tests\Response;
 
 use WBW\Library\HaveIBeenPwned\Model\Paste;
-use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
+use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
  * Pastes response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Model\Response
+ * @package WBW\Library\HaveIBeenPwned\Tests\Response
  */
 class PastesResponseTest extends AbstractTestCase {
 

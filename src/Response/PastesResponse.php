@@ -9,9 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Response;
+namespace WBW\Library\HaveIBeenPwned\Response;
 
-use WBW\Library\HaveIBeenPwned\Model\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Model\Paste;
 
 /**

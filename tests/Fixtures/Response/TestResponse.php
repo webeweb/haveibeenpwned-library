@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model;
+namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Response;
 
-use WBW\Library\HaveIBeenPwned\Model\AbstractResponse;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 
 /**
  * Test response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model
+ * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\Response
  */
 class TestResponse extends AbstractResponse {
 

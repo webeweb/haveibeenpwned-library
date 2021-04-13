@@ -19,10 +19,10 @@ use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Model\DataClass;
 use WBW\Library\HaveIBeenPwned\Model\Paste;
 use WBW\Library\HaveIBeenPwned\Model\Range;
-use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
-use WBW\Library\HaveIBeenPwned\Model\Response\DataClassesResponse;
-use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
-use WBW\Library\HaveIBeenPwned\Model\Response\RangesResponse;
+use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
+use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
+use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
+use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 
 /**
  * Response deserializer.
