@@ -13,17 +13,17 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
 use WBW\Library\Core\Exception\ApiException;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\DataClassesRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\PasteAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\RangeRequest;
-use WBW\Library\HaveIBeenPwned\Model\Response\BreachesResponse;
-use WBW\Library\HaveIBeenPwned\Model\Response\DataClassesResponse;
-use WBW\Library\HaveIBeenPwned\Model\Response\PastesResponse;
-use WBW\Library\HaveIBeenPwned\Model\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Provider\APIv3Provider;
+use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
+use WBW\Library\HaveIBeenPwned\Request\DataClassesRequest;
+use WBW\Library\HaveIBeenPwned\Request\PasteAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
+use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
+use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
+use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
+use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**

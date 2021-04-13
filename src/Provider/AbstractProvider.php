@@ -20,7 +20,7 @@ use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
+use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 
 /**
  * Abstract provider.
