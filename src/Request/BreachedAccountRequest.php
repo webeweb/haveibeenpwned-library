@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Model\Attribute\StringAccountTrait;
@@ -18,7 +18,7 @@ use WBW\Library\HaveIBeenPwned\Model\Attribute\StringAccountTrait;
  * Breached account request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Request
  */
 class BreachedAccountRequest extends BreachesRequest implements SubstituteRequestInterface {
 

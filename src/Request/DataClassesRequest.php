@@ -9,22 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model;
-
-use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
 /**
- * Test request.
+ * Data classes request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Fixtures\Model
+ * @package WBW\Library\HaveIBeenPwned\Request
  */
-class TestRequest extends AbstractRequest {
+class DataClassesRequest extends AbstractRequest {
+
+    /**
+     * Data classes resource path.
+     *
+     * @var string
+     */
+    const DATA_CLASSES_RESOURCE_PATH = "/dataclasses";
 
     /**
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return "";
+        return self::DATA_CLASSES_RESOURCE_PATH;
     }
 }

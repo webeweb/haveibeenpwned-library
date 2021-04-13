@@ -16,12 +16,12 @@ use WBW\Library\HaveIBeenPwned\Entity\BreachesInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachInterface;
 use WBW\Library\HaveIBeenPwned\Entity\PasteAccountInterface;
 use WBW\Library\HaveIBeenPwned\Entity\RangeInterface;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\DataClassesRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\PasteAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\RangeRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
+use WBW\Library\HaveIBeenPwned\Request\DataClassesRequest;
+use WBW\Library\HaveIBeenPwned\Request\PasteAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 
 /**
  * Request factory.

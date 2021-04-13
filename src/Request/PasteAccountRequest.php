@@ -9,47 +9,46 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\Core\Model\Attribute\StringNameTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
+use WBW\Library\HaveIBeenPwned\Model\Attribute\StringAccountTrait;
 
 /**
- * Breach request.
+ * Paste account request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Request
  */
-class BreachRequest extends AbstractRequest implements SubstituteRequestInterface {
+class PasteAccountRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use StringNameTrait;
+    use StringAccountTrait;
 
     /**
-     * Breach resource path.
+     * Paste account resource path.
      *
      * @var string
      */
-    const BREACH_RESOURCE_PATH = "/breach/{name}";
+    const PASTE_ACCOUNT_RESOURCE_PATH = "/pasteaccount/{account}";
 
     /**
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return self::BREACH_RESOURCE_PATH;
+        return self::PASTE_ACCOUNT_RESOURCE_PATH;
     }
 
     /**
      * {@inheritdoc}
      */
     public function getSubstituteName(): string {
-        return "{name}";
+        return "{account}";
     }
 
     /**
      * {@inheritdoc}
      */
     public function getSubstituteValue(): ?string {
-        return $this->getName();
+        return $this->getAccount();
     }
 }

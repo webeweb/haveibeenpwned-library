@@ -12,12 +12,12 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Factory;
 
 use WBW\Library\HaveIBeenPwned\Factory\RequestFactory;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\DataClassesRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\PasteAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\RangeRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
+use WBW\Library\HaveIBeenPwned\Request\DataClassesRequest;
+use WBW\Library\HaveIBeenPwned\Request\PasteAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**

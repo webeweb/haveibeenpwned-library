@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\Request\PasteAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
- * Paste account request test.
+ * Breach request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Tests\Request
  */
-class PasteAccountRequestTest extends AbstractTestCase {
+class BreachRequestTest extends AbstractTestCase {
 
     /**
      * Tests the getSubstituteValue() method.
@@ -30,10 +30,10 @@ class PasteAccountRequestTest extends AbstractTestCase {
      */
     public function testGetSubstituteValue(): void {
 
-        $obj = new PasteAccountRequest();
+        $obj = new BreachRequest();
 
-        $obj->setAccount("account");
-        $this->assertEquals("account", $obj->getSubstituteValue());
+        $obj->setName("name");
+        $this->assertEquals("name", $obj->getSubstituteValue());
     }
 
     /**
@@ -43,15 +43,15 @@ class PasteAccountRequestTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("/pasteaccount/{account}", PasteAccountRequest::PASTE_ACCOUNT_RESOURCE_PATH);
+        $this->assertEquals("/breach/{name}", BreachRequest::BREACH_RESOURCE_PATH);
 
-        $obj = new PasteAccountRequest();
+        $obj = new BreachRequest();
 
-        $this->assertNull($obj->getAccount());
-        $this->assertEquals(PasteAccountRequest::PASTE_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getName());
+        $this->assertEquals(BreachRequest::BREACH_RESOURCE_PATH, $obj->getResourcePath());
 
         $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
-        $this->assertEquals("{account}", $obj->getSubstituteName());
+        $this->assertEquals("{name}", $obj->getSubstituteName());
         $this->assertNull($obj->getSubstituteValue());
     }
 }

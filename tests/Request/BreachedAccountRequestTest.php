@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
  * Breached account request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Tests\Request
  */
 class BreachedAccountRequestTest extends AbstractTestCase {
 

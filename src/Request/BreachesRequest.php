@@ -9,16 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
 
 /**
  * Breaches request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Request
  */
 class BreachesRequest extends AbstractRequest {
 

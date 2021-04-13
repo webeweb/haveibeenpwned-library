@@ -9,47 +9,46 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\Core\Model\Attribute\StringHashTrait;
+use WBW\Library\Core\Model\Attribute\StringNameTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
 
 /**
- * Range request.
+ * Breach request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Request
  */
-class RangeRequest extends AbstractRequest implements SubstituteRequestInterface {
+class BreachRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use StringHashTrait;
+    use StringNameTrait;
 
     /**
-     * Range resource path.
+     * Breach resource path.
      *
      * @var string
      */
-    const RANGE_RESOURCE_PATH = "/range/{hash}";
+    const BREACH_RESOURCE_PATH = "/breach/{name}";
 
     /**
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return self::RANGE_RESOURCE_PATH;
+        return self::BREACH_RESOURCE_PATH;
     }
 
     /**
      * {@inheritdoc}
      */
     public function getSubstituteName(): string {
-        return "{hash}";
+        return "{name}";
     }
 
     /**
      * {@inheritdoc}
      */
     public function getSubstituteValue(): ?string {
-        return $this->getHash();
+        return $this->getName();
     }
 }

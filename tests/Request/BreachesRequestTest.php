@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
  * Breaches request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Tests\Request
  */
 class BreachesRequestTest extends AbstractTestCase {
 

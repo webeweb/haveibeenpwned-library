@@ -9,47 +9,46 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\Core\Model\Attribute\StringHashTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\AbstractRequest;
-use WBW\Library\HaveIBeenPwned\Model\Attribute\StringAccountTrait;
 
 /**
- * Paste account request.
+ * Range request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Request
  */
-class PasteAccountRequest extends AbstractRequest implements SubstituteRequestInterface {
+class RangeRequest extends AbstractRequest implements SubstituteRequestInterface {
 
-    use StringAccountTrait;
+    use StringHashTrait;
 
     /**
-     * Paste account resource path.
+     * Range resource path.
      *
      * @var string
      */
-    const PASTE_ACCOUNT_RESOURCE_PATH = "/pasteaccount/{account}";
+    const RANGE_RESOURCE_PATH = "/range/{hash}";
 
     /**
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return self::PASTE_ACCOUNT_RESOURCE_PATH;
+        return self::RANGE_RESOURCE_PATH;
     }
 
     /**
      * {@inheritdoc}
      */
     public function getSubstituteName(): string {
-        return "{account}";
+        return "{hash}";
     }
 
     /**
      * {@inheritdoc}
      */
     public function getSubstituteValue(): ?string {
-        return $this->getAccount();
+        return $this->getHash();
     }
 }

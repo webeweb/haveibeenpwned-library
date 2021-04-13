@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Serializer;
 
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachedAccountRequest;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachesRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
 use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 

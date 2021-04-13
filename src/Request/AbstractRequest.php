@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Model;
+namespace WBW\Library\HaveIBeenPwned\Request;
 
 /**
  * Abstract request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Model
+ * @package WBW\Library\HaveIBeenPwned\Request
  * @abstract
  */
 abstract class AbstractRequest {

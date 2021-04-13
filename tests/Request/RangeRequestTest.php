@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\Model\Request;
+namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\Request\BreachRequest;
+use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**
- * Breach request test.
+ * Paste account request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\Tests\Model\Request
+ * @package WBW\Library\HaveIBeenPwned\Tests\Request
  */
-class BreachRequestTest extends AbstractTestCase {
+class RangeRequestTest extends AbstractTestCase {
 
     /**
      * Tests the getSubstituteValue() method.
@@ -30,10 +30,10 @@ class BreachRequestTest extends AbstractTestCase {
      */
     public function testGetSubstituteValue(): void {
 
-        $obj = new BreachRequest();
+        $obj = new RangeRequest();
 
-        $obj->setName("name");
-        $this->assertEquals("name", $obj->getSubstituteValue());
+        $obj->setHash("hash");
+        $this->assertEquals("hash", $obj->getSubstituteValue());
     }
 
     /**
@@ -43,15 +43,15 @@ class BreachRequestTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("/breach/{name}", BreachRequest::BREACH_RESOURCE_PATH);
+        $this->assertEquals("/range/{hash}", RangeRequest::RANGE_RESOURCE_PATH);
 
-        $obj = new BreachRequest();
+        $obj = new RangeRequest();
 
-        $this->assertNull($obj->getName());
-        $this->assertEquals(BreachRequest::BREACH_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getHash());
+        $this->assertEquals(RangeRequest::RANGE_RESOURCE_PATH, $obj->getResourcePath());
 
         $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
-        $this->assertEquals("{name}", $obj->getSubstituteName());
+        $this->assertEquals("{hash}", $obj->getSubstituteName());
         $this->assertNull($obj->getSubstituteValue());
     }
 }
