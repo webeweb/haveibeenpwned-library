@@ -37,12 +37,12 @@ Breach
 // Create the API provider.
 $provider = new APIv2Provider();
 
-// Create a Breach model.
-$model = new BreachRequest();
-$model->setName("Adobe");
+// Create a Breach request.
+$request = new BreachRequest();
+$request->setName("Adobe");
 
 // Call the API and get the response.
-$response = $provider->breach($model);
+$response = $provider->breach($request);
 
 // Handle the response.
 foreach($response->getBreaches() as $current) {
@@ -68,13 +68,13 @@ Breached account
 // Create the API provider.
 $provider = new APIv2Provider();
 
-// Create a Breached account model.
-$model = new BreachedAccountRequest();
-$model->setAccount("john.doe@gmail.com");
-$model->setDomain("adobe.com");
+// Create a Breached account request.
+$request = new BreachedAccountRequest();
+$request->setAccount("john.doe@gmail.com");
+$request->setDomain("adobe.com");
 
 // Call the API and get the response.
-$response = $provider->breachedAccount($model);
+$response = $provider->breachedAccount($request);
 
 // Handle the response (same as breach).
 // ...
@@ -86,12 +86,12 @@ Breaches
 // Create the API provider.
 $provider = new APIv2Provider();
 
-// Create a Breaches model.
-$model = new BreachesRequest();
-$model->setDomain("adobe.com");
+// Create a Breaches request.
+$request = new BreachesRequest();
+$request->setDomain("adobe.com");
 
 // Call the API and get the response.
-$response = $provider->breaches($model);
+$response = $provider->breaches($request);
 
 // Handle the response (same as breach).
 // ...
@@ -119,12 +119,12 @@ Paste account
 // Create the API provider.
 $provider = new APIv2Provider();
 
-// Create a Paste account model.
-$model = new PasteAccountRequest();
-$model->setAccount("john.doe@gmail.com");
+// Create a Paste account request.
+$request = new PasteAccountRequest();
+$request->setAccount("john.doe@gmail.com");
 
 // Call the API and get the response.
-$response = $provider->pasteAccount($model);
+$response = $provider->pasteAccount($request);
 
 // Handle the response.
 foreach($response->getPastes() as $current) {
@@ -143,12 +143,12 @@ Range
 // Create the API provider.
 $provider = new APIv2Provider();
 
-// Create a Range model.
-$model = new RangeRequest();
-$model->setHash("21BD1");
+// Create a Range request.
+$request = new RangeRequest();
+$request->setHash("21BD1");
 
 // Call the API and get the response.
-$response = $provider->range($model);
+$response = $provider->range($request);
 
 // Handle the response.
 foreach($response->getRanges() as $current) {
