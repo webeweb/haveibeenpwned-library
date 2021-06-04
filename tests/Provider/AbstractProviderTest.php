@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
+use WBW\Library\Core\Logger\NullLogger;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestProvider;
 
@@ -23,29 +24,19 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Provider\TestProvider;
 class AbstractProviderTest extends AbstractTestCase {
 
     /**
-     * Tests the setDebug() method.
-     *
-     * @return void
-     */
-    public function testSetDebug(): void {
-
-        $obj = new TestProvider();
-
-        $obj->setDebug(true);
-        $this->assertTrue($obj->getDebug());
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
      */
     public function test__construct(): void {
 
+        // Set a Logger mock.
+        $logger = new NullLogger();
+
         $this->assertEquals("https://haveibeenpwned.com/api", TestProvider::ENDPOINT_PATH);
 
-        $obj = new TestProvider();
+        $obj = new TestProvider($logger);
 
-        $this->assertFalse($obj->getDebug());
+        $this->assertSame($logger, $obj->getLogger());
     }
 }

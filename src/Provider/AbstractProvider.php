@@ -45,7 +45,6 @@ abstract class AbstractProvider extends BaseProvider {
      */
     public function __construct(LoggerInterface $logger = null) {
         parent::__construct($logger);
-        $this->setDebug(false);
     }
 
     /**
