@@ -38,6 +38,8 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->setTruncateResponse(true);
 
         $res = RequestSerializer::serializeBreachedAccountRequest($arg);
+        $this->assertCount(3, $res);
+
         $this->assertEquals("domain", $res["domain"]);
         $this->assertEquals("true", $res["includeUnverified"]);
         $this->assertEquals("true", $res["truncateResponse"]);
@@ -69,6 +71,8 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->setDomain("domain");
 
         $res = RequestSerializer::serializeBreachesRequest($arg);
+        $this->assertCount(1, $res);
+
         $this->assertEquals("domain", $res["domain"]);
     }
 
@@ -83,6 +87,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg = new BreachesRequest();
 
         $res = RequestSerializer::serializeBreachesRequest($arg);
-        $this->assertEquals([], $res);
+        $this->assertCount(0, $res);
     }
 }
