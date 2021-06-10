@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests
+
 ### [3.0.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.0.0) (2021-04-13)
 
 - Move Request models
