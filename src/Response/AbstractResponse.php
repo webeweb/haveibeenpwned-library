@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Response;
 
-use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
 use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
+use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
  * Abstract response.

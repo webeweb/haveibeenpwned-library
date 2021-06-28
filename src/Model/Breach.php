@@ -12,10 +12,10 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use WBW\Library\Core\Model\Attribute\StringDescriptionTrait;
-use WBW\Library\Core\Model\Attribute\StringNameTrait;
-use WBW\Library\Core\Model\Attribute\StringTitleTrait;
-use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
+use WBW\Library\Traits\Strings\StringDescriptionTrait;
+use WBW\Library\Traits\Strings\StringDomainTrait;
+use WBW\Library\Traits\Strings\StringNameTrait;
+use WBW\Library\Traits\Strings\StringTitleTrait;
 
 /**
  * Breach.

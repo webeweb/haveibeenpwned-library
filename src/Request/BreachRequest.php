@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\Core\Model\Attribute\StringNameTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
+use WBW\Library\Traits\Strings\StringNameTrait;
 
 /**
  * Breach request.

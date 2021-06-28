@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Request;
 
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
-use WBW\Library\HaveIBeenPwned\Model\Attribute\StringAccountTrait;
+use WBW\Library\Traits\Strings\StringAccountTrait;
 
 /**
  * Breached account request.

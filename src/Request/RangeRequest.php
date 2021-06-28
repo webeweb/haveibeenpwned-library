@@ -11,8 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\Core\Model\Attribute\StringHashTrait;
 use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
+use WBW\Library\Traits\Strings\StringHashTrait;
 
 /**
  * Range request.

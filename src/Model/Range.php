@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
-use WBW\Library\Core\Model\Attribute\StringHashTrait;
+use WBW\Library\Traits\Strings\StringHashTrait;
 
 /**
  * Range.

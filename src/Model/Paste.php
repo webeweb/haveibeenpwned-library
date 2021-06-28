@@ -12,8 +12,8 @@
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use WBW\Library\Core\Model\Attribute\StringIdTrait;
-use WBW\Library\Core\Model\Attribute\StringTitleTrait;
+use WBW\Library\Traits\Strings\StringIdTrait;
+use WBW\Library\Traits\Strings\StringTitleTrait;
 
 /**
  * Paste.

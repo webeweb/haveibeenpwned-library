@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\HaveIBeenPwned\Model\Attribute\StringDomainTrait;
+use WBW\Library\Traits\Strings\StringDomainTrait;
 
 /**
  * Breaches request.
