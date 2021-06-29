@@ -70,19 +70,6 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDescription() method.
-     *
-     * @return void
-     */
-    public function testSetDescription(): void {
-
-        $obj = new Breach();
-
-        $obj->setDescription("description");
-        $this->assertEquals("description", $obj->getDescription());
-    }
-
-    /**
      * Tests the setFabricated() method.
      *
      * @return void
@@ -161,19 +148,6 @@ class BreachTest extends AbstractTestCase {
 
         $obj->setSpamList(true);
         $this->assertTrue($obj->getSpamList());
-    }
-
-    /**
-     * Tests the setTitle() method.
-     *
-     * @return void
-     */
-    public function testSetTitle(): void {
-
-        $obj = new Breach();
-
-        $obj->setTitle("title");
-        $this->assertEquals("title", $obj->getTitle());
     }
 
     /**
