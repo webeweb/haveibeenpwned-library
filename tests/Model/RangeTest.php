@@ -23,19 +23,6 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RangeTest extends AbstractTestCase {
 
     /**
-     * Tests the setCount() method.
-     *
-     * @return void
-     */
-    public function testSetCount(): void {
-
-        $obj = new Range();
-
-        $obj->setCount(1);
-        $this->assertEquals(1, $obj->getCount());
-    }
-
-    /**
      * Tests the setPrefix() method.
      *
      * @return void

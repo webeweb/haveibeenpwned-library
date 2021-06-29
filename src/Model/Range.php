@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
+use WBW\Library\Traits\Integers\IntegerCountTrait;
 use WBW\Library\Traits\Strings\StringHashTrait;
 
 /**
@@ -21,14 +22,8 @@ use WBW\Library\Traits\Strings\StringHashTrait;
  */
 class Range {
 
+    use IntegerCountTrait;
     use StringHashTrait;
-
-    /**
-     * Count.
-     *
-     * @var int|null
-     */
-    private $count;
 
     /**
      * Prefix
@@ -45,32 +40,12 @@ class Range {
     }
 
     /**
-     * Get the count.
-     *
-     * @return int|null Returns the count.
-     */
-    public function getCount(): ?int {
-        return $this->count;
-    }
-
-    /**
      * Get the prefix.
      *
      * @return string|null Returns the prefix.
      */
     public function getPrefix(): ?string {
         return $this->prefix;
-    }
-
-    /**
-     * Set the count.
-     *
-     * @param int|null $count The count.
-     * @return Range Returns this range.
-     */
-    public function setCount(?int $count): Range {
-        $this->count = $count;
-        return $this;
     }
 
     /**
