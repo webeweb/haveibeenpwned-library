@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.0.2](https://github.com/webeweb/haveibeenpwned-library/tree/v3.0.2) (2021-06-29)
+
+- Improve code quality
+
 ### [3.0.1](https://github.com/webeweb/haveibeenpwned-library/tree/v3.0.1) (2021-06-28)
 
 - Improve unit tests
