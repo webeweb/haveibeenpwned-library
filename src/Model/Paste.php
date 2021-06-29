@@ -11,8 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
-use DateTime;
+use WBW\Library\Traits\DateTimes\DateTimeDateTrait;
 use WBW\Library\Traits\Strings\StringIdTrait;
+use WBW\Library\Traits\Strings\StringSourceTrait;
 use WBW\Library\Traits\Strings\StringTitleTrait;
 
 /**
@@ -23,15 +24,10 @@ use WBW\Library\Traits\Strings\StringTitleTrait;
  */
 class Paste {
 
+    use DateTimeDateTrait;
     use StringIdTrait;
+    use StringSourceTrait;
     use StringTitleTrait;
-
-    /**
-     * Date.
-     *
-     * @var DateTime|null
-     */
-    private $date;
 
     /**
      * Email count.
@@ -41,26 +37,10 @@ class Paste {
     private $emailCount;
 
     /**
-     * Source.
-     *
-     * @var string|null
-     */
-    private $source;
-
-    /**
      * Constructor.
      */
     public function __construct() {
         $this->setEmailCount(0);
-    }
-
-    /**
-     * Get the date.
-     *
-     * @return DateTime|null Returns the date.
-     */
-    public function getDate(): ?DateTime {
-        return $this->date;
     }
 
     /**
@@ -73,26 +53,6 @@ class Paste {
     }
 
     /**
-     * Get the source.
-     *
-     * @return string|null Returns the source.
-     */
-    public function getSource(): ?string {
-        return $this->source;
-    }
-
-    /**
-     * Set the date.
-     *
-     * @param DateTime|null $date The date.
-     * @return Paste Returns this paste.
-     */
-    public function setDate(?DateTime $date): Paste {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
      * Set the email count.
      *
      * @param int|null $emailCount The email count.
@@ -100,17 +60,6 @@ class Paste {
      */
     public function setEmailCount(?int $emailCount): Paste {
         $this->emailCount = $emailCount;
-        return $this;
-    }
-
-    /**
-     * Set the source.
-     *
-     * @param string|null $source The source.
-     * @return Paste Returns this paste.
-     */
-    public function setSource(?string $source): Paste {
-        $this->source = $source;
         return $this;
     }
 }
