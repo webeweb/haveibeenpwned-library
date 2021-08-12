@@ -12,7 +12,6 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Exception;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
@@ -25,6 +24,7 @@ use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API v2 provider test.

@@ -13,11 +13,11 @@ namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API v1 provider.

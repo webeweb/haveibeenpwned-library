@@ -13,7 +13,6 @@ namespace WBW\Library\HaveIBeenPwned\Serializer;
 
 use DateTime;
 use DateTimeZone;
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Model\DataClass;
@@ -23,6 +22,7 @@ use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Response deserializer.

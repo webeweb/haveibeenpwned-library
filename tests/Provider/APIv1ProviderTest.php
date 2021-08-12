@@ -14,11 +14,11 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\HaveIBeenPwned\Provider\APIv1Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
+use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API v1 provider test.
