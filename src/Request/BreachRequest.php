@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringNameTrait;
 
 /**
@@ -20,7 +20,7 @@ use WBW\Library\Traits\Strings\StringNameTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
-class BreachRequest extends AbstractRequest implements SubstituteRequestInterface {
+class BreachRequest extends AbstractRequest implements SubstituableRequestInterface {
 
     use StringNameTrait;
 
@@ -41,14 +41,9 @@ class BreachRequest extends AbstractRequest implements SubstituteRequestInterfac
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteName(): string {
-        return "{name}";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSubstituteValue(): ?string {
-        return $this->getName();
+    public function getSubstituables(): array {
+        return [
+            "{name}" => $this->getName(),
+        ];
     }
 }

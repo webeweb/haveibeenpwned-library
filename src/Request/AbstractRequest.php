@@ -11,6 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
+
 /**
  * Abstract request.
  *
@@ -18,7 +20,7 @@ namespace WBW\Library\HaveIBeenPwned\Request;
  * @package WBW\Library\HaveIBeenPwned\Request
  * @abstract
  */
-abstract class AbstractRequest {
+abstract class AbstractRequest extends BaseRequest {
 
     /**
      * Constructor.
@@ -26,11 +28,4 @@ abstract class AbstractRequest {
     public function __construct() {
         // NOTHING TO DO
     }
-
-    /**
-     * Get the resource path.
-     *
-     * @return string Returns the resource path.
-     */
-    abstract public function getResourcePath(): string;
 }

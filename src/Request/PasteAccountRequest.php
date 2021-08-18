@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringAccountTrait;
 
 /**
@@ -20,7 +20,7 @@ use WBW\Library\Traits\Strings\StringAccountTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
-class PasteAccountRequest extends AbstractRequest implements SubstituteRequestInterface {
+class PasteAccountRequest extends AbstractRequest implements SubstituableRequestInterface {
 
     use StringAccountTrait;
 
@@ -41,14 +41,9 @@ class PasteAccountRequest extends AbstractRequest implements SubstituteRequestIn
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteName(): string {
-        return "{account}";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSubstituteValue(): ?string {
-        return $this->getAccount();
+    public function getSubstituables(): array {
+        return [
+            "{account}" => $this->getAccount(),
+        ];
     }
 }

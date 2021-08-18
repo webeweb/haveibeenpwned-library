@@ -82,7 +82,7 @@ class APIv1ProviderTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The substitute value {account} is missing", $ex->getMessage());
+            $this->assertEquals('The substituable value "{account}" is missing', $ex->getMessage());
         }
     }
 

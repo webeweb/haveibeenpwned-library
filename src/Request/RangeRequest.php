@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
-use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringHashTrait;
 
 /**
@@ -20,7 +20,7 @@ use WBW\Library\Traits\Strings\StringHashTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
-class RangeRequest extends AbstractRequest implements SubstituteRequestInterface {
+class RangeRequest extends AbstractRequest implements SubstituableRequestInterface {
 
     use StringHashTrait;
 
@@ -41,14 +41,9 @@ class RangeRequest extends AbstractRequest implements SubstituteRequestInterface
     /**
      * {@inheritdoc}
      */
-    public function getSubstituteName(): string {
-        return "{hash}";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSubstituteValue(): ?string {
-        return $this->getHash();
+    public function getSubstituables(): array {
+        return [
+            "{hash}" => $this->getHash(),
+        ];
     }
 }

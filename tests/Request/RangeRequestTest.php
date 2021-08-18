@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
-use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 
 /**
  * Paste account request test.
@@ -24,16 +24,16 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RangeRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the getSubstituteValue() method.
+     * Tests the getSubstituables() method.
      *
      * @return void
      */
-    public function testGetSubstituteValue(): void {
+    public function testGetSubstituables(): void {
 
         $obj = new RangeRequest();
 
         $obj->setHash("hash");
-        $this->assertEquals("hash", $obj->getSubstituteValue());
+        $this->assertEquals(["{hash}" => "hash"], $obj->getSubstituables());
     }
 
     /**
@@ -50,8 +50,8 @@ class RangeRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getHash());
         $this->assertEquals(RangeRequest::RANGE_RESOURCE_PATH, $obj->getResourcePath());
 
-        $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
-        $this->assertEquals("{hash}", $obj->getSubstituteName());
-        $this->assertNull($obj->getSubstituteValue());
+        $this->assertInstanceOf(SubstituableRequestInterface::class, $obj);
+
+        $this->assertEquals(["{hash}" => null], $obj->getSubstituables());
     }
 }

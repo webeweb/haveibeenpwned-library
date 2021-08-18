@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
-use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 
 /**
  * Breached account request test.
@@ -24,16 +24,16 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachedAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the getSubstituteValue() method.
+     * Tests the getSubstituables() method.
      *
      * @return void
      */
-    public function testGetSubstituteValue(): void {
+    public function testGetSubstituables(): void {
 
         $obj = new BreachedAccountRequest();
 
         $obj->setAccount("account");
-        $this->assertEquals("account", $obj->getSubstituteValue());
+        $this->assertEquals(["{account}" => "account"], $obj->getSubstituables());
     }
 
     /**
@@ -79,8 +79,8 @@ class BreachedAccountRequestTest extends AbstractTestCase {
         $this->assertEquals(BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getTruncateResponse());
 
-        $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
-        $this->assertEquals("{account}", $obj->getSubstituteName());
-        $this->assertNull($obj->getSubstituteValue());
+        $this->assertInstanceOf(SubstituableRequestInterface::class, $obj);
+
+        $this->assertEquals(["{account}" => null], $obj->getSubstituables());
     }
 }

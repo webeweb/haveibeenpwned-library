@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
-use WBW\Library\HaveIBeenPwned\API\SubstituteRequestInterface;
 use WBW\Library\HaveIBeenPwned\Request\PasteAccountRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
+use WBW\Library\Provider\API\SubstituableRequestInterface;
 
 /**
  * Paste account request test.
@@ -24,16 +24,16 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class PasteAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the getSubstituteValue() method.
+     * Tests the getSubstituables() method.
      *
      * @return void
      */
-    public function testGetSubstituteValue(): void {
+    public function testGetSubstituables(): void {
 
         $obj = new PasteAccountRequest();
 
         $obj->setAccount("account");
-        $this->assertEquals("account", $obj->getSubstituteValue());
+        $this->assertEquals(["{account}" => "account"], $obj->getSubstituables());
     }
 
     /**
@@ -50,8 +50,8 @@ class PasteAccountRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getAccount());
         $this->assertEquals(PasteAccountRequest::PASTE_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
 
-        $this->assertInstanceOf(SubstituteRequestInterface::class, $obj);
-        $this->assertEquals("{account}", $obj->getSubstituteName());
-        $this->assertNull($obj->getSubstituteValue());
+        $this->assertInstanceOf(SubstituableRequestInterface::class, $obj);
+
+        $this->assertEquals(["{account}" => null], $obj->getSubstituables());
     }
 }
