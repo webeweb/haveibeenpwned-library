@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Update dependencies
+
 ### [3.0.4](https://github.com/webeweb/haveibeenpwned-library/tree/v3.0.4) (2021-08-16)
 
 - Update dependencies
