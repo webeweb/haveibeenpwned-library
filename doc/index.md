@@ -25,6 +25,8 @@ The rest of this documentation uses version 2, For version 3, just insert your
 API key in the provider constructor like this:
 
 ```php
+use WBW\Library\HaveIBeenPwned\Provider\APIv3Provider;
+
 // Create the API provider.
 $provider = new APIv3Provider("YOUR_API_KEY");
 ```
@@ -34,6 +36,10 @@ Then you can use the provider in the same way as the version 2.
 Breach
 
 ```php
+use WBW\Library\HaveIBeenPwned\Model\Breach;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
+
 // Create the API provider.
 $provider = new APIv2Provider();
 
@@ -45,6 +51,7 @@ $request->setName("Adobe");
 $response = $provider->breach($request);
 
 // Handle the response.
+/** @var Breach $current */
 foreach($response->getBreaches() as $current) {
 
     $current->getAddedDate();
@@ -65,6 +72,10 @@ foreach($response->getBreaches() as $current) {
 Breached account
 
 ```php
+use WBW\Library\HaveIBeenPwned\Model\Breach;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+
 // Create the API provider.
 $provider = new APIv2Provider();
 
@@ -83,6 +94,10 @@ $response = $provider->breachedAccount($request);
 Breaches
 
 ```php
+use WBW\Library\HaveIBeenPwned\Model\Breach;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
+
 // Create the API provider.
 $provider = new APIv2Provider();
 
@@ -100,6 +115,10 @@ $response = $provider->breaches($request);
 Data classes
 
 ```php
+use WBW\Library\HaveIBeenPwned\Model\DataClass;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Request\DataClassesRequest;
+
 // Create the API provider.
 $provider = new APIv2Provider();
 
@@ -107,6 +126,7 @@ $provider = new APIv2Provider();
 $response = $provider->dataClasses(new DataClassesRequest());
 
 // Handle the response.
+/** @var DataClass $current */
 foreach($response->getDataClasses() as $current) {
     
     $current->getName();
@@ -116,6 +136,10 @@ foreach($response->getDataClasses() as $current) {
 Paste account
 
 ```php
+use WBW\Library\HaveIBeenPwned\Model\Paste;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Request\PasteAccountRequest;
+
 // Create the API provider.
 $provider = new APIv2Provider();
 
@@ -127,6 +151,7 @@ $request->setAccount("john.doe@gmail.com");
 $response = $provider->pasteAccount($request);
 
 // Handle the response.
+/** @var Paste $current */
 foreach($response->getPastes() as $current) {
 
     $current->getDate();
@@ -140,6 +165,10 @@ foreach($response->getPastes() as $current) {
 Range
 
 ```php
+use WBW\Library\HaveIBeenPwned\Model\Range;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
+
 // Create the API provider.
 $provider = new APIv2Provider();
 
@@ -151,6 +180,7 @@ $request->setHash("21BD1");
 $response = $provider->range($request);
 
 // Handle the response.
+/** @var Range $current */
 foreach($response->getRanges() as $current) {
     
     $current->getCount();
