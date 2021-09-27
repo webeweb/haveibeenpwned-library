@@ -33,6 +33,31 @@ $provider = new APIv3Provider("YOUR_API_KEY");
 
 Then you can use the provider in the same way as the version 2.
 
+> IMPORTANT NOTICE: Each API provider can be used with a debug flag and/or a
+> logger with the following code:
+
+```php
+use Psr\Log\LoggerInterface;
+use WBW\Library\HaveIBeenPwned\Provider\APIv1Provider;
+use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
+use WBW\Library\HaveIBeenPwned\Provider\APIv3Provider;
+
+/** @var LoggerInterface $logger */
+// $logger = ...
+
+// Create the API provider.
+$provider3 = new APIv3Provider("YOUR_API_KEY", $logger);
+$provider3->setDebug(true);
+
+$provider2 = new APIv2Provider($logger);
+$provider2->setDebug(true);
+
+$provider1 = new APIv1Provider($logger);
+$provider1->setDebug(true);
+```
+
+---
+
 Breach
 
 ```php
