@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\API;
+namespace WBW\Library\HaveIBeenPwned\Api;
 
 /**
  * Request interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\HaveIBeenPwned\API
+ * @package WBW\Library\HaveIBeenPwned\Api
  */
 interface RequestInterface {
 

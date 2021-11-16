@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests;
 
 use PHPUnit\Framework\TestCase;
-use WBW\Library\HaveIBeenPwned\API\RequestInterface;
+use WBW\Library\HaveIBeenPwned\Api\RequestInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachedAccountInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachesInterface;
 use WBW\Library\HaveIBeenPwned\Entity\BreachInterface;

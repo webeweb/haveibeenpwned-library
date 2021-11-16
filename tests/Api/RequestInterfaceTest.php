@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\HaveIBeenPwned\Tests\API;
+namespace WBW\Library\HaveIBeenPwned\Tests\Api;
 
-use WBW\Library\HaveIBeenPwned\API\RequestInterface;
+use WBW\Library\HaveIBeenPwned\Api\RequestInterface;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
 /**

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Serializer;
 
-use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
+use WBW\Library\HaveIBeenPwned\Api\ResponseInterface;
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Model\DataClass;
 use WBW\Library\HaveIBeenPwned\Model\Paste;

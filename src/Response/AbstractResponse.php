@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Response;
 
-use WBW\Library\HaveIBeenPwned\API\ResponseInterface;
+use WBW\Library\HaveIBeenPwned\Api\ResponseInterface;
 use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
