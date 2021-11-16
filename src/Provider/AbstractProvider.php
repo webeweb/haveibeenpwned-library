@@ -53,7 +53,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $apiKey The API key.
      * @return array Returns the configuration.
      */
-    private function buildConfiguration(string $host, $apiKey = null): array {
+    private function buildConfiguration(string $host, string $apiKey = null): array {
 
         $config = [
             "base_uri"    => $host . "/",
