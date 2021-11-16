@@ -49,30 +49,30 @@ class ResponseDeserializer {
     /**
      * Deserialize a breach.
      *
-     * @param array $rawResponse The raw response.
+     * @param array $data The data.
      * @return Breach Returns a breach.
      */
-    protected static function deserializeBreach(array $rawResponse): Breach {
+    protected static function deserializeBreach(array $data): Breach {
 
-        $addedDate    = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_ADDED, ArrayHelper::get($rawResponse, "AddedDate", ""), new DateTimeZone("UTC"));
-        $breachDate   = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_BREACH, ArrayHelper::get($rawResponse, "BreachDate", ""), new DateTimeZone("UTC"));
-        $modifiedDate = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_MODIFIED, ArrayHelper::get($rawResponse, "ModifiedDate", ""), new DateTimeZone("UTC"));
+        $addedDate    = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_ADDED, ArrayHelper::get($data, "AddedDate", ""), new DateTimeZone("UTC"));
+        $breachDate   = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_BREACH, ArrayHelper::get($data, "BreachDate", ""), new DateTimeZone("UTC"));
+        $modifiedDate = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_MODIFIED, ArrayHelper::get($data, "ModifiedDate", ""), new DateTimeZone("UTC"));
 
         $model = new Breach();
-        $model->setName(ArrayHelper::get($rawResponse, "Name"));
-        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
-        $model->setDomain(ArrayHelper::get($rawResponse, "Domain"));
+        $model->setName(ArrayHelper::get($data, "Name"));
+        $model->setTitle(ArrayHelper::get($data, "Title"));
+        $model->setDomain(ArrayHelper::get($data, "Domain"));
         $model->setBreachDate(false !== $breachDate ? $breachDate : null);
         $model->setAddedDate(false !== $addedDate ? $addedDate : null);
         $model->setModifiedDate(false !== $modifiedDate ? $modifiedDate : null);
-        $model->setPwnCount(ArrayHelper::get($rawResponse, "PwnCount", 0));
-        $model->setDescription(ArrayHelper::get($rawResponse, "Description"));
-        $model->setVerified(ArrayHelper::get($rawResponse, "IsVerified", false));
-        $model->setSensitive(ArrayHelper::get($rawResponse, "IsSensitive", false));
-        $model->setRetired(ArrayHelper::get($rawResponse, "IsRetired", false));
-        $model->setSpamList(ArrayHelper::get($rawResponse, "IsSpamList", false));
+        $model->setPwnCount(ArrayHelper::get($data, "PwnCount", 0));
+        $model->setDescription(ArrayHelper::get($data, "Description"));
+        $model->setVerified(ArrayHelper::get($data, "IsVerified", false));
+        $model->setSensitive(ArrayHelper::get($data, "IsSensitive", false));
+        $model->setRetired(ArrayHelper::get($data, "IsRetired", false));
+        $model->setSpamList(ArrayHelper::get($data, "IsSpamList", false));
 
-        foreach (ArrayHelper::get($rawResponse, "DataClasses", []) as $current) {
+        foreach (ArrayHelper::get($data, "DataClasses", []) as $current) {
             $model->addDataClass(static::deserializeDataClass($current));
         }
 
@@ -145,19 +145,19 @@ class ResponseDeserializer {
     /**
      * Deserialize a paste.
      *
-     * @param array $rawResponse The raw response.
+     * @param array $data The data.
      * @return Paste Returns the paste.
      */
-    protected static function deserializePaste(array $rawResponse): Paste {
+    protected static function deserializePaste(array $data): Paste {
 
-        $date = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_DATE, ArrayHelper::get($rawResponse, "Date", ""), new DateTimeZone("UTC"));
+        $date = DateTime::createFromFormat(ResponseInterface::DATETIME_FORMAT_DATE, ArrayHelper::get($data, "Date", ""), new DateTimeZone("UTC"));
 
         $model = new Paste();
-        $model->setSource(ArrayHelper::get($rawResponse, "Source"));
-        $model->setId(ArrayHelper::get($rawResponse, "Id"));
-        $model->setTitle(ArrayHelper::get($rawResponse, "Title"));
+        $model->setSource(ArrayHelper::get($data, "Source"));
+        $model->setId(ArrayHelper::get($data, "Id"));
+        $model->setTitle(ArrayHelper::get($data, "Title"));
         $model->setDate(false !== $date ? $date : null);
-        $model->setEmailCount(ArrayHelper::get($rawResponse, "EmailCount", 0));
+        $model->setEmailCount(ArrayHelper::get($data, "EmailCount", 0));
 
         return $model;
     }

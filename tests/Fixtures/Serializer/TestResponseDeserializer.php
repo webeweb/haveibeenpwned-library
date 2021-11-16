@@ -28,8 +28,15 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritdoc}
      */
-    public static function deserializeBreach(array $rawResponse): Breach {
-        return parent::deserializeBreach($rawResponse);
+    public static function cleanResponse(string $rawResponse): string {
+        return parent::cleanResponse($rawResponse);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function deserializeBreach(array $data): Breach {
+        return parent::deserializeBreach($data);
     }
 
     /**
@@ -42,8 +49,8 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritdoc}
      */
-    public static function deserializePaste(array $rawResponse): Paste {
-        return parent::deserializePaste($rawResponse);
+    public static function deserializePaste(array $data): Paste {
+        return parent::deserializePaste($data);
     }
 
     /**

@@ -22,7 +22,6 @@ use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Serializer\TestResponseDeserializer;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\TestFixtures;
 
 /**
  * Response Deserializer test.
@@ -39,12 +38,13 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testCleanResponse(): void {
 
-        $arg = TestFixtures::SAMPLE_BREACH_RESPONSE;
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/BreachesResponse.json");
 
-        $this->assertStringContainsString("True", $arg);
-        $this->assertStringContainsString("False", $arg);
+        $this->assertStringContainsString("True", $json);
+        $this->assertStringContainsString("False", $json);
 
-        $res = TestResponseDeserializer::cleanResponse($arg);
+        $res = TestResponseDeserializer::cleanResponse($json);
 
         $this->assertStringNotContainsString("True", $res);
         $this->assertStringNotContainsString("False", $res);
@@ -57,28 +57,31 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeBreach(): void {
 
-        $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/BreachesResponse.json");
+        $data = json_decode(TestResponseDeserializer::cleanResponse($json), true);
 
-        $obj = TestResponseDeserializer::deserializeBreach(TestFixtures::getSampleBreachResponse()[0]);
+        $res = TestResponseDeserializer::deserializeBreach($data[0]);
+        $this->assertInstanceOf(Breach::class, $res);
 
-        $this->assertInstanceOf(Breach::class, $obj);
+        $this->assertEquals("Adobe", $res->getName());
+        $this->assertEquals("Adobe", $res->getTitle());
+        $this->assertEquals("adobe.com", $res->getDomain());
+        $this->assertEquals("2013-12-04T00:00Z", $res->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2013-10-04", $res->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertCount(4, $res->getDataClasses());
+        $this->assertStringContainsString("In October 2013", $res->getDescription());
+        $this->assertEquals("2013-12-04T00:00Z", $res->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(152445165, $res->getPwnCount());
+        $this->assertFalse($res->getRetired());
+        $this->assertFalse($res->getSensitive());
+        $this->assertFalse($res->getSpamList());
+        $this->assertTrue($res->getVerified());
 
-        $this->assertEquals("Adobe", $obj->getName());
-        $this->assertEquals("Adobe", $obj->getTitle());
-        $this->assertEquals("adobe.com", $obj->getDomain());
-        $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2013-10-04", $obj->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertCount(4, $obj->getDataClasses());
-        $this->assertStringContainsString("In October 2013", $obj->getDescription());
-        $this->assertEquals("2013-12-04T00:00Z", $obj->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
-        $this->assertEquals(152445165, $obj->getPwnCount());
-        $this->assertFalse($obj->getRetired());
-        $this->assertFalse($obj->getSensitive());
-        $this->assertFalse($obj->getSpamList());
-        $this->assertTrue($obj->getVerified());
+        $exp = json_decode(file_get_contents(__DIR__ . "/../Fixtures/Response/DataClassesResponse.json"), true);
 
         for ($i = 0; $i < 4; ++$i) {
-            $this->assertEquals($dataClasses[$i], $obj->getDataClasses()[$i]->getName());
+            $this->assertEquals($exp[$i], $res->getDataClasses()[$i]->getName());
         }
     }
 
@@ -89,42 +92,46 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeBreachesResponse(): void {
 
-        $obj = TestResponseDeserializer::deserializeBreachesResponse(TestFixtures::SAMPLE_BREACH_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/BreachesResponse.json");
 
-        $this->assertInstanceOf(BreachesResponse::class, $obj);
+        $res = TestResponseDeserializer::deserializeBreachesResponse($json);
+        $this->assertInstanceOf(BreachesResponse::class, $res);
 
-        $res = $obj->getBreaches();
-        $this->assertCount(2, $res);
+        $this->assertEquals($json, $res->getRawResponse());
 
-        $this->assertInstanceOf(Breach::class, $res[0]);
-        $this->assertEquals("Adobe", $res[0]->getName());
-        $this->assertEquals("Adobe", $res[0]->getTitle());
-        $this->assertEquals("adobe.com", $res[0]->getDomain());
-        $this->assertEquals("2013-10-04", $res[0]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertEquals("2013-12-04T00:00Z", $res[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2013-12-04T00:00Z", $res[0]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
-        $this->assertEquals(152445165, $res[0]->getPwnCount());
-        $this->assertStringContainsString("In October 2013", $res[0]->getDescription());
-        $this->assertCount(4, $res[0]->getDataClasses());
-        $this->assertTrue($res[0]->getVerified());
-        $this->assertFalse($res[0]->getSensitive());
-        $this->assertFalse($res[0]->getRetired());
-        $this->assertFalse($res[0]->getSpamList());
+        $obj = $res->getBreaches();
+        $this->assertCount(2, $obj);
 
-        $this->assertInstanceOf(Breach::class, $res[1]);
-        $this->assertEquals("BattlefieldHeroes", $res[1]->getName());
-        $this->assertEquals("Battlefield Heroes", $res[1]->getTitle());
-        $this->assertEquals("battlefieldheroes.com", $res[1]->getDomain());
-        $this->assertEquals("2011-06-26", $res[1]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertEquals("2014-01-23T13:10Z", $res[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2014-01-23T13:10Z", $res[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
-        $this->assertEquals(530270, $res[1]->getPwnCount());
-        $this->assertStringContainsString("In June 2011", $res[1]->getDescription());
-        $this->assertCount(2, $res[1]->getDataClasses());
-        $this->assertTrue($res[1]->getVerified());
-        $this->assertFalse($res[1]->getSensitive());
-        $this->assertFalse($res[1]->getRetired());
-        $this->assertFalse($res[1]->getSpamList());
+        $this->assertInstanceOf(Breach::class, $obj[0]);
+        $this->assertEquals("Adobe", $obj[0]->getName());
+        $this->assertEquals("Adobe", $obj[0]->getTitle());
+        $this->assertEquals("adobe.com", $obj[0]->getDomain());
+        $this->assertEquals("2013-10-04", $obj[0]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertEquals("2013-12-04T00:00Z", $obj[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2013-12-04T00:00Z", $obj[0]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(152445165, $obj[0]->getPwnCount());
+        $this->assertStringContainsString("In October 2013", $obj[0]->getDescription());
+        $this->assertCount(4, $obj[0]->getDataClasses());
+        $this->assertTrue($obj[0]->getVerified());
+        $this->assertFalse($obj[0]->getSensitive());
+        $this->assertFalse($obj[0]->getRetired());
+        $this->assertFalse($obj[0]->getSpamList());
+
+        $this->assertInstanceOf(Breach::class, $obj[1]);
+        $this->assertEquals("BattlefieldHeroes", $obj[1]->getName());
+        $this->assertEquals("Battlefield Heroes", $obj[1]->getTitle());
+        $this->assertEquals("battlefieldheroes.com", $obj[1]->getDomain());
+        $this->assertEquals("2011-06-26", $obj[1]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertEquals("2014-01-23T13:10Z", $obj[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2014-01-23T13:10Z", $obj[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(530270, $obj[1]->getPwnCount());
+        $this->assertStringContainsString("In June 2011", $obj[1]->getDescription());
+        $this->assertCount(2, $obj[1]->getDataClasses());
+        $this->assertTrue($obj[1]->getVerified());
+        $this->assertFalse($obj[1]->getSensitive());
+        $this->assertFalse($obj[1]->getRetired());
+        $this->assertFalse($obj[1]->getSpamList());
     }
 
     /**
@@ -134,13 +141,14 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeDataClass(): void {
 
-        $dataClasses = json_decode(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/DataClassesResponse.json");
+        $data = json_decode($json, true);
 
-        $obj = TestResponseDeserializer::deserializeDataClass($dataClasses[0]);
+        $res = TestResponseDeserializer::deserializeDataClass($data[0]);
+        $this->assertInstanceOf(DataClass::class, $res);
 
-        $this->assertInstanceOf(DataClass::class, $obj);
-
-        $this->assertEquals("Email addresses", $obj->getName());
+        $this->assertEquals("Email addresses", $res->getName());
     }
 
     /**
@@ -150,24 +158,28 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeDataClassesResponse(): void {
 
-        $obj = TestResponseDeserializer::deserializeDataClassesResponse(TestFixtures::SAMPLE_DATA_CLASS_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/DataClassesResponse.json");
 
-        $this->assertInstanceOf(DataClassesResponse::class, $obj);
+        $res = TestResponseDeserializer::deserializeDataClassesResponse($json);
+        $this->assertInstanceOf(DataClassesResponse::class, $res);
 
-        $res = $obj->getDataClasses();
-        $this->assertCount(4, $res);
+        $this->assertEquals($json, $res->getRawResponse());
 
-        $this->assertInstanceOf(DataClass::class, $res[0]);
-        $this->assertEquals("Email addresses", $res[0]->getName());
+        $obj = $res->getDataClasses();
+        $this->assertCount(4, $obj);
 
-        $this->assertInstanceOf(DataClass::class, $res[1]);
-        $this->assertEquals("Password hints", $res[1]->getName());
+        $this->assertInstanceOf(DataClass::class, $obj[0]);
+        $this->assertEquals("Email addresses", $obj[0]->getName());
 
-        $this->assertInstanceOf(DataClass::class, $res[2]);
-        $this->assertEquals("Passwords", $res[2]->getName());
+        $this->assertInstanceOf(DataClass::class, $obj[1]);
+        $this->assertEquals("Password hints", $obj[1]->getName());
 
-        $this->assertInstanceOf(DataClass::class, $res[3]);
-        $this->assertEquals("Usernames", $res[3]->getName());
+        $this->assertInstanceOf(DataClass::class, $obj[2]);
+        $this->assertEquals("Passwords", $obj[2]->getName());
+
+        $this->assertInstanceOf(DataClass::class, $obj[3]);
+        $this->assertEquals("Usernames", $obj[3]->getName());
     }
 
     /**
@@ -177,15 +189,18 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePaste(): void {
 
-        $obj = TestResponseDeserializer::deserializePaste(TestFixtures::getSamplePasteResponse()[0]);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/PastesResponse.json");
+        $data = json_decode($json, true);
 
-        $this->assertInstanceOf(Paste::class, $obj);
+        $res = TestResponseDeserializer::deserializePaste($data[0]);
+        $this->assertInstanceOf(Paste::class, $res);
 
-        $this->assertEquals("Pastebin", $obj->getSource());
-        $this->assertEquals("8Q0BvKD8", $obj->getId());
-        $this->assertEquals("syslog", $obj->getTitle());
-        $this->assertEquals("2014-03-04T19:14:54Z", $obj->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
-        $this->assertEquals(139, $obj->getEmailCount());
+        $this->assertEquals("Pastebin", $res->getSource());
+        $this->assertEquals("8Q0BvKD8", $res->getId());
+        $this->assertEquals("syslog", $res->getTitle());
+        $this->assertEquals("2014-03-04T19:14:54Z", $res->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
+        $this->assertEquals(139, $res->getEmailCount());
     }
 
     /**
@@ -195,26 +210,30 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializePastesResponse(): void {
 
-        $obj = TestResponseDeserializer::deserializePastesResponse(TestFixtures::SAMPLE_PASTE_RESPONSE);
+        // Set a JSON mock.
+        $json = file_get_contents(__DIR__ . "/../Fixtures/Response/PastesResponse.json");
 
-        $this->assertInstanceOf(PastesResponse::class, $obj);
+        $res = TestResponseDeserializer::deserializePastesResponse($json);
+        $this->assertInstanceOf(PastesResponse::class, $res);
 
-        $res = $obj->getPastes();
-        $this->assertCount(2, $res);
+        $this->assertEquals($json, $res->getRawResponse());
 
-        $this->assertInstanceOf(Paste::class, $res[0]);
-        $this->assertEquals("Pastebin", $res[0]->getSource());
-        $this->assertEquals("8Q0BvKD8", $res[0]->getId());
-        $this->assertEquals("syslog", $res[0]->getTitle());
-        $this->assertEquals("2014-03-04T19:14:54Z", $res[0]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
-        $this->assertEquals(139, $res[0]->getEmailCount());
+        $obj = $res->getPastes();
+        $this->assertCount(2, $obj);
 
-        $this->assertInstanceOf(Paste::class, $res[1]);
-        $this->assertEquals("Pastie", $res[1]->getSource());
-        $this->assertEquals("7152479", $res[1]->getId());
-        $this->assertNull($res[1]->getTitle());
-        $this->assertEquals("2013-03-28T16:51:10Z", $res[1]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
-        $this->assertEquals(30, $res[1]->getEmailCount());
+        $this->assertInstanceOf(Paste::class, $obj[0]);
+        $this->assertEquals("Pastebin", $obj[0]->getSource());
+        $this->assertEquals("8Q0BvKD8", $obj[0]->getId());
+        $this->assertEquals("syslog", $obj[0]->getTitle());
+        $this->assertEquals("2014-03-04T19:14:54Z", $obj[0]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
+        $this->assertEquals(139, $obj[0]->getEmailCount());
+
+        $this->assertInstanceOf(Paste::class, $obj[1]);
+        $this->assertEquals("Pastie", $obj[1]->getSource());
+        $this->assertEquals("7152479", $obj[1]->getId());
+        $this->assertNull($obj[1]->getTitle());
+        $this->assertEquals("2013-03-28T16:51:10Z", $obj[1]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
+        $this->assertEquals(30, $obj[1]->getEmailCount());
     }
 
     /**
@@ -224,13 +243,12 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeRange(): void {
 
-        $obj = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65:1");
+        $res = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65:1");
+        $this->assertInstanceOf(Range::class, $res);
 
-        $this->assertInstanceOf(Range::class, $obj);
-
-        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $obj->getHash());
-        $this->assertEquals(1, $obj->getCount());
-        $this->assertNull($obj->getPrefix());
+        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $res->getHash());
+        $this->assertEquals(1, $res->getCount());
+        $this->assertNull($res->getPrefix());
     }
 
     /**
@@ -240,32 +258,36 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeRangeResponse(): void {
 
-        $obj = TestResponseDeserializer::deserializeRangesResponse(TestFixtures::SAMPLE_RANGE_RESPONSE);
+        // Set a text mock.
+        $txt = file_get_contents(__DIR__ . "/../Fixtures/Response/RangesResponse.txt");
 
-        $this->assertInstanceOf(RangesResponse::class, $obj);
+        $res = TestResponseDeserializer::deserializeRangesResponse($txt);
+        $this->assertInstanceOf(RangesResponse::class, $res);
 
-        $res = $obj->getRanges();
-        $this->assertCount(5, $res);
+        $this->assertEquals($txt, $res->getRawResponse());
 
-        $this->assertInstanceOf(Range::class, $res[0]);
-        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $res[0]->getHash());
-        $this->assertEquals(1, $res[0]->getCount());
+        $obj = $res->getRanges();
+        $this->assertCount(5, $obj);
 
-        $this->assertInstanceOf(Range::class, $res[1]);
-        $this->assertEquals("00D4F6E8FA6EECAD2A3AA415EEC418D38EC", $res[1]->getHash());
-        $this->assertEquals(2, $res[1]->getCount());
+        $this->assertInstanceOf(Range::class, $obj[0]);
+        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $obj[0]->getHash());
+        $this->assertEquals(1, $obj[0]->getCount());
 
-        $this->assertInstanceOf(Range::class, $res[2]);
-        $this->assertEquals("011053FD0102E94D6AE2F8B83D76FAF94F6", $res[2]->getHash());
-        $this->assertEquals(1, $res[2]->getCount());
+        $this->assertInstanceOf(Range::class, $obj[1]);
+        $this->assertEquals("00D4F6E8FA6EECAD2A3AA415EEC418D38EC", $obj[1]->getHash());
+        $this->assertEquals(2, $obj[1]->getCount());
 
-        $this->assertInstanceOf(Range::class, $res[3]);
-        $this->assertEquals("012A7CA357541F0AC487871FEEC1891C49C", $res[3]->getHash());
-        $this->assertEquals(2, $res[3]->getCount());
+        $this->assertInstanceOf(Range::class, $obj[2]);
+        $this->assertEquals("011053FD0102E94D6AE2F8B83D76FAF94F6", $obj[2]->getHash());
+        $this->assertEquals(1, $obj[2]->getCount());
 
-        $this->assertInstanceOf(Range::class, $res[4]);
-        $this->assertEquals("0136E006E24E7D152139815FB0FC6A50B15", $res[4]->getHash());
-        $this->assertEquals(2, $res[4]->getCount());
+        $this->assertInstanceOf(Range::class, $obj[3]);
+        $this->assertEquals("012A7CA357541F0AC487871FEEC1891C49C", $obj[3]->getHash());
+        $this->assertEquals(2, $obj[3]->getCount());
+
+        $this->assertInstanceOf(Range::class, $obj[4]);
+        $this->assertEquals("0136E006E24E7D152139815FB0FC6A50B15", $obj[4]->getHash());
+        $this->assertEquals(2, $obj[4]->getCount());
     }
 
     /**
@@ -275,12 +297,12 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeRangeWithBadRawResponse(): void {
 
-        $obj = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65");
+        $res = TestResponseDeserializer::deserializeRange("0018A45C4D1DEF81644B54AB7F969B88D65");
 
-        $this->assertInstanceOf(Range::class, $obj);
+        $this->assertInstanceOf(Range::class, $res);
 
-        $this->assertEquals(0, $obj->getCount());
-        $this->assertNull($obj->getHash());
-        $this->assertNull($obj->getPrefix());
+        $this->assertEquals(0, $res->getCount());
+        $this->assertNull($res->getHash());
+        $this->assertNull($res->getPrefix());
     }
 }
