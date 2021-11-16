@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.2.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.2.0) (2021-11-16)
+
+- Improve unit tests
+- Rename API package
+
 ### [3.1.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.1.0) (2021-09-25)
 
 - Update dependencies
