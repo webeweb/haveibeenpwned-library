@@ -33,6 +33,7 @@ class DataClassesResponse extends AbstractResponse {
      */
     public function __construct() {
         parent::__construct();
+
         $this->setDataClasses([]);
     }
 
