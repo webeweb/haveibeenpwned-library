@@ -13,7 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
 use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\Provider\API\SubstituableRequestInterface;
+use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
 /**
  * Breach request test.
