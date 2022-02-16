@@ -29,7 +29,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RequestFactoryTest extends AbstractTestCase {
 
     /**
-     * Tests the newBreachRequest() method.
+     * Tests newBreachRequest()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newBreachedAccountRequest() method.
+     * Tests newBreachedAccountRequest()
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newBreachesRequest() method.
+     * Tests newBreachesRequest()
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newDataClassesRequest() method.
+     * Tests newDataClassesRequest()
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newPasteAccountRequest() method.
+     * Tests newPasteAccountRequest()
      *
      * @return void
      */
@@ -95,7 +95,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newRangeRequest() method.
+     * Tests newRangeRequest()
      *
      * @return void
      */

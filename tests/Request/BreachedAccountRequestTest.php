@@ -24,7 +24,7 @@ use WBW\Library\Provider\Api\SubstituableRequestInterface;
 class BreachedAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the getSubstituables() method.
+     * Tests getSubstituables()
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setIncludeUnverified() method.
+     * Tests setIncludeUnverified()
      *
      * @return void
      */
@@ -50,7 +50,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setTruncateResponse() method.
+     * Tests setTruncateResponse()
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class BreachedAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

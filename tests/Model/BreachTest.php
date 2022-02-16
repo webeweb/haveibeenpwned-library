@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachTest extends AbstractTestCase {
 
     /**
-     * Tests the setAddedDate() method.
+     * Tests setAddedDate()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -41,7 +41,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setBreachDate() method.
+     * Tests setBreachDate()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -57,7 +57,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDataClasses() method.
+     * Tests setDataClasses()
      *
      * @return void
      */
@@ -70,7 +70,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setFabricated() method.
+     * Tests setFabricated()
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setModifiedDate() method.
+     * Tests setModifiedDate()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -99,7 +99,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setPwnCount() method.
+     * Tests setPwnCount()
      *
      * @return void
      */
@@ -112,7 +112,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setRetired() method.
+     * Tests setRetired()
      *
      * @return void
      */
@@ -125,7 +125,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setSensitive() method.
+     * Tests setSensitive()
      *
      * @return void
      */
@@ -138,7 +138,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setSpamList() method.
+     * Tests setSpamList()
      *
      * @return void
      */
@@ -151,7 +151,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setVerified() method.
+     * Tests setVerified()
      *
      * @return void
      */
@@ -164,7 +164,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

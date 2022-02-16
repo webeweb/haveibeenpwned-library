@@ -54,7 +54,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the breach() method.
+     * Tests breach()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -72,7 +72,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the breachedAccount() method.
+     * Tests breachedAccount()
      *
      * @return void
      */
@@ -97,7 +97,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the breachedAccount() method.
+     * Tests breachedAccount()
      *
      * @return void
      */
@@ -122,7 +122,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the breaches() method.
+     * Tests breaches()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -140,7 +140,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the dataClasses() method.
+     * Tests dataClasses()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -157,7 +157,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the pasteAccount() method.
+     * Tests pasteAccount()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -182,7 +182,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the range() method.
+     * Tests range()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -200,7 +200,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setApiKey() method.
+     * Tests setApiKey()
      *
      * @return void
      */
@@ -215,7 +215,7 @@ class APIv3ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

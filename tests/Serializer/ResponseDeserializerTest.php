@@ -32,7 +32,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Serializer\TestResponseDeserialize
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the cleanResponse() method.
+     * Tests cleanResponse()
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeBreach() method.
+     * Tests deserializeBreach()
      *
      * @return void
      */
@@ -86,7 +86,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeBreachesResponse() method.
+     * Tests deserializeBreachesResponse()
      *
      * @return void
      */
@@ -135,7 +135,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeDataClass() method.
+     * Tests deserializeDataClass()
      *
      * @return void
      */
@@ -152,7 +152,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeDataClassesResponse() method.
+     * Tests deserializeDataClassesResponse()
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializePaste() method.
+     * Tests deserializePaste()
      *
      * @return void
      */
@@ -204,7 +204,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializePastesResponse() method.
+     * Tests deserializePastesResponse()
      *
      * @return void
      */
@@ -237,7 +237,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeRange() method.
+     * Tests deserializeRange()
      *
      * @return void
      */
@@ -252,7 +252,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeRangesResponse() method.
+     * Tests deserializeRangesResponse()
      *
      * @return void
      */
@@ -291,7 +291,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeRange() method.
+     * Tests deserializeRange()
      *
      * @return void
      */
