@@ -16,7 +16,7 @@ use WBW\Library\HaveIBeenPwned\Model\Paste;
 /**
  * Pastes response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Response
  */
 class PastesResponse extends AbstractResponse {

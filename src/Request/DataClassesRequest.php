@@ -14,7 +14,7 @@ namespace WBW\Library\HaveIBeenPwned\Request;
 /**
  * Data classes request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
 class DataClassesRequest extends AbstractRequest {

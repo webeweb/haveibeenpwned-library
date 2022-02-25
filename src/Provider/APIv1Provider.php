@@ -22,7 +22,7 @@ use WBW\Library\Provider\Exception\ApiException;
 /**
  * API v1 provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Provider
  */
 class APIv1Provider extends AbstractProvider {

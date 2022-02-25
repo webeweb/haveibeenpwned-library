@@ -17,7 +17,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 /**
  * Paste test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package  WBW\Library\HaveIBeenPwned\Tests\Model
  */
 class PasteTest extends AbstractTestCase {

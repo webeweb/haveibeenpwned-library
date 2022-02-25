@@ -18,7 +18,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 /**
  * Data classes response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Tests\Response
  */
 class DataClassesResponseTest extends AbstractTestCase {

@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringNameTrait;
 /**
  * Breach request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
 class BreachRequest extends AbstractRequest implements SubstituableRequestInterface {

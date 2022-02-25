@@ -26,7 +26,7 @@ use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Serializer\TestResponseDeserialize
 /**
  * Response Deserializer test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Tests\Serializer
  */
 class ResponseDeserializerTest extends AbstractTestCase {

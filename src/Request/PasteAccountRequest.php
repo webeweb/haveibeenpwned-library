@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringAccountTrait;
 /**
  * Paste account request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
 class PasteAccountRequest extends AbstractRequest implements SubstituableRequestInterface {

@@ -13,7 +13,7 @@ namespace WBW\Library\HaveIBeenPwned\Entity;
 /**
  * Breaches interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Entity
  */
 interface BreachesInterface extends HaveIBeenPwnedEntityInterface {

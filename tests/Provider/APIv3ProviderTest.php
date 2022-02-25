@@ -29,7 +29,7 @@ use WBW\Library\Provider\Exception\ApiException;
 /**
  * API v3 provider test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Tests\Provider
  */
 class APIv3ProviderTest extends AbstractTestCase {

@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringRawResponseTrait;
 /**
  * Abstract response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Response
  * @abstract
  */

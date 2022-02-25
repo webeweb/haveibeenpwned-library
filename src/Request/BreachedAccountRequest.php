@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringAccountTrait;
 /**
  * Breached account request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Request
  */
 class BreachedAccountRequest extends BreachesRequest implements SubstituableRequestInterface {

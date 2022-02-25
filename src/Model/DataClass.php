@@ -16,7 +16,7 @@ use WBW\Library\Traits\Strings\StringNameTrait;
 /**
  * Data class.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Model
  */
 class DataClass {

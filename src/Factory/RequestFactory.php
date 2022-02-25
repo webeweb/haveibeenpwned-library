@@ -26,7 +26,7 @@ use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 /**
  * Request factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Factory
  */
 class RequestFactory {

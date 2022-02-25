@@ -14,7 +14,7 @@ namespace WBW\Library\HaveIBeenPwned\Api;
 /**
  * Response interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Api
  */
 interface ResponseInterface {

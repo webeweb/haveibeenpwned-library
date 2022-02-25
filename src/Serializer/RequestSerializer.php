@@ -19,7 +19,7 @@ use WBW\Library\Types\Helper\StringHelper;
 /**
  * Request serializer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Serializer
  */
 class RequestSerializer {

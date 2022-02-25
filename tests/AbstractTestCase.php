@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Entity\RangeInterface;
 /**
  * Abstract test case.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Tests
  * @abstract
  */

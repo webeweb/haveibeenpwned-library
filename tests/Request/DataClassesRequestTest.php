@@ -17,7 +17,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 /**
  * Data classes request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\HaveIBeenPwned\Tests\Request
  */
 class DataClassesRequestTest extends AbstractTestCase {
