@@ -40,8 +40,8 @@ class ResponseDeserializer {
      */
     public static function cleanResponse(string $rawResponse): string {
 
-        $searches = [":True", ":False"];
-        $replaces = [":true", ":false"];
+        $searches = [":True", ":False", ": True", ": False"];
+        $replaces = [":true", ":false", ":true", ":false"];
 
         return str_replace($searches, $replaces, $rawResponse);
     }
