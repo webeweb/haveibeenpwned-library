@@ -72,6 +72,7 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituableRequ
      * {@inheritdoc}
      */
     public function getSubstituables(): array {
+
         return [
             "{account}" => $this->getAccount(),
         ];

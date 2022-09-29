@@ -42,6 +42,7 @@ class PasteAccountRequest extends AbstractRequest implements SubstituableRequest
      * {@inheritdoc}
      */
     public function getSubstituables(): array {
+
         return [
             "{account}" => $this->getAccount(),
         ];

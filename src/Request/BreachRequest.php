@@ -42,6 +42,7 @@ class BreachRequest extends AbstractRequest implements SubstituableRequestInterf
      * {@inheritdoc}
      */
     public function getSubstituables(): array {
+
         return [
             "{name}" => $this->getName(),
         ];
