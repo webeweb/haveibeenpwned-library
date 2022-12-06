@@ -47,7 +47,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a breach.
+     * Deserializes a breach.
      *
      * @param array $data The data.
      * @return Breach Returns a breach.
@@ -80,7 +80,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a breaches response.
+     * Deserializes a breaches response.
      *
      * @param string $rawResponse The raw response.
      * @return BreachesResponse Returns the breaches response.
@@ -109,7 +109,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a data class.
+     * Deserializes a data class.
      *
      * @param string $rawResponse The raw response.
      * @return DataClass Returns a data class.
@@ -123,7 +123,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a data classes response.
+     * Deserializes a data classes response.
      *
      * @param string $rawResponse The raw response.
      * @return DataClassesResponse Returns the data classes response.
@@ -143,7 +143,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a paste.
+     * Deserializes a paste.
      *
      * @param array $data The data.
      * @return Paste Returns the paste.
@@ -163,7 +163,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a pastes response.
+     * Deserializes a pastes response.
      *
      * @param string $rawResponse The raw response.
      * @return PastesResponse Returns the pastes response.
@@ -185,7 +185,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a range.
+     * Deserializes a range.
      *
      * @param string $rawResponse The raw response.
      * @return Range Returns a range.
@@ -206,7 +206,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a ranges response.
+     * Deserializes a ranges response.
      *
      * @param string $rawResponse The raw response.
      * @return RangesResponse Returns the ranges response.

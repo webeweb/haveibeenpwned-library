@@ -25,7 +25,7 @@ use WBW\Library\Types\Helper\StringHelper;
 class RequestSerializer {
 
     /**
-     * Serialize a breached account request.
+     * Serializes a breached account request.
      *
      * @param BreachedAccountRequest $request The breached account request.
      * @return array Returns the serialized breached account request.
@@ -42,7 +42,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serialize a breaches request.
+     * Serializes a breaches request.
      *
      * @param BreachesRequest $request The breaches request.
      * @return array Returns the serialized breaches request.
