@@ -48,7 +48,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         parent::setUp();
 
         // Set an API key mock.
-        $this->apiKey = "YOUR_API_KEY";
+        $this->apiKey = static::getToken();
 
         $this->wait();
     }
