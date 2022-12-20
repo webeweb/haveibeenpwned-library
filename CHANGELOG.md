@@ -1,8 +1,9 @@
 CHANGELOG
 =========
 
-### master
+### [3.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.4.0) (2022-12-20)
 
+- Add PHP 8.2 support
 - Improve code quality
 - Improve PHPDoc
 - Improve unit tests
