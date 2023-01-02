@@ -11,9 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
-use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\HaveIBeenPwned\Provider\APIv1Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
@@ -58,7 +58,7 @@ class APIv1ProviderTest extends AbstractTestCase {
             // This unit test failed on Travis-CI.
             $res = $obj->breachedAccount($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
         }
@@ -79,7 +79,7 @@ class APIv1ProviderTest extends AbstractTestCase {
         try {
 
             $obj->breachedAccount($breachedAccountRequest);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The substituable value "{account}" is missing', $ex->getMessage());

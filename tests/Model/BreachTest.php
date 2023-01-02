@@ -12,7 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Model;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
@@ -28,7 +28,7 @@ class BreachTest extends AbstractTestCase {
      * Tests setAddedDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetAddedDate(): void {
 
@@ -44,7 +44,7 @@ class BreachTest extends AbstractTestCase {
      * Tests setBreachDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetBreachDate(): void {
 
@@ -86,7 +86,7 @@ class BreachTest extends AbstractTestCase {
      * Tests setModifiedDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetModifiedDate(): void {
 

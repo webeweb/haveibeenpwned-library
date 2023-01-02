@@ -11,12 +11,12 @@
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;
@@ -108,7 +108,7 @@ abstract class AbstractProvider extends BaseProvider {
         } catch (InvalidArgumentException $ex) {
 
             throw $ex;
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             if (true === ($ex instanceof ClientException) && 404 === $ex->getCode()) {
                 return "[]";

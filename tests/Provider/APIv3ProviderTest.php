@@ -11,7 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
-use Exception;
+use Throwable;
 use WBW\Library\HaveIBeenPwned\Provider\APIv3Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
@@ -57,7 +57,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * Tests breach()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testBreach(): void {
 
@@ -90,7 +90,7 @@ class APIv3ProviderTest extends AbstractTestCase {
             // This unit test failed without a valid API key.
             $res = $obj->breachedAccount($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
         }
@@ -115,7 +115,7 @@ class APIv3ProviderTest extends AbstractTestCase {
             // This unit test failed without a valid API key.
             $res = $obj->breachedAccount($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
         }
@@ -125,7 +125,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * Tests breaches()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testBreaches(): void {
 
@@ -143,7 +143,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * Tests dataClasses()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testDataClasses(): void {
 
@@ -160,7 +160,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * Tests pasteAccount()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testPasteAccount(): void {
 
@@ -185,7 +185,7 @@ class APIv3ProviderTest extends AbstractTestCase {
      * Tests range()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testRange(): void {
 
