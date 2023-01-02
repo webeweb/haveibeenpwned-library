@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.5.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.5.0) (2023-01-02)
+
+- Improve code quality
+- Improve PHPDoc
+- Update LICENSE
+
 ### [3.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.4.0) (2022-12-20)
 
 - Add PHP 8.2 support
