@@ -1,7 +1,7 @@
 haveibeenpwned-library
 ======================
 
-[![Build Status](https://img.shields.io/github/workflow/status/webeweb/haveibeenpwned-library/build?style=flat-square)](https://github.com/webeweb/haveibeenpwned-library/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/webeweb/haveibeenpwned-library/build.yml?style=flat-square)](https://github.com/webeweb/haveibeenpwned-library/actions)
 [![Coverage Status](https://img.shields.io/coveralls/github/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/haveibeenpwned-library?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/haveibeenpwned-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/haveibeenpwned-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/haveibeenpwned-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/haveibeenpwned-library)
