@@ -56,7 +56,7 @@ class APIv1ProviderTest extends AbstractTestCase {
         try {
 
             // This unit test failed on Travis-CI.
-            $res = $obj->breachedAccount($breachedAccountRequest);
+            $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
@@ -78,7 +78,7 @@ class APIv1ProviderTest extends AbstractTestCase {
 
         try {
 
-            $obj->breachedAccount($breachedAccountRequest);
+            $obj->sendRequest($breachedAccountRequest);
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);

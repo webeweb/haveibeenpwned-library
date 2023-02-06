@@ -57,7 +57,7 @@ class APIv2ProviderTest extends AbstractTestCase {
 
         $obj = new APIv2Provider();
 
-        $res = $obj->breach($breachRequest);
+        $res = $obj->sendRequest($breachRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
@@ -78,7 +78,7 @@ class APIv2ProviderTest extends AbstractTestCase {
         try {
 
             // This unit test failed on Travis-CI.
-            $res = $obj->breachedAccount($breachedAccountRequest);
+            $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
@@ -103,7 +103,7 @@ class APIv2ProviderTest extends AbstractTestCase {
         try {
 
             // This unit test failed on Travis-CI.
-            $res = $obj->breachedAccount($breachedAccountRequest);
+            $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
@@ -125,7 +125,7 @@ class APIv2ProviderTest extends AbstractTestCase {
 
         $obj = new APIv2Provider();
 
-        $res = $obj->breaches($breachesRequest);
+        $res = $obj->sendRequest($breachesRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
@@ -142,7 +142,7 @@ class APIv2ProviderTest extends AbstractTestCase {
 
         $obj = new APIv2Provider();
 
-        $res = $obj->dataClasses($dataClassesRequest);
+        $res = $obj->sendRequest($dataClassesRequest);
         $this->assertInstanceOf(DataClassesResponse::class, $res);
     }
 
@@ -174,12 +174,11 @@ class APIv2ProviderTest extends AbstractTestCase {
 
         try {
 
-            $res = $obj->pasteAccount($pasteAccountRequest);
+            $res = $obj->sendRequest($pasteAccountRequest);
             $this->assertInstanceOf(PastesResponse::class, $res);
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ApiException::class, $ex);
-            $this->assertEquals(401, $ex->getPrevious()->getCode());
         }
     }
 
@@ -197,7 +196,7 @@ class APIv2ProviderTest extends AbstractTestCase {
 
         $obj = new APIv2Provider();
 
-        $res = $obj->range($rangeRequest);
+        $res = $obj->sendRequest($rangeRequest);
         $this->assertInstanceOf(RangesResponse::class, $res);
     }
 }

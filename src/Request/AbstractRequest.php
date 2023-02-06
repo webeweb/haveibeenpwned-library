@@ -11,6 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use InvalidArgumentException;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 
 /**
@@ -28,4 +30,20 @@ abstract class AbstractRequest extends BaseRequest {
     public function __construct() {
         // NOTHING TO DO
     }
+
+    /**
+     * Deserializes a response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractResponse Returns the deserialized response.
+     */
+    abstract public function deserializeResponse(string $rawResponse): AbstractResponse;
+
+    /**
+     * Serializes this request.
+     *
+     * @return array Returns this serialized request.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
+     */
+    abstract public function serializeRequest(): array;
 }

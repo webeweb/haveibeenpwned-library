@@ -15,8 +15,6 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
-use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
-use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Exception\ApiException;
 
 /**
@@ -28,27 +26,26 @@ use WBW\Library\Provider\Exception\ApiException;
 class APIv1Provider extends AbstractProvider {
 
     /**
-     * Breached account.
-     *
-     * @param BreachedAccountRequest $request The breached account request.
-     * @return BreachesResponse Returns the breaches response.
-     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
-     * @throws ApiException Throws an API exception if an error occurs.
-     */
-    public function breachedAccount(BreachedAccountRequest $request): BreachesResponse {
-
-        $queryData = RequestSerializer::serializeBreachesRequest($request);
-
-        $rawResponse = $this->callApi($request, $queryData);
-
-        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getEndpointVersion(): string {
         return "";
+    }
+
+    /**
+     * Sends a request.
+     *
+     * @param BreachedAccountRequest $request The request.
+     * @return BreachesResponse Returns the response.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
+     */
+    public function sendRequest(BreachedAccountRequest $request): BreachesResponse {
+
+        $queryData   = $request->serializeRequest();
+        $rawResponse = $this->callApi($request, $queryData);
+
+        return $request->deserializeResponse($rawResponse);
     }
 }

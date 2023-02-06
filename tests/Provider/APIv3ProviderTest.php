@@ -67,7 +67,7 @@ class APIv3ProviderTest extends AbstractTestCase {
 
         $obj = new APIv3Provider();
 
-        $res = $obj->breach($breachRequest);
+        $res = $obj->sendRequest($breachRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
@@ -88,7 +88,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         try {
 
             // This unit test failed without a valid API key.
-            $res = $obj->breachedAccount($breachedAccountRequest);
+            $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
@@ -113,7 +113,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         try {
 
             // This unit test failed without a valid API key.
-            $res = $obj->breachedAccount($breachedAccountRequest);
+            $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
@@ -135,7 +135,7 @@ class APIv3ProviderTest extends AbstractTestCase {
 
         $obj = new APIv3Provider();
 
-        $res = $obj->breaches($breachesRequest);
+        $res = $obj->sendRequest($breachesRequest);
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
@@ -152,7 +152,7 @@ class APIv3ProviderTest extends AbstractTestCase {
 
         $obj = new APIv3Provider();
 
-        $res = $obj->dataClasses($dataClassesRequest);
+        $res = $obj->sendRequest($dataClassesRequest);
         $this->assertInstanceOf(DataClassesResponse::class, $res);
     }
 
@@ -173,7 +173,7 @@ class APIv3ProviderTest extends AbstractTestCase {
         try {
 
             // This unit test failed without a valid API key.
-            $res = $obj->pasteAccount($pasteAccountRequest);
+            $res = $obj->sendRequest($pasteAccountRequest);
             $this->assertInstanceOf(PastesResponse::class, $res);
         } catch (ApiException $ex) {
 
@@ -195,7 +195,7 @@ class APIv3ProviderTest extends AbstractTestCase {
 
         $obj = new APIv3Provider();
 
-        $res = $obj->range($rangeRequest);
+        $res = $obj->sendRequest($rangeRequest);
         $this->assertInstanceOf(RangesResponse::class, $res);
     }
 
