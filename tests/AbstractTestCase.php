@@ -64,6 +64,22 @@ abstract class AbstractTestCase extends TestCase {
     protected $range;
 
     /**
+     * Get the token.
+     *
+     * @return string Returns the token.
+     */
+    public static function getToken(): string {
+
+        $path = __DIR__ . "/../.token";
+
+        if (true === file_exists($path)) {
+            return file_get_contents($path);
+        }
+
+        return "YOUR_API_KEY";
+    }
+
+    /**
      * {inheritdoc}
      */
     protected function setUp(): void {
@@ -91,22 +107,6 @@ abstract class AbstractTestCase extends TestCase {
         // Set a Range mock.
         $this->range = $this->getMockBuilder(RangeInterface::class)->getMock();
         $this->range->expects($this->any())->method("getHaveIBeenPwnedHash")->willReturn("21BD1");
-    }
-
-    /**
-     * Get the token.
-     *
-     * @return string Returns the token.
-     */
-    public static function getToken(): string {
-
-        $path = __DIR__ . "/../.token";
-
-        if (true === file_exists($path)) {
-            return file_get_contents($path);
-        }
-
-        return "YOUR_API_KEY";
     }
 
     /**

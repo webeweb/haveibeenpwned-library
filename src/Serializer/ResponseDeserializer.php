@@ -33,7 +33,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class ResponseDeserializer {
 
     /**
-     * Clean a raw response.
+     * Cleans a raw response.
      *
      * @param string $rawResponse The raw response.
      * @return string Returns the cleaned raw response.
@@ -99,9 +99,11 @@ class ResponseDeserializer {
         }
 
         foreach ($response as $current) {
+
             if (true === is_string($current)) {
                 $current = ["Name" => $current];
             }
+
             $model->addBreach(static::deserializeBreach($current));
         }
 
