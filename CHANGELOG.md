@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+### [4.0.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.0.0) (2023-02-06)
+
+> IMPORTANT NOTICE: The API providers has a unique method sendRequest() who replaced:
+> - breach()
+> - breachedAccount()
+> - breaches()
+> - dataClasses()
+> - pasteAccount()
+> - range()
+
+- Improve code quality
+- Improve PHPDoc
+- Update dependencies
+- Update documentation
+
 ### [3.5.0](https://github.com/webeweb/haveibeenpwned-library/tree/v3.5.0) (2023-01-02)
 
 - Improve code quality
