@@ -11,7 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 use WBW\Library\Traits\Strings\StringDomainTrait;
 
 /**
@@ -30,6 +32,13 @@ class BreachesRequest extends AbstractRequest {
      * @var string
      */
     const BREACHES_RESOURCE_PATH = "/breaches";
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
+    }
 
     /**
      * {@inheritdoc}
