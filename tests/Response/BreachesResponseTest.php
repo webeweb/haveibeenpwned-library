@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Response;
 
 use WBW\Library\HaveIBeenPwned\Model\Breach;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
@@ -49,6 +50,8 @@ class BreachesResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new BreachesResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertCount(0, $obj->getBreaches());
     }

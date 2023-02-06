@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Response;
 
 use WBW\Library\HaveIBeenPwned\Model\DataClass;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
@@ -49,6 +50,8 @@ class DataClassesResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new DataClassesResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertCount(0, $obj->getDataClasses());
     }

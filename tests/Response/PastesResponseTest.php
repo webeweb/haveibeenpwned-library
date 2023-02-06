@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Response;
 
 use WBW\Library\HaveIBeenPwned\Model\Paste;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
@@ -49,6 +50,8 @@ class PastesResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new PastesResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertCount(0, $obj->getPastes());
     }

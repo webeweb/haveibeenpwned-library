@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Response;
 
 use WBW\Library\HaveIBeenPwned\Model\Range;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 
@@ -49,6 +50,8 @@ class RangesResponseTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new RangesResponse();
+
+        $this->assertInstanceOf(AbstractResponse::class, $obj);
 
         $this->assertCount(0, $obj->getRanges());
     }
