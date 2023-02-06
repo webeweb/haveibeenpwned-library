@@ -37,6 +37,18 @@ class RangeRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new RangeRequest();
+
+        $this->assertEquals([], $obj->serializeRequest());
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void

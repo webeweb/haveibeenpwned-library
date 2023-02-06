@@ -47,4 +47,11 @@ class RangeRequest extends AbstractRequest implements SubstituableRequestInterfa
             "{hash}" => $this->getHash(),
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return [];
+    }
 }
