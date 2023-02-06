@@ -11,6 +11,9 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
+
 /**
  * Data classes request.
  *
@@ -25,6 +28,13 @@ class DataClassesRequest extends AbstractRequest {
      * @var string
      */
     const DATA_CLASSES_RESOURCE_PATH = "/dataclasses";
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeDataClassesResponse($rawResponse);
+    }
 
     /**
      * {@inheritdoc}
