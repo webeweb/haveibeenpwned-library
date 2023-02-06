@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringAccountTrait;
 
@@ -85,6 +86,13 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituableRequ
      */
     public function getTruncateResponse(): ?bool {
         return $this->truncateResponse;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeBreachedAccountRequest($this);
     }
 
     /**

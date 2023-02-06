@@ -37,6 +37,26 @@ class BreachedAccountRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new BreachedAccountRequest();
+        $obj->setDomain("domain");
+        $obj->setIncludeUnverified(true);
+        $obj->setTruncateResponse(true);
+
+        $res = $obj->serializeRequest();
+        $this->assertCount(3, $res);
+
+        $this->assertEquals("domain", $res["domain"]);
+        $this->assertEquals("true", $res["includeUnverified"]);
+        $this->assertEquals("true", $res["truncateResponse"]);
+    }
+
+    /**
      * Tests setIncludeUnverified()
      *
      * @return void
