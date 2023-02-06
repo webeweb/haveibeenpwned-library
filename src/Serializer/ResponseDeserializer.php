@@ -38,7 +38,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return string Returns the cleaned raw response.
      */
-    public static function cleanResponse(string $rawResponse): string {
+    protected static function cleanResponse(string $rawResponse): string {
 
         $searches = [":True", ":False", ": True", ": False"];
         $replaces = [":true", ":false", ":true", ":false"];
@@ -87,12 +87,14 @@ class ResponseDeserializer {
      */
     public static function deserializeBreachesResponse(string $rawResponse): BreachesResponse {
 
-        $cleanedResponse = static::cleanResponse($rawResponse);
-
-        $response = json_decode($cleanedResponse, true);
-
         $model = new BreachesResponse();
         $model->setRawResponse($rawResponse);
+
+        $cleaned  = static::cleanResponse($rawResponse);
+        $response = json_decode($cleaned, true);
+        if (null === $response) {
+            return $model;
+        }
 
         if (true === ArrayHelper::isObject($response)) {
             $response = [$response];
@@ -132,10 +134,13 @@ class ResponseDeserializer {
      */
     public static function deserializeDataClassesResponse(string $rawResponse): DataClassesResponse {
 
-        $response = json_decode($rawResponse, true);
-
         $model = new DataClassesResponse();
         $model->setRawResponse($rawResponse);
+
+        $response = json_decode($rawResponse, true);
+        if (null === $response) {
+            return $model;
+        }
 
         foreach ($response as $current) {
             $model->addDataClass(static::deserializeDataClass($current));
@@ -172,12 +177,14 @@ class ResponseDeserializer {
      */
     public static function deserializePastesResponse(string $rawResponse): PastesResponse {
 
-        $cleanedResponse = static::cleanResponse($rawResponse);
-
-        $response = json_decode($cleanedResponse, true);
-
         $model = new PastesResponse();
         $model->setRawResponse($rawResponse);
+
+        $cleaned  = static::cleanResponse($rawResponse);
+        $response = json_decode($cleaned, true);
+        if (null === $response) {
+            return $model;
+        }
 
         foreach ($response as $current) {
             $model->addPaste(static::deserializePaste($current));
@@ -215,10 +222,13 @@ class ResponseDeserializer {
      */
     public static function deserializeRangesResponse(string $rawResponse): RangesResponse {
 
-        $response = explode("\n", $rawResponse);
-
         $model = new RangesResponse();
         $model->setRawResponse($rawResponse);
+
+        $response = explode("\n", $rawResponse);
+        if (0 === count($response)) {
+            return $model;
+        }
 
         foreach ($response as $current) {
             $model->addRange(static::deserializeRange($current));
