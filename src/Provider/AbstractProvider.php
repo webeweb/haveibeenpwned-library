@@ -81,7 +81,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $apiKey The API key.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a GUzzle exception if an error occurs.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApi(AbstractRequest $request, array $queryData, string $endpointPath = null, string $apiKey = null): string {
