@@ -12,6 +12,7 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
@@ -22,6 +23,22 @@ use WBW\Library\Provider\Api\SubstituableRequestInterface;
  * @package WBW\Library\HaveIBeenPwned\Tests\Request
  */
 class BreachedAccountRequestTest extends AbstractTestCase {
+
+    /**
+     * Tests deserializeResponse()
+     *
+     * @return void
+     */
+    public function testDeserializeResponse(): void {
+
+        // Set a raw response mock.
+        $rawResponse = file_get_contents(__DIR__ . "/BreachesRequestTest.testDeserializeResponse.json");
+
+        $obj = new BreachedAccountRequest();
+
+        $res = $obj->deserializeResponse($rawResponse);
+        $this->assertInstanceOf(BreachesResponse::class, $res);
+    }
 
     /**
      * Tests getSubstituables()
