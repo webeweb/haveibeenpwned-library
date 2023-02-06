@@ -64,6 +64,7 @@ Breach
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
+use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 
 // Create the API provider.
 $provider = new APIv2Provider();
@@ -72,8 +73,8 @@ $provider = new APIv2Provider();
 $request = new BreachRequest();
 $request->setName("Adobe");
 
-// Call the API and get the response.
-$response = $provider->breach($request);
+/** @var BreachesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 /** @var Breach $current */
@@ -100,6 +101,7 @@ Breached account
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
+use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 
 // Create the API provider.
 $provider = new APIv2Provider();
@@ -109,8 +111,8 @@ $request = new BreachedAccountRequest();
 $request->setAccount("john.doe@gmail.com");
 $request->setDomain("adobe.com");
 
-// Call the API and get the response.
-$response = $provider->breachedAccount($request);
+/** @var BreachesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response (same as breach).
 // ...
@@ -122,6 +124,7 @@ Breaches
 use WBW\Library\HaveIBeenPwned\Model\Breach;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
+use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 
 // Create the API provider.
 $provider = new APIv2Provider();
@@ -130,8 +133,8 @@ $provider = new APIv2Provider();
 $request = new BreachesRequest();
 $request->setDomain("adobe.com");
 
-// Call the API and get the response.
-$response = $provider->breaches($request);
+/** @var BreachesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response (same as breach).
 // ...
@@ -143,12 +146,13 @@ Data classes
 use WBW\Library\HaveIBeenPwned\Model\DataClass;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\DataClassesRequest;
+use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
 
 // Create the API provider.
 $provider = new APIv2Provider();
 
-// Call the API and get the response.
-$response = $provider->dataClasses(new DataClassesRequest());
+/** @var DataClassesResponse $response */
+$response = $provider->sendRequest(new DataClassesRequest());
 
 // Handle the response.
 /** @var DataClass $current */
@@ -164,6 +168,7 @@ Paste account
 use WBW\Library\HaveIBeenPwned\Model\Paste;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\PasteAccountRequest;
+use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 
 // Create the API provider.
 $provider = new APIv2Provider();
@@ -172,8 +177,8 @@ $provider = new APIv2Provider();
 $request = new PasteAccountRequest();
 $request->setAccount("john.doe@gmail.com");
 
-// Call the API and get the response.
-$response = $provider->pasteAccount($request);
+/** @var PastesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 /** @var Paste $current */
@@ -193,6 +198,7 @@ Range
 use WBW\Library\HaveIBeenPwned\Model\Range;
 use WBW\Library\HaveIBeenPwned\Provider\APIv2Provider;
 use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
+use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 
 // Create the API provider.
 $provider = new APIv2Provider();
@@ -201,8 +207,8 @@ $provider = new APIv2Provider();
 $request = new RangeRequest();
 $request->setHash("21BD1");
 
-// Call the API and get the response.
-$response = $provider->range($request);
+/** @var RangesResponse $response */
+$response = $provider->sendRequest($request);
 
 // Handle the response.
 /** @var Range $current */
