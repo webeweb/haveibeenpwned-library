@@ -47,4 +47,11 @@ class BreachRequest extends AbstractRequest implements SubstituableRequestInterf
             "{name}" => $this->getName(),
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return [];
+    }
 }
