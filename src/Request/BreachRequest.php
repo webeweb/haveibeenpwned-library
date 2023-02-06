@@ -11,6 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringNameTrait;
 
@@ -30,6 +32,13 @@ class BreachRequest extends AbstractRequest implements SubstituableRequestInterf
      * @var string
      */
     const BREACH_RESOURCE_PATH = "/breach/{name}";
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
+    }
 
     /**
      * {@inheritdoc}
