@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\Traits\Strings\StringDomainTrait;
 
 /**
@@ -35,5 +36,12 @@ class BreachesRequest extends AbstractRequest {
      */
     public function getResourcePath(): string {
         return self::BREACHES_RESOURCE_PATH;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return RequestSerializer::serializeBreachesRequest($this);
     }
 }

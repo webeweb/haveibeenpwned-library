@@ -23,6 +23,22 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachesRequestTest extends AbstractTestCase {
 
     /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new BreachesRequest();
+        $obj->setDomain("domain");
+
+        $res = $obj->serializeRequest();
+        $this->assertCount(1, $res);
+
+        $this->assertEquals("domain", $res["domain"]);
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
