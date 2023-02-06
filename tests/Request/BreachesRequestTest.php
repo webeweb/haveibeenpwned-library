@@ -43,38 +43,37 @@ class BreachesRequestTest extends AbstractTestCase {
 
         $this->assertEquals($rawResponse, $res->getRawResponse());
 
-        $obj = $res->getBreaches();
-        $this->assertCount(2, $obj);
+        $this->assertCount(2, $res->getBreaches());
 
-        $this->assertInstanceOf(Breach::class, $obj[0]);
-        $this->assertEquals("Adobe", $obj[0]->getName());
-        $this->assertEquals("Adobe", $obj[0]->getTitle());
-        $this->assertEquals("adobe.com", $obj[0]->getDomain());
-        $this->assertEquals("2013-10-04", $obj[0]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertEquals("2013-12-04T00:00Z", $obj[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2013-12-04T00:00Z", $obj[0]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
-        $this->assertEquals(152445165, $obj[0]->getPwnCount());
-        $this->assertStringContainsString("In October 2013", $obj[0]->getDescription());
-        $this->assertCount(4, $obj[0]->getDataClasses());
-        $this->assertTrue($obj[0]->getVerified());
-        $this->assertFalse($obj[0]->getSensitive());
-        $this->assertFalse($obj[0]->getRetired());
-        $this->assertFalse($obj[0]->getSpamList());
+        $this->assertInstanceOf(Breach::class, $res->getBreaches()[0]);
+        $this->assertEquals("Adobe", $res->getBreaches()[0]->getName());
+        $this->assertEquals("Adobe", $res->getBreaches()[0]->getTitle());
+        $this->assertEquals("adobe.com", $res->getBreaches()[0]->getDomain());
+        $this->assertEquals("2013-10-04", $res->getBreaches()[0]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertEquals("2013-12-04T00:00Z", $res->getBreaches()[0]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2013-12-04T00:00Z", $res->getBreaches()[0]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(152445165, $res->getBreaches()[0]->getPwnCount());
+        $this->assertStringContainsString("In October 2013", $res->getBreaches()[0]->getDescription());
+        $this->assertCount(4, $res->getBreaches()[0]->getDataClasses());
+        $this->assertTrue($res->getBreaches()[0]->getVerified());
+        $this->assertFalse($res->getBreaches()[0]->getSensitive());
+        $this->assertFalse($res->getBreaches()[0]->getRetired());
+        $this->assertFalse($res->getBreaches()[0]->getSpamList());
 
-        $this->assertInstanceOf(Breach::class, $obj[1]);
-        $this->assertEquals("BattlefieldHeroes", $obj[1]->getName());
-        $this->assertEquals("Battlefield Heroes", $obj[1]->getTitle());
-        $this->assertEquals("battlefieldheroes.com", $obj[1]->getDomain());
-        $this->assertEquals("2011-06-26", $obj[1]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
-        $this->assertEquals("2014-01-23T13:10Z", $obj[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
-        $this->assertEquals("2014-01-23T13:10Z", $obj[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
-        $this->assertEquals(530270, $obj[1]->getPwnCount());
-        $this->assertStringContainsString("In June 2011", $obj[1]->getDescription());
-        $this->assertCount(2, $obj[1]->getDataClasses());
-        $this->assertTrue($obj[1]->getVerified());
-        $this->assertFalse($obj[1]->getSensitive());
-        $this->assertFalse($obj[1]->getRetired());
-        $this->assertFalse($obj[1]->getSpamList());
+        $this->assertInstanceOf(Breach::class, $res->getBreaches()[1]);
+        $this->assertEquals("BattlefieldHeroes", $res->getBreaches()[1]->getName());
+        $this->assertEquals("Battlefield Heroes", $res->getBreaches()[1]->getTitle());
+        $this->assertEquals("battlefieldheroes.com", $res->getBreaches()[1]->getDomain());
+        $this->assertEquals("2011-06-26", $res->getBreaches()[1]->getBreachDate()->format(ResponseInterface::DATETIME_FORMAT_BREACH));
+        $this->assertEquals("2014-01-23T13:10Z", $res->getBreaches()[1]->getAddedDate()->format(ResponseInterface::DATETIME_FORMAT_ADDED));
+        $this->assertEquals("2014-01-23T13:10Z", $res->getBreaches()[1]->getModifiedDate()->format(ResponseInterface::DATETIME_FORMAT_MODIFIED));
+        $this->assertEquals(530270, $res->getBreaches()[1]->getPwnCount());
+        $this->assertStringContainsString("In June 2011", $res->getBreaches()[1]->getDescription());
+        $this->assertCount(2, $res->getBreaches()[1]->getDataClasses());
+        $this->assertTrue($res->getBreaches()[1]->getVerified());
+        $this->assertFalse($res->getBreaches()[1]->getSensitive());
+        $this->assertFalse($res->getBreaches()[1]->getRetired());
+        $this->assertFalse($res->getBreaches()[1]->getSpamList());
     }
 
     /**

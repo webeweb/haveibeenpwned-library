@@ -42,20 +42,19 @@ class DataClassesRequestTest extends AbstractTestCase {
 
         $this->assertEquals($rawResponse, $res->getRawResponse());
 
-        $obj = $res->getDataClasses();
-        $this->assertCount(4, $obj);
+        $this->assertCount(4, $res->getDataClasses());
 
-        $this->assertInstanceOf(DataClass::class, $obj[0]);
-        $this->assertEquals("Email addresses", $obj[0]->getName());
+        $this->assertInstanceOf(DataClass::class, $res->getDataClasses()[0]);
+        $this->assertEquals("Email addresses", $res->getDataClasses()[0]->getName());
 
-        $this->assertInstanceOf(DataClass::class, $obj[1]);
-        $this->assertEquals("Password hints", $obj[1]->getName());
+        $this->assertInstanceOf(DataClass::class, $res->getDataClasses()[1]);
+        $this->assertEquals("Password hints", $res->getDataClasses()[1]->getName());
 
-        $this->assertInstanceOf(DataClass::class, $obj[2]);
-        $this->assertEquals("Passwords", $obj[2]->getName());
+        $this->assertInstanceOf(DataClass::class, $res->getDataClasses()[2]);
+        $this->assertEquals("Passwords", $res->getDataClasses()[2]->getName());
 
-        $this->assertInstanceOf(DataClass::class, $obj[3]);
-        $this->assertEquals("Usernames", $obj[3]->getName());
+        $this->assertInstanceOf(DataClass::class, $res->getDataClasses()[3]);
+        $this->assertEquals("Usernames", $res->getDataClasses()[3]->getName());
     }
 
     /**

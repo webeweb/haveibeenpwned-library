@@ -44,22 +44,21 @@ class PasteAccountRequestTest extends AbstractTestCase {
 
         $this->assertEquals($rawResponse, $res->getRawResponse());
 
-        $obj = $res->getPastes();
-        $this->assertCount(2, $obj);
+        $this->assertCount(2, $res->getPastes());
 
-        $this->assertInstanceOf(Paste::class, $obj[0]);
-        $this->assertEquals("Pastebin", $obj[0]->getSource());
-        $this->assertEquals("8Q0BvKD8", $obj[0]->getId());
-        $this->assertEquals("syslog", $obj[0]->getTitle());
-        $this->assertEquals("2014-03-04T19:14:54Z", $obj[0]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
-        $this->assertEquals(139, $obj[0]->getEmailCount());
+        $this->assertInstanceOf(Paste::class, $res->getPastes()[0]);
+        $this->assertEquals("Pastebin", $res->getPastes()[0]->getSource());
+        $this->assertEquals("8Q0BvKD8", $res->getPastes()[0]->getId());
+        $this->assertEquals("syslog", $res->getPastes()[0]->getTitle());
+        $this->assertEquals("2014-03-04T19:14:54Z", $res->getPastes()[0]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
+        $this->assertEquals(139, $res->getPastes()[0]->getEmailCount());
 
-        $this->assertInstanceOf(Paste::class, $obj[1]);
-        $this->assertEquals("Pastie", $obj[1]->getSource());
-        $this->assertEquals("7152479", $obj[1]->getId());
-        $this->assertNull($obj[1]->getTitle());
-        $this->assertEquals("2013-03-28T16:51:10Z", $obj[1]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
-        $this->assertEquals(30, $obj[1]->getEmailCount());
+        $this->assertInstanceOf(Paste::class, $res->getPastes()[1]);
+        $this->assertEquals("Pastie", $res->getPastes()[1]->getSource());
+        $this->assertEquals("7152479", $res->getPastes()[1]->getId());
+        $this->assertNull($res->getPastes()[1]->getTitle());
+        $this->assertEquals("2013-03-28T16:51:10Z", $res->getPastes()[1]->getDate()->format(ResponseInterface::DATETIME_FORMAT_DATE));
+        $this->assertEquals(30, $res->getPastes()[1]->getEmailCount());
     }
 
     /**
