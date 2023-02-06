@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
+use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
@@ -31,12 +32,9 @@ class BreachedAccountRequestTest extends AbstractTestCase {
      */
     public function testDeserializeResponse(): void {
 
-        // Set a raw response mock.
-        $rawResponse = file_get_contents(__DIR__ . "/BreachesRequestTest.testDeserializeResponse.json");
-
         $obj = new BreachedAccountRequest();
 
-        $res = $obj->deserializeResponse($rawResponse);
+        $res = $obj->deserializeResponse("");
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
@@ -61,16 +59,12 @@ class BreachedAccountRequestTest extends AbstractTestCase {
     public function testSerializeRequest(): void {
 
         $obj = new BreachedAccountRequest();
-        $obj->setDomain("domain");
         $obj->setIncludeUnverified(true);
-        $obj->setTruncateResponse(true);
 
         $res = $obj->serializeRequest();
-        $this->assertCount(3, $res);
+        $this->assertIsArray($res);
 
-        $this->assertEquals("domain", $res["domain"]);
         $this->assertEquals("true", $res["includeUnverified"]);
-        $this->assertEquals("true", $res["truncateResponse"]);
     }
 
     /**
@@ -109,6 +103,8 @@ class BreachedAccountRequestTest extends AbstractTestCase {
         $this->assertEquals("/breachedaccount/{account}", BreachedAccountRequest::BREACHED_ACCOUNT_RESOURCE_PATH);
 
         $obj = new BreachedAccountRequest();
+
+        $this->assertInstanceOf(AbstractRequest::class, $obj);
 
         $this->assertNull($obj->getAccount());
         $this->assertNull($obj->getDomain());

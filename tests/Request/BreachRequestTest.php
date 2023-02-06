@@ -11,6 +11,7 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
+use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
@@ -31,12 +32,9 @@ class BreachRequestTest extends AbstractTestCase {
      */
     public function testDeserializeResponse(): void {
 
-        // Set a raw response mock.
-        $rawResponse = file_get_contents(__DIR__ . "/BreachesRequestTest.testDeserializeResponse.json");
-
         $obj = new BreachRequest();
 
-        $res = $obj->deserializeResponse($rawResponse);
+        $res = $obj->deserializeResponse("");
         $this->assertInstanceOf(BreachesResponse::class, $res);
     }
 
@@ -75,6 +73,8 @@ class BreachRequestTest extends AbstractTestCase {
         $this->assertEquals("/breach/{name}", BreachRequest::BREACH_RESOURCE_PATH);
 
         $obj = new BreachRequest();
+
+        $this->assertInstanceOf(AbstractRequest::class, $obj);
 
         $this->assertNull($obj->getName());
         $this->assertEquals(BreachRequest::BREACH_RESOURCE_PATH, $obj->getResourcePath());

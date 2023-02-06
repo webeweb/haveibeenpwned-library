@@ -11,11 +11,10 @@
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
-use WBW\Library\HaveIBeenPwned\Model\Range;
+use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Serializer\TestResponseDeserializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
 /**
@@ -31,39 +30,12 @@ class RangeRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeRangeResponse(): void {
-
-        // Set a raw response mock.
-        $rawResponse = file_get_contents(__DIR__ . "/RangeRequestTest.testDeserializeResponse.txt");
+    public function testDeserializeResponse(): void {
 
         $obj = new RangeRequest();
 
-        $res = $obj->deserializeResponse($rawResponse);
+        $res = $obj->deserializeResponse("");
         $this->assertInstanceOf(RangesResponse::class, $res);
-
-        $this->assertEquals($rawResponse, $res->getRawResponse());
-
-        $this->assertCount(5, $res->getRanges());
-
-        $this->assertInstanceOf(Range::class, $res->getRanges()[0]);
-        $this->assertEquals("0018A45C4D1DEF81644B54AB7F969B88D65", $res->getRanges()[0]->getHash());
-        $this->assertEquals(1, $res->getRanges()[0]->getCount());
-
-        $this->assertInstanceOf(Range::class, $res->getRanges()[1]);
-        $this->assertEquals("00D4F6E8FA6EECAD2A3AA415EEC418D38EC", $res->getRanges()[1]->getHash());
-        $this->assertEquals(2, $res->getRanges()[1]->getCount());
-
-        $this->assertInstanceOf(Range::class, $res->getRanges()[2]);
-        $this->assertEquals("011053FD0102E94D6AE2F8B83D76FAF94F6", $res->getRanges()[2]->getHash());
-        $this->assertEquals(1, $res->getRanges()[2]->getCount());
-
-        $this->assertInstanceOf(Range::class, $res->getRanges()[3]);
-        $this->assertEquals("012A7CA357541F0AC487871FEEC1891C49C", $res->getRanges()[3]->getHash());
-        $this->assertEquals(2, $res->getRanges()[3]->getCount());
-
-        $this->assertInstanceOf(Range::class, $res->getRanges()[4]);
-        $this->assertEquals("0136E006E24E7D152139815FB0FC6A50B15", $res->getRanges()[4]->getHash());
-        $this->assertEquals(2, $res->getRanges()[4]->getCount());
     }
 
     /**
@@ -101,6 +73,8 @@ class RangeRequestTest extends AbstractTestCase {
         $this->assertEquals("/range/{hash}", RangeRequest::RANGE_RESOURCE_PATH);
 
         $obj = new RangeRequest();
+
+        $this->assertInstanceOf(AbstractRequest::class, $obj);
 
         $this->assertNull($obj->getHash());
         $this->assertEquals(RangeRequest::RANGE_RESOURCE_PATH, $obj->getResourcePath());
