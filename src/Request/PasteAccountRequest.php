@@ -11,6 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringAccountTrait;
 
@@ -30,6 +32,13 @@ class PasteAccountRequest extends AbstractRequest implements SubstituableRequest
      * @var string
      */
     const PASTE_ACCOUNT_RESOURCE_PATH = "/pasteaccount/{account}";
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializePastesResponse($rawResponse);
+    }
 
     /**
      * {@inheritdoc}
