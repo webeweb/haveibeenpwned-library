@@ -32,12 +32,12 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeBreachedAccountRequest(): void {
 
         // Set a Breached account request mock.
-        $request = new BreachedAccountRequest();
-        $request->setDomain("domain");
-        $request->setIncludeUnverified(true);
-        $request->setTruncateResponse(true);
+        $arg = new BreachedAccountRequest();
+        $arg->setDomain("domain");
+        $arg->setIncludeUnverified(true);
+        $arg->setTruncateResponse(true);
 
-        $res = RequestSerializer::serializeBreachedAccountRequest($request);
+        $res = RequestSerializer::serializeBreachedAccountRequest($arg);
         $this->assertCount(3, $res);
 
         $this->assertEquals("domain", $res["domain"]);
@@ -53,10 +53,10 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeBreachesRequest(): void {
 
         // Set a Breaches request mock.
-        $request = new BreachesRequest();
-        $request->setDomain("domain");
+        $arg = new BreachesRequest();
+        $arg->setDomain("domain");
 
-        $res = RequestSerializer::serializeBreachesRequest($request);
+        $res = RequestSerializer::serializeBreachesRequest($arg);
         $this->assertCount(1, $res);
 
         $this->assertEquals("domain", $res["domain"]);
