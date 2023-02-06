@@ -32,4 +32,11 @@ class DataClassesRequest extends AbstractRequest {
     public function getResourcePath(): string {
         return self::DATA_CLASSES_RESOURCE_PATH;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serializeRequest(): array {
+        return [];
+    }
 }

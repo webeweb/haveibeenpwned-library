@@ -23,6 +23,18 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class DataClassesRequestTest extends AbstractTestCase {
 
     /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new DataClassesRequest();
+
+        $this->assertEquals([], $obj->serializeRequest());
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
