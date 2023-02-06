@@ -37,6 +37,18 @@ class PasteAccountRequestTest extends AbstractTestCase {
     }
 
     /**
+     * Tests serializeRequest()
+     *
+     * @return void
+     */
+    public function testSerializeRequest(): void {
+
+        $obj = new PasteAccountRequest();
+
+        $this->assertEquals([], $obj->serializeRequest());
+    }
+
+    /**
      * Tests __construct()
      *
      * @return void
