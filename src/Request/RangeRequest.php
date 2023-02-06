@@ -11,6 +11,8 @@
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
+use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
 use WBW\Library\Provider\Api\SubstituableRequestInterface;
 use WBW\Library\Traits\Strings\StringHashTrait;
 
@@ -30,6 +32,13 @@ class RangeRequest extends AbstractRequest implements SubstituableRequestInterfa
      * @var string
      */
     const RANGE_RESOURCE_PATH = "/range/{hash}";
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return ResponseDeserializer::deserializeRangesResponse($rawResponse);
+    }
 
     /**
      * {@inheritdoc}
