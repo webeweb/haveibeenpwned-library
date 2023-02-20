@@ -64,19 +64,18 @@ abstract class AbstractTestCase extends TestCase {
     protected $range;
 
     /**
-     * Get the token.
+     * Get a token.
      *
      * @return string Returns the token.
      */
     public static function getToken(): string {
 
         $path = __DIR__ . "/../.token";
-
         if (true === file_exists($path)) {
             return file_get_contents($path);
         }
 
-        return "YOUR_API_KEY";
+        return "API_TOKEN_MOCK";
     }
 
     /**
