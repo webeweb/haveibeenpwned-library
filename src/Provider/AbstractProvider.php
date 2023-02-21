@@ -47,7 +47,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Build the configuration.
+     * Builds the configuration.
      *
      * @param string $host The host.
      * @param string|null $apiKey The API key.
@@ -73,7 +73,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Call API.
+     * Calls the API.
      *
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
@@ -91,7 +91,6 @@ abstract class AbstractProvider extends BaseProvider {
             $host = null === $endpointPath ? self::ENDPOINT_PATH . $this->getEndpointVersion() : $endpointPath;
 
             $config = $this->buildConfiguration($host, $apiKey);
-
             $client = new Client($config);
 
             $method  = "GET";
