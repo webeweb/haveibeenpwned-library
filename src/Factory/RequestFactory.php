@@ -32,7 +32,7 @@ use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 class RequestFactory {
 
     /**
-     * Creates a breach request.
+     * Create a breach request.
      *
      * @param BreachInterface $breach The breaches.
      * @return BreachRequest Returns the breach request.
@@ -46,7 +46,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a breached account request.
+     * Create a breached account request.
      *
      * @param BreachedAccountInterface $breachedAccount The breached account.
      * @return BreachedAccountRequest Returns the breached account request.
@@ -63,7 +63,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a breaches request.
+     * Create a breaches request.
      *
      * @param BreachesInterface $breaches The breaches.
      * @return BreachesRequest Returns the breaches request.
@@ -77,7 +77,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a data classes request.
+     * Create a data classes request.
      *
      * @return DataClassesRequest Returns the data classes request.
      */
@@ -86,7 +86,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a paste account request.
+     * Create a paste account request.
      *
      * @param PasteAccountInterface $pasteAccount The paste account.
      * @return PasteAccountRequest Returns the paste account request.
@@ -100,7 +100,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a range request.
+     * Create a range request.
      *
      * @param RangeInterface $range The range.
      * @return RangeRequest Returns the range request.

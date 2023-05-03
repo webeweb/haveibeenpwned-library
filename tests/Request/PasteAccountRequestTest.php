@@ -26,7 +26,7 @@ use WBW\Library\Provider\Api\SubstituableRequestInterface;
 class PasteAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class PasteAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getSubstituables()
+     * Test getSubstituables()
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class PasteAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -64,7 +64,7 @@ class PasteAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

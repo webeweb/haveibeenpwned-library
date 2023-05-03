@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class DataClassTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

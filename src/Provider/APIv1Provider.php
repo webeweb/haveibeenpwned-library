@@ -33,7 +33,7 @@ class APIv1Provider extends AbstractProvider {
     }
 
     /**
-     * Sends a request.
+     * Send a request.
      *
      * @param BreachedAccountRequest $request The request.
      * @return BreachesResponse Returns the response.

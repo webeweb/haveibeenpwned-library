@@ -26,7 +26,7 @@ use WBW\Library\Provider\Api\SubstituableRequestInterface;
 class RangeRequestTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeRangesResponse()
+     * Test deserializeRangesResponse()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class RangeRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getSubstituables()
+     * Test getSubstituables()
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class RangeRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -64,7 +64,7 @@ class RangeRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

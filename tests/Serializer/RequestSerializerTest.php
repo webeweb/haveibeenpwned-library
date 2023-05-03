@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests serializeRequest()
+     * Test serializeRequest()
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests serializeBreachesRequest()
+     * Test serializeBreachesRequest()
      *
      * @return void
      */

@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachTest extends AbstractTestCase {
 
     /**
-     * Tests setAddedDate()
+     * Test setAddedDate()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -41,7 +41,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setBreachDate()
+     * Test setBreachDate()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -57,7 +57,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setDataClasses()
+     * Test setDataClasses()
      *
      * @return void
      */
@@ -70,7 +70,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setFabricated()
+     * Test setFabricated()
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setModifiedDate()
+     * Test setModifiedDate()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -99,7 +99,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPwnCount()
+     * Test setPwnCount()
      *
      * @return void
      */
@@ -112,7 +112,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setRetired()
+     * Test setRetired()
      *
      * @return void
      */
@@ -125,7 +125,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSensitive()
+     * Test setSensitive()
      *
      * @return void
      */
@@ -138,7 +138,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSpamList()
+     * Test setSpamList()
      *
      * @return void
      */
@@ -151,7 +151,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setVerified()
+     * Test setVerified()
      *
      * @return void
      */
@@ -164,7 +164,7 @@ class BreachTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

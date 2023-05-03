@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class BreachesResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addBreach()
+     * Test addBreach()
      *
      * @return void
      */
@@ -43,7 +43,7 @@ class BreachesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

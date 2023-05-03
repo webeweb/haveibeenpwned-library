@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class PasteTest extends AbstractTestCase {
 
     /**
-     * Tests setEmailCount()
+     * Test setEmailCount()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class PasteTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

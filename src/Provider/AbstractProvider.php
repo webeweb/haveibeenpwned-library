@@ -47,7 +47,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Builds the configuration.
+     * Build the configuration.
      *
      * @param string $host The host.
      * @param string|null $apiKey The API key.
@@ -73,7 +73,7 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
-     * Calls the API.
+     * Call the API.
      *
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.

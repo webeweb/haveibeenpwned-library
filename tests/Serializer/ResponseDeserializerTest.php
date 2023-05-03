@@ -33,7 +33,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeBreachesResponse()
+     * Test deserializeBreachesResponse()
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeDataClassesResponse()
+     * Test deserializeDataClassesResponse()
      *
      * @return void
      */
@@ -113,7 +113,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializePastesResponse()
+     * Test deserializePastesResponse()
      *
      * @return void
      */
@@ -145,7 +145,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeRangesResponse()
+     * Test deserializeRangesResponse()
      *
      * @return void
      */

@@ -38,7 +38,7 @@ class APIv1ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests breachedAccount()
+     * Test breachedAccount()
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class APIv1ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests breachedAccount()
+     * Test breachedAccount()
      *
      * @return void
      */
@@ -87,7 +87,7 @@ class APIv1ProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getEndpointVersion()
+     * Test getEndpointVersion()
      *
      * @return void
      */

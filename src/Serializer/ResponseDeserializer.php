@@ -33,7 +33,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class ResponseDeserializer {
 
     /**
-     * Cleans a raw response.
+     * Clean a raw response.
      *
      * @param string $rawResponse The raw response.
      * @return string Returns the cleaned raw response.
@@ -47,7 +47,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a breach.
+     * Deserialize a breach.
      *
      * @param array $data The data.
      * @return Breach Returns a breach.
@@ -80,7 +80,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a breaches response.
+     * Deserialize a breaches response.
      *
      * @param string $rawResponse The raw response.
      * @return BreachesResponse Returns the breaches response.
@@ -113,7 +113,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a data class.
+     * Deserialize a data class.
      *
      * @param string $rawResponse The raw response.
      * @return DataClass Returns a data class.
@@ -127,7 +127,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a data classes response.
+     * Deserialize a data classes response.
      *
      * @param string $rawResponse The raw response.
      * @return DataClassesResponse Returns the data classes response.
@@ -150,7 +150,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a paste.
+     * Deserialize a paste.
      *
      * @param array $data The data.
      * @return Paste Returns the paste.
@@ -170,7 +170,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a pastes response.
+     * Deserialize a pastes response.
      *
      * @param string $rawResponse The raw response.
      * @return PastesResponse Returns the pastes response.
@@ -194,7 +194,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a range.
+     * Deserialize a range.
      *
      * @param string $rawResponse The raw response.
      * @return Range Returns a range.
@@ -215,7 +215,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a ranges response.
+     * Deserialize a ranges response.
      *
      * @param string $rawResponse The raw response.
      * @return RangesResponse Returns the ranges response.

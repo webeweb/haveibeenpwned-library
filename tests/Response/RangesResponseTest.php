@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RangesResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addRange()
+     * Test addRange()
      *
      * @return void
      */
@@ -43,7 +43,7 @@ class RangesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

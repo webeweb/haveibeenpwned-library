@@ -23,7 +23,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class RangeTest extends AbstractTestCase {
 
     /**
-     * Tests setPrefix()
+     * Test setPrefix()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class RangeTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

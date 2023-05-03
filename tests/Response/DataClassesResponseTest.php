@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class DataClassesResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addDataClass()
+     * Test addDataClass()
      *
      * @return void
      */
@@ -43,7 +43,7 @@ class DataClassesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

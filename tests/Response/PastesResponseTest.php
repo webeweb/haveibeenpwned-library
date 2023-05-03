@@ -25,7 +25,7 @@ use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
 class PastesResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addPaste()
+     * Test addPaste()
      *
      * @return void
      */
@@ -43,7 +43,7 @@ class PastesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */
