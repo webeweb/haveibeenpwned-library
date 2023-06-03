@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [4.1.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.1.0) (2023-06-03)
+
+- Improve code quality
+- Improve PHPDoc
+- Update dependencies
+
 ### [4.0.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.0.0) (2023-02-06)
 
 > IMPORTANT NOTICE: The API providers has a unique method sendRequest() who replaced:
