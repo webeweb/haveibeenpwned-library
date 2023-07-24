@@ -27,7 +27,7 @@ use WBW\Library\Provider\Exception\ApiException;
 class APIv2Provider extends AbstractProvider {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEndpointVersion(): string {
         return "/v2";

@@ -34,21 +34,21 @@ class PasteAccountRequest extends AbstractRequest implements SubstituableRequest
     const PASTE_ACCOUNT_RESOURCE_PATH = "/pasteaccount/{account}";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializePastesResponse($rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::PASTE_ACCOUNT_RESOURCE_PATH;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSubstituables(): array {
 
@@ -58,7 +58,7 @@ class PasteAccountRequest extends AbstractRequest implements SubstituableRequest
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return [];

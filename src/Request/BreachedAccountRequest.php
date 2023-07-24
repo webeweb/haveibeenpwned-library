@@ -56,7 +56,7 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituableRequ
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deserializeResponse(string $rawResponse): AbstractResponse {
         return ResponseDeserializer::deserializeBreachesResponse($rawResponse);
@@ -72,14 +72,14 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituableRequ
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::BREACHED_ACCOUNT_RESOURCE_PATH;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSubstituables(): array {
 
@@ -98,7 +98,7 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituableRequ
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serializeRequest(): array {
         return RequestSerializer::serializeBreachedAccountRequest($this);

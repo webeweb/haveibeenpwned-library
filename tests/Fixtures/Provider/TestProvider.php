@@ -22,7 +22,7 @@ use WBW\Library\HaveIBeenPwned\Provider\AbstractProvider;
 class TestProvider extends AbstractProvider {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEndpointVersion(): string {
         return "";
