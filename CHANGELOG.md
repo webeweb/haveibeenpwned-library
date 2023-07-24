@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve PHPDoc
+
 ### [4.1.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.1.0) (2023-06-03)
 
 - Improve code quality
