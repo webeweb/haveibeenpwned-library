@@ -77,7 +77,7 @@ class RequestFactoryTest extends AbstractTestCase {
      */
     public function testNewDataClassesRequest(): void {
 
-        $res = RequestFactory::newDataClassesRequest($this->breach);
+        $res = RequestFactory::newDataClassesRequest();
         $this->assertInstanceOf(DataClassesRequest::class, $res);
     }
 
