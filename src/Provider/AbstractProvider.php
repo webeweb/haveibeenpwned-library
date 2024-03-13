@@ -51,7 +51,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @param string $host The host.
      * @param string|null $apiKey The API key.
-     * @return array Returns the configuration.
+     * @return array<string,mixed> Returns the configuration.
      */
     private function buildConfiguration(string $host, string $apiKey = null): array {
 
@@ -76,7 +76,7 @@ abstract class AbstractProvider extends BaseProvider {
      * Call the API.
      *
      * @param AbstractRequest $request The request.
-     * @param array $queryData The query data.
+     * @param array<string,mixed> $queryData The query data.
      * @param string|null $endpointPath The endpoint path.
      * @param string|null $apiKey The API key.
      * @return string Returns the raw response.
