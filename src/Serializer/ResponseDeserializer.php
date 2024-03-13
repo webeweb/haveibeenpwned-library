@@ -49,7 +49,7 @@ class ResponseDeserializer {
     /**
      * Deserialize a breach.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Breach Returns a breach.
      */
     protected static function deserializeBreach(array $data): Breach {
@@ -152,7 +152,7 @@ class ResponseDeserializer {
     /**
      * Deserialize a paste.
      *
-     * @param array $data The data.
+     * @param array<string,mixed> $data The data.
      * @return Paste Returns the paste.
      */
     protected static function deserializePaste(array $data): Paste {
