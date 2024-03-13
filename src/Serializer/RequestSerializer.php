@@ -28,7 +28,7 @@ class RequestSerializer {
      * Serialize a breached account request.
      *
      * @param BreachedAccountRequest $request The breached account request.
-     * @return array Returns the serialized breached account request.
+     * @return array<string,mixed> Returns the serialized breached account request.
      */
     public static function serializeBreachedAccountRequest(BreachedAccountRequest $request): array {
 
@@ -45,7 +45,7 @@ class RequestSerializer {
      * Serialize a breaches request.
      *
      * @param BreachesRequest $request The breaches request.
-     * @return array Returns the serialized breaches request.
+     * @return array<string,mixed> Returns the serialized breaches request.
      */
     public static function serializeBreachesRequest(BreachesRequest $request): array {
 
