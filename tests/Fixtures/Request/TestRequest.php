@@ -12,6 +12,8 @@
 namespace WBW\Library\HaveIBeenPwned\Tests\Fixtures\Request;
 
 use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
+use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
+use WBW\Library\HaveIBeenPwned\Tests\Fixtures\Response\TestResponse;
 
 /**
  * Test request.
@@ -24,7 +26,21 @@ class TestRequest extends AbstractRequest {
     /**
      * {@inheritDoc}
      */
+    public function deserializeResponse(string $rawResponse): AbstractResponse {
+        return new TestResponse();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getResourcePath(): string {
         return "";
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serializeRequest(): array {
+        return [];
     }
 }
