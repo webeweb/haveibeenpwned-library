@@ -226,10 +226,6 @@ class ResponseDeserializer {
         $model->setRawResponse($rawResponse);
 
         $response = explode("\n", $rawResponse);
-        if (0 === count($response)) {
-            return $model;
-        }
-
         foreach ($response as $current) {
             $model->addRange(static::deserializeRange($current));
         }
