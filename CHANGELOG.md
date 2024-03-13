@@ -3,7 +3,10 @@ CHANGELOG
 
 ### master
 
+- Add PHP 8.3 support
+- Improve code quality
 - Improve PHPDoc
+- Update dependencies
 
 ### [4.1.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.1.0) (2023-06-03)
 
