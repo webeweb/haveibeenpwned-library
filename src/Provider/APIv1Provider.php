@@ -46,6 +46,7 @@ class APIv1Provider extends AbstractProvider {
         $queryData   = $request->serializeRequest();
         $rawResponse = $this->callApi($request, $queryData);
 
+        /** @var BreachesResponse */
         return $request->deserializeResponse($rawResponse);
     }
 }
