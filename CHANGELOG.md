@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.3.1](https://github.com/webeweb/haveibeenpwned-library/tree/v4.3.1) (2024-03-16)
+
+- Improve PHPDoc
+
 ### [4.3.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.3.0) (2024-03-16)
 
 - Add declare(strict_types = 1)
