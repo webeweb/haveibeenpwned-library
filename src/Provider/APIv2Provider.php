@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
@@ -41,7 +40,6 @@ class APIv2Provider extends AbstractProvider {
      * @param AbstractRequest $request The request.
      * @return AbstractResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendRequest(AbstractRequest $request): AbstractResponse {

@@ -15,7 +15,6 @@ namespace WBW\Library\HaveIBeenPwned\Provider;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
@@ -83,7 +82,6 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $apiKey The API key.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApi(AbstractRequest $request, array $queryData, string $endpointPath = null, string $apiKey = null): string {

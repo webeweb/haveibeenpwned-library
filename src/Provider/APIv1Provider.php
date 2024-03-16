@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Provider;
 
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
@@ -40,7 +39,6 @@ class APIv1Provider extends AbstractProvider {
      * @param BreachedAccountRequest $request The request.
      * @return BreachesResponse Returns the response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendRequest(BreachedAccountRequest $request): BreachesResponse {
