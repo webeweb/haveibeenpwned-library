@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.4.0) (2024-03-18)
+
+- Improve constants visibility
+
 ### [4.3.1](https://github.com/webeweb/haveibeenpwned-library/tree/v4.3.1) (2024-03-16)
 
 - Improve PHPDoc
