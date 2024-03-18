@@ -34,7 +34,7 @@ class BreachedAccountRequest extends BreachesRequest implements SubstituableRequ
      *
      * @var string
      */
-    const BREACHED_ACCOUNT_RESOURCE_PATH = "/breachedaccount/{account}";
+    public const BREACHED_ACCOUNT_RESOURCE_PATH = "/breachedaccount/{account}";
 
     /**
      * Include unverified.

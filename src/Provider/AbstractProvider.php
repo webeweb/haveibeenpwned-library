@@ -36,7 +36,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @var string
      */
-    const ENDPOINT_PATH = "https://haveibeenpwned.com/api";
+    public const ENDPOINT_PATH = "https://haveibeenpwned.com/api";
 
     /**
      * Constructor.

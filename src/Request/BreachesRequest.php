@@ -33,7 +33,7 @@ class BreachesRequest extends AbstractRequest {
      *
      * @var string
      */
-    const BREACHES_RESOURCE_PATH = "/breaches";
+    public const BREACHES_RESOURCE_PATH = "/breaches";
 
     /**
      * {@inheritDoc}

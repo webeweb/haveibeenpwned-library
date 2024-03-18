@@ -26,5 +26,5 @@ interface RequestInterface {
      *
      * @var int
      */
-    const RATE_LIMITING = 1500;
+    public const RATE_LIMITING = 1500;
 }

@@ -29,7 +29,7 @@ class DataClassesRequest extends AbstractRequest {
      *
      * @var string
      */
-    const DATA_CLASSES_RESOURCE_PATH = "/dataclasses";
+    public const DATA_CLASSES_RESOURCE_PATH = "/dataclasses";
 
     /**
      * {@inheritDoc}

@@ -26,26 +26,26 @@ interface ResponseInterface {
      *
      * @var string
      */
-    const DATETIME_FORMAT_ADDED = "Y-m-d\TH:i\Z";
+    public const DATETIME_FORMAT_ADDED = "Y-m-d\TH:i\Z";
 
     /**
      * Date/time format "breach".
      *
      * @var string
      */
-    const DATETIME_FORMAT_BREACH = "Y-m-d";
+    public const DATETIME_FORMAT_BREACH = "Y-m-d";
 
     /**
      * Date/time format "date".
      *
      * @var string
      */
-    const DATETIME_FORMAT_DATE = "Y-m-d\TH:i:s\Z";
+    public const DATETIME_FORMAT_DATE = "Y-m-d\TH:i:s\Z";
 
     /**
      * Date/time format "modified".
      *
      * @var string
      */
-    const DATETIME_FORMAT_MODIFIED = "Y-m-d\TH:i\Z";
+    public const DATETIME_FORMAT_MODIFIED = "Y-m-d\TH:i\Z";
 }

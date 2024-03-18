@@ -33,7 +33,7 @@ class RangeRequest extends AbstractRequest implements SubstituableRequestInterfa
      *
      * @var string
      */
-    const RANGE_RESOURCE_PATH = "/range/{hash}";
+    public const RANGE_RESOURCE_PATH = "/range/{hash}";
 
     /**
      * {@inheritDoc}

@@ -33,7 +33,7 @@ class BreachRequest extends AbstractRequest implements SubstituableRequestInterf
      *
      * @var string
      */
-    const BREACH_RESOURCE_PATH = "/breach/{name}";
+    public const BREACH_RESOURCE_PATH = "/breach/{name}";
 
     /**
      * {@inheritDoc}

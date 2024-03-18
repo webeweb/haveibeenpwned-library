@@ -33,7 +33,7 @@ class PasteAccountRequest extends AbstractRequest implements SubstituableRequest
      *
      * @var string
      */
-    const PASTE_ACCOUNT_RESOURCE_PATH = "/pasteaccount/{account}";
+    public const PASTE_ACCOUNT_RESOURCE_PATH = "/pasteaccount/{account}";
 
     /**
      * {@inheritDoc}
