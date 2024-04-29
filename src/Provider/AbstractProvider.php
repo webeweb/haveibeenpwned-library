@@ -18,9 +18,9 @@ use GuzzleHttp\Exception\ClientException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
+use WBW\Library\Common\Provider\AbstractProvider as BaseProvider;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
-use WBW\Library\Provider\AbstractProvider as BaseProvider;
-use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * Abstract provider.
@@ -82,7 +82,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $apiKey The API key.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     protected function callApi(AbstractRequest $request, array $queryData, string $endpointPath = null, string $apiKey = null): string {
 
@@ -113,7 +113,7 @@ abstract class AbstractProvider extends BaseProvider {
                 return "[]";
             }
 
-            throw new ApiException("Call HaveIBeenPwned API failed", 500, $ex);
+            throw new ProviderException("Call HaveIBeenPwned API failed", 500, $ex);
         }
     }
 

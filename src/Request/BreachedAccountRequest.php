@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\Common\Provider\SubstituableRequestInterface;
+use WBW\Library\Common\Traits\Strings\StringAccountTrait;
 use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
-use WBW\Library\Traits\Strings\StringAccountTrait;
 
 /**
  * Breached account request.

@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\Common\Traits\Strings\StringDomainTrait;
 use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Serializer\RequestSerializer;
 use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
-use WBW\Library\Traits\Strings\StringDomainTrait;
 
 /**
  * Breaches request.

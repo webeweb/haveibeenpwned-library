@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 
 use Throwable;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\HaveIBeenPwned\Provider\APIv3Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
@@ -26,7 +27,6 @@ use WBW\Library\HaveIBeenPwned\Response\DataClassesResponse;
 use WBW\Library\HaveIBeenPwned\Response\PastesResponse;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API v3 provider test.
@@ -94,7 +94,7 @@ class APIv3ProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -119,7 +119,7 @@ class APIv3ProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 
@@ -177,9 +177,9 @@ class APIv3ProviderTest extends AbstractTestCase {
             // This unit test failed without a valid API key.
             $res = $obj->sendRequest($pasteAccountRequest);
             $this->assertInstanceOf(PastesResponse::class, $res);
-        } catch (ApiException $ex) {
+        } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 

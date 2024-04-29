@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Serializer;
 
+use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\StringHelper;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachesRequest;
-use WBW\Library\Types\Helper\ArrayHelper;
-use WBW\Library\Types\Helper\StringHelper;
 
 /**
  * Request serializer.

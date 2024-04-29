@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Request;
 
+use WBW\Library\Common\Provider\SubstituableRequestInterface;
+use WBW\Library\Common\Traits\Strings\StringHashTrait;
 use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
 use WBW\Library\HaveIBeenPwned\Serializer\ResponseDeserializer;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
-use WBW\Library\Traits\Strings\StringHashTrait;
 
 /**
  * Range request.

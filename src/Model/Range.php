@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
-use WBW\Library\Traits\Integers\IntegerCountTrait;
-use WBW\Library\Traits\Strings\StringHashTrait;
+use WBW\Library\Common\Traits\Integers\IntegerCountTrait;
+use WBW\Library\Common\Traits\Strings\StringHashTrait;
 
 /**
  * Range.

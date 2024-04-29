@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Response;
 
+use WBW\Library\Common\Traits\Strings\StringRawResponseTrait;
 use WBW\Library\HaveIBeenPwned\Api\ResponseInterface;
-use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
  * Abstract response.

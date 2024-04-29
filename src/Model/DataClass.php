@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
-use WBW\Library\Traits\Strings\StringNameTrait;
+use WBW\Library\Common\Traits\Strings\StringNameTrait;
 
 /**
  * Data class.

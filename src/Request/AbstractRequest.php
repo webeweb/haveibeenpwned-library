@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Library\HaveIBeenPwned\Request;
 
 use InvalidArgumentException;
+use WBW\Library\Common\Provider\AbstractRequest as BaseRequest;
 use WBW\Library\HaveIBeenPwned\Response\AbstractResponse;
-use WBW\Library\Provider\Request\AbstractRequest as BaseRequest;
 
 /**
  * Abstract request.

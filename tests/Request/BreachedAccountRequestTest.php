@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
+use WBW\Library\Common\Provider\SubstituableRequestInterface;
 use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
 /**
  * Breached account request test.

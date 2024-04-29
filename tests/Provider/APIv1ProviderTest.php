@@ -16,11 +16,11 @@ namespace WBW\Library\HaveIBeenPwned\Tests\Provider;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\HaveIBeenPwned\Provider\APIv1Provider;
 use WBW\Library\HaveIBeenPwned\Request\BreachedAccountRequest;
 use WBW\Library\HaveIBeenPwned\Response\BreachesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\Provider\Exception\ApiException;
 
 /**
  * API v1 provider test.
@@ -62,7 +62,7 @@ class APIv1ProviderTest extends AbstractTestCase {
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
 
-            $this->assertInstanceOf(ApiException::class, $ex);
+            $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
 

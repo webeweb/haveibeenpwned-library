@@ -14,10 +14,10 @@ declare(strict_types = 1);
 namespace WBW\Library\HaveIBeenPwned\Model;
 
 use DateTime;
-use WBW\Library\Traits\Strings\StringDescriptionTrait;
-use WBW\Library\Traits\Strings\StringDomainTrait;
-use WBW\Library\Traits\Strings\StringNameTrait;
-use WBW\Library\Traits\Strings\StringTitleTrait;
+use WBW\Library\Common\Traits\Strings\StringDescriptionTrait;
+use WBW\Library\Common\Traits\Strings\StringDomainTrait;
+use WBW\Library\Common\Traits\Strings\StringNameTrait;
+use WBW\Library\Common\Traits\Strings\StringTitleTrait;
 
 /**
  * Breach.

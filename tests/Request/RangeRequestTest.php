@@ -13,11 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Tests\Request;
 
+use WBW\Library\Common\Provider\SubstituableRequestInterface;
 use WBW\Library\HaveIBeenPwned\Request\AbstractRequest;
 use WBW\Library\HaveIBeenPwned\Request\RangeRequest;
 use WBW\Library\HaveIBeenPwned\Response\RangesResponse;
 use WBW\Library\HaveIBeenPwned\Tests\AbstractTestCase;
-use WBW\Library\Provider\Api\SubstituableRequestInterface;
 
 /**
  * Paste account request test.

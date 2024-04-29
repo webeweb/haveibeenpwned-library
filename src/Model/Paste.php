@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\HaveIBeenPwned\Model;
 
-use WBW\Library\Traits\DateTimes\DateTimeDateTrait;
-use WBW\Library\Traits\Strings\StringIdTrait;
-use WBW\Library\Traits\Strings\StringSourceTrait;
-use WBW\Library\Traits\Strings\StringTitleTrait;
+use WBW\Library\Common\Traits\DateTimes\DateTimeDateTrait;
+use WBW\Library\Common\Traits\Strings\StringIdTrait;
+use WBW\Library\Common\Traits\Strings\StringSourceTrait;
+use WBW\Library\Common\Traits\Strings\StringTitleTrait;
 
 /**
  * Paste.
