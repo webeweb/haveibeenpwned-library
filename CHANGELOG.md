@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.5.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.5.0) (2024-04-29)
+
+- Update dependencies
+
 ### [4.4.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.4.0) (2024-03-18)
 
 - Improve constants visibility
