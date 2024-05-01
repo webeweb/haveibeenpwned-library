@@ -6,11 +6,9 @@
          colors="true">
     <filter>
         <whitelist>
-            <directory>./</directory>
+            <directory>./src</directory>
             <exclude>
                 <directory>src/Resources</directory>
-                <directory>tests</directory>
-                <directory>vendor</directory>
             </exclude>
         </whitelist>
     </filter>
