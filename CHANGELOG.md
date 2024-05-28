@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.5.1](https://github.com/webeweb/haveibeenpwned-library/tree/v4.5.1) (2024-05-28)
+
+- Improve code quality
+
 ### [4.5.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.5.0) (2024-04-29)
 
 - Update dependencies
