@@ -61,7 +61,6 @@ class APIv1ProviderTest extends AbstractTestCase {
             $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -79,7 +78,6 @@ class APIv1ProviderTest extends AbstractTestCase {
         $obj = new APIv1Provider();
 
         try {
-
             $obj->sendRequest($breachedAccountRequest);
         } catch (Throwable $ex) {
 

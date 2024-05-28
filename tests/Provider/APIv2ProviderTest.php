@@ -83,7 +83,6 @@ class APIv2ProviderTest extends AbstractTestCase {
             $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -108,7 +107,6 @@ class APIv2ProviderTest extends AbstractTestCase {
             $res = $obj->sendRequest($breachedAccountRequest);
             $this->assertInstanceOf(BreachesResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
@@ -179,7 +177,6 @@ class APIv2ProviderTest extends AbstractTestCase {
             $res = $obj->sendRequest($pasteAccountRequest);
             $this->assertInstanceOf(PastesResponse::class, $res);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(ProviderException::class, $ex);
         }
     }
