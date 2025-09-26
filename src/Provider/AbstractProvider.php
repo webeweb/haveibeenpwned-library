@@ -43,7 +43,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(LoggerInterface $logger = null) {
+    public function __construct(?LoggerInterface $logger = null) {
         parent::__construct($logger);
     }
 
@@ -54,7 +54,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param string|null $apiKey The API key.
      * @return array<string,mixed> Returns the configuration.
      */
-    private function buildConfiguration(string $host, string $apiKey = null): array {
+    private function buildConfiguration(string $host, ?string $apiKey = null): array {
 
         $config = [
             "base_uri"    => $host . "/",
@@ -84,7 +84,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws ProviderException Throws a provider exception if an error occurs.
      */
-    protected function callApi(AbstractRequest $request, array $queryData, string $endpointPath = null, string $apiKey = null): string {
+    protected function callApi(AbstractRequest $request, array $queryData, ?string $endpointPath = null, ?string $apiKey = null): string {
 
         try {
 

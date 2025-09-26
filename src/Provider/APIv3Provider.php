@@ -41,7 +41,7 @@ class APIv3Provider extends AbstractProvider {
      * @param string|null $apiKey The API key.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(string $apiKey = null, LoggerInterface $logger = null) {
+    public function __construct(?string $apiKey = null, ?LoggerInterface $logger = null) {
         parent::__construct($logger);
 
         $this->setApiKey($apiKey);
