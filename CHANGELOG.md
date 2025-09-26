@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.7.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.7.0) (2025-09-26)
+
+- Improve code quality
+
 ### [4.6.0](https://github.com/webeweb/haveibeenpwned-library/tree/v4.6.0) (2025-08-11)
 
 - Add PHP 8.4 support
